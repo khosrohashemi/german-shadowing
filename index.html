@@ -476,10 +476,9 @@ if(hasTTS){
 }
 els.voiceSelect.onchange = ()=>{ state.settings.voiceName = els.voiceSelect.value; saveState(); };
 els.testVoiceBtn.onclick = ()=>{
-  if(!hasTTS){ setStatus('Sprachausgabe wird von diesem Browser nicht unterstützt.', false); return; }
   els.testVoiceBtn.disabled = true;
   setStatus('🔊 Teste Stimme…', true);
-  speak('Hallo! Kannst du mich hören? Das ist ein Test.', 1, ()=>{
+  speakSmart('Hallo! Kannst du mich hören? Das ist ein Test.', 'audio/test.mp3', 1, ()=>{
     els.testVoiceBtn.disabled = false;
   });
 };
@@ -520,14 +519,37 @@ function speak(text, rate, onend){
     speakNow(text, rate, onend);
   }
 }
-// Speaks a list of lines back-to-back with a short gap, then calls onAllDone once.
-function speakSequence(texts, rate, gapMs, onAllDone){
+// Pre-recorded natural-voice clips for all fixed content (see audio/ + generate_audio.py).
+// currentAudioEl tracks whichever <audio> is playing right now so pause/skip can reach it.
+let currentAudioEl = null;
+function playAudioFile(url, text, rate, onend){
+  const audio = new Audio(url);
+  currentAudioEl = audio;
+  audio.playbackRate = rate || 1;
+  let settled = false;
+  const toFallback = ()=>{
+    if(settled) return; settled = true;
+    currentAudioEl = null;
+    speak(text, rate, onend);
+  };
+  audio.onended = ()=>{ if(settled) return; settled = true; currentAudioEl = null; if(onend) onend(); };
+  audio.onerror = toFallback;
+  audio.play().catch(toFallback);
+}
+// Plays the pre-recorded clip at `url` when available, otherwise falls back to
+// the browser's built-in speech synthesis for `text`.
+function speakSmart(text, url, rate, onend){
+  if(url) playAudioFile(url, text, rate, onend);
+  else speak(text, rate, onend);
+}
+// Speaks a list of {text, url} items back-to-back with a short gap, then calls onAllDone once.
+function speakSequence(items, rate, gapMs, onAllDone){
   let i = 0;
   function playNext(){
-    if(i>=texts.length){ onAllDone(); return; }
-    const t = texts[i]; i++;
-    speak(t, rate, ()=>{
-      if(i<texts.length) setTimeout(playNext, gapMs);
+    if(i>=items.length){ onAllDone(); return; }
+    const it = items[i]; i++;
+    speakSmart(it.text, it.url, rate, ()=>{
+      if(i<items.length) setTimeout(playNext, gapMs);
       else onAllDone();
     });
   }
@@ -733,20 +755,25 @@ function renderDiff(target, said){
 
 // Tracks individual words that keep getting missed so they can resurface on
 // later days, independent of how the whole passage/sentence scored overall.
-function updateWeakWords(targetWords, aMatched, exampleLines){
+function updateWeakWords(targetWords, aMatched, passage){
   const today = todayStr();
+  const lines = passage.lines;
   targetWords.forEach((w,idx)=>{
     if(w.length<3 || WORD_STOPLIST.has(w)) return;
     const known = aMatched[idx];
     const rec = state.weakWords[w];
     if(!known){
-      const exLine = exampleLines.find(l=> normalizeWords(l.de).includes(w));
+      let lineIdx = lines.findIndex(l=> normalizeWords(l.de).includes(w));
+      if(lineIdx===-1) lineIdx = 0;
+      const exLine = lines[lineIdx];
       state.weakWords[w] = {
         box:1,
         due: addDays(today, BOX_INTERVALS[1]),
         misses: rec ? rec.misses+1 : 1,
-        example: exLine ? exLine.de : (rec ? rec.example : exampleLines[0].de),
-        exampleEn: exLine ? exLine.en : (rec ? rec.exampleEn : exampleLines[0].en)
+        example: exLine.de,
+        exampleEn: exLine.en,
+        sourceId: passage.id,
+        sourceLineIdx: lineIdx
       };
     } else if(rec){
       rec.box = Math.min(rec.box+1, BOX_INTERVALS.length-1);
@@ -758,7 +785,7 @@ function updateWeakWords(targetWords, aMatched, exampleLines){
 }
 
 /* ---------------- Session controller ---------------- */
-let session = {queue:[], idx:-1, current:null, roundCount:0, recognition:null, mediaRecorder:null, isBonus:false, mode:'passage', weakWordsAttempted:null, token:0};
+let session = {queue:[], idx:-1, current:null, roundCount:0, recognition:null, mediaRecorder:null, isBonus:false, bonusIdx:-1, mode:'passage', weakWordsAttempted:null, token:0};
 
 function setStatus(text, live){
   els.statusLine.innerHTML = (live? '<span class="dot live"></span>' : '<span class="dot"></span>') + ' ' + text;
@@ -771,6 +798,19 @@ function currentTargetLines(){
   return session.isBonus ? [session.current] : session.current.lines.map(l=>l.de);
 }
 function currentTargetText(){ return currentTargetLines().join(' '); }
+// Returns [{text, url}] pairing each line with its pre-recorded natural-voice
+// clip (falls back to browser TTS in speakSmart if a line has no url).
+function currentTargetItems(){
+  if(session.mode==='word'){
+    const w = session.current;
+    const url = (w.sourceId!=null && w.sourceLineIdx!=null) ? ('audio/'+w.sourceId+'_'+w.sourceLineIdx+'.mp3') : null;
+    return [{text: w.example, url}];
+  }
+  if(session.isBonus){
+    return [{text: session.current, url: 'audio/tt'+session.bonusIdx+'.mp3'}];
+  }
+  return session.current.lines.map((l,idx)=>({text: l.de, url: 'audio/'+session.current.id+'_'+idx+'.mp3'}));
+}
 
 function showSentenceCard(){
   els.diffRow.style.display='none';
@@ -811,7 +851,7 @@ function pickDueWeakWord(){
   const unseen = due.filter(([w])=>!session.weakWordsAttempted.has(w));
   const chosen = unseen[0] || due[0];
   session.weakWordsAttempted.add(chosen[0]);
-  return {word: chosen[0], example: chosen[1].example, exampleEn: chosen[1].exampleEn};
+  return {word: chosen[0], example: chosen[1].example, exampleEn: chosen[1].exampleEn, sourceId: chosen[1].sourceId, sourceLineIdx: chosen[1].sourceLineIdx};
 }
 function nextRound(){
   session.token++; // invalidates any recognition/recording still in flight from the previous round
@@ -832,7 +872,8 @@ function nextRound(){
   // passage from the queue (previously it silently replaced/skipped one).
   if(session.roundCount>1 && session.roundCount % 3 === 0){
     session.isBonus = true;
-    session.current = TONGUE_TWISTERS[Math.floor(Math.random()*TONGUE_TWISTERS.length)];
+    session.bonusIdx = Math.floor(Math.random()*TONGUE_TWISTERS.length);
+    session.current = TONGUE_TWISTERS[session.bonusIdx];
     showSentenceCard();
     return;
   }
@@ -860,6 +901,7 @@ function startSession(){
 els.startBtn.onclick = startSession;
 els.skipBtn.onclick = ()=>{
   speechSynthesis.cancel();
+  if(currentAudioEl){ try{ currentAudioEl.pause(); }catch(e){} currentAudioEl=null; }
   ttsPaused=false; els.pauseBtn.style.display='none'; els.pauseBtn.textContent='⏸ Pause';
   if(session.recognition){ try{ session.recognition.abort(); }catch(e){} }
   if(session.mediaRecorder && session.mediaRecorder.state!=='inactive'){ try{ session.mediaRecorder.stop(); }catch(e){} }
@@ -876,6 +918,20 @@ els.revealBtn.onclick = ()=>{
 
 let ttsPaused = false;
 els.pauseBtn.onclick = ()=>{
+  if(currentAudioEl){
+    if(!ttsPaused){
+      currentAudioEl.pause();
+      ttsPaused = true;
+      els.pauseBtn.textContent = '▶ Weiter';
+      setStatus('⏸ Pausiert. Klicke „Weiter“, um fortzufahren.', false);
+    } else {
+      currentAudioEl.play();
+      ttsPaused = false;
+      els.pauseBtn.textContent = '⏸ Pause';
+      setStatus('🔊 Wird abgespielt…', true);
+    }
+    return;
+  }
   if(!hasTTS) return;
   if(!ttsPaused){
     speechSynthesis.pause();
@@ -893,7 +949,7 @@ els.playBtn.onclick = ()=>{
   setStatus('🔊 Wird abgespielt…', true);
   els.playBtn.disabled=true;
   ttsPaused=false; els.pauseBtn.textContent='⏸ Pause'; els.pauseBtn.style.display='inline-block';
-  speakSequence(currentTargetLines(), state.settings.rate, 450, ()=>{
+  speakSequence(currentTargetItems(), state.settings.rate, 450, ()=>{
     els.playBtn.disabled=false;
     els.pauseBtn.style.display='none';
     setStatus('Gleich geht\'s los — bereite dich vor…', false);
@@ -946,7 +1002,7 @@ function startRecording(){
         renderTopBar(); renderStats();
       } else if(!session.isBonus){
         updateCard(session.current.id, score);
-        updateWeakWords(diff.targetWords, diff.aMatched, session.current.lines);
+        updateWeakWords(diff.targetWords, diff.aMatched, session.current);
         const linesCount = currentTargetLines().length;
         state.stats.totalPracticed += linesCount;
         state.stats.scoreSum += score*linesCount;
@@ -1040,14 +1096,16 @@ function endSession(){
 }
 
 /* ---------------- Freestyle mode ---------------- */
-let freestyleCurrent = FREESTYLE_PROMPTS[Math.floor(Math.random()*FREESTYLE_PROMPTS.length)];
+let freestyleIdx = Math.floor(Math.random()*FREESTYLE_PROMPTS.length);
+let freestyleCurrent = FREESTYLE_PROMPTS[freestyleIdx];
 els.freestylePrompt.textContent = freestyleCurrent;
 els.freestyleAskBtn.onclick = ()=>{
   els.freestyleStatus.textContent='🔊 Frage wird gestellt…';
-  speak(freestyleCurrent, 0.9, ()=> els.freestyleStatus.textContent='Jetzt antworte frei auf Deutsch.');
+  speakSmart(freestyleCurrent, 'audio/fp'+freestyleIdx+'.mp3', 0.9, ()=> els.freestyleStatus.textContent='Jetzt antworte frei auf Deutsch.');
 };
 els.freestyleNextBtn.onclick = ()=>{
-  freestyleCurrent = FREESTYLE_PROMPTS[Math.floor(Math.random()*FREESTYLE_PROMPTS.length)];
+  freestyleIdx = Math.floor(Math.random()*FREESTYLE_PROMPTS.length);
+  freestyleCurrent = FREESTYLE_PROMPTS[freestyleIdx];
   els.freestylePrompt.textContent = freestyleCurrent;
   els.freestyleTranscript.value='';
   els.freestyleStatus.textContent='';
