@@ -100,18 +100,27 @@
     <div class="wotd" id="wotdText"></div>
   </div>
 
-  <div class="card" id="practiceCard">
+  <div class="card" id="modeCard">
+    <div class="tag">Heutige Übung</div>
+    <div class="sentence" style="font-size:1.15rem;">Was möchtest du heute üben?</div>
+    <div class="controls">
+      <button class="primary" id="startShadowBtn">🗣️ Schatten üben</button>
+      <button class="primary" id="startListenBtn">🎧 Hören üben</button>
+    </div>
+  </div>
+
+  <div class="card" id="practiceCard" style="display:none;">
     <div class="tag" id="sentenceTag">Kategorie</div>
-    <div class="sentence" id="sentenceText">Bereit? Klicke auf „Start“, um deine heutige Sitzung zu beginnen. Du übst jetzt kurze Dreier-Passagen statt einzelner Sätze.</div>
+    <div class="sentence" id="sentenceText"></div>
     <div class="translation" id="translationText"></div>
     <div class="controls">
-      <button class="primary" id="startBtn">▶ Sitzung starten</button>
       <button id="playBtn" style="display:none;">🔊 Abspielen</button>
       <button id="pauseBtn" style="display:none;">⏸ Pause</button>
       <button id="recordBtn" style="display:none;">🎤 Aufnehmen</button>
       <button id="retryBtn" style="display:none;">↺ Wiederholen</button>
       <button id="skipBtn" style="display:none;">⏭ Nächster</button>
       <button id="revealBtn" style="display:none;">👁 Text zeigen</button>
+      <button class="ghost" id="newSessionBtn" style="display:none;">↩ Zurück zur Auswahl</button>
     </div>
     <div class="status" id="statusLine"></div>
     <div class="diff-row" id="diffRow" style="display:none;">
@@ -123,6 +132,42 @@
       <div class="feedback-msg" id="feedbackMsg"></div>
       <div id="recordedAudioWrap" style="margin-top:10px;display:none;">
         <audio id="recordedAudio" controls style="width:100%;"></audio>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" id="listenCard" style="display:none;">
+    <div class="tag" id="listenTag">Podcast</div>
+    <div class="sentence" id="listenTitle" style="font-size:1.3rem;"></div>
+    <audio id="listenAudio" controls style="width:100%;margin-top:10px;" preload="none"></audio>
+    <div class="controls">
+      <button class="primary" id="listenDoneBtn">✅ Fertig gehört — zu den Fragen</button>
+      <button class="ghost" id="listenBackBtn">↩ Zurück zur Auswahl</button>
+    </div>
+    <div class="status" id="listenStatus"></div>
+
+    <div id="listenQABlock" style="display:none;">
+      <div class="diff-row">
+        <div class="diff-label" id="listenQProgress"></div>
+        <div class="sentence" id="listenQText" style="font-size:1.2rem;"></div>
+        <div class="controls">
+          <button id="listenQPlayBtn">🔊 Frage abspielen</button>
+          <button id="listenQAnswerBtn" style="display:none;">🎤 Antworten</button>
+        </div>
+        <div class="status" id="listenQStatus"></div>
+        <div class="feedback-msg" id="listenQFeedback"></div>
+      </div>
+    </div>
+
+    <div id="listenSummary" style="display:none;">
+      <div class="diff-row">
+        <div class="score" id="listenScoreLine"></div>
+        <div class="feedback-msg" id="listenSummaryMsg"></div>
+        <div class="controls">
+          <button id="listenTranscriptBtn">📜 Transkript anzeigen</button>
+          <button class="primary" id="listenAgainBtn">↩ Zurück zur Auswahl</button>
+        </div>
+        <div id="listenTranscriptBox" style="display:none;margin-top:10px;white-space:pre-wrap;line-height:1.6;color:var(--muted);"></div>
       </div>
     </div>
   </div>
@@ -380,6 +425,50 @@ const FREESTYLE_PROMPTS = [
   "Beschreibe eine Person, die dich inspiriert."
 ];
 
+const PODCASTS = [
+  {
+    id:"ep0", title:"Die Vier-Tage-Woche", style:"news", level:"B1",
+    script:"In den letzten Jahren testen immer mehr Firmen in Europa ein neues Arbeitsmodell: die Vier-Tage-Woche. Die Idee ist einfach. Die Mitarbeiter arbeiten nur noch vier Tage pro Woche, meistens von Montag bis Donnerstag, und haben trotzdem ein volles Gehalt. Der Freitag wird frei.\n\nEin großes Beispiel kommt aus Island. Dort haben zwischen 2015 und 2019 mehrere Firmen und Behörden dieses Modell ausprobiert. Insgesamt haben etwa 2500 Angestellte teilgenommen. Das Ergebnis war überraschend positiv. Die Menschen waren weniger gestresst, schliefen besser und waren trotzdem genauso produktiv wie vorher. Nach dem Test haben viele isländische Arbeitgeber die kürzere Woche dauerhaft eingeführt.\n\nAuch in Großbritannien gab es 2022 einen großen Versuch. Über 60 Unternehmen aus verschiedenen Branchen haben sechs Monate lang die Vier-Tage-Woche getestet. Am Ende des Versuchs haben fast alle Firmen entschieden, das neue Modell weiterzuführen. Besonders interessant: Die Zahl der Kündigungen ist in dieser Zeit deutlich gesunken, weil die Mitarbeiter zufriedener waren.\n\nNatürlich funktioniert die Vier-Tage-Woche nicht in jedem Beruf. In Krankenhäusern, Fabriken oder im Handel ist es schwieriger, weil dort jemand an sieben Tagen in der Woche arbeiten muss. Kritiker sagen außerdem, dass die Arbeit in vier Tagen genauso anstrengend werden kann, wenn niemand die Aufgaben reduziert.\n\nTrotzdem wächst das Interesse an diesem Modell weltweit. In Deutschland haben im letzten Jahr über 40 Firmen an einem ähnlichen Pilotprojekt teilgenommen, organisiert von einer Beratungsfirma und einer Universität. Auch hier war das Feedback größtenteils positiv: mehr Zeit für Familie, Hobbys und Erholung.\n\nEine Angestellte aus Berlin, die an einem der deutschen Pilotprojekte teilgenommen hat, beschreibt die Veränderung so: Früher sei sie am Wochenende oft zu müde gewesen, um noch etwas zu unternehmen. Jetzt nutze sie den zusätzlichen freien Tag für Sport, für ihre Familie oder einfach, um nichts zu tun. Ihr Chef berichtet außerdem, dass die Meetings kürzer und fokussierter geworden seien, weil einfach weniger Zeit dafür bleibt.\n\nOb die Vier-Tage-Woche irgendwann zum Standard wird, ist noch offen. Aber immer mehr Experten glauben, dass sich die Arbeitswelt in den nächsten Jahren stark verändern wird — vielleicht wird der freie Freitag schon bald für viele Menschen ganz normal sein.",
+    questions:[
+      {q:"Wie viele Tage pro Woche arbeiten die Menschen bei diesem neuen Modell?", accept:["vier","4"], hint:"vier Tage"},
+      {q:"In welchem Land hat der große Versuch zwischen 2015 und 2019 stattgefunden?", accept:["island"], hint:"Island"},
+      {q:"Wie viele Unternehmen haben 2022 in Großbritannien teilgenommen?", accept:["60","sechzig"], hint:"über 60"},
+      {q:"Was ist in Großbritannien während des Versuchs deutlich gesunken?", accept:["kündigungen"], hint:"die Zahl der Kündigungen"},
+    ]
+  },
+  {
+    id:"ep1", title:"Der Schlüssel im alten Mantel", style:"story", level:"B1",
+    script:"Es ist eine kalte Herbstwoche in München. Frau Berger, eine Rentnerin von 72 Jahren, räumt den Dachboden ihres Hauses auf. Das Haus gehörte früher ihrem Großvater, und seit seinem Tod vor drei Jahren liegen viele alte Sachen einfach dort oben.\n\nIn einer Kiste findet sie einen dunkelgrünen Wintermantel. Als sie in die Innentasche greift, spürt sie etwas Hartes. Es ist ein kleiner, rostiger Schlüssel, zusammen mit einem Zettel. Auf dem Zettel steht nur eine Adresse in Salzburg und die Zahl 14.\n\nFrau Berger ist neugierig. Sie erinnert sich, dass ihr Großvater oft von einer Reise nach Salzburg erzählt hat, aber nie Details verraten hat. Sie beschließt, mit dem Zug nach Salzburg zu fahren, um die Adresse zu finden.\n\nWährend der Zugfahrt denkt Frau Berger viel an ihre Kindheit zurück. Ihr Großvater war ein ruhiger Mann, der selten über seine Vergangenheit sprach. Sie erinnert sich, wie er manchmal stundenlang am Fenster saß und aufs Feld hinausschaute, als würde er etwas suchen. Erst jetzt, mit dem Schlüssel in der Hand, beginnt sie zu ahnen, dass dieses Schweigen vielleicht mehr bedeutet hat, als die Familie je vermutet hatte.\n\nAm nächsten Tag steht sie vor einem alten Gebäude in der Salzburger Altstadt. Es ist ein kleines Bankgebäude aus dem 19. Jahrhundert. Ein freundlicher Angestellter erklärt ihr, dass es dort ein altes Schließfachsystem gibt und dass Nummer 14 tatsächlich noch existiert.\n\nNach einigen Formularen und einem Anruf bei einem Notar darf sie das Fach öffnen. Darin liegt eine kleine Holzbox mit alten Fotos, einem Brief und mehreren Silbermünzen. Der Brief ist an ihre Großmutter gerichtet, geschrieben im Jahr 1962, kurz nachdem die beiden geheiratet hatten. Ihr Großvater beschreibt darin, wie schwierig die ersten Jahre nach dem Krieg waren und wie sehr er sich wünschte, seiner Frau eines Tages ein sicheres Leben zu bieten.\n\nFrau Berger sitzt lange in dem kleinen Büro und liest den Brief mehrmals. Sie hatte ihren Großvater immer als ruhigen, verschlossenen Mann gekannt. Jetzt versteht sie, wie viel Liebe und Sorge hinter seinem Schweigen steckte. Die Münzen nimmt sie nicht mit. Stattdessen bittet sie den Angestellten, sie einer kleinen Stiftung für Kriegswaisen in der Stadt zu spenden — genau das, sagt sie, hätte ihr Großvater sich gewünscht.",
+    questions:[
+      {q:"In welcher Stadt wohnt Frau Berger?", accept:["münchen","munchen"], hint:"München"},
+      {q:"Was findet sie in der Innentasche des Mantels?", accept:["schlüssel","schlussel"], hint:"einen Schlüssel"},
+      {q:"In welche Stadt fährt sie, um die Adresse zu finden?", accept:["salzburg"], hint:"Salzburg"},
+      {q:"Was macht sie am Ende mit den Silbermünzen?", accept:["spend","stiftung"], hint:"sie spendet sie einer Stiftung"},
+    ]
+  },
+  {
+    id:"ep2", title:"Die Rückkehr der Wale", style:"news", level:"B2",
+    script:"An der Nordseeküste erleben Forscher in diesem Jahr etwas Ungewöhnliches: Immer häufiger werden große Wale direkt vor der deutschen Küste gesichtet. Besonders oft handelt es sich um Buckelwale, die normalerweise weit draußen im Atlantik leben.\n\nNach Angaben von Meeresbiologen der Universität Kiel wurden allein in den letzten zwölf Monaten über 30 Sichtungen gemeldet, deutlich mehr als in den Jahren zuvor. Noch vor zwanzig Jahren waren solche Beobachtungen extrem selten.\n\nEin Grund dafür könnte die verbesserte Wasserqualität in der Nordsee sein. Strengere Umweltgesetze in Europa haben in den letzten Jahrzehnten dazu geführt, dass weniger Chemikalien und Abwasser ins Meer gelangen. Dadurch haben sich auch die Fischpopulationen erholt, von denen sich die Wale ernähren.\n\nEin weiterer Faktor ist der Rückgang des Schiffslärms in bestimmten Gebieten, nachdem einige Regionen zu Schutzzonen erklärt wurden. Wale orientieren sich stark über Geräusche, und weniger Lärm bedeutet für sie weniger Stress und eine leichtere Nahrungssuche.\n\nFür die Fischerei bringt die Entwicklung allerdings auch neue Herausforderungen. Einige Fischer berichten, dass sich Wale in der Nähe von Netzen aufhalten, was zu gefährlichen Situationen führen kann. Experten empfehlen deshalb, bestimmte Fanggebiete während der Wandersaison der Wale vorübergehend zu meiden.\n\nDie Forscherin Dr. Meike Lorenzen von der Universität Kiel erklärt, dass ihr Team die Wale mit Drohnen und speziellen Unterwassermikrofonen beobachtet. So können die Wissenschaftler nicht nur einzelne Tiere über Jahre wiedererkennen, sondern auch ihre Wanderrouten genauer verstehen. Manche der beobachteten Wale, sagt sie, seien inzwischen schon seit über fünf Jahren immer wieder in derselben Gegend gesichtet worden, was für eine erstaunliche Ortstreue spricht.\n\nFür den Tourismus dagegen ist die Entwicklung eine gute Nachricht. Mehrere Küstenstädte, darunter Büsum und Cuxhaven, bieten inzwischen spezielle Bootstouren an, bei denen Besucher die Wale aus sicherer Entfernung beobachten können. Die Nachfrage nach diesen Touren ist laut lokalen Anbietern im letzten Sommer um fast 50 Prozent gestiegen.\n\nForscher warnen jedoch davor, die Entwicklung zu unterschätzen. Der Klimawandel verändert weiterhin die Meeresströmungen und Wassertemperaturen, und niemand kann sicher vorhersagen, ob die Wale langfristig in der Nordsee bleiben werden.",
+    questions:[
+      {q:"Welche Walart wird am häufigsten vor der deutschen Küste gesichtet?", accept:["buckelwale","buckelwal"], hint:"Buckelwale"},
+      {q:"Wie viele Sichtungen wurden in den letzten zwölf Monaten gemeldet?", accept:["30","dreißig","dreissig"], hint:"über 30"},
+      {q:"Nenne eine der beiden deutschen Küstenstädte, die Bootstouren anbieten.", accept:["büsum","busum","cuxhaven"], hint:"Büsum oder Cuxhaven"},
+      {q:"Um wie viel Prozent ist die Nachfrage nach den Touren gestiegen?", accept:["50","fünfzig","funfzig"], hint:"fast 50 Prozent"},
+    ]
+  },
+  {
+    id:"ep3", title:"Die Postkarte ohne Absender", style:"story", level:"B2",
+    script:"Jeden Sommer verbringt Familie Hoffmann zwei Wochen in einem kleinen Ferienhaus an der Ostsee, direkt in der Nähe von Rügen. Die vierzehnjährige Tochter Lea findet dort in diesem Jahr etwas Merkwürdiges im Briefkasten: eine alte Postkarte, vergilbt und mit verblasster Schrift.\n\nDie Postkarte zeigt ein Foto des Ferienhauses, aber das Haus sieht darauf ganz anders aus — ohne die moderne Terrasse, die es heute hat. Auf der Rückseite steht ein kurzer Text auf Deutsch, aber ohne Unterschrift und ohne Absenderadresse. Der Text lautet: „Wir haben es endlich gefunden. Komm bald nach, du weißt, wo.\"\n\nLea zeigt die Karte ihrem Vater, der das Haus vor fünf Jahren von einem älteren Ehepaar gekauft hat. Er erinnert sich, dass die frühere Besitzerin einmal erzählt hat, ihr Bruder sei in den 1980er-Jahren für mehrere Jahre spurlos verschwunden, bevor er plötzlich wieder auftauchte — ohne je zu erklären, wo er gewesen war.\n\nNeugierig geworden, fragt Lea im Dorf herum. Eine ältere Nachbarin erinnert sich tatsächlich an die Geschichte. Der Bruder, so erzählt sie, habe in den 1980er-Jahren angeblich nach einem verschollenen Familienschatz gesucht, von dem ihr Großvater vor dem Krieg gesprochen hatte.\n\nAm Abend sitzt Lea auf der Terrasse und betrachtet die alten Fotos noch einmal genauer. Auf einem Bild erkennt sie einen jungen Mann, der ihr seltsam bekannt vorkommt — vielleicht, denkt sie, weil er die gleichen Augen hat wie ihr Vater. Sie fragt sich, ob es in jeder Familie solche versteckten Geschichten gibt, die einfach nie erzählt wurden, bis jemand zufällig danach sucht.\n\nLea und ihr Vater beschließen, den alten Dachboden des Hauses noch einmal genauer zu untersuchen. Hinter einer losen Holzwand finden sie tatsächlich eine kleine, verstaubte Metallkiste. Darin liegen keine Schätze, sondern nur alte Familienfotos, ein Ring und mehrere weitere Postkarten — offenbar nie abgeschickt.\n\nDer „Schatz\", stellt sich heraus, war nie Gold oder Geld, sondern Erinnerungen, die der Bruder all die Jahre lang gesammelt und versteckt hatte, bevor er verschwand. Warum er nie zurückkam, bleibt bis heute ungeklärt. Lea beschließt jedoch, die gefundenen Postkarten in einem kleinen Rahmen im Ferienhaus aufzuhängen.",
+    questions:[
+      {q:"In der Nähe welcher Insel verbringt die Familie Hoffmann ihren Urlaub?", accept:["rügen","rugen"], hint:"Rügen"},
+      {q:"Wie alt ist Lea?", accept:["14","vierzehn"], hint:"vierzehn Jahre"},
+      {q:"Was finden Lea und ihr Vater hinter der losen Holzwand?", accept:["metallkiste","kiste"], hint:"eine Metallkiste"},
+      {q:"Was war der Schatz am Ende wirklich?", accept:["erinnerungen","fotos","postkarten"], hint:"Erinnerungen, keine Schätze"},
+    ]
+  },
+];
+PODCASTS.forEach(p=>{ p.paragraphs = p.script.split("\n\n"); });
+
 /* ---------------- State ---------------- */
 const STORE_KEY = 'deShadowState_v1';
 function todayStr(){ const d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
@@ -389,6 +478,7 @@ function defaultState(){
   return {
     leitner:{}, // id -> {box, due, history:[]}
     weakWords:{}, // normalized word -> {box, due, misses, example, exampleEn}
+    podcasts:{}, // episode id -> {box, due, bestScore}
     streak:{practiceDates:[], currentStreak:0, longestStreak:0},
     xp:0, badges:[],
     settings:{rate:0.85, pause:1.2, sessionLen:6, category:'all', hideText:false, recordAudio:false, theme:'light', voiceName:''},
@@ -415,7 +505,8 @@ const els = {
   compatWarning:$('compatWarning'),
   wotdText:$('wotdText'),
   sentenceTag:$('sentenceTag'), sentenceText:$('sentenceText'), translationText:$('translationText'),
-  startBtn:$('startBtn'), playBtn:$('playBtn'), pauseBtn:$('pauseBtn'), recordBtn:$('recordBtn'), retryBtn:$('retryBtn'), skipBtn:$('skipBtn'), revealBtn:$('revealBtn'),
+  modeCard:$('modeCard'), startShadowBtn:$('startShadowBtn'), startListenBtn:$('startListenBtn'),
+  playBtn:$('playBtn'), pauseBtn:$('pauseBtn'), recordBtn:$('recordBtn'), retryBtn:$('retryBtn'), skipBtn:$('skipBtn'), revealBtn:$('revealBtn'), newSessionBtn:$('newSessionBtn'),
   statusLine:$('statusLine'),
   diffRow:$('diffRow'), targetLine:$('targetLine'), saidLine:$('saidLine'), scoreLine:$('scoreLine'), feedbackMsg:$('feedbackMsg'),
   recordedAudioWrap:$('recordedAudioWrap'), recordedAudio:$('recordedAudio'),
@@ -425,7 +516,14 @@ const els = {
   statTotal:$('statTotal'), statAvg:$('statAvg'), statLongest:$('statLongest'), heatGrid:$('heatGrid'), badgeList:$('badgeList'),
   exportBtn:$('exportBtn'), importBtn:$('importBtn'), importFile:$('importFile'), resetBtn:$('resetBtn'),
   freestylePrompt:$('freestylePrompt'), freestyleAskBtn:$('freestyleAskBtn'), freestyleRecordBtn:$('freestyleRecordBtn'),
-  freestyleNextBtn:$('freestyleNextBtn'), freestyleStatus:$('freestyleStatus'), freestyleTranscript:$('freestyleTranscript')
+  freestyleNextBtn:$('freestyleNextBtn'), freestyleStatus:$('freestyleStatus'), freestyleTranscript:$('freestyleTranscript'),
+  practiceCard:$('practiceCard'),
+  listenCard:$('listenCard'), listenTag:$('listenTag'), listenTitle:$('listenTitle'), listenAudio:$('listenAudio'),
+  listenDoneBtn:$('listenDoneBtn'), listenBackBtn:$('listenBackBtn'), listenStatus:$('listenStatus'),
+  listenQABlock:$('listenQABlock'), listenQProgress:$('listenQProgress'), listenQText:$('listenQText'),
+  listenQPlayBtn:$('listenQPlayBtn'), listenQAnswerBtn:$('listenQAnswerBtn'), listenQStatus:$('listenQStatus'), listenQFeedback:$('listenQFeedback'),
+  listenSummary:$('listenSummary'), listenScoreLine:$('listenScoreLine'), listenSummaryMsg:$('listenSummaryMsg'),
+  listenTranscriptBtn:$('listenTranscriptBtn'), listenTranscriptBox:$('listenTranscriptBox'), listenAgainBtn:$('listenAgainBtn')
 };
 
 /* ---------------- Theme ---------------- */
@@ -894,11 +992,21 @@ function startSession(){
   }
   session.idx=-1; session.roundCount=0; session.mode='passage';
   session.weakWordsAttempted = new Set();
-  els.startBtn.style.display='none';
   primeMicPermission();
   nextRound();
 }
-els.startBtn.onclick = startSession;
+function showModeCard(){
+  els.modeCard.style.display='block';
+  els.practiceCard.style.display='none';
+  els.listenCard.style.display='none';
+}
+els.startShadowBtn.onclick = ()=>{
+  els.modeCard.style.display='none';
+  els.practiceCard.style.display='block';
+  els.newSessionBtn.style.display='none';
+  startSession();
+};
+els.newSessionBtn.onclick = showModeCard;
 els.skipBtn.onclick = ()=>{
   speechSynthesis.cancel();
   if(currentAudioEl){ try{ currentAudioEl.pause(); }catch(e){} currentAudioEl=null; }
@@ -1090,10 +1198,150 @@ function endSession(){
   els.playBtn.style.display='none'; els.recordBtn.style.display='none';
   els.retryBtn.style.display='none'; els.skipBtn.style.display='none'; els.revealBtn.style.display='none';
   els.diffRow.style.display='none';
-  els.startBtn.style.display='inline-block';
-  els.startBtn.textContent='▶ Neue Sitzung starten';
+  els.newSessionBtn.style.display='inline-block';
   setStatus('Komm morgen wieder, um deine Streak fortzusetzen!', false);
 }
+
+/* ---------------- Listening comprehension mode ---------------- */
+let listenSession = {episode:null, qIdx:-1, correctCount:0, recognition:null, token:0};
+
+function getDuePodcasts(){
+  const today = todayStr();
+  const due = PODCASTS.filter(p=>{ const c=state.podcasts[p.id]; return c && c.due<=today; });
+  if(due.length) return due;
+  const fresh = PODCASTS.filter(p=> !state.podcasts[p.id]);
+  return fresh.length ? fresh : PODCASTS;
+}
+function setListenStatus(t){ els.listenStatus.textContent = t; }
+function setListenQStatus(t){ els.listenQStatus.textContent = t; }
+
+els.startListenBtn.onclick = ()=>{
+  if(listenSession.recognition){ try{ listenSession.recognition.abort(); }catch(e){} }
+  els.modeCard.style.display='none';
+  els.listenCard.style.display='block';
+  const pool = getDuePodcasts();
+  const ep = pool[Math.floor(Math.random()*pool.length)];
+  listenSession = {episode: ep, qIdx:-1, correctCount:0, recognition:null, token: listenSession.token+1};
+  const styleNames = {news:'📰 Nachrichten', story:'📖 Geschichte'};
+  els.listenTag.textContent = (styleNames[ep.style]||ep.style) + ' · ' + ep.level;
+  els.listenTitle.textContent = ep.title;
+  els.listenAudio.pause();
+  els.listenAudio.src = 'audio/'+ep.id+'_full.mp3';
+  els.listenAudio.playbackRate = 1;
+  els.listenDoneBtn.style.display='inline-block';
+  els.listenQABlock.style.display='none';
+  els.listenSummary.style.display='none';
+  setListenStatus('Höre dir den Podcast an — du kannst pausieren und zurückspulen, wie du möchtest. Danach kommen ein paar Verständnisfragen.');
+  primeMicPermission();
+};
+els.listenBackBtn.onclick = ()=>{
+  els.listenAudio.pause();
+  listenSession.token++;
+  if(listenSession.recognition){ try{ listenSession.recognition.abort(); }catch(e){} }
+  showModeCard();
+};
+els.listenAgainBtn.onclick = showModeCard;
+
+els.listenDoneBtn.onclick = ()=>{
+  els.listenAudio.pause();
+  els.listenDoneBtn.style.display='none';
+  els.listenQABlock.style.display='block';
+  nextListenQuestion();
+};
+
+function nextListenQuestion(){
+  listenSession.qIdx++;
+  const ep = listenSession.episode;
+  if(listenSession.qIdx >= ep.questions.length){
+    finishListenSession();
+    return;
+  }
+  const q = ep.questions[listenSession.qIdx];
+  els.listenQProgress.textContent = 'Frage ' + (listenSession.qIdx+1) + ' von ' + ep.questions.length;
+  els.listenQText.textContent = q.q;
+  els.listenQFeedback.textContent = '';
+  els.listenQPlayBtn.style.display = 'inline-block';
+  els.listenQAnswerBtn.style.display='none';
+  setListenQStatus('Klicke auf 🔊, um die Frage zu hören.');
+}
+els.listenQPlayBtn.onclick = ()=>{
+  setListenQStatus('🔊 Frage wird abgespielt…');
+  const ep = listenSession.episode;
+  const qIdx = listenSession.qIdx;
+  speakSmart(ep.questions[qIdx].q, 'audio/'+ep.id+'_q'+qIdx+'.mp3', 1, ()=>{
+    els.listenQAnswerBtn.style.display='inline-block';
+    setListenQStatus('Jetzt antworte per Mikrofon.');
+  });
+};
+els.listenQAnswerBtn.onclick = ()=>{
+  const myToken = listenSession.token;
+  els.listenQAnswerBtn.disabled = true;
+  setListenQStatus('🎤 Ich höre zu…');
+  if(!hasSTT){
+    const q = listenSession.episode.questions[listenSession.qIdx];
+    setListenQStatus('Spracherkennung nicht verfügbar — bewerte dich selbst.');
+    els.listenQFeedback.textContent = 'Erwartete Antwort: ' + q.hint;
+    els.listenQAnswerBtn.disabled=false;
+    setTimeout(()=>{ if(myToken===listenSession.token) nextListenQuestion(); }, 3000);
+    return;
+  }
+  const rec = new SpeechRecognitionCtor();
+  rec.lang='de-DE'; rec.interimResults=false; rec.maxAlternatives=1;
+  let said = '';
+  rec.onresult = (e)=>{ said = e.results[0][0].transcript; };
+  rec.onerror = ()=>{};
+  rec.onend = ()=>{
+    els.listenQAnswerBtn.disabled=false;
+    if(myToken===listenSession.token) judgeListenAnswer(said);
+  };
+  listenSession.recognition = rec;
+  try{ rec.start(); }catch(e){ els.listenQAnswerBtn.disabled=false; if(myToken===listenSession.token) judgeListenAnswer(''); }
+  setTimeout(()=>{ try{ if(listenSession.recognition===rec) rec.stop(); }catch(e){} }, 12000);
+};
+function judgeListenAnswer(said){
+  const q = listenSession.episode.questions[listenSession.qIdx];
+  const norm = normalizeWords(said).join(' ');
+  const correct = q.accept.some(a=> norm.includes(normalizeWords(a).join(' ')));
+  if(correct){
+    listenSession.correctCount++;
+    els.listenQFeedback.textContent = '✅ Richtig!';
+  } else {
+    els.listenQFeedback.textContent = '❌ Nicht ganz — richtige Antwort: ' + q.hint;
+  }
+  setListenQStatus('Du hast gesagt: „' + (said || '(nichts erkannt)') + '"');
+  const myToken = listenSession.token;
+  setTimeout(()=>{ if(myToken===listenSession.token) nextListenQuestion(); }, 2500);
+}
+
+function finishListenSession(){
+  const ep = listenSession.episode;
+  const total = ep.questions.length;
+  const score = Math.round((listenSession.correctCount/total)*100);
+  els.listenQABlock.style.display='none';
+  els.listenSummary.style.display='block';
+  els.listenScoreLine.textContent = listenSession.correctCount + ' / ' + total + ' richtig (' + score + '%)';
+  els.listenScoreLine.className = 'score ' + (score>=85?'good':score>=50?'mid':'bad');
+  els.listenSummaryMsg.textContent = score>=85 ? 'Ausgezeichnetes Hörverständnis! 🎉' : score>=50 ? 'Gut gemacht, weiter so.' : 'Diese Folge kommt bald wieder — dranbleiben!';
+  els.listenTranscriptBox.style.display='none';
+  els.listenTranscriptBox.textContent = ep.paragraphs.join('\n\n');
+
+  const card = state.podcasts[ep.id] || {box:0, due:todayStr(), bestScore:0};
+  if(score>=85) card.box = Math.min((card.box||0)+1, BOX_INTERVALS.length-1);
+  else if(score<50) card.box = 1;
+  card.due = addDays(todayStr(), BOX_INTERVALS[card.box||0]);
+  card.bestScore = Math.max(card.bestScore||0, score);
+  state.podcasts[ep.id] = card;
+
+  state.stats.totalPracticed += total;
+  state.stats.scoreSum += score*total;
+  state.xp += score>=85?15:(score>=50?8:3);
+  markPracticedToday();
+  saveState();
+  renderTopBar(); renderStats();
+}
+els.listenTranscriptBtn.onclick = ()=>{
+  els.listenTranscriptBox.style.display = els.listenTranscriptBox.style.display==='none' ? 'block' : 'none';
+};
 
 /* ---------------- Freestyle mode ---------------- */
 let freestyleIdx = Math.floor(Math.random()*FREESTYLE_PROMPTS.length);
