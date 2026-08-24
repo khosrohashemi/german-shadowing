@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deutsch Schatten – German Shadowing</title>
+<style>
+  :root{
+    --bg:#f5f3ee; --panel:#ffffff; --text:#1e1e1e; --muted:#6b6b6b;
+    --accent:#b5443b; --accent2:#2f6f5e; --ok:#2f7d4f; --miss:#c0392b; --extra:#b8860b;
+    --border:#e2ddd3; --shadow:0 2px 10px rgba(0,0,0,0.06); --chip:#eee7d8;
+  }
+  [data-theme="dark"]{
+    --bg:#161513; --panel:#211f1c; --text:#eee8de; --muted:#a89f8f;
+    --accent:#e2685c; --accent2:#5fbf9f; --ok:#6fcf8e; --miss:#ff6b5e; --extra:#e0b64a;
+    --border:#332f2a; --shadow:0 2px 12px rgba(0,0,0,0.4); --chip:#2b2823;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:'Segoe UI',system-ui,Arial,sans-serif;
+    background:var(--bg); color:var(--text); transition:background .2s,color .2s;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:20px 16px 60px;}
+  header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px;}
+  h1{font-size:1.4rem;margin:0;display:flex;align-items:center;gap:8px;}
+  .badges{display:flex;gap:10px;align-items:center;font-size:.85rem;color:var(--muted);}
+  .pill{background:var(--chip);border-radius:20px;padding:5px 12px;font-weight:600;color:var(--text);}
+  button{
+    font-family:inherit;cursor:pointer;border:1px solid var(--border);background:var(--panel);
+    color:var(--text);border-radius:10px;padding:10px 16px;font-size:.95rem;transition:.15s;
+  }
+  button:hover{border-color:var(--accent);}
+  button.primary{background:var(--accent);color:#fff;border:none;}
+  button.primary:hover{opacity:.9;}
+  button.ghost{background:transparent;border:none;color:var(--muted);}
+  button:disabled{opacity:.4;cursor:not-allowed;}
+  .card{
+    background:var(--panel);border:1px solid var(--border);border-radius:16px;
+    padding:20px;margin-bottom:16px;box-shadow:var(--shadow);
+  }
+  .tag{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
+    color:var(--accent2);background:var(--chip);border-radius:6px;padding:3px 8px;margin-bottom:10px;}
+  .sentence{font-size:1.5rem;line-height:1.5;margin:6px 0 4px;min-height:2.2em;}
+  .sentence.hidden-text{filter:blur(6px);user-select:none;}
+  .translation{color:var(--muted);font-size:.95rem;margin-bottom:14px;line-height:1.5;}
+  .controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+  .status{font-size:.9rem;color:var(--muted);min-height:1.4em;margin-top:8px;display:flex;align-items:center;gap:6px;}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--muted);display:inline-block;}
+  .dot.live{background:var(--accent);animation:pulse 1s infinite;}
+  @keyframes pulse{0%{opacity:1;}50%{opacity:.3;}100%{opacity:1;}}
+  .diff-row{margin-top:16px;padding-top:14px;border-top:1px dashed var(--border);}
+  .diff-label{font-size:.8rem;color:var(--muted);margin-bottom:4px;}
+  .diff-line{font-size:1.15rem;line-height:1.6;}
+  .w-ok{color:var(--ok);font-weight:600;}
+  .w-miss{color:var(--miss);text-decoration:line-through;opacity:.85;}
+  .w-extra{color:var(--extra);}
+  .score{font-size:1.8rem;font-weight:700;margin-top:10px;}
+  .score.good{color:var(--ok);} .score.mid{color:var(--extra);} .score.bad{color:var(--miss);}
+  .feedback-msg{font-size:.95rem;margin-top:4px;color:var(--muted);}
+  details{margin-bottom:16px;}
+  summary{cursor:pointer;font-weight:600;padding:6px 0;}
+  .settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px;}
+  .settings-grid label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:4px;}
+  .settings-grid select,.settings-grid input[type=range]{width:100%;}
+  .settings-grid .full{grid-column:1/3;}
+  .row-check{display:flex;align-items:center;gap:8px;font-size:.9rem;}
+  .heat{display:grid;grid-template-columns:repeat(14,1fr);gap:4px;margin-top:10px;}
+  .heat div{aspect-ratio:1;border-radius:3px;background:var(--chip);}
+  .heat div.hit{background:var(--accent2);}
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center;margin-top:10px;}
+  .stats-grid .num{font-size:1.5rem;font-weight:700;}
+  .stats-grid .lbl{font-size:.75rem;color:var(--muted);}
+  .wotd{font-style:italic;}
+  .wotd b{font-style:normal;color:var(--accent);}
+  .bonus{border:1px dashed var(--extra);background:linear-gradient(90deg,transparent,rgba(224,182,74,.08));}
+  .footer-note{color:var(--muted);font-size:.8rem;text-align:center;margin-top:24px;}
+  .warn{background:#fff3cd;color:#7a5b00;border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:.9rem;}
+  [data-theme="dark"] .warn{background:#3a3315;color:#ffe08a;}
+  .toggle-link{color:var(--accent2);cursor:pointer;text-decoration:underline;font-size:.85rem;}
+  textarea.freestyle-out{width:100%;min-height:90px;background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:8px;font-size:1rem;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>🗣️ Deutsch Schatten</h1>
+    <div class="badges">
+      <span class="pill" id="streakPill">🔥 0 Tage</span>
+      <span class="pill" id="xpPill">⭐ 0 XP</span>
+      <span class="pill" id="weakPill" title="Wörter, die heute zur Wiederholung fällig sind" style="display:none;">🎯 0</span>
+      <button class="ghost" id="themeToggle" title="Hell/Dunkel">🌙</button>
+    </div>
+  </header>
+
+  <div id="compatWarning" class="warn" style="display:none;"></div>
+
+  <div class="card" id="wotdCard">
+    <div class="tag">Ausdruck des Tages</div>
+    <div class="wotd" id="wotdText"></div>
+  </div>
+
+  <div class="card" id="practiceCard">
+    <div class="tag" id="sentenceTag">Kategorie</div>
+    <div class="sentence" id="sentenceText">Bereit? Klicke auf „Start“, um deine heutige Sitzung zu beginnen. Du übst jetzt kurze Dreier-Passagen statt einzelner Sätze.</div>
+    <div class="translation" id="translationText"></div>
+    <div class="controls">
+      <button class="primary" id="startBtn">▶ Sitzung starten</button>
+      <button id="playBtn" style="display:none;">🔊 Abspielen</button>
+      <button id="pauseBtn" style="display:none;">⏸ Pause</button>
+      <button id="recordBtn" style="display:none;">🎤 Aufnehmen</button>
+      <button id="retryBtn" style="display:none;">↺ Wiederholen</button>
+      <button id="skipBtn" style="display:none;">⏭ Nächster</button>
+      <button id="revealBtn" style="display:none;">👁 Text zeigen</button>
+    </div>
+    <div class="status" id="statusLine"></div>
+    <div class="diff-row" id="diffRow" style="display:none;">
+      <div class="diff-label">Zielsätze</div>
+      <div class="diff-line" id="targetLine"></div>
+      <div class="diff-label" style="margin-top:10px;">Du hast gesagt</div>
+      <div class="diff-line" id="saidLine"></div>
+      <div class="score" id="scoreLine"></div>
+      <div class="feedback-msg" id="feedbackMsg"></div>
+      <div id="recordedAudioWrap" style="margin-top:10px;display:none;">
+        <audio id="recordedAudio" controls style="width:100%;"></audio>
+      </div>
+    </div>
+  </div>
+
+  <details id="freestyleDetails">
+    <summary>💬 Freies Sprechen (unbewertete Konversationsübung)</summary>
+    <div class="card">
+      <div class="tag">Frage</div>
+      <div class="sentence" id="freestylePrompt" style="font-size:1.2rem;"></div>
+      <div class="controls">
+        <button id="freestyleAskBtn">🔊 Frage stellen</button>
+        <button id="freestyleRecordBtn">🎤 Antworten</button>
+        <button id="freestyleNextBtn">🔁 Neue Frage</button>
+      </div>
+      <div class="status" id="freestyleStatus"></div>
+      <textarea class="freestyle-out" id="freestyleTranscript" placeholder="Deine gesprochene Antwort erscheint hier zur Selbstkontrolle…" readonly></textarea>
+    </div>
+  </details>
+
+  <details id="statsDetails">
+    <summary>📊 Fortschritt & Streak</summary>
+    <div class="card">
+      <div class="stats-grid">
+        <div><div class="num" id="statTotal">0</div><div class="lbl">Sätze geübt</div></div>
+        <div><div class="num" id="statAvg">0%</div><div class="lbl">Ø Genauigkeit</div></div>
+        <div><div class="num" id="statLongest">0</div><div class="lbl">Längste Streak</div></div>
+      </div>
+      <div class="diff-label" style="margin-top:14px;">Letzte 14 Tage</div>
+      <div class="heat" id="heatGrid"></div>
+      <div id="badgeList" style="margin-top:12px;font-size:.9rem;"></div>
+      <div class="controls" style="margin-top:14px;">
+        <button id="exportBtn">⬇ Fortschritt exportieren</button>
+        <button id="importBtn">⬆ Importieren</button>
+        <input type="file" id="importFile" accept=".json" style="display:none;">
+        <button id="resetBtn">🗑 Zurücksetzen</button>
+      </div>
+    </div>
+  </details>
+
+  <details id="settingsDetails">
+    <summary>⚙️ Einstellungen</summary>
+    <div class="card">
+      <div class="settings-grid">
+        <div class="full">
+          <label>Stimme (deutsche Stimmen zuerst)</label>
+          <select id="voiceSelect"></select>
+          <button id="testVoiceBtn" type="button" style="margin-top:8px;">🔊 Stimme testen</button>
+        </div>
+        <div>
+          <label>Sprechtempo: <span id="rateVal">0.85</span>x</label>
+          <input type="range" id="rateRange" min="0.5" max="1.3" step="0.05" value="0.85">
+        </div>
+        <div>
+          <label>Pause vor dem Nachsprechen: <span id="pauseVal">1.2</span>s</label>
+          <input type="range" id="pauseRange" min="0.3" max="3" step="0.1" value="1.2">
+        </div>
+        <div>
+          <label>Passagen pro Sitzung (je 3 Sätze)</label>
+          <select id="sessionLenSelect">
+            <option value="4">4</option>
+            <option value="6" selected>6</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+        <div>
+          <label>Kategorie</label>
+          <select id="categorySelect">
+            <option value="all" selected>Gemischt</option>
+            <option value="talk">Alltagsgespräche</option>
+            <option value="story">Erzählungen</option>
+            <option value="topic">Aktuelle Themen</option>
+          </select>
+        </div>
+        <div class="full row-check"><input type="checkbox" id="hideTextChk"> <label for="hideTextChk" style="margin:0;">Text erst nach dem Hören anzeigen (reines Hörtraining)</label></div>
+        <div class="full row-check"><input type="checkbox" id="recordAudioChk"> <label for="recordAudioChk" style="margin:0;">Meine Stimme aufnehmen &amp; zum Vergleich abspielen</label></div>
+      </div>
+    </div>
+  </details>
+
+  <div class="footer-note">Läuft komplett lokal in deinem Browser · Chrome/Edge empfohlen für Spracherkennung</div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------------- Content ---------------- */
+/* Each passage is 3 connected German sentences (a mini dialogue/narrative/argument),
+   so one shadowing round covers a coherent chunk instead of an isolated sentence. */
+const PASSAGES = [
+  // ---- talk (Alltagsgespräche) ----
+  {c:'talk', level:'A2', lines:[
+    {de:"Guten Morgen! Ich hätte gern einen Kaffee mit wenig Milch, bitte.", en:"Good morning! I'd like a coffee with a little milk, please."},
+    {de:"Und vielleicht noch ein Stück Kuchen, wenn Sie welchen haben.", en:"And maybe a piece of cake too, if you have any."},
+    {de:"Vielen Dank, das reicht mir völlig.", en:"Thank you very much, that's plenty for me."}
+  ]},
+  {c:'talk', level:'A2', lines:[
+    {de:"Entschuldigung, könnten Sie mir sagen, wie ich zum Bahnhof komme?", en:"Excuse me, could you tell me how to get to the train station?"},
+    {de:"Ich muss in einer halben Stunde dort sein.", en:"I need to be there in half an hour."},
+    {de:"Super, vielen Dank für Ihre Hilfe!", en:"Great, thank you very much for your help!"}
+  ]},
+  {c:'talk', level:'B1', lines:[
+    {de:"Hast du am Wochenende schon etwas vor?", en:"Do you already have plans for the weekend?"},
+    {de:"Ich dachte, wir könnten wandern gehen, wenn das Wetter mitspielt.", en:"I thought we could go hiking if the weather cooperates."},
+    {de:"Das klingt super, ich freue mich schon darauf.", en:"That sounds great, I'm already looking forward to it."}
+  ]},
+  {c:'talk', level:'B1', lines:[
+    {de:"Es tut mir wirklich leid, dass ich mich verspätet habe.", en:"I'm really sorry that I'm late."},
+    {de:"Der Zug hatte fast eine Stunde Verspätung, das war nicht vorherzusehen.", en:"The train was almost an hour late, that wasn't foreseeable."},
+    {de:"Zum Glück haben wir noch genug Zeit für alles Wichtige.", en:"Luckily we still have enough time for everything important."}
+  ]},
+  {c:'talk', level:'B1', lines:[
+    {de:"Ich habe gerade ein kleines Problem mit meinem Computer.", en:"I just have a small problem with my computer."},
+    {de:"Er stürzt jedes Mal ab, wenn ich das Programm öffne.", en:"It crashes every time I open the program."},
+    {de:"Kannst du kurz vorbeikommen und einen Blick darauf werfen?", en:"Could you come by briefly and take a look at it?"}
+  ]},
+  {c:'talk', level:'B2', lines:[
+    {de:"Es geht leider um unseren Termin am Donnerstag.", en:"It's unfortunately about our appointment on Thursday."},
+    {de:"Mir ist kurzfristig etwas Wichtiges dazwischengekommen, das ich nicht verschieben kann.", en:"Something important has come up unexpectedly that I can't postpone."},
+    {de:"Wäre es möglich, den Termin auf Freitagnachmittag zu verlegen?", en:"Would it be possible to move the appointment to Friday afternoon?"}
+  ]},
+  {c:'talk', level:'B2', lines:[
+    {de:"Entschuldigung, ich glaube, hier stimmt etwas mit der Rechnung nicht.", en:"Excuse me, I think something isn't right with the bill."},
+    {de:"Wir haben nur zwei Hauptgerichte bestellt, aber hier stehen drei.", en:"We only ordered two main courses, but three are listed here."},
+    {de:"Könnten Sie das bitte noch einmal überprüfen?", en:"Could you please check that again?"}
+  ]},
+  {c:'talk', level:'A2', lines:[
+    {de:"Hallo, wir sind gerade erst in die Wohnung nebenan eingezogen.", en:"Hello, we just moved into the apartment next door."},
+    {de:"Ich wollte mich kurz vorstellen und fragen, ob wir irgendetwas beachten sollten.", en:"I wanted to introduce myself briefly and ask if there's anything we should be aware of."},
+    {de:"Es freut mich sehr, Sie kennenzulernen.", en:"It's very nice to meet you."}
+  ]},
+  // ---- story (Erzählungen) ----
+  {c:'story', level:'B1', lines:[
+    {de:"Als sie aus dem Haus trat, bemerkte sie, dass es angefangen hatte zu regnen.", en:"As she stepped out of the house, she noticed it had started to rain."},
+    {de:"Sie hatte ihren Schirm vergessen und musste schnell zurück ins Haus laufen.", en:"She had forgotten her umbrella and had to quickly run back inside."},
+    {de:"Am Ende kam sie trotzdem pünktlich zur Arbeit.", en:"In the end, she still made it to work on time."}
+  ]},
+  {c:'story', level:'B1', lines:[
+    {de:"Der alte Mann saß jeden Morgen auf derselben Bank im Park.", en:"The old man sat on the same bench in the park every morning."},
+    {de:"Er fütterte die Tauben und beobachtete die Kinder beim Spielen.", en:"He fed the pigeons and watched the children playing."},
+    {de:"Niemand wusste, wie lange er das schon so machte.", en:"No one knew how long he had been doing this."}
+  ]},
+  {c:'story', level:'B2', lines:[
+    {de:"Nach langer Suche fand er endlich den Brief seiner Großmutter.", en:"After a long search, he finally found his grandmother's letter."},
+    {de:"Die Tinte war verblasst, aber die Worte berührten ihn noch genauso tief wie früher.", en:"The ink had faded, but the words still touched him just as deeply as before."},
+    {de:"Er beschloss, den Brief für immer aufzubewahren.", en:"He decided to keep the letter forever."}
+  ]},
+  {c:'story', level:'A2', lines:[
+    {de:"Die Kinder liefen lachend über die Wiese.", en:"The children ran laughing across the meadow."},
+    {de:"Ihre Eltern saßen im Schatten und schauten ihnen glücklich zu.", en:"Their parents sat in the shade and watched them happily."},
+    {de:"Es war ein ganz gewöhnlicher, aber wunderschöner Nachmittag.", en:"It was a completely ordinary but beautiful afternoon."}
+  ]},
+  {c:'story', level:'B2', lines:[
+    {de:"Erst als der Zug den Bahnhof verließ, erinnerte sie sich an ihren Koffer.", en:"Only as the train left the station did she remember her suitcase."},
+    {de:"Er stand noch immer auf dem Bahnsteig, direkt neben der Bank.", en:"It was still standing on the platform, right next to the bench."},
+    {de:"Zum Glück konnte sie ihn am nächsten Tag am Fundbüro abholen.", en:"Luckily, she was able to pick it up at the lost-and-found office the next day."}
+  ]},
+  {c:'story', level:'C1', lines:[
+    {de:"In der kleinen Stadt kannte fast jeder jeden.", en:"In the small town, almost everyone knew everyone."},
+    {de:"Neuigkeiten verbreiteten sich schneller, als man sie erzählen konnte.", en:"News spread faster than you could tell it."},
+    {de:"Manchmal wusste man von einem Ereignis, bevor es überhaupt passiert war.", en:"Sometimes you knew about an event before it had even happened."}
+  ]},
+  {c:'story', level:'B1', lines:[
+    {de:"Nach dem Sturm lagen überall Äste und Blätter auf den Straßen.", en:"After the storm, branches and leaves lay everywhere on the streets."},
+    {de:"Die Nachbarn kamen zusammen, um gemeinsam aufzuräumen.", en:"The neighbors came together to clean up."},
+    {de:"Bis zum Abend sah die Straße schon wieder fast normal aus.", en:"By evening, the street already looked almost normal again."}
+  ]},
+  {c:'story', level:'C1', lines:[
+    {de:"Sie hatte das Gefühl, diesen Ort schon einmal in einem Traum gesehen zu haben.", en:"She had the feeling she had already seen this place once in a dream."},
+    {de:"Jede Ecke wirkte vertraut, obwohl sie noch nie zuvor dort gewesen war.", en:"Every corner seemed familiar, even though she had never been there before."},
+    {de:"Dieses seltsame Gefühl ließ sie den ganzen Tag nicht mehr los.", en:"This strange feeling stayed with her for the rest of the day."}
+  ]},
+  // ---- topic (Aktuelle Themen) ----
+  {c:'topic', level:'B1', lines:[
+    {de:"Immer mehr Menschen entscheiden sich dafür, mit dem Fahrrad zur Arbeit zu fahren.", en:"More and more people choose to cycle to work."},
+    {de:"Das spart nicht nur Geld, sondern ist auch gut für die Umwelt.", en:"This not only saves money but is also good for the environment."},
+    {de:"Viele Städte bauen deshalb ihre Radwege weiter aus.", en:"Many cities are therefore continuing to expand their bike paths."}
+  ]},
+  {c:'topic', level:'B1', lines:[
+    {de:"Die Preise für Lebensmittel sind im letzten Jahr deutlich gestiegen.", en:"Food prices have risen significantly over the past year."},
+    {de:"Viele Familien müssen dadurch genauer auf ihr Budget achten.", en:"Because of this, many families have to watch their budget more closely."},
+    {de:"Experten erwarten, dass sich die Preise erst langsam wieder stabilisieren.", en:"Experts expect prices to stabilize again only slowly."}
+  ]},
+  {c:'topic', level:'B2', lines:[
+    {de:"Viele Unternehmen bieten ihren Mitarbeitern inzwischen die Möglichkeit, im Homeoffice zu arbeiten.", en:"Many companies now offer their employees the option to work from home."},
+    {de:"Das schafft mehr Flexibilität, bringt aber auch neue Herausforderungen für die Zusammenarbeit mit sich.", en:"This creates more flexibility but also brings new challenges for collaboration."},
+    {de:"Manche Firmen setzen deshalb auf ein Modell aus Homeoffice und Bürotagen.", en:"Some companies therefore rely on a model combining home office and office days."}
+  ]},
+  {c:'topic', level:'B2', lines:[
+    {de:"Der Klimawandel beeinflusst schon heute die Landwirtschaft in vielen Regionen der Welt.", en:"Climate change is already affecting agriculture in many regions of the world."},
+    {de:"Trockenperioden und unvorhersehbares Wetter erschweren die Ernteplanung.", en:"Droughts and unpredictable weather make harvest planning more difficult."},
+    {de:"Forscher arbeiten an Pflanzen, die auch unter diesen Bedingungen wachsen können.", en:"Researchers are working on plants that can grow even under these conditions."}
+  ]},
+  {c:'topic', level:'B1', lines:[
+    {de:"Studien zeigen, dass regelmäßige Bewegung einen positiven Einfluss auf die geistige Gesundheit hat.", en:"Studies show that regular exercise has a positive effect on mental health."},
+    {de:"Schon ein kurzer Spaziergang am Tag kann Stress deutlich reduzieren.", en:"Even a short walk each day can significantly reduce stress."},
+    {de:"Trotzdem finden viele Menschen im Alltag kaum Zeit dafür.", en:"Nevertheless, many people barely find time for it in everyday life."}
+  ]},
+  {c:'topic', level:'C1', lines:[
+    {de:"Erneuerbare Energien spielen eine immer wichtigere Rolle in der deutschen Wirtschaft.", en:"Renewable energy plays an increasingly important role in the German economy."},
+    {de:"Windkraft und Solarenergie decken inzwischen einen erheblichen Teil des Strombedarfs.", en:"Wind and solar power now cover a considerable share of electricity demand."},
+    {de:"Die größte Herausforderung bleibt jedoch die Speicherung von überschüssiger Energie.", en:"The biggest challenge, however, remains storing surplus energy."}
+  ]},
+  {c:'topic', level:'C1', lines:[
+    {de:"Künstliche Intelligenz verändert bereits viele Bereiche unseres Alltags.", en:"Artificial intelligence is already changing many areas of our everyday lives."},
+    {de:"Sie hilft nicht nur bei einfachen Aufgaben, sondern übernimmt zunehmend auch komplexe Entscheidungen.", en:"It not only helps with simple tasks but is increasingly taking on complex decisions too."},
+    {de:"Genau deshalb wird die Frage nach klaren ethischen Grenzen immer wichtiger.", en:"That is precisely why the question of clear ethical boundaries is becoming ever more important."}
+  ]},
+  {c:'topic', level:'B2', lines:[
+    {de:"Immer mehr Verbraucher achten beim Einkaufen auf Nachhaltigkeit und Umweltschutz.", en:"More and more consumers pay attention to sustainability and environmental protection when shopping."},
+    {de:"Sie bevorzugen Produkte mit weniger Verpackung und kürzeren Transportwegen.", en:"They prefer products with less packaging and shorter transport distances."},
+    {de:"Dieser Trend zwingt auch große Unternehmen, ihre Angebote zu überdenken.", en:"This trend is also forcing large companies to rethink their offerings."}
+  ]}
+];
+PASSAGES.forEach((p,i)=>p.id='p'+i);
+
+const TONGUE_TWISTERS = [
+  "Fischers Fritz fischt frische Fische, frische Fische fischt Fischers Fritz.",
+  "Zwischen zwei Zwetschgenzweigen sitzen zwei zwitschernde Schwalben.",
+  "Blaukraut bleibt Blaukraut und Brautkleid bleibt Brautkleid.",
+  "In Ulm und um Ulm und um Ulm herum.",
+  "Acht alte Ameisen aßen am Abend Ananas.",
+  "Der Metzger wetzt die Metzgermesser, wetzt der Metzger Metzgermesser."
+];
+
+const IDIOMS = [
+  {de:"Die Daumen drücken", en:"To keep your fingers crossed (lit. \"to press your thumbs\")."},
+  {de:"Ins kalte Wasser springen", en:"To jump into the deep end / try something new unprepared."},
+  {de:"Den Nagel auf den Kopf treffen", en:"To hit the nail on the head."},
+  {de:"Alles in Butter", en:"Everything's fine / all good (lit. \"all in butter\")."},
+  {de:"Die Katze im Sack kaufen", en:"To buy a pig in a poke (lit. \"to buy the cat in the sack\")."},
+  {de:"Da liegt der Hase im Pfeffer", en:"That's the crux of the problem."},
+  {de:"Um den heißen Brei reden", en:"To beat around the bush (lit. \"to talk around the hot porridge\")."},
+  {de:"Jemandem einen Bären aufbinden", en:"To pull someone's leg (lit. \"to tie a bear onto someone\")."},
+  {de:"Das ist nicht mein Bier", en:"That's not my problem (lit. \"that's not my beer\")."},
+  {de:"Unter vier Augen", en:"Privately, just between two people (lit. \"under four eyes\")."},
+  {de:"Da steppt der Bär", en:"That's where the party's at (lit. \"the bear is dancing there\")."},
+  {de:"Tomaten auf den Augen haben", en:"To not notice something obvious (lit. \"to have tomatoes on your eyes\")."},
+  {de:"Das ist mir Wurst", en:"I don't care either way (lit. \"that's sausage to me\")."},
+  {de:"Ich glaube, mein Schwein pfeift", en:"I can't believe it (lit. \"I think my pig is whistling\")."},
+  {de:"Hals- und Beinbruch", en:"Break a leg / good luck (lit. \"neck and leg fracture\")."}
+];
+
+const FREESTYLE_PROMPTS = [
+  "Erzähl mir von deinem letzten Urlaub.",
+  "Was hast du heute gegessen?",
+  "Beschreibe deinen Arbeitsplatz.",
+  "Was machst du normalerweise am Wochenende?",
+  "Welches Buch oder welchen Film würdest du empfehlen und warum?",
+  "Was ist dein Lieblingsort in deiner Stadt?",
+  "Erzähl mir von einem Hobby, das du hast.",
+  "Wie sieht ein typischer Tag bei dir aus?",
+  "Was würdest du tun, wenn du eine Million Euro gewinnen würdest?",
+  "Beschreibe eine Person, die dich inspiriert."
+];
+
+/* ---------------- State ---------------- */
+const STORE_KEY = 'deShadowState_v1';
+function todayStr(){ const d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function addDays(dateStr, n){ const d=new Date(dateStr+'T00:00:00'); d.setDate(d.getDate()+n); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+
+function defaultState(){
+  return {
+    leitner:{}, // id -> {box, due, history:[]}
+    weakWords:{}, // normalized word -> {box, due, misses, example, exampleEn}
+    streak:{practiceDates:[], currentStreak:0, longestStreak:0},
+    xp:0, badges:[],
+    settings:{rate:0.85, pause:1.2, sessionLen:6, category:'all', hideText:false, recordAudio:false, theme:'light', voiceName:''},
+    stats:{totalPracticed:0, scoreSum:0}
+  };
+}
+let state = loadState();
+function loadState(){
+  try{
+    const raw = localStorage.getItem(STORE_KEY);
+    if(!raw) return defaultState();
+    const parsed = JSON.parse(raw);
+    return Object.assign(defaultState(), parsed, {settings:Object.assign(defaultState().settings, parsed.settings||{})});
+  }catch(e){ return defaultState(); }
+}
+function saveState(){ localStorage.setItem(STORE_KEY, JSON.stringify(state)); }
+
+const BOX_INTERVALS = [0,1,3,7,16,30]; // days per box index (box0 handled as new)
+
+/* ---------------- DOM refs ---------------- */
+const $ = id => document.getElementById(id);
+const els = {
+  streakPill:$('streakPill'), xpPill:$('xpPill'), weakPill:$('weakPill'), themeToggle:$('themeToggle'),
+  compatWarning:$('compatWarning'),
+  wotdText:$('wotdText'),
+  sentenceTag:$('sentenceTag'), sentenceText:$('sentenceText'), translationText:$('translationText'),
+  startBtn:$('startBtn'), playBtn:$('playBtn'), pauseBtn:$('pauseBtn'), recordBtn:$('recordBtn'), retryBtn:$('retryBtn'), skipBtn:$('skipBtn'), revealBtn:$('revealBtn'),
+  statusLine:$('statusLine'),
+  diffRow:$('diffRow'), targetLine:$('targetLine'), saidLine:$('saidLine'), scoreLine:$('scoreLine'), feedbackMsg:$('feedbackMsg'),
+  recordedAudioWrap:$('recordedAudioWrap'), recordedAudio:$('recordedAudio'),
+  voiceSelect:$('voiceSelect'), testVoiceBtn:$('testVoiceBtn'), rateRange:$('rateRange'), rateVal:$('rateVal'),
+  pauseRange:$('pauseRange'), pauseVal:$('pauseVal'), sessionLenSelect:$('sessionLenSelect'),
+  categorySelect:$('categorySelect'), hideTextChk:$('hideTextChk'), recordAudioChk:$('recordAudioChk'),
+  statTotal:$('statTotal'), statAvg:$('statAvg'), statLongest:$('statLongest'), heatGrid:$('heatGrid'), badgeList:$('badgeList'),
+  exportBtn:$('exportBtn'), importBtn:$('importBtn'), importFile:$('importFile'), resetBtn:$('resetBtn'),
+  freestylePrompt:$('freestylePrompt'), freestyleAskBtn:$('freestyleAskBtn'), freestyleRecordBtn:$('freestyleRecordBtn'),
+  freestyleNextBtn:$('freestyleNextBtn'), freestyleStatus:$('freestyleStatus'), freestyleTranscript:$('freestyleTranscript')
+};
+
+/* ---------------- Theme ---------------- */
+function applyTheme(){
+  document.documentElement.setAttribute('data-theme', state.settings.theme);
+  els.themeToggle.textContent = state.settings.theme==='dark' ? '☀️' : '🌙';
+}
+els.themeToggle.onclick = ()=>{
+  state.settings.theme = state.settings.theme==='dark' ? 'light' : 'dark';
+  saveState(); applyTheme();
+};
+
+/* ---------------- Speech capability check ---------------- */
+const SpeechRecognitionCtor = window.SpeechRecognition || window.webkitSpeechRecognition;
+const hasTTS = 'speechSynthesis' in window;
+const hasSTT = !!SpeechRecognitionCtor;
+if(!hasSTT){
+  els.compatWarning.style.display='block';
+  els.compatWarning.textContent = "Spracherkennung wird von diesem Browser nicht unterstützt (bitte Chrome oder Edge auf dem Desktop verwenden). Du kannst trotzdem hören & sprechen, aber die automatische Bewertung ist ausgeschaltet — bewerte dich in diesem Modus selbst.";
+}
+if(hasSTT && location.protocol==='file:'){
+  els.compatWarning.style.display='block';
+  els.compatWarning.textContent = "Hinweis: Du öffnest diese Datei direkt (file://). Chrome fragt dann bei jeder Aufnahme erneut nach dem Mikrofon, weil es die Erlaubnis für lokale Dateien nicht dauerhaft speichert. Starte stattdessen 'start.bat' im selben Ordner, um die App über http://localhost zu öffnen — dann musst du das Mikrofon nur einmal erlauben.";
+}
+
+/* ---------------- Voices ---------------- */
+function populateVoices(){
+  if(!hasTTS) return;
+  const voices = speechSynthesis.getVoices();
+  const german = voices.filter(v=>v.lang.toLowerCase().startsWith('de'));
+  const others = voices.filter(v=>!v.lang.toLowerCase().startsWith('de'));
+  els.voiceSelect.innerHTML='';
+  german.concat(others).forEach(v=>{
+    const opt = document.createElement('option');
+    opt.value = v.name; opt.textContent = v.name + ' (' + v.lang + ')';
+    els.voiceSelect.appendChild(opt);
+  });
+  if(state.settings.voiceName){
+    els.voiceSelect.value = state.settings.voiceName;
+  } else if(german[0]){
+    els.voiceSelect.value = german[0].name;
+    state.settings.voiceName = german[0].name;
+  }
+}
+if(hasTTS){
+  populateVoices();
+  speechSynthesis.onvoiceschanged = populateVoices;
+}
+els.voiceSelect.onchange = ()=>{ state.settings.voiceName = els.voiceSelect.value; saveState(); };
+els.testVoiceBtn.onclick = ()=>{
+  if(!hasTTS){ setStatus('Sprachausgabe wird von diesem Browser nicht unterstützt.', false); return; }
+  els.testVoiceBtn.disabled = true;
+  setStatus('🔊 Teste Stimme…', true);
+  speak('Hallo! Kannst du mich hören? Das ist ein Test.', 1, ()=>{
+    els.testVoiceBtn.disabled = false;
+  });
+};
+
+function speakNow(text, rate, onend){
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang='de-DE'; u.rate = rate || state.settings.rate;
+  const voices = speechSynthesis.getVoices();
+  const chosen = voices.find(v=>v.name===state.settings.voiceName);
+  if(chosen) u.voice = chosen;
+  u.onstart = ()=>{ if(typeof setStatus==='function') setStatus('🔊 Wird abgespielt…', true); };
+  u.onend = ()=>{ if(onend) onend(); };
+  u.onerror = (e)=>{
+    if(typeof setStatus==='function'){
+      setStatus('⚠ Sprachausgabe-Fehler ("'+(e.error||'unbekannt')+'") — prüfe Lautstärke, Internetverbindung, oder wähle in den Einstellungen eine andere Stimme.', false);
+    }
+    if(onend) onend();
+  };
+  // Chrome can silently drop speak() if it's called in the same tick as cancel();
+  // a short delay avoids that race (a known Chrome Web Speech bug).
+  setTimeout(()=>{ speechSynthesis.speak(u); }, 80);
+}
+function speak(text, rate, onend){
+  if(!hasTTS){ if(onend) onend(); return; }
+  const voices = speechSynthesis.getVoices();
+  if(voices.length===0){
+    // Voices sometimes aren't loaded yet on first use; wait briefly, then speak regardless.
+    let done=false;
+    const handler=()=>{
+      if(done) return; done=true;
+      speechSynthesis.removeEventListener('voiceschanged', handler);
+      speakNow(text, rate, onend);
+    };
+    speechSynthesis.addEventListener('voiceschanged', handler);
+    setTimeout(handler, 800);
+  } else {
+    speakNow(text, rate, onend);
+  }
+}
+// Speaks a list of lines back-to-back with a short gap, then calls onAllDone once.
+function speakSequence(texts, rate, gapMs, onAllDone){
+  let i = 0;
+  function playNext(){
+    if(i>=texts.length){ onAllDone(); return; }
+    const t = texts[i]; i++;
+    speak(t, rate, ()=>{
+      if(i<texts.length) setTimeout(playNext, gapMs);
+      else onAllDone();
+    });
+  }
+  playNext();
+}
+
+/* ---------------- Microphone permission ---------------- */
+// Ask for the microphone once, up front, instead of letting every single
+// recording trigger its own browser permission prompt.
+function primeMicPermission(){
+  if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) return;
+  navigator.mediaDevices.getUserMedia({audio:true}).then(stream=>{
+    stream.getTracks().forEach(t=>t.stop());
+  }).catch(()=>{ /* denied or no mic — later recording attempts will surface that themselves */ });
+}
+
+/* ---------------- Settings UI wiring ---------------- */
+function loadSettingsUI(){
+  els.rateRange.value = state.settings.rate; els.rateVal.textContent = state.settings.rate;
+  els.pauseRange.value = state.settings.pause; els.pauseVal.textContent = state.settings.pause;
+  els.sessionLenSelect.value = state.settings.sessionLen;
+  els.categorySelect.value = state.settings.category;
+  els.hideTextChk.checked = state.settings.hideText;
+  els.recordAudioChk.checked = state.settings.recordAudio;
+}
+loadSettingsUI(); applyTheme();
+
+els.rateRange.oninput = ()=>{ state.settings.rate=parseFloat(els.rateRange.value); els.rateVal.textContent=state.settings.rate; saveState(); };
+els.pauseRange.oninput = ()=>{ state.settings.pause=parseFloat(els.pauseRange.value); els.pauseVal.textContent=state.settings.pause; saveState(); };
+els.sessionLenSelect.onchange = ()=>{ state.settings.sessionLen=parseInt(els.sessionLenSelect.value); saveState(); };
+els.categorySelect.onchange = ()=>{ state.settings.category=els.categorySelect.value; saveState(); };
+els.hideTextChk.onchange = ()=>{ state.settings.hideText=els.hideTextChk.checked; saveState(); };
+els.recordAudioChk.onchange = ()=>{ state.settings.recordAudio=els.recordAudioChk.checked; saveState(); };
+
+/* ---------------- Word of the day ---------------- */
+function wordOfTheDay(){
+  const today = todayStr();
+  let seed = 0;
+  for(let i=0;i<today.length;i++) seed += today.charCodeAt(i);
+  const idiom = IDIOMS[seed % IDIOMS.length];
+  els.wotdText.innerHTML = '<b>'+idiom.de+'</b> — ' + idiom.en;
+}
+wordOfTheDay();
+
+/* ---------------- Streak / XP / Stats rendering ---------------- */
+function recomputeStreak(){
+  const dates = new Set(state.streak.practiceDates);
+  let cur=0, d=todayStr();
+  if(dates.has(d)){
+    cur=1; let probe=addDays(d,-1);
+    while(dates.has(probe)){ cur++; probe=addDays(probe,-1); }
+  } else {
+    const yest = addDays(d,-1);
+    if(dates.has(yest)){
+      cur=1; let probe=addDays(yest,-1);
+      while(dates.has(probe)){ cur++; probe=addDays(probe,-1); }
+    }
+  }
+  state.streak.currentStreak = cur;
+  state.streak.longestStreak = Math.max(state.streak.longestStreak||0, cur);
+}
+function markPracticedToday(){
+  const d = todayStr();
+  if(!state.streak.practiceDates.includes(d)) state.streak.practiceDates.push(d);
+  recomputeStreak();
+  checkBadges();
+  saveState();
+}
+function checkBadges(){
+  const milestones = [3,7,14,30,60,100];
+  milestones.forEach(m=>{
+    const key='streak'+m;
+    if(state.streak.currentStreak>=m && !state.badges.includes(key)) state.badges.push(key);
+  });
+  const totalMilestones=[25,50,100,250];
+  totalMilestones.forEach(m=>{
+    const key='total'+m;
+    if(state.stats.totalPracticed>=m && !state.badges.includes(key)) state.badges.push(key);
+  });
+}
+// Weak words due today or earlier, most-missed and most-overdue first.
+function getDueWeakWords(){
+  const today = todayStr();
+  return Object.entries(state.weakWords)
+    .filter(([,rec])=>rec.due<=today)
+    .sort((a,b)=> (b[1].misses-a[1].misses) || (a[1].due<b[1].due?-1:1));
+}
+function renderTopBar(){
+  recomputeStreak();
+  els.streakPill.textContent = '🔥 ' + state.streak.currentStreak + ' Tage';
+  els.xpPill.textContent = '⭐ ' + state.xp + ' XP';
+  const dueCount = getDueWeakWords().length;
+  els.weakPill.style.display = dueCount>0 ? 'inline-block' : 'none';
+  els.weakPill.textContent = '🎯 ' + dueCount;
+}
+function renderStats(){
+  els.statTotal.textContent = state.stats.totalPracticed;
+  const avg = state.stats.totalPracticed ? Math.round(state.stats.scoreSum/state.stats.totalPracticed) : 0;
+  els.statAvg.textContent = avg + '%';
+  els.statLongest.textContent = state.streak.longestStreak||0;
+  els.heatGrid.innerHTML='';
+  const dates = new Set(state.streak.practiceDates);
+  let d = addDays(todayStr(), -13);
+  for(let i=0;i<14;i++){
+    const cell = document.createElement('div');
+    if(dates.has(d)) cell.className='hit';
+    cell.title = d;
+    els.heatGrid.appendChild(cell);
+    d = addDays(d,1);
+  }
+  const badgeNames = {
+    streak3:'🔥 3-Tage-Streak', streak7:'🔥 7-Tage-Streak', streak14:'🔥 14-Tage-Streak',
+    streak30:'🏆 30-Tage-Streak', streak60:'🏆 60-Tage-Streak', streak100:'👑 100-Tage-Streak',
+    total25:'🎯 25 Sätze', total50:'🎯 50 Sätze', total100:'🎯 100 Sätze', total250:'🎯 250 Sätze'
+  };
+  els.badgeList.innerHTML = state.badges.length
+    ? 'Abzeichen: ' + state.badges.map(b=>badgeNames[b]||b).join('  ')
+    : 'Noch keine Abzeichen — übe weiter!';
+}
+renderTopBar(); renderStats();
+
+/* ---------------- Leitner scheduling ---------------- */
+function getCard(id){
+  if(!state.leitner[id]) state.leitner[id] = {box:0, due:todayStr(), history:[]};
+  return state.leitner[id];
+}
+function updateCard(id, score){
+  const card = getCard(id);
+  card.history.push(score);
+  if(card.history.length>10) card.history.shift();
+  if(score>=85){ card.box = Math.min(card.box+1, BOX_INTERVALS.length-1); }
+  else if(score>=50){ /* stay */ }
+  else { card.box = 1; }
+  card.due = addDays(todayStr(), BOX_INTERVALS[card.box]);
+}
+function buildSessionQueue(){
+  const cat = state.settings.category;
+  const pool = PASSAGES.filter(p=> cat==='all' || p.c===cat);
+  const today = todayStr();
+  const due = pool.filter(p=>{ const c=state.leitner[p.id]; return c && c.due<=today; });
+  const fresh = pool.filter(p=> !state.leitner[p.id]);
+  function shuffle(arr){ for(let i=arr.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]]; } return arr; }
+  shuffle(due); shuffle(fresh);
+  const combined = due.concat(fresh).concat(shuffle(pool.slice()));
+  const seen=new Set(); const queue=[];
+  for(const p of combined){
+    if(seen.has(p.id)) continue;
+    seen.add(p.id); queue.push(p);
+    if(queue.length>=state.settings.sessionLen) break;
+  }
+  return queue;
+}
+
+/* ---------------- Diff / scoring ---------------- */
+// Common function words are excluded from weak-word tracking: misrecognizing them
+// is usually speech-recognition noise, not an actual pronunciation problem.
+const WORD_STOPLIST = new Set(['der','die','das','den','dem','des','und','ist','zu','ich','du','er','sie','es','wir','ihr','ein','eine','einen','einem','einer','im','in','an','am','auf','mit','für','von','vom','zum','zur','als','dass','wie','was','wenn','aber','auch','noch','schon','nur','so','nicht','sich','sind','war','hat','habe','haben','wird','werden','kann','könnte']);
+function normalizeWords(text){
+  return text.toLowerCase()
+    .replace(/[.,!?;:„"“”'’\-()]/g,' ')
+    .split(/\s+/).filter(Boolean);
+}
+function lcsMatch(a,b){
+  const n=a.length, m=b.length;
+  const dp = Array.from({length:n+1},()=>new Array(m+1).fill(0));
+  for(let i=n-1;i>=0;i--)
+    for(let j=m-1;j>=0;j--)
+      dp[i][j] = a[i]===b[j] ? dp[i+1][j+1]+1 : Math.max(dp[i+1][j], dp[i][j+1]);
+  const aMatched = new Array(n).fill(false), bMatched = new Array(m).fill(false);
+  let i=0,j=0;
+  while(i<n && j<m){
+    if(a[i]===b[j]){ aMatched[i]=true; bMatched[j]=true; i++; j++; }
+    else if(dp[i+1][j] >= dp[i][j+1]) i++;
+    else j++;
+  }
+  return {aMatched, bMatched, lcsLen: dp[0][0]};
+}
+function scoreAndDiff(target, said){
+  const t = normalizeWords(target);
+  const s = normalizeWords(said);
+  const {aMatched, bMatched, lcsLen} = lcsMatch(t,s);
+  const score = t.length ? Math.round((lcsLen/t.length)*100) : 0;
+  return {score, targetWords:t, saidWords:s, aMatched, bMatched};
+}
+function renderDiff(target, said){
+  const {score, targetWords, saidWords, aMatched, bMatched} = scoreAndDiff(target, said);
+  els.targetLine.innerHTML = targetWords.map((w,idx)=> `<span class="${aMatched[idx]?'w-ok':'w-miss'}">${w}</span>`).join(' ');
+  els.saidLine.innerHTML = saidWords.length
+    ? saidWords.map((w,idx)=> `<span class="${bMatched[idx]?'w-ok':'w-extra'}">${w}</span>`).join(' ')
+    : '<span class="w-miss">(nichts erkannt)</span>';
+  els.scoreLine.textContent = score + '%';
+  els.scoreLine.className = 'score ' + (score>=85?'good':score>=50?'mid':'bad');
+  let msg;
+  if(score>=95) msg = "Perfekt! 🎉";
+  else if(score>=85) msg = "Sehr gut — fast makellos.";
+  else if(score>=65) msg = "Gut, aber achte auf die rot markierten Wörter.";
+  else if(score>=40) msg = "Übe diese Passage noch etwas — höre genau auf jedes Wort.";
+  else msg = "Versuch es noch einmal, langsamer und deutlicher.";
+  els.feedbackMsg.textContent = msg;
+  els.diffRow.style.display='block';
+  return {score, targetWords, aMatched, saidWords};
+}
+
+// Tracks individual words that keep getting missed so they can resurface on
+// later days, independent of how the whole passage/sentence scored overall.
+function updateWeakWords(targetWords, aMatched, exampleLines){
+  const today = todayStr();
+  targetWords.forEach((w,idx)=>{
+    if(w.length<3 || WORD_STOPLIST.has(w)) return;
+    const known = aMatched[idx];
+    const rec = state.weakWords[w];
+    if(!known){
+      const exLine = exampleLines.find(l=> normalizeWords(l.de).includes(w));
+      state.weakWords[w] = {
+        box:1,
+        due: addDays(today, BOX_INTERVALS[1]),
+        misses: rec ? rec.misses+1 : 1,
+        example: exLine ? exLine.de : (rec ? rec.example : exampleLines[0].de),
+        exampleEn: exLine ? exLine.en : (rec ? rec.exampleEn : exampleLines[0].en)
+      };
+    } else if(rec){
+      rec.box = Math.min(rec.box+1, BOX_INTERVALS.length-1);
+      rec.due = addDays(today, BOX_INTERVALS[rec.box]);
+      if(rec.box>=BOX_INTERVALS.length-1) delete state.weakWords[w];
+    }
+  });
+  saveState();
+}
+
+/* ---------------- Session controller ---------------- */
+let session = {queue:[], idx:-1, current:null, roundCount:0, recognition:null, mediaRecorder:null, isBonus:false, mode:'passage', weakWordsAttempted:null, token:0};
+
+function setStatus(text, live){
+  els.statusLine.innerHTML = (live? '<span class="dot live"></span>' : '<span class="dot"></span>') + ' ' + text;
+}
+function escapeRegExp(s){ return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
+// Returns the array of German lines to speak/score for the current round:
+// 3 lines for a normal passage, 1 for a bonus tongue-twister or a weak-word review.
+function currentTargetLines(){
+  if(session.mode==='word') return [session.current.example];
+  return session.isBonus ? [session.current] : session.current.lines.map(l=>l.de);
+}
+function currentTargetText(){ return currentTargetLines().join(' '); }
+
+function showSentenceCard(){
+  els.diffRow.style.display='none';
+  els.recordedAudioWrap.style.display='none';
+  if(session.mode==='word'){
+    const w = session.current;
+    els.sentenceTag.textContent = '🎯 Wort zum Üben: „' + w.word + '“';
+    els.sentenceText.innerHTML = state.settings.hideText ? '🔊 Hör zu…' : w.example.replace(new RegExp('('+escapeRegExp(w.word)+')','i'), '<b>$1</b>');
+    els.translationText.textContent = w.exampleEn;
+  } else if(session.isBonus){
+    els.sentenceTag.textContent = '🌟 Bonus-Zungenbrecher';
+    els.sentenceText.innerHTML = state.settings.hideText ? '🔊 Hör zu…' : session.current;
+    els.translationText.textContent = 'Nur zum Spaß — beeinflusst deine Statistik nicht.';
+  } else {
+    const p = session.current;
+    const catNames = {talk:'Alltagsgespräch', story:'Erzählung', topic:'Aktuelles Thema'};
+    els.sentenceTag.textContent = (catNames[p.c]||p.c) + ' · ' + p.level;
+    els.sentenceText.innerHTML = state.settings.hideText ? '🔊 Hör zu…' : p.lines.map(l=>l.de).join('<br>');
+    els.translationText.innerHTML = p.lines.map(l=>l.en).join('<br>');
+  }
+  document.getElementById('practiceCard').querySelector('.sentence').classList.remove('hidden-text');
+  document.getElementById('practiceCard').classList.toggle('bonus', session.isBonus || session.mode==='word');
+  els.revealBtn.style.display = state.settings.hideText ? 'inline-block' : 'none';
+  els.playBtn.style.display='inline-block';
+  els.recordBtn.style.display='none';
+  els.retryBtn.style.display='none';
+  els.skipBtn.style.display='inline-block';
+  let statusMsg;
+  if(session.mode==='word') statusMsg = 'Ein Wort, das dir schwerfällt — klicke auf „Abspielen“.';
+  else if(session.isBonus) statusMsg = 'Klicke auf „Abspielen“, um den Zungenbrecher zu hören.';
+  else statusMsg = 'Klicke auf „Abspielen“, um die drei Sätze zu hören.';
+  setStatus(statusMsg, false);
+}
+// Picks the most-missed / most-overdue due weak word not yet attempted this session.
+function pickDueWeakWord(){
+  const due = getDueWeakWords();
+  if(due.length===0) return null;
+  const unseen = due.filter(([w])=>!session.weakWordsAttempted.has(w));
+  const chosen = unseen[0] || due[0];
+  session.weakWordsAttempted.add(chosen[0]);
+  return {word: chosen[0], example: chosen[1].example, exampleEn: chosen[1].exampleEn};
+}
+function nextRound(){
+  session.token++; // invalidates any recognition/recording still in flight from the previous round
+  session.roundCount++;
+  // Every 4th round, resurface a word the user has struggled with (if any are due
+  // today), without consuming a passage or colliding with the bonus slot below.
+  if(session.roundCount>1 && session.roundCount % 4 === 0){
+    const w = pickDueWeakWord();
+    if(w){
+      session.mode = 'word'; session.isBonus = false;
+      session.current = w;
+      showSentenceCard();
+      return;
+    }
+  }
+  session.mode = 'passage';
+  // Every 3rd round is a bonus tongue-twister that doesn't consume a real
+  // passage from the queue (previously it silently replaced/skipped one).
+  if(session.roundCount>1 && session.roundCount % 3 === 0){
+    session.isBonus = true;
+    session.current = TONGUE_TWISTERS[Math.floor(Math.random()*TONGUE_TWISTERS.length)];
+    showSentenceCard();
+    return;
+  }
+  session.isBonus = false;
+  session.idx++;
+  if(session.idx >= session.queue.length){
+    endSession();
+    return;
+  }
+  session.current = session.queue[session.idx];
+  showSentenceCard();
+}
+function startSession(){
+  session.queue = buildSessionQueue();
+  if(session.queue.length===0){
+    setStatus('Keine Passagen für diese Kategorie verfügbar.', false);
+    return;
+  }
+  session.idx=-1; session.roundCount=0; session.mode='passage';
+  session.weakWordsAttempted = new Set();
+  els.startBtn.style.display='none';
+  primeMicPermission();
+  nextRound();
+}
+els.startBtn.onclick = startSession;
+els.skipBtn.onclick = ()=>{
+  speechSynthesis.cancel();
+  ttsPaused=false; els.pauseBtn.style.display='none'; els.pauseBtn.textContent='⏸ Pause';
+  if(session.recognition){ try{ session.recognition.abort(); }catch(e){} }
+  if(session.mediaRecorder && session.mediaRecorder.state!=='inactive'){ try{ session.mediaRecorder.stop(); }catch(e){} }
+  nextRound();
+};
+els.revealBtn.onclick = ()=>{
+  if(session.mode==='word'){
+    els.sentenceText.innerHTML = session.current.example.replace(new RegExp('('+escapeRegExp(session.current.word)+')','i'), '<b>$1</b>');
+  } else {
+    els.sentenceText.innerHTML = session.isBonus ? session.current : session.current.lines.map(l=>l.de).join('<br>');
+  }
+  els.revealBtn.style.display='none';
+};
+
+let ttsPaused = false;
+els.pauseBtn.onclick = ()=>{
+  if(!hasTTS) return;
+  if(!ttsPaused){
+    speechSynthesis.pause();
+    ttsPaused = true;
+    els.pauseBtn.textContent = '▶ Weiter';
+    setStatus('⏸ Pausiert. Klicke „Weiter“, um fortzufahren.', false);
+  } else {
+    speechSynthesis.resume();
+    ttsPaused = false;
+    els.pauseBtn.textContent = '⏸ Pause';
+    setStatus('🔊 Wird abgespielt…', true);
+  }
+};
+els.playBtn.onclick = ()=>{
+  setStatus('🔊 Wird abgespielt…', true);
+  els.playBtn.disabled=true;
+  ttsPaused=false; els.pauseBtn.textContent='⏸ Pause'; els.pauseBtn.style.display='inline-block';
+  speakSequence(currentTargetLines(), state.settings.rate, 450, ()=>{
+    els.playBtn.disabled=false;
+    els.pauseBtn.style.display='none';
+    setStatus('Gleich geht\'s los — bereite dich vor…', false);
+    setTimeout(()=>{
+      els.recordBtn.style.display='inline-block';
+      setStatus((session.mode==='word' || session.isBonus) ? 'Jetzt bist du dran! Klicke auf 🎤 und sprich nach.' : 'Jetzt bist du dran! Klicke auf 🎤 und sprich alle drei Sätze nach.', false);
+    }, state.settings.pause*1000);
+  });
+};
+
+function startRecording(){
+  const myToken = session.token; // if the round changes (skip/retry-into-next) before we finish, discard our result
+  els.recordBtn.disabled=true;
+  els.diffRow.style.display='none';
+  let recognizedText = '';
+  let recognitionDone = false;
+  let mediaDone = !state.settings.recordAudio;
+  let finished = false;
+  let mr = null;
+
+  function finish(){
+    if(!recognitionDone || !mediaDone || finished) return;
+    finished = true;
+    els.recordBtn.disabled=false;
+    if(myToken !== session.token) return; // stale — the user already moved to a different round
+
+    if(hasSTT){
+      const diff = renderDiff(currentTargetText(), recognizedText);
+      const score = diff.score;
+      if(session.mode==='word'){
+        const w = session.current.word;
+        const said = normalizeWords(recognizedText);
+        const hit = said.includes(w);
+        const rec = state.weakWords[w];
+        if(rec){
+          if(hit){
+            rec.box = Math.min(rec.box+1, BOX_INTERVALS.length-1);
+            rec.due = addDays(todayStr(), BOX_INTERVALS[rec.box]);
+            if(rec.box>=BOX_INTERVALS.length-1) delete state.weakWords[w];
+            els.feedbackMsg.textContent = '🎯 Richtig gesagt! „'+w+'“ kommt jetzt seltener zurück.';
+          } else {
+            rec.due = todayStr();
+            els.feedbackMsg.textContent = '🎯 „'+w+'“ sitzt noch nicht ganz — das üben wir bald wieder.';
+          }
+          saveState();
+        }
+        state.stats.totalPracticed += 1;
+        state.xp += hit?5:1;
+        markPracticedToday();
+        renderTopBar(); renderStats();
+      } else if(!session.isBonus){
+        updateCard(session.current.id, score);
+        updateWeakWords(diff.targetWords, diff.aMatched, session.current.lines);
+        const linesCount = currentTargetLines().length;
+        state.stats.totalPracticed += linesCount;
+        state.stats.scoreSum += score*linesCount;
+        state.xp += score>=85?10:(score>=50?5:2);
+        markPracticedToday();
+        renderTopBar(); renderStats();
+      } else {
+        state.xp += 3; saveState(); renderTopBar();
+      }
+      els.retryBtn.style.display='inline-block';
+    } else {
+      els.diffRow.style.display='block';
+      els.targetLine.textContent = currentTargetText();
+      els.saidLine.innerHTML = '<span class="w-extra">Automatische Erkennung nicht verfügbar — bewerte dich selbst.</span>';
+      els.scoreLine.textContent='';
+      els.feedbackMsg.textContent = 'War deine Aussprache nah am Original? Klicke „Wiederholen“ falls nicht.';
+      if(session.mode!=='word' && !session.isBonus){
+        state.stats.totalPracticed += currentTargetLines().length; markPracticedToday(); renderTopBar(); renderStats();
+      }
+      els.retryBtn.style.display='inline-block';
+    }
+    setStatus('Fertig. Wiederholen oder weiter zum nächsten Satz.', false);
+  }
+
+  function stopRecorderIfNeeded(){
+    if(mr && mr.state!=='inactive') mr.stop();
+    else { mediaDone=true; finish(); }
+  }
+
+  function beginRecognition(){
+    if(hasSTT){
+      setStatus((session.mode==='word' || session.isBonus) ? '🎤 Ich höre zu…' : '🎤 Ich höre zu… sprich alle drei Sätze nach.', true);
+      const rec = new SpeechRecognitionCtor();
+      rec.lang='de-DE'; rec.interimResults=false; rec.continuous=true; rec.maxAlternatives=1;
+      rec.onresult = (e)=>{
+        let full='';
+        for(let i=0;i<e.results.length;i++) full += e.results[i][0].transcript + ' ';
+        recognizedText = full.trim();
+      };
+      rec.onerror = ()=>{};
+      rec.onend = ()=>{ recognitionDone=true; stopRecorderIfNeeded(); finish(); };
+      session.recognition = rec;
+      try{ rec.start(); }catch(e){ recognitionDone=true; stopRecorderIfNeeded(); finish(); }
+      // Safety cap in case continuous recognition never naturally ends.
+      setTimeout(()=>{ try{ if(session.recognition===rec) rec.stop(); }catch(e){} }, 25000);
+    } else {
+      const approxMs = 5000 * currentTargetLines().length;
+      setStatus('🎤 Sprich jetzt (~'+Math.round(approxMs/1000)+' Sekunden)…', true);
+      setTimeout(()=>{ recognitionDone=true; stopRecorderIfNeeded(); finish(); }, approxMs);
+    }
+  }
+
+  if(state.settings.recordAudio && navigator.mediaDevices){
+    navigator.mediaDevices.getUserMedia({audio:true}).then(stream=>{
+      mr = new MediaRecorder(stream);
+      const chunks=[];
+      mr.ondataavailable = e=>chunks.push(e.data);
+      mr.onstop = ()=>{
+        const blob = new Blob(chunks, {type:'audio/webm'});
+        els.recordedAudio.src = URL.createObjectURL(blob);
+        els.recordedAudioWrap.style.display='block';
+        stream.getTracks().forEach(t=>t.stop());
+        mediaDone=true; finish();
+      };
+      mr.start();
+      session.mediaRecorder = mr;
+      beginRecognition();
+    }).catch(()=>{ mediaDone=true; beginRecognition(); });
+  } else {
+    beginRecognition();
+  }
+}
+els.recordBtn.onclick = startRecording;
+els.retryBtn.onclick = ()=>{
+  els.diffRow.style.display='none';
+  els.recordBtn.style.display='inline-block';
+  els.playBtn.disabled=false;
+  setStatus('Klicke 🔊 zum erneuten Hören oder 🎤 um direkt zu sprechen.', false);
+};
+
+function endSession(){
+  els.sentenceTag.textContent='Fertig';
+  els.sentenceText.textContent = '✅ Sitzung abgeschlossen! Gute Arbeit heute.';
+  els.translationText.textContent='';
+  els.playBtn.style.display='none'; els.recordBtn.style.display='none';
+  els.retryBtn.style.display='none'; els.skipBtn.style.display='none'; els.revealBtn.style.display='none';
+  els.diffRow.style.display='none';
+  els.startBtn.style.display='inline-block';
+  els.startBtn.textContent='▶ Neue Sitzung starten';
+  setStatus('Komm morgen wieder, um deine Streak fortzusetzen!', false);
+}
+
+/* ---------------- Freestyle mode ---------------- */
+let freestyleCurrent = FREESTYLE_PROMPTS[Math.floor(Math.random()*FREESTYLE_PROMPTS.length)];
+els.freestylePrompt.textContent = freestyleCurrent;
+els.freestyleAskBtn.onclick = ()=>{
+  els.freestyleStatus.textContent='🔊 Frage wird gestellt…';
+  speak(freestyleCurrent, 0.9, ()=> els.freestyleStatus.textContent='Jetzt antworte frei auf Deutsch.');
+};
+els.freestyleNextBtn.onclick = ()=>{
+  freestyleCurrent = FREESTYLE_PROMPTS[Math.floor(Math.random()*FREESTYLE_PROMPTS.length)];
+  els.freestylePrompt.textContent = freestyleCurrent;
+  els.freestyleTranscript.value='';
+  els.freestyleStatus.textContent='';
+};
+els.freestyleRecordBtn.onclick = ()=>{
+  if(!hasSTT){ els.freestyleStatus.textContent='Spracherkennung nicht verfügbar in diesem Browser.'; return; }
+  els.freestyleStatus.textContent='🎤 Ich höre zu… sprich frei, keine Bewertung.';
+  const rec = new SpeechRecognitionCtor();
+  rec.lang='de-DE'; rec.interimResults=false; rec.continuous=true;
+  let full='';
+  rec.onresult = (e)=>{
+    full='';
+    for(let i=0;i<e.results.length;i++) full += e.results[i][0].transcript + ' ';
+    els.freestyleTranscript.value = full.trim();
+  };
+  rec.onend = ()=>{ els.freestyleStatus.textContent='Fertig. Lies deine Antwort noch einmal durch.'; };
+  rec.start();
+  setTimeout(()=>{ try{rec.stop();}catch(e){} }, 20000);
+};
+
+/* ---------------- Export / Import / Reset ---------------- */
+els.exportBtn.onclick = ()=>{
+  const blob = new Blob([JSON.stringify(state,null,2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'deutsch-schatten-fortschritt-'+todayStr()+'.json';
+  document.body.appendChild(a); a.click(); a.remove();
+};
+els.importBtn.onclick = ()=> els.importFile.click();
+els.importFile.onchange = (e)=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = ()=>{
+    try{
+      const imported = JSON.parse(reader.result);
+      state = Object.assign(defaultState(), imported, {settings:Object.assign(defaultState().settings, imported.settings||{})});
+      saveState(); loadSettingsUI(); applyTheme(); renderTopBar(); renderStats();
+      alert('Fortschritt importiert!');
+    }catch(err){ alert('Ungültige Datei.'); }
+  };
+  reader.readAsText(file);
+};
+els.resetBtn.onclick = ()=>{
+  if(confirm('Wirklich den gesamten Fortschritt zurücksetzen? Das kann nicht rückgängig gemacht werden.')){
+    state = defaultState(); saveState(); loadSettingsUI(); applyTheme(); renderTopBar(); renderStats();
+  }
+};
+
+})();
+</script>
+</body>
+</html>
