@@ -1414,8 +1414,13 @@ const WIKT_API = 'https://de.wiktionary.org/w/api.php';
 
 function escapeHtmlPlain(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 // Wraps German word tokens in clickable spans; leaves punctuation/whitespace untouched.
+// Wraps word tokens in an already-HTML-escaped string (safe: only touches bare
+// letter runs, never anything inside a tag or entity).
+function tapifyEscaped(escapedText){
+  return escapedText.replace(/([A-Za-zÀ-ÖØ-öø-ÿ]+)/g, w => '<span class="tap-word">'+w+'</span>');
+}
 function tapify(text){
-  return escapeHtmlPlain(text).replace(/([A-Za-zÀ-ÖØ-öø-ÿ]+)/g, w => '<span class="tap-word">'+w+'</span>');
+  return tapifyEscaped(escapeHtmlPlain(text));
 }
 // Bolds one already-tapified word's <span> in place (used to highlight a weak word
 // inside its example sentence without breaking its click-to-define behavior).
@@ -1502,7 +1507,7 @@ function cleanWikitext(raw){
   t = t.replace(/\{\{[^{}]*\}\}/g, '');
   t = t.replace(/\s{2,}/g, ' ').trim();
   t = t.replace(/^[,;:]\s*/, '');
-  let html = escapeHtmlPlain(t);
+  let html = tapifyEscaped(escapeHtmlPlain(t));
   html = html.replace(/'''(.*?)'''/g, '<b>$1</b>');
   html = html.replace(/''(.*?)''/g, '<i>$1</i>');
   return { html, labels };
@@ -1575,19 +1580,33 @@ function renderDictResult(container, word, result){
   if(result.inflectedFrom){
     html += '<div class="feedback-msg">Flektierte Form von <b>'+escapeHtmlPlain(result.baseForm)+'</b>:</div>';
   }
+  const VISIBLE = 3; // keep the first view short — a wall of 15 senses helps no one
+  let groupIdx = 0;
   result.entries.forEach(entry=>{
+    groupIdx++;
     if(entry.wortart) html += '<div class="dict-wortart">'+escapeHtmlPlain(entry.wortart)+'</div>';
     html += '<ol class="dict-meanings">';
-    entry.meanings.forEach(m=>{
+    entry.meanings.forEach((m,i)=>{
       const labelStr = m.labels.length ? '<span class="dict-label">('+m.labels.map(escapeHtmlPlain).join(', ')+')</span> ' : '';
       const ex = entry.examples.filter(e=>e.num===m.num);
-      html += '<li>'+labelStr+m.html;
+      const hiddenAttr = i>=VISIBLE ? ' class="dict-extra-'+groupIdx+'" style="display:none;"' : '';
+      html += '<li'+hiddenAttr+'>'+labelStr+m.html;
       if(ex.length) html += '<div class="dict-example">„'+ex[0].html+'“</div>';
       html += '</li>';
     });
     html += '</ol>';
+    if(entry.meanings.length>VISIBLE){
+      html += '<button class="ghost dict-more-btn" data-group="'+groupIdx+'" style="font-size:.85rem;padding:6px 10px;">+ '+(entry.meanings.length-VISIBLE)+' weitere Bedeutungen</button>';
+    }
   });
   container.innerHTML = html;
+  container.querySelectorAll('.dict-more-btn').forEach(btn=>{
+    btn.onclick = ()=>{
+      const g = btn.getAttribute('data-group');
+      container.querySelectorAll('.dict-extra-'+g).forEach(li=> li.style.display='list-item');
+      btn.remove();
+    };
+  });
 }
 
 function showWordPopover(word){
