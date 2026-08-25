@@ -155,6 +155,7 @@
     <audio id="listenAudio" controls style="width:100%;margin-top:10px;" preload="none"></audio>
     <div class="controls">
       <button class="primary" id="listenDoneBtn">✅ Fertig gehört — zu den Fragen</button>
+      <button id="listenSkipEpBtn">🔀 Anderer Podcast</button>
       <button class="ghost" id="listenBackBtn">↩ Zurück zur Auswahl</button>
     </div>
     <div class="status" id="listenStatus"></div>
@@ -1456,7 +1457,7 @@ const els = {
   freestyleNextBtn:$('freestyleNextBtn'), freestyleStatus:$('freestyleStatus'), freestyleTranscript:$('freestyleTranscript'),
   practiceCard:$('practiceCard'),
   listenCard:$('listenCard'), listenTag:$('listenTag'), listenTitle:$('listenTitle'), listenAudio:$('listenAudio'),
-  listenDoneBtn:$('listenDoneBtn'), listenBackBtn:$('listenBackBtn'), listenStatus:$('listenStatus'),
+  listenDoneBtn:$('listenDoneBtn'), listenSkipEpBtn:$('listenSkipEpBtn'), listenBackBtn:$('listenBackBtn'), listenStatus:$('listenStatus'),
   listenQABlock:$('listenQABlock'), listenQProgress:$('listenQProgress'), listenQText:$('listenQText'),
   listenQPlayBtn:$('listenQPlayBtn'), listenQAnswerBtn:$('listenQAnswerBtn'), listenQStatus:$('listenQStatus'), listenQFeedback:$('listenQFeedback'),
   listenSummary:$('listenSummary'), listenScoreLine:$('listenScoreLine'), listenSummaryMsg:$('listenSummaryMsg'),
@@ -2185,25 +2186,34 @@ function getDuePodcasts(){
 function setListenStatus(t){ els.listenStatus.textContent = t; }
 function setListenQStatus(t){ els.listenQStatus.textContent = t; }
 
-els.startListenBtn.onclick = ()=>{
+// Picks a random due/fresh episode (avoiding the one just shown, when another is available)
+// and resets the listen card to it — used both for the initial pick and "Anderer Podcast".
+function loadListenEpisode(){
   if(listenSession.recognition){ try{ listenSession.recognition.abort(); }catch(e){} }
-  els.modeCard.style.display='none';
-  els.listenCard.style.display='block';
+  els.listenAudio.pause();
   const pool = getDuePodcasts();
-  const ep = pool[Math.floor(Math.random()*pool.length)];
+  const currentId = listenSession.episode ? listenSession.episode.id : null;
+  const choices = pool.length>1 ? pool.filter(p=>p.id!==currentId) : pool;
+  const ep = choices[Math.floor(Math.random()*choices.length)];
   listenSession = {episode: ep, qIdx:-1, correctCount:0, recognition:null, token: listenSession.token+1};
   const styleNames = {news:'📰 Nachrichten', story:'📖 Geschichte'};
   els.listenTag.textContent = (styleNames[ep.style]||ep.style) + ' · ' + ep.level;
   els.listenTitle.textContent = ep.title;
-  els.listenAudio.pause();
   els.listenAudio.src = 'audio/'+ep.id+'_full.mp3';
   els.listenAudio.playbackRate = 1;
   els.listenDoneBtn.style.display='inline-block';
+  els.listenSkipEpBtn.style.display='inline-block';
   els.listenQABlock.style.display='none';
   els.listenSummary.style.display='none';
   setListenStatus('Höre dir den Podcast an — du kannst pausieren und zurückspulen, wie du möchtest. Danach kommen ein paar Verständnisfragen.');
+}
+els.startListenBtn.onclick = ()=>{
+  els.modeCard.style.display='none';
+  els.listenCard.style.display='block';
+  loadListenEpisode();
   primeMicPermission();
 };
+els.listenSkipEpBtn.onclick = loadListenEpisode;
 els.listenBackBtn.onclick = ()=>{
   els.listenAudio.pause();
   listenSession.token++;
@@ -2215,6 +2225,7 @@ els.listenAgainBtn.onclick = showModeCard;
 els.listenDoneBtn.onclick = ()=>{
   els.listenAudio.pause();
   els.listenDoneBtn.style.display='none';
+  els.listenSkipEpBtn.style.display='none';
   els.listenQABlock.style.display='block';
   nextListenQuestion();
 };
