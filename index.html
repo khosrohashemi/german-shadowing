@@ -296,129 +296,568 @@
 /* Each passage is 3 connected German sentences (a mini dialogue/narrative/argument),
    so one shadowing round covers a coherent chunk instead of an isolated sentence. */
 const PASSAGES = [
-  // ---- talk (Alltagsgespräche) ----
-  {c:'talk', level:'A2', lines:[
+  // Each passage is 3 connected German sentences (a mini dialogue/narrative/argument),
+  // so one shadowing round covers a coherent chunk instead of an isolated sentence.
+  {c:"talk", level:"A2", lines:[
     {de:"Guten Morgen! Ich hätte gern einen Kaffee mit wenig Milch, bitte.", en:"Good morning! I'd like a coffee with a little milk, please."},
     {de:"Und vielleicht noch ein Stück Kuchen, wenn Sie welchen haben.", en:"And maybe a piece of cake too, if you have any."},
-    {de:"Vielen Dank, das reicht mir völlig.", en:"Thank you very much, that's plenty for me."}
+    {de:"Vielen Dank, das reicht mir völlig.", en:"Thank you very much, that's plenty for me."},
   ]},
-  {c:'talk', level:'A2', lines:[
+  {c:"talk", level:"A2", lines:[
     {de:"Entschuldigung, könnten Sie mir sagen, wie ich zum Bahnhof komme?", en:"Excuse me, could you tell me how to get to the train station?"},
     {de:"Ich muss in einer halben Stunde dort sein.", en:"I need to be there in half an hour."},
-    {de:"Super, vielen Dank für Ihre Hilfe!", en:"Great, thank you very much for your help!"}
+    {de:"Super, vielen Dank für Ihre Hilfe!", en:"Great, thank you very much for your help!"},
   ]},
-  {c:'talk', level:'B1', lines:[
+  {c:"talk", level:"B1", lines:[
     {de:"Hast du am Wochenende schon etwas vor?", en:"Do you already have plans for the weekend?"},
     {de:"Ich dachte, wir könnten wandern gehen, wenn das Wetter mitspielt.", en:"I thought we could go hiking if the weather cooperates."},
-    {de:"Das klingt super, ich freue mich schon darauf.", en:"That sounds great, I'm already looking forward to it."}
+    {de:"Das klingt super, ich freue mich schon darauf.", en:"That sounds great, I'm already looking forward to it."},
   ]},
-  {c:'talk', level:'B1', lines:[
+  {c:"talk", level:"B1", lines:[
     {de:"Es tut mir wirklich leid, dass ich mich verspätet habe.", en:"I'm really sorry that I'm late."},
     {de:"Der Zug hatte fast eine Stunde Verspätung, das war nicht vorherzusehen.", en:"The train was almost an hour late, that wasn't foreseeable."},
-    {de:"Zum Glück haben wir noch genug Zeit für alles Wichtige.", en:"Luckily we still have enough time for everything important."}
+    {de:"Zum Glück haben wir noch genug Zeit für alles Wichtige.", en:"Luckily we still have enough time for everything important."},
   ]},
-  {c:'talk', level:'B1', lines:[
+  {c:"talk", level:"B1", lines:[
     {de:"Ich habe gerade ein kleines Problem mit meinem Computer.", en:"I just have a small problem with my computer."},
     {de:"Er stürzt jedes Mal ab, wenn ich das Programm öffne.", en:"It crashes every time I open the program."},
-    {de:"Kannst du kurz vorbeikommen und einen Blick darauf werfen?", en:"Could you come by briefly and take a look at it?"}
+    {de:"Kannst du kurz vorbeikommen und einen Blick darauf werfen?", en:"Could you come by briefly and take a look at it?"},
   ]},
-  {c:'talk', level:'B2', lines:[
+  {c:"talk", level:"B2", lines:[
     {de:"Es geht leider um unseren Termin am Donnerstag.", en:"It's unfortunately about our appointment on Thursday."},
     {de:"Mir ist kurzfristig etwas Wichtiges dazwischengekommen, das ich nicht verschieben kann.", en:"Something important has come up unexpectedly that I can't postpone."},
-    {de:"Wäre es möglich, den Termin auf Freitagnachmittag zu verlegen?", en:"Would it be possible to move the appointment to Friday afternoon?"}
+    {de:"Wäre es möglich, den Termin auf Freitagnachmittag zu verlegen?", en:"Would it be possible to move the appointment to Friday afternoon?"},
   ]},
-  {c:'talk', level:'B2', lines:[
+  {c:"talk", level:"B2", lines:[
     {de:"Entschuldigung, ich glaube, hier stimmt etwas mit der Rechnung nicht.", en:"Excuse me, I think something isn't right with the bill."},
     {de:"Wir haben nur zwei Hauptgerichte bestellt, aber hier stehen drei.", en:"We only ordered two main courses, but three are listed here."},
-    {de:"Könnten Sie das bitte noch einmal überprüfen?", en:"Could you please check that again?"}
+    {de:"Könnten Sie das bitte noch einmal überprüfen?", en:"Could you please check that again?"},
   ]},
-  {c:'talk', level:'A2', lines:[
+  {c:"talk", level:"A2", lines:[
     {de:"Hallo, wir sind gerade erst in die Wohnung nebenan eingezogen.", en:"Hello, we just moved into the apartment next door."},
     {de:"Ich wollte mich kurz vorstellen und fragen, ob wir irgendetwas beachten sollten.", en:"I wanted to introduce myself briefly and ask if there's anything we should be aware of."},
-    {de:"Es freut mich sehr, Sie kennenzulernen.", en:"It's very nice to meet you."}
+    {de:"Es freut mich sehr, Sie kennenzulernen.", en:"It's very nice to meet you."},
   ]},
-  // ---- story (Erzählungen) ----
-  {c:'story', level:'B1', lines:[
+  {c:"story", level:"B1", lines:[
     {de:"Als sie aus dem Haus trat, bemerkte sie, dass es angefangen hatte zu regnen.", en:"As she stepped out of the house, she noticed it had started to rain."},
     {de:"Sie hatte ihren Schirm vergessen und musste schnell zurück ins Haus laufen.", en:"She had forgotten her umbrella and had to quickly run back inside."},
-    {de:"Am Ende kam sie trotzdem pünktlich zur Arbeit.", en:"In the end, she still made it to work on time."}
+    {de:"Am Ende kam sie trotzdem pünktlich zur Arbeit.", en:"In the end, she still made it to work on time."},
   ]},
-  {c:'story', level:'B1', lines:[
+  {c:"story", level:"B1", lines:[
     {de:"Der alte Mann saß jeden Morgen auf derselben Bank im Park.", en:"The old man sat on the same bench in the park every morning."},
     {de:"Er fütterte die Tauben und beobachtete die Kinder beim Spielen.", en:"He fed the pigeons and watched the children playing."},
-    {de:"Niemand wusste, wie lange er das schon so machte.", en:"No one knew how long he had been doing this."}
+    {de:"Niemand wusste, wie lange er das schon so machte.", en:"No one knew how long he had been doing this."},
   ]},
-  {c:'story', level:'B2', lines:[
+  {c:"story", level:"B2", lines:[
     {de:"Nach langer Suche fand er endlich den Brief seiner Großmutter.", en:"After a long search, he finally found his grandmother's letter."},
     {de:"Die Tinte war verblasst, aber die Worte berührten ihn noch genauso tief wie früher.", en:"The ink had faded, but the words still touched him just as deeply as before."},
-    {de:"Er beschloss, den Brief für immer aufzubewahren.", en:"He decided to keep the letter forever."}
+    {de:"Er beschloss, den Brief für immer aufzubewahren.", en:"He decided to keep the letter forever."},
   ]},
-  {c:'story', level:'A2', lines:[
+  {c:"story", level:"A2", lines:[
     {de:"Die Kinder liefen lachend über die Wiese.", en:"The children ran laughing across the meadow."},
     {de:"Ihre Eltern saßen im Schatten und schauten ihnen glücklich zu.", en:"Their parents sat in the shade and watched them happily."},
-    {de:"Es war ein ganz gewöhnlicher, aber wunderschöner Nachmittag.", en:"It was a completely ordinary but beautiful afternoon."}
+    {de:"Es war ein ganz gewöhnlicher, aber wunderschöner Nachmittag.", en:"It was a completely ordinary but beautiful afternoon."},
   ]},
-  {c:'story', level:'B2', lines:[
+  {c:"story", level:"B2", lines:[
     {de:"Erst als der Zug den Bahnhof verließ, erinnerte sie sich an ihren Koffer.", en:"Only as the train left the station did she remember her suitcase."},
     {de:"Er stand noch immer auf dem Bahnsteig, direkt neben der Bank.", en:"It was still standing on the platform, right next to the bench."},
-    {de:"Zum Glück konnte sie ihn am nächsten Tag am Fundbüro abholen.", en:"Luckily, she was able to pick it up at the lost-and-found office the next day."}
+    {de:"Zum Glück konnte sie ihn am nächsten Tag am Fundbüro abholen.", en:"Luckily, she was able to pick it up at the lost-and-found office the next day."},
   ]},
-  {c:'story', level:'C1', lines:[
+  {c:"story", level:"C1", lines:[
     {de:"In der kleinen Stadt kannte fast jeder jeden.", en:"In the small town, almost everyone knew everyone."},
     {de:"Neuigkeiten verbreiteten sich schneller, als man sie erzählen konnte.", en:"News spread faster than you could tell it."},
-    {de:"Manchmal wusste man von einem Ereignis, bevor es überhaupt passiert war.", en:"Sometimes you knew about an event before it had even happened."}
+    {de:"Manchmal wusste man von einem Ereignis, bevor es überhaupt passiert war.", en:"Sometimes you knew about an event before it had even happened."},
   ]},
-  {c:'story', level:'B1', lines:[
+  {c:"story", level:"B1", lines:[
     {de:"Nach dem Sturm lagen überall Äste und Blätter auf den Straßen.", en:"After the storm, branches and leaves lay everywhere on the streets."},
     {de:"Die Nachbarn kamen zusammen, um gemeinsam aufzuräumen.", en:"The neighbors came together to clean up."},
-    {de:"Bis zum Abend sah die Straße schon wieder fast normal aus.", en:"By evening, the street already looked almost normal again."}
+    {de:"Bis zum Abend sah die Straße schon wieder fast normal aus.", en:"By evening, the street already looked almost normal again."},
   ]},
-  {c:'story', level:'C1', lines:[
+  {c:"story", level:"C1", lines:[
     {de:"Sie hatte das Gefühl, diesen Ort schon einmal in einem Traum gesehen zu haben.", en:"She had the feeling she had already seen this place once in a dream."},
     {de:"Jede Ecke wirkte vertraut, obwohl sie noch nie zuvor dort gewesen war.", en:"Every corner seemed familiar, even though she had never been there before."},
-    {de:"Dieses seltsame Gefühl ließ sie den ganzen Tag nicht mehr los.", en:"This strange feeling stayed with her for the rest of the day."}
+    {de:"Dieses seltsame Gefühl ließ sie den ganzen Tag nicht mehr los.", en:"This strange feeling stayed with her for the rest of the day."},
   ]},
-  // ---- topic (Aktuelle Themen) ----
-  {c:'topic', level:'B1', lines:[
+  {c:"topic", level:"B1", lines:[
     {de:"Immer mehr Menschen entscheiden sich dafür, mit dem Fahrrad zur Arbeit zu fahren.", en:"More and more people choose to cycle to work."},
     {de:"Das spart nicht nur Geld, sondern ist auch gut für die Umwelt.", en:"This not only saves money but is also good for the environment."},
-    {de:"Viele Städte bauen deshalb ihre Radwege weiter aus.", en:"Many cities are therefore continuing to expand their bike paths."}
+    {de:"Viele Städte bauen deshalb ihre Radwege weiter aus.", en:"Many cities are therefore continuing to expand their bike paths."},
   ]},
-  {c:'topic', level:'B1', lines:[
+  {c:"topic", level:"B1", lines:[
     {de:"Die Preise für Lebensmittel sind im letzten Jahr deutlich gestiegen.", en:"Food prices have risen significantly over the past year."},
     {de:"Viele Familien müssen dadurch genauer auf ihr Budget achten.", en:"Because of this, many families have to watch their budget more closely."},
-    {de:"Experten erwarten, dass sich die Preise erst langsam wieder stabilisieren.", en:"Experts expect prices to stabilize again only slowly."}
+    {de:"Experten erwarten, dass sich die Preise erst langsam wieder stabilisieren.", en:"Experts expect prices to stabilize again only slowly."},
   ]},
-  {c:'topic', level:'B2', lines:[
+  {c:"topic", level:"B2", lines:[
     {de:"Viele Unternehmen bieten ihren Mitarbeitern inzwischen die Möglichkeit, im Homeoffice zu arbeiten.", en:"Many companies now offer their employees the option to work from home."},
     {de:"Das schafft mehr Flexibilität, bringt aber auch neue Herausforderungen für die Zusammenarbeit mit sich.", en:"This creates more flexibility but also brings new challenges for collaboration."},
-    {de:"Manche Firmen setzen deshalb auf ein Modell aus Homeoffice und Bürotagen.", en:"Some companies therefore rely on a model combining home office and office days."}
+    {de:"Manche Firmen setzen deshalb auf ein Modell aus Homeoffice und Bürotagen.", en:"Some companies therefore rely on a model combining home office and office days."},
   ]},
-  {c:'topic', level:'B2', lines:[
+  {c:"topic", level:"B2", lines:[
     {de:"Der Klimawandel beeinflusst schon heute die Landwirtschaft in vielen Regionen der Welt.", en:"Climate change is already affecting agriculture in many regions of the world."},
     {de:"Trockenperioden und unvorhersehbares Wetter erschweren die Ernteplanung.", en:"Droughts and unpredictable weather make harvest planning more difficult."},
-    {de:"Forscher arbeiten an Pflanzen, die auch unter diesen Bedingungen wachsen können.", en:"Researchers are working on plants that can grow even under these conditions."}
+    {de:"Forscher arbeiten an Pflanzen, die auch unter diesen Bedingungen wachsen können.", en:"Researchers are working on plants that can grow even under these conditions."},
   ]},
-  {c:'topic', level:'B1', lines:[
+  {c:"topic", level:"B1", lines:[
     {de:"Studien zeigen, dass regelmäßige Bewegung einen positiven Einfluss auf die geistige Gesundheit hat.", en:"Studies show that regular exercise has a positive effect on mental health."},
     {de:"Schon ein kurzer Spaziergang am Tag kann Stress deutlich reduzieren.", en:"Even a short walk each day can significantly reduce stress."},
-    {de:"Trotzdem finden viele Menschen im Alltag kaum Zeit dafür.", en:"Nevertheless, many people barely find time for it in everyday life."}
+    {de:"Trotzdem finden viele Menschen im Alltag kaum Zeit dafür.", en:"Nevertheless, many people barely find time for it in everyday life."},
   ]},
-  {c:'topic', level:'C1', lines:[
+  {c:"topic", level:"C1", lines:[
     {de:"Erneuerbare Energien spielen eine immer wichtigere Rolle in der deutschen Wirtschaft.", en:"Renewable energy plays an increasingly important role in the German economy."},
     {de:"Windkraft und Solarenergie decken inzwischen einen erheblichen Teil des Strombedarfs.", en:"Wind and solar power now cover a considerable share of electricity demand."},
-    {de:"Die größte Herausforderung bleibt jedoch die Speicherung von überschüssiger Energie.", en:"The biggest challenge, however, remains storing surplus energy."}
+    {de:"Die größte Herausforderung bleibt jedoch die Speicherung von überschüssiger Energie.", en:"The biggest challenge, however, remains storing surplus energy."},
   ]},
-  {c:'topic', level:'C1', lines:[
+  {c:"topic", level:"C1", lines:[
     {de:"Künstliche Intelligenz verändert bereits viele Bereiche unseres Alltags.", en:"Artificial intelligence is already changing many areas of our everyday lives."},
     {de:"Sie hilft nicht nur bei einfachen Aufgaben, sondern übernimmt zunehmend auch komplexe Entscheidungen.", en:"It not only helps with simple tasks but is increasingly taking on complex decisions too."},
-    {de:"Genau deshalb wird die Frage nach klaren ethischen Grenzen immer wichtiger.", en:"That is precisely why the question of clear ethical boundaries is becoming ever more important."}
+    {de:"Genau deshalb wird die Frage nach klaren ethischen Grenzen immer wichtiger.", en:"That is precisely why the question of clear ethical boundaries is becoming ever more important."},
   ]},
-  {c:'topic', level:'B2', lines:[
+  {c:"topic", level:"B2", lines:[
     {de:"Immer mehr Verbraucher achten beim Einkaufen auf Nachhaltigkeit und Umweltschutz.", en:"More and more consumers pay attention to sustainability and environmental protection when shopping."},
     {de:"Sie bevorzugen Produkte mit weniger Verpackung und kürzeren Transportwegen.", en:"They prefer products with less packaging and shorter transport distances."},
-    {de:"Dieser Trend zwingt auch große Unternehmen, ihre Angebote zu überdenken.", en:"This trend is also forcing large companies to rethink their offerings."}
-  ]}
+    {de:"Dieser Trend zwingt auch große Unternehmen, ihre Angebote zu überdenken.", en:"This trend is also forcing large companies to rethink their offerings."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Guten Tag, ich habe für heute Nachmittag einen Termin bei Dr. Meier.", en:"Good afternoon, I have an appointment with Dr. Meier this afternoon."},
+    {de:"Könnten Sie mir sagen, wie lange die Wartezeit ungefähr ist?", en:"Could you tell me roughly how long the waiting time is?"},
+    {de:"Kein Problem, ich warte einfach hier im Wartezimmer.", en:"No problem, I'll just wait here in the waiting room."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Entschuldigung, wissen Sie, ob dieser Laden auch sonntags geöffnet hat?", en:"Excuse me, do you know if this shop is also open on Sundays?"},
+    {de:"Nein, leider hat er sonntags immer geschlossen.", en:"No, unfortunately it's always closed on Sundays."},
+    {de:"Ah, schade, dann komme ich morgen wieder.", en:"Ah, too bad, then I'll come back tomorrow."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Kannst du mir ein gutes Restaurant in der Nähe empfehlen?", en:"Can you recommend a good restaurant nearby?"},
+    {de:"Es gibt ein kleines italienisches Restaurant gleich um die Ecke.", en:"There's a small Italian restaurant just around the corner."},
+    {de:"Perfekt, darauf hätte ich jetzt richtig Lust.", en:"Perfect, I'd really be in the mood for that right now."},
+  ]},
+  {c:"talk", level:"B2", lines:[
+    {de:"Ich wollte mich erkundigen, ob die Lieferung schon unterwegs ist.", en:"I wanted to check whether the delivery is already on its way."},
+    {de:"Laut unserem System sollte das Paket morgen Vormittag ankommen.", en:"According to our system, the package should arrive tomorrow morning."},
+    {de:"Gut zu wissen, dann bleibe ich morgen bis mittags zu Hause.", en:"Good to know, then I'll stay home until noon tomorrow."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Hast du Lust, heute Abend zusammen ins Kino zu gehen?", en:"Do you feel like going to the cinema together tonight?"},
+    {de:"Gern, welchen Film möchtest du dir denn ansehen?", en:"Sure, which movie would you like to watch?"},
+    {de:"Ich habe von einer neuen Komödie gehört, die soll richtig lustig sein.", en:"I heard about a new comedy that's supposed to be really funny."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Es tut mir wirklich leid, aber ich muss unseren Termin leider verschieben.", en:"I'm really sorry, but I unfortunately have to postpone our appointment."},
+    {de:"Kein Problem, wann würde es dir denn besser passen?", en:"No problem, when would work better for you?"},
+    {de:"Vielleicht könnten wir es auf nächsten Mittwoch legen?", en:"Maybe we could move it to next Wednesday?"},
+  ]},
+  {c:"talk", level:"B2", lines:[
+    {de:"Ich habe gehört, dass du kürzlich in eine neue Wohnung gezogen bist.", en:"I heard that you recently moved into a new apartment."},
+    {de:"Ja, genau, sie ist zum Glück viel heller als meine alte Wohnung.", en:"Yes, exactly, luckily it's much brighter than my old apartment."},
+    {de:"Das freut mich für dich, ich muss sie mir unbedingt mal ansehen.", en:"I'm happy for you, I definitely have to see it sometime."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Verzeihung, könnten Sie mir helfen, diesen Koffer nach oben zu tragen?", en:"Excuse me, could you help me carry this suitcase upstairs?"},
+    {de:"Natürlich, das ist überhaupt kein Problem.", en:"Of course, that's no problem at all."},
+    {de:"Vielen Dank, das ist wirklich sehr freundlich von Ihnen.", en:"Thank you very much, that's really very kind of you."},
+  ]},
+  {c:"talk", level:"C1", lines:[
+    {de:"Angesichts der aktuellen Entwicklungen frage ich mich, ob wir unsere Strategie überdenken sollten.", en:"Given the current developments, I wonder whether we should reconsider our strategy."},
+    {de:"Das ist ein berechtigter Einwand, den wir im nächsten Meeting ansprechen sollten.", en:"That's a valid objection that we should address in the next meeting."},
+    {de:"Einverstanden, ich bereite dafür ein paar konkrete Vorschläge vor.", en:"Agreed, I'll prepare a few concrete suggestions for that."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Wie war eigentlich dein Vorstellungsgespräch letzte Woche?", en:"How was your job interview last week, by the way?"},
+    {de:"Es lief eigentlich ganz gut, aber ich bin noch nervös wegen der Antwort.", en:"It actually went pretty well, but I'm still nervous about the answer."},
+    {de:"Ich bin sicher, dass du gute Chancen hast, drück die Daumen!", en:"I'm sure you have good chances, fingers crossed!"},
+  ]},
+  {c:"talk", level:"B2", lines:[
+    {de:"Könnten wir das Meeting eventuell auf eine frühere Uhrzeit vorziehen?", en:"Could we possibly move the meeting to an earlier time?"},
+    {de:"Das müsste ich erst mit den anderen Teilnehmern absprechen.", en:"I'd have to check that with the other participants first."},
+    {de:"Kein Problem, melde dich einfach, sobald du es weißt.", en:"No problem, just let me know as soon as you know."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Weißt du zufällig, wo der nächste Geldautomat ist?", en:"Do you happen to know where the nearest ATM is?"},
+    {de:"Ja, es gibt einen direkt neben der Bäckerei da vorne.", en:"Yes, there's one right next to the bakery over there."},
+    {de:"Super, dann laufe ich schnell dorthin.", en:"Great, then I'll quickly walk over there."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Ich glaube, meine Katze ist seit gestern Abend verschwunden.", en:"I think my cat has been missing since last night."},
+    {de:"Oh nein, hast du schon in der ganzen Nachbarschaft gesucht?", en:"Oh no, have you already searched the whole neighborhood?"},
+    {de:"Ja, aber vielleicht sollte ich auch einen Zettel aufhängen.", en:"Yes, but maybe I should also put up a notice."},
+  ]},
+  {c:"talk", level:"C1", lines:[
+    {de:"Ich bin mir nicht sicher, ob diese Entscheidung wirklich durchdacht war.", en:"I'm not sure whether this decision was really well thought out."},
+    {de:"Vielleicht sollten wir zunächst die möglichen Konsequenzen genauer abwägen.", en:"Maybe we should first weigh the possible consequences more carefully."},
+    {de:"Das halte ich für einen vernünftigen Vorschlag, lass uns das morgen besprechen.", en:"I think that's a sensible suggestion, let's discuss it tomorrow."},
+  ]},
+  {c:"talk", level:"B2", lines:[
+    {de:"Entschuldige die Verspätung, die Bahn hatte heute mal wieder Verspätung.", en:"Sorry for being late, the train was delayed again today."},
+    {de:"Kein Problem, ich habe die Zeit genutzt, um schon die Speisekarte anzusehen.", en:"No problem, I used the time to already look at the menu."},
+    {de:"Gute Idee, hast du schon etwas gefunden, das dir gefällt?", en:"Good idea, have you already found something you like?"},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Ich möchte gern dieses Hemd zurückgeben, es passt mir leider nicht.", en:"I'd like to return this shirt, unfortunately it doesn't fit me."},
+    {de:"Haben Sie noch den Kassenzettel dabei?", en:"Do you still have the receipt with you?"},
+    {de:"Ja, hier ist er, ich habe ihn extra aufgehoben.", en:"Yes, here it is, I kept it especially for this."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Meine Nachbarn machen seit Tagen abends sehr laute Musik.", en:"My neighbors have been playing very loud music in the evenings for days."},
+    {de:"Hast du schon einmal versucht, freundlich mit ihnen zu sprechen?", en:"Have you already tried talking to them in a friendly way?"},
+    {de:"Noch nicht, aber ich denke, das wäre wirklich einen Versuch wert.", en:"Not yet, but I think that would really be worth a try."},
+  ]},
+  {c:"talk", level:"B2", lines:[
+    {de:"Ich überlege, ob ich meine Wohnung selbst renovieren oder eine Firma beauftragen soll.", en:"I'm considering whether to renovate my apartment myself or hire a company."},
+    {de:"Das hängt wahrscheinlich davon ab, wie viel Zeit du dafür einplanen kannst.", en:"That probably depends on how much time you can plan for it."},
+    {de:"Stimmt, ich werde erst einmal ein paar Angebote einholen.", en:"True, I'll first get a few quotes."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Herzlichen Glückwunsch zum Geburtstag! Wie fühlst du dich?", en:"Happy birthday! How do you feel?"},
+    {de:"Danke schön, ich fühle mich eigentlich genauso wie gestern.", en:"Thank you, I actually feel exactly the same as yesterday."},
+    {de:"Das kenne ich gut, bei mir war es letztes Jahr genauso.", en:"I know that feeling well, it was the same for me last year."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Ich brauche unbedingt deine Hilfe beim Umzug am Samstag.", en:"I really need your help with the move on Saturday."},
+    {de:"Klar, sag mir einfach, wie viel Uhr ich kommen soll.", en:"Sure, just tell me what time to come."},
+    {de:"Am besten schon um neun Uhr, dann haben wir genug Zeit.", en:"Best around nine o'clock, then we'll have enough time."},
+  ]},
+  {c:"talk", level:"C1", lines:[
+    {de:"Mir ist aufgefallen, dass unsere Kommunikation im Team zuletzt etwas gelitten hat.", en:"I've noticed that our team's communication has suffered a bit recently."},
+    {de:"Da stimme ich dir zu, vielleicht sollten wir regelmäßigere Absprachen einführen.", en:"I agree with you, maybe we should introduce more regular check-ins."},
+    {de:"Genau das hatte ich mir auch überlegt, lass uns das gleich umsetzen.", en:"That's exactly what I was thinking too, let's implement that right away."},
+  ]},
+  {c:"talk", level:"B2", lines:[
+    {de:"Weißt du, ob es für dieses Konzert noch Karten an der Abendkasse gibt?", en:"Do you know if there are still tickets available at the box office for this concert?"},
+    {de:"Ich glaube schon, aber sicherheitshalber würde ich früh genug hingehen.", en:"I think so, but to be safe I'd go early enough."},
+    {de:"Guter Rat, dann treffen wir uns schon eine Stunde vorher.", en:"Good advice, then let's meet an hour earlier."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Ich habe meinen Regenschirm wohl im Bus liegen lassen.", en:"I think I left my umbrella on the bus."},
+    {de:"Das ist ärgerlich, hast du beim Fundbüro angerufen?", en:"That's annoying, did you call the lost-and-found office?"},
+    {de:"Noch nicht, das mache ich gleich nach der Arbeit.", en:"Not yet, I'll do that right after work."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Kannst du mir zeigen, wie diese neue Kaffeemaschine funktioniert?", en:"Can you show me how this new coffee machine works?"},
+    {de:"Klar, du musst zuerst Wasser einfüllen und dann diesen Knopf drücken.", en:"Sure, you first have to fill in water and then press this button."},
+    {de:"Ah, jetzt verstehe ich es, vielen Dank für die Erklärung.", en:"Ah, now I understand, thank you very much for the explanation."},
+  ]},
+  {c:"talk", level:"B2", lines:[
+    {de:"Ich habe überlegt, ob ich dieses Jahr an einem Sprachkurs im Ausland teilnehme.", en:"I've been considering whether to take a language course abroad this year."},
+    {de:"Das klingt spannend, in welchem Land würdest du das gern machen?", en:"That sounds exciting, in which country would you like to do that?"},
+    {de:"Am liebsten in Spanien, dort könnte ich gleichzeitig mein Spanisch verbessern.", en:"Preferably in Spain, there I could improve my Spanish at the same time."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Möchtest du am Wochenende mit mir wandern gehen?", en:"Would you like to go hiking with me this weekend?"},
+    {de:"Sehr gern, aber ich muss vorher noch bessere Schuhe kaufen.", en:"I'd love to, but I need to buy better shoes first."},
+    {de:"Kein Problem, wir können morgen zusammen einkaufen gehen.", en:"No problem, we can go shopping together tomorrow."},
+  ]},
+  {c:"talk", level:"C1", lines:[
+    {de:"Ich hätte gern deine ehrliche Meinung zu meinem Entwurf gehört.", en:"I would like to hear your honest opinion about my draft."},
+    {de:"Grundsätzlich finde ich ihn gelungen, allerdings wirkt der Schluss etwas abrupt.", en:"Basically I find it well done, but the ending seems a bit abrupt."},
+    {de:"Das ist ein guter Hinweis, ich werde ihn noch einmal überarbeiten.", en:"That's a good point, I'll revise it once more."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Wir sollten unbedingt mal wieder unsere alten Schulfreunde treffen.", en:"We should really meet up with our old school friends again sometime."},
+    {de:"Ja, das ist schon viel zu lange her, lass uns eine Gruppe gründen.", en:"Yes, it's been way too long, let's start a group chat."},
+    {de:"Gute Idee, ich schreibe gleich mal ein paar von ihnen an.", en:"Good idea, I'll message a few of them right away."},
+  ]},
+  {c:"talk", level:"B2", lines:[
+    {de:"Können Sie mir erklären, warum die Rechnung höher ausgefallen ist als erwartet?", en:"Can you explain to me why the bill turned out higher than expected?"},
+    {de:"Es gab eine zusätzliche Gebühr, die leider nicht im ursprünglichen Angebot stand.", en:"There was an additional fee that unfortunately wasn't in the original offer."},
+    {de:"Das verstehe ich, aber bitte informieren Sie mich künftig vorher darüber.", en:"I understand, but please inform me about that beforehand in the future."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Isst du eigentlich gern scharfes Essen?", en:"Do you actually like spicy food?"},
+    {de:"Ja, sehr gern, je schärfer, desto besser für mich.", en:"Yes, very much, the spicier the better for me."},
+    {de:"Dann kenne ich das perfekte Restaurant für dich.", en:"Then I know the perfect restaurant for you."},
+  ]},
+  {c:"story", level:"B1", lines:[
+    {de:"Jeden Morgen um sechs Uhr öffnete der alte Leuchtturmwärter die schwere Eisentür.", en:"Every morning at six o'clock, the old lighthouse keeper opened the heavy iron door."},
+    {de:"Er stieg die engen Treppen hinauf, um die Lampe für die Nacht zu prüfen.", en:"He climbed the narrow stairs to check the lamp for the night."},
+    {de:"Seit vierzig Jahren machte er diese Runde, ohne einen einzigen Morgen zu verpassen.", en:"For forty years he had done this round without missing a single morning."},
+  ]},
+  {c:"story", level:"A2", lines:[
+    {de:"Am ersten Schultag war die kleine Mia sehr aufgeregt.", en:"On the first day of school, little Mia was very excited."},
+    {de:"Sie trug einen neuen Rucksack und hielt fest die Hand ihrer Mutter.", en:"She wore a new backpack and held her mother's hand tightly."},
+    {de:"Am Ende des Tages erzählte sie voller Freude von ihrer neuen besten Freundin.", en:"At the end of the day, she happily talked about her new best friend."},
+  ]},
+  {c:"story", level:"B2", lines:[
+    {de:"Die Bibliothekarin fand zwischen zwei alten Büchern einen vergessenen Stapel Briefe.", en:"The librarian found a forgotten stack of letters between two old books."},
+    {de:"Die Briefe stammten von einem Soldaten, der seiner Familie aus dem Krieg geschrieben hatte.", en:"The letters were from a soldier who had written to his family from the war."},
+    {de:"Sie beschloss, die Nachkommen der Familie zu suchen, um ihnen die Briefe zurückzugeben.", en:"She decided to search for the family's descendants in order to return the letters to them."},
+  ]},
+  {c:"story", level:"B1", lines:[
+    {de:"Beim Wandern in den Bergen verlor Paul plötzlich den markierten Weg.", en:"While hiking in the mountains, Paul suddenly lost the marked trail."},
+    {de:"Erst nach zwei Stunden entdeckte er eine kleine, verlassene Hütte im Wald.", en:"Only after two hours did he discover a small, abandoned hut in the forest."},
+    {de:"Dort wartete er bis zum nächsten Morgen, bevor er den Weg zurück fand.", en:"There he waited until the next morning before finding his way back."},
+  ]},
+  {c:"story", level:"C1", lines:[
+    {de:"Nach jahrzehntelanger Trennung stand die Familie sich plötzlich wieder gegenüber, ohne recht zu wissen, was sie sagen sollte.", en:"After decades of separation, the family suddenly stood facing each other again, not quite knowing what to say."},
+    {de:"Die anfängliche Stille wurde erst durch die alte Großmutter gebrochen, die leise zu weinen begann.", en:"The initial silence was only broken by the old grandmother, who quietly began to cry."},
+    {de:"Innerhalb weniger Minuten verwandelte sich die angespannte Stimmung in ein überwältigendes Wiedersehen voller Umarmungen.", en:"Within a few minutes, the tense mood turned into an overwhelming reunion full of embraces."},
+  ]},
+  {c:"story", level:"B1", lines:[
+    {de:"Der junge Koch probierte in seiner Küche ein völlig neues Rezept aus.", en:"The young chef tried out a completely new recipe in his kitchen."},
+    {de:"Beim ersten Versuch schmeckte das Gericht leider viel zu salzig.", en:"On the first attempt, the dish unfortunately tasted much too salty."},
+    {de:"Erst beim dritten Versuch war er endlich mit dem Ergebnis zufrieden.", en:"Only on the third attempt was he finally satisfied with the result."},
+  ]},
+  {c:"story", level:"A2", lines:[
+    {de:"Herr Klein fand auf seinem Weg zur Arbeit einen kleinen, verängstigten Hund.", en:"On his way to work, Mr. Klein found a small, frightened dog."},
+    {de:"Er brachte ihn mit ins Büro und fragte alle Kollegen nach dem Besitzer.", en:"He brought it to the office and asked all his colleagues about the owner."},
+    {de:"Am Abend fand er schließlich die dankbare Besitzerin über eine Anzeige im Internet.", en:"In the evening, he finally found the grateful owner through an online ad."},
+  ]},
+  {c:"story", level:"B2", lines:[
+    {de:"Die Malerin saß seit Stunden vor einer leeren weißen Leinwand, ohne eine Idee zu haben.", en:"The painter had been sitting in front of an empty white canvas for hours, without an idea."},
+    {de:"Erst als sie durch das Fenster einen plötzlichen Regenschauer beobachtete, kam ihr die passende Inspiration.", en:"Only when she watched a sudden rain shower through the window did the right inspiration come to her."},
+    {de:"Innerhalb einer einzigen Nacht malte sie das Bild, das später ihr bekanntestes Werk werden sollte.", en:"Within a single night, she painted the picture that would later become her most famous work."},
+  ]},
+  {c:"story", level:"B1", lines:[
+    {de:"Der Taxifahrer erinnerte sich noch genau an eine ungewöhnliche Fahrt vor vielen Jahren.", en:"The taxi driver still remembered exactly an unusual ride from many years ago."},
+    {de:"Ein älterer Herr hatte ihn gebeten, einfach ohne Ziel durch die ganze Stadt zu fahren.", en:"An elderly gentleman had asked him to simply drive through the whole city without a destination."},
+    {de:"Am Ende der Fahrt erklärte der Mann, er wolle seine Heimatstadt ein letztes Mal sehen.", en:"At the end of the ride, the man explained that he wanted to see his hometown one last time."},
+  ]},
+  {c:"story", level:"B1", lines:[
+    {de:"Nach dreißig Jahren als Lehrerin stand Frau Bergmann an ihrem letzten Schultag vor der Klasse.", en:"After thirty years as a teacher, Mrs. Bergmann stood in front of her class on her last school day."},
+    {de:"Ihre Schüler hatten heimlich eine kleine Abschiedsfeier mit selbstgemalten Bildern vorbereitet.", en:"Her students had secretly prepared a small farewell party with hand-painted pictures."},
+    {de:"Frau Bergmann musste die Tränen zurückhalten, als sie die Bilder eines nach dem anderen betrachtete.", en:"Mrs. Bergmann had to hold back her tears as she looked at the pictures one after another."},
+  ]},
+  {c:"story", level:"C1", lines:[
+    {de:"Der Wissenschaftler hatte fast zwanzig Jahre an einem Experiment gearbeitet, das kaum jemand für erfolgversprechend hielt.", en:"The scientist had worked for almost twenty years on an experiment that hardly anyone considered promising."},
+    {de:"An einem gewöhnlichen Dienstagmorgen bemerkte er schließlich ein unerwartetes Muster in seinen Messdaten.", en:"On an ordinary Tuesday morning, he finally noticed an unexpected pattern in his measurement data."},
+    {de:"Diese kleine Entdeckung sollte sich später als bedeutender Durchbruch für sein gesamtes Forschungsgebiet erweisen.", en:"This small discovery would later prove to be a significant breakthrough for his entire field of research."},
+  ]},
+  {c:"story", level:"B2", lines:[
+    {de:"Auf der letzten Zugfahrt vor seiner Pensionierung setzte sich ein Musiker versehentlich in das falsche Abteil.", en:"On his last train ride before retirement, a musician accidentally sat in the wrong compartment."},
+    {de:"Dort traf er zufällig eine ehemalige Kollegin, mit der er jahrzehntelang keinen Kontakt mehr gehabt hatte.", en:"There he happened to meet a former colleague with whom he had had no contact for decades."},
+    {de:"Die beiden verbrachten die restliche Fahrt damit, sich gegenseitig von ihrem Leben zu erzählen.", en:"The two spent the rest of the journey telling each other about their lives."},
+  ]},
+  {c:"story", level:"A2", lines:[
+    {de:"Der Bäcker stand jeden Tag schon um vier Uhr morgens in seiner kleinen Backstube.", en:"The baker stood in his small bakery every day already at four in the morning."},
+    {de:"Er liebte den Moment, wenn der Duft von frischem Brot durch die Straße zog.", en:"He loved the moment when the smell of fresh bread drifted through the street."},
+    {de:"Seine Kunden kamen jeden Morgen gern früh, nur um dieses Brot noch warm zu kaufen.", en:"His customers liked coming early every morning, just to buy this bread while still warm."},
+  ]},
+  {c:"story", level:"B1", lines:[
+    {de:"Die kleine Stadt feierte jedes Jahr im Sommer ihr traditionelles Straßenfest.", en:"The small town celebrated its traditional street festival every summer."},
+    {de:"Dieses Jahr regnete es jedoch den ganzen Tag ohne Unterbrechung.", en:"This year, however, it rained the whole day without a break."},
+    {de:"Trotzdem tanzten die Menschen fröhlich unter bunten Regenschirmen weiter.", en:"Nevertheless, the people continued dancing happily under colorful umbrellas."},
+  ]},
+  {c:"story", level:"B2", lines:[
+    {de:"Als Kind hatte sich Julia ein kleines Baumhaus im Garten ihrer Eltern gebaut.", en:"As a child, Julia had built a small treehouse in her parents' garden."},
+    {de:"Nach über zwanzig Jahren besuchte sie das alte Haus noch einmal, um sich zu verabschieden.", en:"After more than twenty years, she visited the old house once more to say goodbye."},
+    {de:"Das Baumhaus stand noch immer dort, verwittert, aber überraschend stabil.", en:"The treehouse was still standing there, weathered but surprisingly stable."},
+  ]},
+  {c:"story", level:"A2", lines:[
+    {de:"Am Strand fand der kleine Jonas eine leere Glasflasche im Sand.", en:"On the beach, little Jonas found an empty glass bottle in the sand."},
+    {de:"Er nahm sie mit nach Hause und stellte sie als Vase auf sein Regal.", en:"He took it home and put it on his shelf as a vase."},
+    {de:"Jedes Mal, wenn er sie ansah, dachte er an diesen schönen Urlaubstag.", en:"Every time he looked at it, he thought of that lovely vacation day."},
+  ]},
+  {c:"story", level:"B1", lines:[
+    {de:"In der alten Werkstatt roch es immer noch nach Holz und frischer Farbe.", en:"The old workshop still smelled of wood and fresh paint."},
+    {de:"Der Schreiner arbeitete dort schon seit seiner Jugend an eigenen Möbelstücken.", en:"The carpenter had been working there on his own furniture pieces since his youth."},
+    {de:"Sein größter Traum war es, eines Tages ein eigenes kleines Möbelgeschäft zu eröffnen.", en:"His biggest dream was to one day open his own small furniture shop."},
+  ]},
+  {c:"story", level:"B2", lines:[
+    {de:"Während eines heftigen Gewitters mussten mehrere Wanderer in einer kleinen Almhütte Schutz suchen.", en:"During a heavy thunderstorm, several hikers had to seek shelter in a small mountain hut."},
+    {de:"Obwohl sie sich vorher nicht kannten, verbrachten sie den Abend gemeinsam am warmen Ofen.", en:"Although they hadn't known each other before, they spent the evening together by the warm stove."},
+    {de:"Am nächsten Morgen tauschten alle ihre Adressen aus, um in Kontakt zu bleiben.", en:"The next morning, everyone exchanged addresses to stay in touch."},
+  ]},
+  {c:"story", level:"C1", lines:[
+    {de:"Der pensionierte Kapitän verbrachte seine Tage damit, alten Seemannsgeschichten in der kleinen Hafenkneipe zuzuhören.", en:"The retired captain spent his days listening to old sailors' tales in the small harbor pub."},
+    {de:"Eines Abends erzählte ein junger Fremder eine Geschichte, die verblüffend genau seiner eigenen glich.", en:"One evening, a young stranger told a story that resembled his own strikingly closely."},
+    {de:"Erst nach langem Gespräch erkannten beide, dass sie tatsächlich denselben Sturm überlebt hatten, nur auf verschiedenen Schiffen.", en:"Only after a long conversation did they both realize they had actually survived the same storm, just on different ships."},
+  ]},
+  {c:"story", level:"B1", lines:[
+    {de:"Emma entdeckte auf dem Dachboden ihrer Großeltern eine alte Nähmaschine.", en:"Emma discovered an old sewing machine in her grandparents' attic."},
+    {de:"Ihre Großmutter zeigte ihr geduldig, wie man damit einfache Kleidungsstücke nähen konnte.", en:"Her grandmother patiently showed her how to sew simple pieces of clothing with it."},
+    {de:"Seitdem näht Emma jedes Jahr ihre eigenen Weihnachtsgeschenke für die ganze Familie.", en:"Since then, Emma sews her own Christmas presents for the whole family every year."},
+  ]},
+  {c:"story", level:"B2", lines:[
+    {de:"Der Fotograf reiste jahrelang durch die Welt, um seltene Tiere in freier Natur zu fotografieren.", en:"The photographer traveled the world for years to photograph rare animals in the wild."},
+    {de:"Sein bekanntestes Foto entstand jedoch völlig zufällig, direkt vor seinem eigenen Gartenzaun.", en:"His most famous photo, however, was taken completely by chance, right in front of his own garden fence."},
+    {de:"Ein seltener Vogel war für wenige Sekunden auf seinem Zaunpfahl gelandet, genau im richtigen Licht.", en:"A rare bird had landed on his fence post for a few seconds, in exactly the right light."},
+  ]},
+  {c:"story", level:"A2", lines:[
+    {de:"Frau Alt beschloss mit siebzig Jahren, endlich schwimmen zu lernen.", en:"At seventy years old, Mrs. Alt decided to finally learn how to swim."},
+    {de:"Ihre Enkelkinder waren zunächst überrascht, aber auch sehr stolz auf sie.", en:"Her grandchildren were at first surprised, but also very proud of her."},
+    {de:"Nach nur drei Monaten schwamm sie schon eine ganze Bahn ohne Pause.", en:"After only three months, she was already swimming a whole lap without a break."},
+  ]},
+  {c:"story", level:"B1", lines:[
+    {de:"Die Nachtzugfahrt von Berlin nach Wien dauerte fast zehn Stunden.", en:"The night-train journey from Berlin to Vienna took almost ten hours."},
+    {de:"Im Schlafwagen teilte sich Anna das Abteil mit einer freundlichen älteren Dame.", en:"In the sleeper car, Anna shared the compartment with a friendly older lady."},
+    {de:"Die beiden unterhielten sich bis spät in die Nacht über ihre unterschiedlichen Lebenswege.", en:"The two talked late into the night about their different paths in life."},
+  ]},
+  {c:"story", level:"B2", lines:[
+    {de:"Jedes Jahr im Herbst veranstaltete das kleine Dorf einen Wettbewerb für den größten Kürbis.", en:"Every autumn, the small village held a competition for the biggest pumpkin."},
+    {de:"Herr Fischer gewann seit fünf Jahren in Folge, was einige Nachbarn zunehmend argwöhnisch machte.", en:"Mr. Fischer had won five years in a row, which made some neighbors increasingly suspicious."},
+    {de:"Erst als er sein Geheimnis verriet, ein spezieller Kompost aus Fischresten, verstanden alle seinen Erfolg.", en:"Only when he revealed his secret, a special compost made from fish scraps, did everyone understand his success."},
+  ]},
+  {c:"story", level:"C1", lines:[
+    {de:"Der geheimnisvolle Nachbar zeigte sich niemals tagsüber und ließ die Vorhänge stets geschlossen.", en:"The mysterious neighbor never showed himself during the day and always kept the curtains closed."},
+    {de:"Die Kinder der Straße erzählten sich abenteuerliche Geschichten über sein angebliches früheres Leben.", en:"The children of the street told each other adventurous stories about his supposed former life."},
+    {de:"Erst nach seinem Tod erfuhr die Nachbarschaft, dass er einfach nachts als Krankenpfleger gearbeitet hatte.", en:"Only after his death did the neighborhood learn that he had simply worked as a nurse at night."},
+  ]},
+  {c:"story", level:"B1", lines:[
+    {de:"Nach dem plötzlichen Tod ihres Onkels erbte Laura ein kleines Haus am See, von dem niemand wusste.", en:"After her uncle's sudden death, Laura inherited a small house by the lake that nobody knew about."},
+    {de:"Beim ersten Besuch fand sie in einer Schublade alte Fotos von einer ihr unbekannten Familie.", en:"On her first visit, she found old photos of a family unknown to her in a drawer."},
+    {de:"Nach einigen Nachforschungen stellte sich heraus, dass ihr Onkel dort einst eine geheime zweite Familie gehabt hatte.", en:"After some research, it turned out that her uncle had once had a secret second family there."},
+  ]},
+  {c:"story", level:"B2", lines:[
+    {de:"Als das Auto der jungen Familie mitten auf der Landstraße stehen blieb, begann es bereits zu regnen.", en:"As the young family's car broke down in the middle of the country road, it had already started to rain."},
+    {de:"Ein vorbeifahrender Landwirt hielt sofort an und bot ihnen an, bei ihm auf den Abschleppdienst zu warten.", en:"A passing farmer stopped immediately and offered them to wait at his place for the tow truck."},
+    {de:"Die Familie war so dankbar, dass sie den Landwirt seitdem jedes Jahr zu Weihnachten besucht.", en:"The family was so grateful that they have visited the farmer every Christmas since then."},
+  ]},
+  {c:"story", level:"A2", lines:[
+    {de:"Tim liebte es, jeden Samstag mit seinem Großvater im Garten zu arbeiten.", en:"Tim loved working in the garden with his grandfather every Saturday."},
+    {de:"Zusammen pflanzten sie Tomaten, Karotten und viele bunte Blumen.", en:"Together they planted tomatoes, carrots, and many colorful flowers."},
+    {de:"Im Sommer ernteten sie stolz ihr erstes eigenes Gemüse.", en:"In the summer, they proudly harvested their first own vegetables."},
+  ]},
+  {c:"story", level:"B1", lines:[
+    {de:"Der alte Geigenspieler saß jeden Abend auf derselben Brücke in der Innenstadt.", en:"The old violin player sat on the same bridge in the city center every evening."},
+    {de:"Die Menschen blieben oft stehen, nur um seiner ruhigen Melodie zu lauschen.", en:"People often stopped just to listen to his calm melody."},
+    {de:"Niemand wusste, dass er früher an einer großen Oper gespielt hatte.", en:"Nobody knew that he had once played at a big opera house."},
+  ]},
+  {c:"topic", level:"B1", lines:[
+    {de:"Immer mehr Menschen achten beim Einkaufen bewusst auf regionale Produkte.", en:"More and more people consciously pay attention to regional products when shopping."},
+    {de:"Kurze Transportwege sollen dabei helfen, die Umwelt weniger zu belasten.", en:"Short transport routes are meant to help put less strain on the environment."},
+    {de:"Kritiker weisen jedoch darauf hin, dass regionale Produkte oft teurer sind.", en:"Critics, however, point out that regional products are often more expensive."},
+  ]},
+  {c:"topic", level:"B2", lines:[
+    {de:"Immer mehr Unternehmen setzen auf künstliche Intelligenz, um Arbeitsprozesse zu beschleunigen.", en:"More and more companies rely on artificial intelligence to speed up work processes."},
+    {de:"Gleichzeitig wächst die Sorge, dass dadurch viele Arbeitsplätze verloren gehen könnten.", en:"At the same time, concern is growing that many jobs could be lost as a result."},
+    {de:"Experten fordern deshalb eine bessere Weiterbildung für Arbeitnehmer in betroffenen Branchen.", en:"Experts are therefore calling for better training for workers in affected industries."},
+  ]},
+  {c:"topic", level:"C1", lines:[
+    {de:"Der zunehmende Rückgang der Artenvielfalt gilt inzwischen als eine der größten Herausforderungen unserer Zeit.", en:"The increasing decline in biodiversity is now considered one of the greatest challenges of our time."},
+    {de:"Insbesondere die Zerstörung natürlicher Lebensräume trägt maßgeblich zu diesem Problem bei.", en:"In particular, the destruction of natural habitats contributes significantly to this problem."},
+    {de:"Wissenschaftler fordern daher dringend international abgestimmte Schutzmaßnahmen für gefährdete Ökosysteme.", en:"Scientists are therefore urgently calling for internationally coordinated protective measures for endangered ecosystems."},
+  ]},
+  {c:"topic", level:"B1", lines:[
+    {de:"In vielen Großstädten steigen die Mietpreise seit Jahren kontinuierlich an.", en:"In many big cities, rental prices have been continuously rising for years."},
+    {de:"Besonders junge Familien haben es dadurch zunehmend schwer, eine passende Wohnung zu finden.", en:"Young families in particular are finding it increasingly difficult to find a suitable apartment."},
+    {de:"Manche Städte versuchen deshalb, mit neuen Gesetzen die Mietpreise zu begrenzen.", en:"Some cities are therefore trying to limit rental prices with new laws."},
+  ]},
+  {c:"topic", level:"B2", lines:[
+    {de:"Die Nutzung sozialer Medien hat die Art, wie junge Menschen miteinander kommunizieren, stark verändert.", en:"The use of social media has greatly changed the way young people communicate with each other."},
+    {de:"Studien zeigen jedoch, dass übermäßige Nutzung auch negative Auswirkungen auf die psychische Gesundheit haben kann.", en:"Studies show, however, that excessive use can also have negative effects on mental health."},
+    {de:"Experten empfehlen deshalb bewusste Pausen von digitalen Geräten, besonders bei Jugendlichen.", en:"Experts therefore recommend conscious breaks from digital devices, especially for teenagers."},
+  ]},
+  {c:"topic", level:"A2", lines:[
+    {de:"Viele Menschen fahren heute lieber mit dem Fahrrad als mit dem Auto.", en:"Many people today prefer to ride a bicycle rather than drive a car."},
+    {de:"Das ist gut für die Gesundheit und auch gut für die Umwelt.", en:"That's good for health and also good for the environment."},
+    {de:"Deshalb bauen viele Städte inzwischen mehr Radwege.", en:"That's why many cities are now building more bike paths."},
+  ]},
+  {c:"topic", level:"C1", lines:[
+    {de:"Die fortschreitende Digitalisierung des Gesundheitswesens verspricht effizientere Abläufe, wirft jedoch auch neue Datenschutzfragen auf.", en:"The advancing digitalization of healthcare promises more efficient processes, but also raises new data protection questions."},
+    {de:"Elektronische Patientenakten sollen Ärzten künftig einen schnelleren Zugriff auf wichtige Informationen ermöglichen.", en:"Electronic patient records are meant to give doctors faster access to important information in the future."},
+    {de:"Kritiker mahnen jedoch strengere Sicherheitsstandards an, um einen Missbrauch sensibler Daten zu verhindern.", en:"Critics, however, call for stricter security standards to prevent misuse of sensitive data."},
+  ]},
+  {c:"topic", level:"B1", lines:[
+    {de:"Immer mehr Schulen führen Projekte ein, bei denen Schüler selbst kleine Firmen gründen.", en:"More and more schools are introducing projects where students found their own small companies."},
+    {de:"Dabei lernen die Jugendlichen, wie man ein Produkt entwickelt und erfolgreich verkauft.", en:"In doing so, the teenagers learn how to develop a product and sell it successfully."},
+    {de:"Viele Lehrer berichten, dass solche Projekte das unternehmerische Denken stark fördern.", en:"Many teachers report that such projects strongly promote entrepreneurial thinking."},
+  ]},
+  {c:"topic", level:"B2", lines:[
+    {de:"Der Anteil älterer Menschen an der Gesamtbevölkerung wächst in vielen europäischen Ländern stetig.", en:"The proportion of older people in the total population is steadily growing in many European countries."},
+    {de:"Dies stellt die Sozialsysteme vor neue finanzielle und organisatorische Herausforderungen.", en:"This confronts social systems with new financial and organizational challenges."},
+    {de:"Politiker diskutieren deshalb verschiedene Reformen, um die Rentensysteme langfristig zu sichern.", en:"Politicians are therefore discussing various reforms to secure pension systems in the long term."},
+  ]},
+  {c:"topic", level:"A2", lines:[
+    {de:"Viele Menschen kaufen heute weniger neue Kleidung als früher.", en:"Many people today buy less new clothing than before."},
+    {de:"Stattdessen kaufen sie gebrauchte Kleidung oder tauschen mit Freunden.", en:"Instead, they buy used clothing or trade with friends."},
+    {de:"Das spart Geld und ist außerdem besser für die Umwelt.", en:"This saves money and is also better for the environment."},
+  ]},
+  {c:"topic", level:"B1", lines:[
+    {de:"Immer mehr Firmen bieten ihren Mitarbeitern die Möglichkeit, in Teilzeit zu arbeiten.", en:"More and more companies offer their employees the option to work part-time."},
+    {de:"Das soll dabei helfen, Beruf und Familie besser miteinander zu vereinbaren.", en:"This is meant to help balance work and family life better."},
+    {de:"Trotzdem entscheiden sich noch immer mehr Frauen als Männer für diese Option.", en:"Nevertheless, still more women than men choose this option."},
+  ]},
+  {c:"topic", level:"C1", lines:[
+    {de:"Die Debatte um ein bedingungsloses Grundeinkommen gewinnt angesichts wachsender Automatisierung zunehmend an Bedeutung.", en:"The debate about an unconditional basic income is gaining increasing importance in light of growing automation."},
+    {de:"Befürworter argumentieren, dass ein solches Modell soziale Sicherheit in Zeiten wirtschaftlichen Wandels gewährleisten könnte.", en:"Proponents argue that such a model could guarantee social security in times of economic change."},
+    {de:"Gegner befürchten hingegen erhebliche finanzielle Belastungen für den Staatshaushalt.", en:"Opponents, on the other hand, fear considerable financial burdens on the state budget."},
+  ]},
+  {c:"topic", level:"B2", lines:[
+    {de:"Der weltweite Wasserverbrauch steigt aufgrund wachsender Bevölkerung und Industrialisierung stetig an.", en:"Global water consumption is steadily increasing due to a growing population and industrialization."},
+    {de:"In manchen Regionen führt das bereits zu ernsten Konflikten um die begrenzten Wasserressourcen.", en:"In some regions, this is already leading to serious conflicts over limited water resources."},
+    {de:"Experten fordern deshalb einen bewussteren und effizienteren Umgang mit dieser wertvollen Ressource.", en:"Experts are therefore calling for a more conscious and efficient use of this valuable resource."},
+  ]},
+  {c:"topic", level:"B1", lines:[
+    {de:"Viele Städte testen zurzeit kostenlose öffentliche Verkehrsmittel für alle Bürger.", en:"Many cities are currently testing free public transportation for all citizens."},
+    {de:"Ziel ist es, mehr Menschen dazu zu bringen, ihr Auto stehen zu lassen.", en:"The goal is to encourage more people to leave their car at home."},
+    {de:"Erste Ergebnisse zeigen tatsächlich weniger Verkehr und sauberere Luft in den Innenstädten.", en:"Initial results actually show less traffic and cleaner air in city centers."},
+  ]},
+  {c:"topic", level:"B2", lines:[
+    {de:"Immer mehr Verbraucher interessieren sich für die Herkunft und Herstellung ihrer Lebensmittel.", en:"More and more consumers are interested in the origin and production of their food."},
+    {de:"Transparente Kennzeichnungen sollen es einfacher machen, bewusste Kaufentscheidungen zu treffen.", en:"Transparent labeling is meant to make it easier to make conscious purchasing decisions."},
+    {de:"Kritiker bemängeln jedoch, dass viele Kennzeichnungen für Verbraucher schwer verständlich sind.", en:"Critics, however, complain that many labels are hard for consumers to understand."},
+  ]},
+  {c:"topic", level:"A2", lines:[
+    {de:"Viele Kinder lernen heute schon in der Schule, wie man mit Geld umgeht.", en:"Many children today already learn in school how to handle money."},
+    {de:"Sie lernen, wie man spart und wofür man Geld sinnvoll ausgibt.", en:"They learn how to save and what to sensibly spend money on."},
+    {de:"Lehrer finden, dass dieses Wissen für die Zukunft sehr wichtig ist.", en:"Teachers think this knowledge is very important for the future."},
+  ]},
+  {c:"topic", level:"B1", lines:[
+    {de:"Der Onlinehandel wächst seit Jahren stärker als der klassische Handel in Geschäften.", en:"Online retail has been growing faster than traditional store retail for years."},
+    {de:"Viele kleine Läden in Innenstädten haben deshalb finanzielle Schwierigkeiten.", en:"Many small shops in city centers therefore have financial difficulties."},
+    {de:"Manche Städte versuchen, mit besonderen Veranstaltungen mehr Kunden in die Innenstadt zu locken.", en:"Some cities are trying to attract more customers to the city center with special events."},
+  ]},
+  {c:"topic", level:"C1", lines:[
+    {de:"Die zunehmende Verbreitung von Desinformation im Internet stellt demokratische Gesellschaften vor erhebliche Herausforderungen.", en:"The increasing spread of disinformation on the internet poses considerable challenges for democratic societies."},
+    {de:"Besonders in sozialen Netzwerken verbreiten sich falsche Informationen oft schneller als korrigierende Fakten.", en:"Especially on social networks, false information often spreads faster than corrective facts."},
+    {de:"Experten fordern deshalb eine stärkere Förderung von Medienkompetenz bereits im schulischen Unterricht.", en:"Experts therefore call for stronger promotion of media literacy already in school education."},
+  ]},
+  {c:"topic", level:"B2", lines:[
+    {de:"Immer mehr Firmen bieten ihren Angestellten die Möglichkeit, ein sogenanntes Sabbatical zu nehmen.", en:"More and more companies offer their employees the option to take a so-called sabbatical."},
+    {de:"Dabei pausieren Arbeitnehmer für mehrere Monate, ohne ihre Stelle zu verlieren.", en:"Employees take a break for several months without losing their position."},
+    {de:"Viele nutzen diese Zeit zum Reisen oder um sich neuen persönlichen Projekten zu widmen.", en:"Many use this time to travel or to dedicate themselves to new personal projects."},
+  ]},
+  {c:"topic", level:"B1", lines:[
+    {de:"Immer mehr Restaurants bieten inzwischen auch vegane Gerichte auf ihrer Speisekarte an.", en:"More and more restaurants now also offer vegan dishes on their menu."},
+    {de:"Das liegt daran, dass sich immer mehr Menschen für eine pflanzliche Ernährung interessieren.", en:"This is because more and more people are interested in a plant-based diet."},
+    {de:"Auch Fleischesser probieren solche Gerichte inzwischen gerne aus Neugier aus.", en:"Even meat-eaters now like to try such dishes out of curiosity."},
+  ]},
+  {c:"topic", level:"B2", lines:[
+    {de:"Die Zahl der Menschen, die von zu Hause aus arbeiten, ist in den letzten Jahren stark gestiegen.", en:"The number of people working from home has risen sharply in recent years."},
+    {de:"Dadurch verändert sich auch die Nachfrage nach Büroflächen in den großen Städten.", en:"As a result, demand for office space in major cities is also changing."},
+    {de:"Manche Unternehmen wandeln nicht mehr benötigte Büros bereits in Wohnungen um.", en:"Some companies are already converting no-longer-needed offices into apartments."},
+  ]},
+  {c:"topic", level:"A2", lines:[
+    {de:"Viele Menschen trinken heute weniger Kaffee als noch vor zehn Jahren.", en:"Many people today drink less coffee than ten years ago."},
+    {de:"Stattdessen trinken sie öfter Tee oder andere gesunde Getränke.", en:"Instead, they drink tea or other healthy beverages more often."},
+    {de:"Ärzte sagen, dass zu viel Kaffee nicht gut für den Schlaf ist.", en:"Doctors say that too much coffee is not good for sleep."},
+  ]},
+  {c:"topic", level:"C1", lines:[
+    {de:"Die fortschreitende Automatisierung industrieller Produktionsprozesse verändert die Anforderungen an zukünftige Arbeitskräfte grundlegend.", en:"The advancing automation of industrial production processes is fundamentally changing the requirements for future workers."},
+    {de:"Insbesondere manuelle Tätigkeiten werden zunehmend durch spezialisierte Maschinen ersetzt.", en:"In particular, manual tasks are increasingly being replaced by specialized machines."},
+    {de:"Bildungseinrichtungen stehen daher vor der Aufgabe, ihre Ausbildungsprogramme entsprechend anzupassen.", en:"Educational institutions therefore face the task of adapting their training programs accordingly."},
+  ]},
+  {c:"topic", level:"B1", lines:[
+    {de:"Immer mehr Menschen achten darauf, weniger Plastikmüll im Alltag zu produzieren.", en:"More and more people are paying attention to producing less plastic waste in everyday life."},
+    {de:"Sie benutzen zum Beispiel wiederverwendbare Taschen statt Plastiktüten beim Einkaufen.", en:"For example, they use reusable bags instead of plastic bags when shopping."},
+    {de:"Auch viele Supermärkte bieten inzwischen unverpackte Produkte zum Selbstabfüllen an.", en:"Many supermarkets also now offer unpackaged products for self-filling."},
+  ]},
+  {c:"topic", level:"B2", lines:[
+    {de:"Der Tourismus in vielen beliebten Städten führt zunehmend zu Spannungen mit der einheimischen Bevölkerung.", en:"Tourism in many popular cities is increasingly leading to tensions with the local population."},
+    {de:"Steigende Mietpreise und überfüllte Straßen gehören zu den häufigsten Beschwerden der Anwohner.", en:"Rising rents and overcrowded streets are among the most common complaints of residents."},
+    {de:"Einige Städte diskutieren deshalb über eine Begrenzung der jährlichen Besucherzahlen.", en:"Some cities are therefore discussing a limit on the annual number of visitors."},
+  ]},
+  {c:"topic", level:"B1", lines:[
+    {de:"Immer mehr Eltern erlauben ihren Kindern erst später ein eigenes Smartphone.", en:"More and more parents only allow their children to have their own smartphone later."},
+    {de:"Sie befürchten, dass zu viel Bildschirmzeit der Entwicklung schaden könnte.", en:"They fear that too much screen time could harm development."},
+    {de:"Manche Schulen verbieten deshalb inzwischen komplett die Nutzung von Handys im Unterricht.", en:"Some schools therefore now completely ban the use of phones in class."},
+  ]},
+  {c:"topic", level:"C1", lines:[
+    {de:"Die globale Erwärmung führt in vielen Küstenregionen bereits heute zu einem messbaren Anstieg des Meeresspiegels.", en:"Global warming is already leading to a measurable rise in sea level in many coastal regions today."},
+    {de:"Betroffene Länder investieren zunehmend in Deiche und andere Schutzmaßnahmen gegen Überflutungen.", en:"Affected countries are increasingly investing in dikes and other protective measures against flooding."},
+    {de:"Trotzdem warnen Wissenschaftler, dass langfristig ganze Küstenstädte umsiedeln müssen könnten.", en:"Nevertheless, scientists warn that entire coastal cities might have to relocate in the long term."},
+  ]},
+  {c:"topic", level:"B2", lines:[
+    {de:"Immer mehr Universitäten bieten mittlerweile komplette Studiengänge online an.", en:"More and more universities now offer complete degree programs online."},
+    {de:"Das ermöglicht auch Berufstätigen, neben ihrer Arbeit ein Studium zu absolvieren.", en:"This also allows working people to complete a degree alongside their job."},
+    {de:"Kritiker bemängeln jedoch, dass der persönliche Austausch zwischen Studierenden dabei oft zu kurz kommt.", en:"Critics, however, complain that personal exchange between students often falls short in this format."},
+  ]},
+  {c:"topic", level:"A2", lines:[
+    {de:"Immer mehr Familien fahren im Urlaub lieber mit dem Zug statt mit dem Flugzeug.", en:"More and more families prefer to travel by train rather than by plane on vacation."},
+    {de:"Das ist zwar oft langsamer, aber viele finden es entspannter.", en:"It's often slower, but many find it more relaxing."},
+    {de:"Außerdem ist die Zugfahrt meistens besser für die Umwelt.", en:"Also, the train journey is usually better for the environment."},
+  ]},
 ];
 PASSAGES.forEach((p,i)=>p.id='p'+i);
 
