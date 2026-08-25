@@ -78,6 +78,17 @@
   [data-theme="dark"] .warn{background:#3a3315;color:#ffe08a;}
   .toggle-link{color:var(--accent2);cursor:pointer;text-decoration:underline;font-size:.85rem;}
   textarea.freestyle-out{width:100%;min-height:90px;background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:8px;font-size:1rem;}
+  .tap-word{cursor:pointer;border-bottom:1px dotted var(--accent2);}
+  .tap-word:hover{background:var(--chip);}
+  .word-popover{position:fixed;left:0;right:0;bottom:0;max-height:65vh;overflow-y:auto;background:var(--panel);border-top:1px solid var(--border);box-shadow:0 -6px 24px rgba(0,0,0,.18);padding:18px 18px 24px;z-index:1000;border-radius:18px 18px 0 0;}
+  .word-popover-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+  .word-popover-title{font-size:1.3rem;font-weight:700;}
+  .dict-wortart{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--accent2);background:var(--chip);border-radius:6px;padding:3px 8px;margin:10px 0 4px;}
+  .dict-meanings{padding-left:20px;margin:6px 0;}
+  .dict-meanings li{margin-bottom:10px;line-height:1.5;}
+  .dict-example{color:var(--muted);font-size:.92em;margin-top:3px;}
+  .dict-label{color:var(--accent2);font-size:.85em;}
+  #dictInput{flex:1;min-width:160px;padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:var(--panel);color:var(--text);font-size:1rem;}
 </style>
 </head>
 <body>
@@ -106,6 +117,7 @@
     <div class="controls">
       <button class="primary" id="startShadowBtn">🗣️ Schatten üben</button>
       <button class="primary" id="startListenBtn">🎧 Hören üben</button>
+      <button class="primary" id="startDictBtn">📖 Wörterbuch</button>
     </div>
   </div>
 
@@ -170,6 +182,18 @@
         </div>
         <div id="listenTranscriptBox" style="display:none;margin-top:10px;white-space:pre-wrap;line-height:1.6;color:var(--muted);"></div>
       </div>
+    </div>
+  </div>
+
+  <div class="card" id="dictCard" style="display:none;">
+    <div class="tag">Wörterbuch · Deutsch–Deutsch</div>
+    <div class="controls">
+      <input type="text" id="dictInput" placeholder="Wort eingeben…">
+      <button class="primary" id="dictSearchBtn">🔍 Suchen</button>
+    </div>
+    <div id="dictResult" style="margin-top:14px;"></div>
+    <div class="controls" style="margin-top:14px;">
+      <button class="ghost" id="dictBackBtn">↩ Zurück zur Auswahl</button>
     </div>
   </div>
 
@@ -250,6 +274,14 @@
   </details>
 
   <div class="footer-note">Läuft komplett lokal in deinem Browser · Chrome/Edge empfohlen für Spracherkennung</div>
+</div>
+
+<div class="word-popover" id="wordPopover" style="display:none;">
+  <div class="word-popover-head">
+    <div class="word-popover-title" id="wordPopoverTitle"></div>
+    <button class="ghost" id="wordPopoverClose">✕</button>
+  </div>
+  <div id="wordPopoverBody"></div>
 </div>
 
 <script>
@@ -480,6 +512,7 @@ function defaultState(){
     leitner:{}, // id -> {box, due, history:[]}
     weakWords:{}, // normalized word -> {box, due, misses, example, exampleEn}
     podcasts:{}, // episode id -> {box, due, bestScore}
+    dictCache:{}, // lowercased word -> parsed Wiktionary lookup result
     streak:{practiceDates:[], currentStreak:0, longestStreak:0},
     xp:0, badges:[],
     settings:{rate:0.85, pause:1.2, sessionLen:6, category:'all', hideText:false, recordAudio:false, theme:'light', voiceName:''},
@@ -524,7 +557,10 @@ const els = {
   listenQABlock:$('listenQABlock'), listenQProgress:$('listenQProgress'), listenQText:$('listenQText'),
   listenQPlayBtn:$('listenQPlayBtn'), listenQAnswerBtn:$('listenQAnswerBtn'), listenQStatus:$('listenQStatus'), listenQFeedback:$('listenQFeedback'),
   listenSummary:$('listenSummary'), listenScoreLine:$('listenScoreLine'), listenSummaryMsg:$('listenSummaryMsg'),
-  listenTranscriptBtn:$('listenTranscriptBtn'), listenTranscriptBox:$('listenTranscriptBox'), listenAgainBtn:$('listenAgainBtn')
+  listenTranscriptBtn:$('listenTranscriptBtn'), listenTranscriptBox:$('listenTranscriptBox'), listenAgainBtn:$('listenAgainBtn'),
+  startDictBtn:$('startDictBtn'), dictCard:$('dictCard'), dictInput:$('dictInput'), dictSearchBtn:$('dictSearchBtn'),
+  dictResult:$('dictResult'), dictBackBtn:$('dictBackBtn'),
+  wordPopover:$('wordPopover'), wordPopoverTitle:$('wordPopoverTitle'), wordPopoverClose:$('wordPopoverClose'), wordPopoverBody:$('wordPopoverBody')
 };
 
 /* ---------------- Theme ---------------- */
@@ -689,7 +725,7 @@ function wordOfTheDay(){
   let seed = 0;
   for(let i=0;i<today.length;i++) seed += today.charCodeAt(i);
   const idiom = IDIOMS[seed % IDIOMS.length];
-  els.wotdText.innerHTML = '<b>'+idiom.de+'</b> — ' + idiom.en;
+  els.wotdText.innerHTML = '<b>'+tapify(idiom.de)+'</b> — ' + idiom.en;
 }
 wordOfTheDay();
 
@@ -889,7 +925,6 @@ let session = {queue:[], idx:-1, current:null, roundCount:0, recognition:null, m
 function setStatus(text, live){
   els.statusLine.innerHTML = (live? '<span class="dot live"></span>' : '<span class="dot"></span>') + ' ' + text;
 }
-function escapeRegExp(s){ return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
 // Returns the array of German lines to speak/score for the current round:
 // 3 lines for a normal passage, 1 for a bonus tongue-twister or a weak-word review.
 function currentTargetLines(){
@@ -917,17 +952,17 @@ function showSentenceCard(){
   if(session.mode==='word'){
     const w = session.current;
     els.sentenceTag.textContent = '🎯 Wort zum Üben: „' + w.word + '“';
-    els.sentenceText.innerHTML = state.settings.hideText ? '🔊 Hör zu…' : w.example.replace(new RegExp('('+escapeRegExp(w.word)+')','i'), '<b>$1</b>');
+    els.sentenceText.innerHTML = state.settings.hideText ? '🔊 Hör zu…' : boldWordInTapified(tapify(w.example), w.word);
     els.translationText.textContent = w.exampleEn;
   } else if(session.isBonus){
     els.sentenceTag.textContent = '🌟 Bonus-Zungenbrecher';
-    els.sentenceText.innerHTML = state.settings.hideText ? '🔊 Hör zu…' : session.current;
+    els.sentenceText.innerHTML = state.settings.hideText ? '🔊 Hör zu…' : tapify(session.current);
     els.translationText.textContent = 'Nur zum Spaß — beeinflusst deine Statistik nicht.';
   } else {
     const p = session.current;
     const catNames = {talk:'Alltagsgespräch', story:'Erzählung', topic:'Aktuelles Thema'};
     els.sentenceTag.textContent = (catNames[p.c]||p.c) + ' · ' + p.level;
-    els.sentenceText.innerHTML = state.settings.hideText ? '🔊 Hör zu…' : p.lines.map(l=>l.de).join('<br>');
+    els.sentenceText.innerHTML = state.settings.hideText ? '🔊 Hör zu…' : p.lines.map(l=>tapify(l.de)).join('<br>');
     els.translationText.innerHTML = p.lines.map(l=>l.en).join('<br>');
   }
   document.getElementById('practiceCard').querySelector('.sentence').classList.remove('hidden-text');
@@ -1002,6 +1037,7 @@ function showModeCard(){
   els.modeCard.style.display='block';
   els.practiceCard.style.display='none';
   els.listenCard.style.display='none';
+  els.dictCard.style.display='none';
 }
 els.startShadowBtn.onclick = ()=>{
   els.modeCard.style.display='none';
@@ -1020,9 +1056,9 @@ els.skipBtn.onclick = ()=>{
 };
 els.revealBtn.onclick = ()=>{
   if(session.mode==='word'){
-    els.sentenceText.innerHTML = session.current.example.replace(new RegExp('('+escapeRegExp(session.current.word)+')','i'), '<b>$1</b>');
+    els.sentenceText.innerHTML = boldWordInTapified(tapify(session.current.example), session.current.word);
   } else {
-    els.sentenceText.innerHTML = session.isBonus ? session.current : session.current.lines.map(l=>l.de).join('<br>');
+    els.sentenceText.innerHTML = session.isBonus ? tapify(session.current) : session.current.lines.map(l=>tapify(l.de)).join('<br>');
   }
   els.revealBtn.style.display='none';
 };
@@ -1288,7 +1324,7 @@ function nextListenQuestion(){
   }
   const q = ep.questions[listenSession.qIdx];
   els.listenQProgress.textContent = 'Frage ' + (listenSession.qIdx+1) + ' von ' + ep.questions.length;
-  els.listenQText.textContent = q.q;
+  els.listenQText.innerHTML = tapify(q.q);
   els.listenQFeedback.textContent = '';
   els.listenQPlayBtn.style.display = 'inline-block';
   els.listenQAnswerBtn.style.display='none';
@@ -1353,7 +1389,7 @@ function finishListenSession(){
   els.listenScoreLine.className = 'score ' + (score>=85?'good':score>=50?'mid':'bad');
   els.listenSummaryMsg.textContent = score>=85 ? 'Ausgezeichnetes Hörverständnis! 🎉' : score>=50 ? 'Gut gemacht, weiter so.' : 'Diese Folge kommt bald wieder — dranbleiben!';
   els.listenTranscriptBox.style.display='none';
-  els.listenTranscriptBox.textContent = ep.paragraphs.join('\n\n');
+  els.listenTranscriptBox.innerHTML = ep.paragraphs.map(p=>tapify(p)).join('\n\n');
 
   const card = state.podcasts[ep.id] || {box:0, due:todayStr(), bestScore:0};
   if(score>=85) card.box = Math.min((card.box||0)+1, BOX_INTERVALS.length-1);
@@ -1373,10 +1409,221 @@ els.listenTranscriptBtn.onclick = ()=>{
   els.listenTranscriptBox.style.display = els.listenTranscriptBox.style.display==='none' ? 'block' : 'none';
 };
 
+/* ---------------- German-German dictionary (live Wiktionary lookup) ---------------- */
+const WIKT_API = 'https://de.wiktionary.org/w/api.php';
+
+function escapeHtmlPlain(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+// Wraps German word tokens in clickable spans; leaves punctuation/whitespace untouched.
+function tapify(text){
+  return escapeHtmlPlain(text).replace(/([A-Za-zÀ-ÖØ-öø-ÿ]+)/g, w => '<span class="tap-word">'+w+'</span>');
+}
+// Bolds one already-tapified word's <span> in place (used to highlight a weak word
+// inside its example sentence without breaking its click-to-define behavior).
+function boldWordInTapified(html, word){
+  const re = new RegExp('(<span class="tap-word">'+word.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'</span>)', 'i');
+  return html.replace(re, '<b>$1</b>');
+}
+
+async function fetchWiktionaryPage(title){
+  const url = WIKT_API + '?action=query&titles=' + encodeURIComponent(title) +
+    '&prop=revisions&rvprop=content&rvslots=main&format=json&formatversion=2&origin=*';
+  const res = await fetch(url);
+  if(!res.ok) throw new Error('network');
+  const data = await res.json();
+  const page = data.query.pages[0];
+  if(!page || page.missing) return null;
+  if(!page.revisions) return null;
+  return page.revisions[0].slots.main.content;
+}
+// Isolates the "== Word ({{Sprache|Deutsch}}) ==" section from a multi-language page.
+function extractGermanSection(wikitext){
+  const marker = '{{Sprache|Deutsch}}';
+  const idx = wikitext.indexOf(marker);
+  if(idx===-1) return null;
+  let headingStart = wikitext.lastIndexOf('\n==', idx);
+  headingStart = headingStart===-1 ? 0 : headingStart+1;
+  const rest = wikitext.slice(idx);
+  const nextRel = rest.search(/\n==[^=]/);
+  const sectionEnd = nextRel===-1 ? wikitext.length : idx+nextRel;
+  return wikitext.slice(headingStart, sectionEnd);
+}
+// Splits a German section into one block per part of speech (Substantiv/Verb/...).
+function splitWortarten(section){
+  const re = /===\s*\{\{Wortart\|([^|}]*)/g;
+  const indices = [];
+  let m;
+  while((m = re.exec(section))) indices.push({pos:m.index, wortart:m[1]});
+  if(indices.length===0) return [{wortart:'', text:section}];
+  const blocks = [];
+  for(let i=0;i<indices.length;i++){
+    const start = indices[i].pos;
+    const end = i+1<indices.length ? indices[i+1].pos : section.length;
+    blocks.push({wortart:indices[i].wortart, text:section.slice(start,end)});
+  }
+  return blocks;
+}
+// Reads a "{{Bedeutungen}}"/"{{Beispiele}}" numbered list: lines like ":[1] text".
+function extractNumberedList(sectionText, templateName){
+  const idx = sectionText.indexOf('{{'+templateName+'}}');
+  if(idx===-1) return [];
+  const lines = sectionText.slice(idx).split('\n').slice(1);
+  const items = [];
+  for(const line of lines){
+    const m = line.match(/^:\[(\d+[a-z]?)\]\s*(.*)$/);
+    if(m){ items.push({num:m[1], raw:m[2]}); continue; }
+    if(items.length>0) break;
+  }
+  return items;
+}
+function findGrundform(sectionText){
+  const m = sectionText.match(/\{\{Grundformverweis\s*\w*\|([^}|]+)/);
+  return m ? m[1].trim() : null;
+}
+// Strips MediaWiki markup (refs, templates, links) down to clean, safe display HTML,
+// pulling out {{K|...}} usage labels (e.g. "ugs.", "veraltet") separately.
+function cleanWikitext(raw){
+  let t = raw;
+  t = t.replace(/<ref[^>]*\/>/g, '');
+  t = t.replace(/<ref[^>]*>[\s\S]*?<\/ref>/g, '');
+  const labels = [];
+  t = t.replace(/\{\{K\|([^}]*)\}\}/g, (m, inner)=>{
+    inner.split('|').forEach(p=>{
+      p = p.trim();
+      if(p && p.indexOf('=')===-1){
+        p = p.replace(/\[\[[^\]|]*\|([^\]]*)\]\]/g, '$1').replace(/\[\[([^\]]*)\]\]/g, '$1');
+        labels.push(p);
+      }
+    });
+    return '';
+  });
+  t = t.replace(/\[\[[^\]|]*\|([^\]]*)\]\]/g, '$1');
+  t = t.replace(/\[\[([^\]]*)\]\]/g, '$1');
+  t = t.replace(/\{\{[^{}]*\}\}/g, '');
+  t = t.replace(/\{\{[^{}]*\}\}/g, '');
+  t = t.replace(/\s{2,}/g, ' ').trim();
+  t = t.replace(/^[,;:]\s*/, '');
+  let html = escapeHtmlPlain(t);
+  html = html.replace(/'''(.*?)'''/g, '<b>$1</b>');
+  html = html.replace(/''(.*?)''/g, '<i>$1</i>');
+  return { html, labels };
+}
+async function lookupWordRaw(word){
+  const wikitext = await fetchWiktionaryPage(word);
+  if(!wikitext) return {found:false};
+  const section = extractGermanSection(wikitext);
+  if(!section) return {found:false};
+  const blocks = splitWortarten(section);
+  const entries = [];
+  let grundformRef = null;
+  for(const block of blocks){
+    const meanings = extractNumberedList(block.text, 'Bedeutungen').map(it=>{
+      const c = cleanWikitext(it.raw); return {num:it.num, html:c.html, labels:c.labels};
+    });
+    const examples = extractNumberedList(block.text, 'Beispiele').map(it=>{
+      const c = cleanWikitext(it.raw); return {num:it.num, html:c.html};
+    });
+    if(meanings.length){
+      entries.push({wortart: block.wortart, meanings, examples});
+    } else if(!grundformRef){
+      grundformRef = findGrundform(block.text);
+    }
+  }
+  if(entries.length===0 && grundformRef) return {found:false, redirectTo: grundformRef};
+  if(entries.length===0) return {found:false};
+  return {found:true, entries};
+}
+async function lookupWord(word){
+  const key = word.toLowerCase();
+  if(state.dictCache[key]) return state.dictCache[key];
+  let result;
+  try{
+    result = await lookupWordRaw(word);
+    if(!result.found && result.redirectTo){
+      const base = await lookupWordRaw(result.redirectTo);
+      result = base.found ? Object.assign({}, base, {inflectedFrom: word, baseForm: result.redirectTo}) : {found:false};
+    }
+    if(!result.found){
+      // Sentence-initial capitalization or a lowercase click on a noun can mismatch
+      // the dictionary's canonical casing — retry with the case toggled once.
+      const alt = word[0]===word[0].toUpperCase() ? word[0].toLowerCase()+word.slice(1) : word[0].toUpperCase()+word.slice(1);
+      if(alt!==word){
+        let r2 = await lookupWordRaw(alt);
+        if(!r2.found && r2.redirectTo){
+          const base2 = await lookupWordRaw(r2.redirectTo);
+          if(base2.found) r2 = Object.assign({}, base2, {inflectedFrom: alt, baseForm: r2.redirectTo});
+        }
+        if(r2.found) result = r2;
+      }
+    }
+  }catch(e){
+    result = {found:false, error:true};
+  }
+  state.dictCache[key] = result;
+  saveState();
+  return result;
+}
+function renderDictResult(container, word, result){
+  if(result.error){
+    container.innerHTML = '<div class="feedback-msg">⚠ Netzwerkfehler — prüfe deine Internetverbindung und versuche es erneut.</div>';
+    return;
+  }
+  if(!result.found){
+    container.innerHTML = '<div class="feedback-msg">Kein Eintrag für „'+escapeHtmlPlain(word)+'“ gefunden. Versuche die Grundform (z. B. Singular oder Infinitiv).</div>';
+    return;
+  }
+  let html = '';
+  if(result.inflectedFrom){
+    html += '<div class="feedback-msg">Flektierte Form von <b>'+escapeHtmlPlain(result.baseForm)+'</b>:</div>';
+  }
+  result.entries.forEach(entry=>{
+    if(entry.wortart) html += '<div class="dict-wortart">'+escapeHtmlPlain(entry.wortart)+'</div>';
+    html += '<ol class="dict-meanings">';
+    entry.meanings.forEach(m=>{
+      const labelStr = m.labels.length ? '<span class="dict-label">('+m.labels.map(escapeHtmlPlain).join(', ')+')</span> ' : '';
+      const ex = entry.examples.filter(e=>e.num===m.num);
+      html += '<li>'+labelStr+m.html;
+      if(ex.length) html += '<div class="dict-example">„'+ex[0].html+'“</div>';
+      html += '</li>';
+    });
+    html += '</ol>';
+  });
+  container.innerHTML = html;
+}
+
+function showWordPopover(word){
+  els.wordPopover.style.display='block';
+  els.wordPopoverTitle.textContent = word;
+  els.wordPopoverBody.innerHTML = '<div class="status"><span class="dot live"></span> Suche „'+escapeHtmlPlain(word)+'“…</div>';
+  lookupWord(word).then(result=>{ renderDictResult(els.wordPopoverBody, word, result); });
+}
+els.wordPopoverClose.onclick = ()=>{ els.wordPopover.style.display='none'; };
+document.addEventListener('click', (e)=>{
+  const span = e.target.closest ? e.target.closest('.tap-word') : null;
+  if(!span) return;
+  showWordPopover(span.textContent);
+});
+
+els.startDictBtn.onclick = ()=>{
+  els.modeCard.style.display='none';
+  els.dictCard.style.display='block';
+  els.dictResult.innerHTML='';
+  els.dictInput.value='';
+  els.dictInput.focus();
+};
+els.dictBackBtn.onclick = showModeCard;
+function runDictSearch(){
+  const w = els.dictInput.value.trim();
+  if(!w) return;
+  els.dictResult.innerHTML = '<div class="status"><span class="dot live"></span> Suche…</div>';
+  lookupWord(w).then(result=>{ renderDictResult(els.dictResult, w, result); });
+}
+els.dictSearchBtn.onclick = runDictSearch;
+els.dictInput.addEventListener('keydown', (e)=>{ if(e.key==='Enter') runDictSearch(); });
+
 /* ---------------- Freestyle mode ---------------- */
 let freestyleIdx = Math.floor(Math.random()*FREESTYLE_PROMPTS.length);
 let freestyleCurrent = FREESTYLE_PROMPTS[freestyleIdx];
-els.freestylePrompt.textContent = freestyleCurrent;
+els.freestylePrompt.innerHTML = tapify(freestyleCurrent);
 els.freestyleAskBtn.onclick = ()=>{
   els.freestyleStatus.textContent='🔊 Frage wird gestellt…';
   speakSmart(freestyleCurrent, 'audio/fp'+freestyleIdx+'.mp3', 0.9, ()=> els.freestyleStatus.textContent='Jetzt antworte frei auf Deutsch.');
@@ -1384,7 +1631,7 @@ els.freestyleAskBtn.onclick = ()=>{
 els.freestyleNextBtn.onclick = ()=>{
   freestyleIdx = Math.floor(Math.random()*FREESTYLE_PROMPTS.length);
   freestyleCurrent = FREESTYLE_PROMPTS[freestyleIdx];
-  els.freestylePrompt.textContent = freestyleCurrent;
+  els.freestylePrompt.innerHTML = tapify(freestyleCurrent);
   els.freestyleTranscript.value='';
   els.freestyleStatus.textContent='';
 };
