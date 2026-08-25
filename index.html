@@ -192,6 +192,10 @@
       <button class="primary" id="dictSearchBtn">🔍 Suchen</button>
     </div>
     <div id="dictResult" style="margin-top:14px;"></div>
+    <details id="dictSimpleListDetails" style="margin-top:14px;">
+      <summary>✓ Alle einfach erklärten Wörter (<span id="dictSimpleListCount">0</span>)</summary>
+      <div id="dictSimpleList" style="margin-top:10px;line-height:2.1;"></div>
+    </details>
     <div class="controls" style="margin-top:14px;">
       <button class="ghost" id="dictBackBtn">↩ Zurück zur Auswahl</button>
     </div>
@@ -560,6 +564,7 @@ const els = {
   listenTranscriptBtn:$('listenTranscriptBtn'), listenTranscriptBox:$('listenTranscriptBox'), listenAgainBtn:$('listenAgainBtn'),
   startDictBtn:$('startDictBtn'), dictCard:$('dictCard'), dictInput:$('dictInput'), dictSearchBtn:$('dictSearchBtn'),
   dictResult:$('dictResult'), dictBackBtn:$('dictBackBtn'),
+  dictSimpleListCount:$('dictSimpleListCount'), dictSimpleList:$('dictSimpleList'),
   wordPopover:$('wordPopover'), wordPopoverTitle:$('wordPopoverTitle'), wordPopoverClose:$('wordPopoverClose'), wordPopoverBody:$('wordPopoverBody')
 };
 
@@ -2773,11 +2778,19 @@ document.addEventListener('click', (e)=>{
   showWordPopover(span.textContent);
 });
 
+function renderSimpleWordList(){
+  const words = Object.keys(SIMPLE_DICT).sort((a,b)=>a.localeCompare(b,'de'));
+  els.dictSimpleListCount.textContent = words.length;
+  els.dictSimpleList.innerHTML = words.map(w=>
+    '<span class="tap-word" style="margin-right:4px;" data-simple-word="'+escapeHtmlPlain(w)+'">'+escapeHtmlPlain(w)+'</span>'
+  ).join(', ');
+}
 els.startDictBtn.onclick = ()=>{
   els.modeCard.style.display='none';
   els.dictCard.style.display='block';
   els.dictResult.innerHTML='';
   els.dictInput.value='';
+  renderSimpleWordList();
   els.dictInput.focus();
 };
 els.dictBackBtn.onclick = showModeCard;
