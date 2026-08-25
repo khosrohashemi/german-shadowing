@@ -1,0 +1,457 @@
+{
+ "passages": [
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Guten Morgen! Ich hätte gern einen Kaffee mit wenig Milch, bitte.",
+     "Good morning! I'd like a coffee with a little milk, please."
+    ],
+    [
+     "Und vielleicht noch ein Stück Kuchen, wenn Sie welchen haben.",
+     "And maybe a piece of cake too, if you have any."
+    ],
+    [
+     "Vielen Dank, das reicht mir völlig.",
+     "Thank you very much, that's plenty for me."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Entschuldigung, könnten Sie mir sagen, wie ich zum Bahnhof komme?",
+     "Excuse me, could you tell me how to get to the train station?"
+    ],
+    [
+     "Ich muss in einer halben Stunde dort sein.",
+     "I need to be there in half an hour."
+    ],
+    [
+     "Super, vielen Dank für Ihre Hilfe!",
+     "Great, thank you very much for your help!"
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Hast du am Wochenende schon etwas vor?",
+     "Do you already have plans for the weekend?"
+    ],
+    [
+     "Ich dachte, wir könnten wandern gehen, wenn das Wetter mitspielt.",
+     "I thought we could go hiking if the weather cooperates."
+    ],
+    [
+     "Das klingt super, ich freue mich schon darauf.",
+     "That sounds great, I'm already looking forward to it."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Es tut mir wirklich leid, dass ich mich verspätet habe.",
+     "I'm really sorry that I'm late."
+    ],
+    [
+     "Der Zug hatte fast eine Stunde Verspätung, das war nicht vorherzusehen.",
+     "The train was almost an hour late, that wasn't foreseeable."
+    ],
+    [
+     "Zum Glück haben wir noch genug Zeit für alles Wichtige.",
+     "Luckily we still have enough time for everything important."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich habe gerade ein kleines Problem mit meinem Computer.",
+     "I just have a small problem with my computer."
+    ],
+    [
+     "Er stürzt jedes Mal ab, wenn ich das Programm öffne.",
+     "It crashes every time I open the program."
+    ],
+    [
+     "Kannst du kurz vorbeikommen und einen Blick darauf werfen?",
+     "Could you come by briefly and take a look at it?"
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B2",
+   "lines": [
+    [
+     "Es geht leider um unseren Termin am Donnerstag.",
+     "It's unfortunately about our appointment on Thursday."
+    ],
+    [
+     "Mir ist kurzfristig etwas Wichtiges dazwischengekommen, das ich nicht verschieben kann.",
+     "Something important has come up unexpectedly that I can't postpone."
+    ],
+    [
+     "Wäre es möglich, den Termin auf Freitagnachmittag zu verlegen?",
+     "Would it be possible to move the appointment to Friday afternoon?"
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B2",
+   "lines": [
+    [
+     "Entschuldigung, ich glaube, hier stimmt etwas mit der Rechnung nicht.",
+     "Excuse me, I think something isn't right with the bill."
+    ],
+    [
+     "Wir haben nur zwei Hauptgerichte bestellt, aber hier stehen drei.",
+     "We only ordered two main courses, but three are listed here."
+    ],
+    [
+     "Könnten Sie das bitte noch einmal überprüfen?",
+     "Could you please check that again?"
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Hallo, wir sind gerade erst in die Wohnung nebenan eingezogen.",
+     "Hello, we just moved into the apartment next door."
+    ],
+    [
+     "Ich wollte mich kurz vorstellen und fragen, ob wir irgendetwas beachten sollten.",
+     "I wanted to introduce myself briefly and ask if there's anything we should be aware of."
+    ],
+    [
+     "Es freut mich sehr, Sie kennenzulernen.",
+     "It's very nice to meet you."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B1",
+   "lines": [
+    [
+     "Als sie aus dem Haus trat, bemerkte sie, dass es angefangen hatte zu regnen.",
+     "As she stepped out of the house, she noticed it had started to rain."
+    ],
+    [
+     "Sie hatte ihren Schirm vergessen und musste schnell zurück ins Haus laufen.",
+     "She had forgotten her umbrella and had to quickly run back inside."
+    ],
+    [
+     "Am Ende kam sie trotzdem pünktlich zur Arbeit.",
+     "In the end, she still made it to work on time."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B1",
+   "lines": [
+    [
+     "Der alte Mann saß jeden Morgen auf derselben Bank im Park.",
+     "The old man sat on the same bench in the park every morning."
+    ],
+    [
+     "Er fütterte die Tauben und beobachtete die Kinder beim Spielen.",
+     "He fed the pigeons and watched the children playing."
+    ],
+    [
+     "Niemand wusste, wie lange er das schon so machte.",
+     "No one knew how long he had been doing this."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B2",
+   "lines": [
+    [
+     "Nach langer Suche fand er endlich den Brief seiner Großmutter.",
+     "After a long search, he finally found his grandmother's letter."
+    ],
+    [
+     "Die Tinte war verblasst, aber die Worte berührten ihn noch genauso tief wie früher.",
+     "The ink had faded, but the words still touched him just as deeply as before."
+    ],
+    [
+     "Er beschloss, den Brief für immer aufzubewahren.",
+     "He decided to keep the letter forever."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "A2",
+   "lines": [
+    [
+     "Die Kinder liefen lachend über die Wiese.",
+     "The children ran laughing across the meadow."
+    ],
+    [
+     "Ihre Eltern saßen im Schatten und schauten ihnen glücklich zu.",
+     "Their parents sat in the shade and watched them happily."
+    ],
+    [
+     "Es war ein ganz gewöhnlicher, aber wunderschöner Nachmittag.",
+     "It was a completely ordinary but beautiful afternoon."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B2",
+   "lines": [
+    [
+     "Erst als der Zug den Bahnhof verließ, erinnerte sie sich an ihren Koffer.",
+     "Only as the train left the station did she remember her suitcase."
+    ],
+    [
+     "Er stand noch immer auf dem Bahnsteig, direkt neben der Bank.",
+     "It was still standing on the platform, right next to the bench."
+    ],
+    [
+     "Zum Glück konnte sie ihn am nächsten Tag am Fundbüro abholen.",
+     "Luckily, she was able to pick it up at the lost-and-found office the next day."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "C1",
+   "lines": [
+    [
+     "In der kleinen Stadt kannte fast jeder jeden.",
+     "In the small town, almost everyone knew everyone."
+    ],
+    [
+     "Neuigkeiten verbreiteten sich schneller, als man sie erzählen konnte.",
+     "News spread faster than you could tell it."
+    ],
+    [
+     "Manchmal wusste man von einem Ereignis, bevor es überhaupt passiert war.",
+     "Sometimes you knew about an event before it had even happened."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B1",
+   "lines": [
+    [
+     "Nach dem Sturm lagen überall Äste und Blätter auf den Straßen.",
+     "After the storm, branches and leaves lay everywhere on the streets."
+    ],
+    [
+     "Die Nachbarn kamen zusammen, um gemeinsam aufzuräumen.",
+     "The neighbors came together to clean up."
+    ],
+    [
+     "Bis zum Abend sah die Straße schon wieder fast normal aus.",
+     "By evening, the street already looked almost normal again."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "C1",
+   "lines": [
+    [
+     "Sie hatte das Gefühl, diesen Ort schon einmal in einem Traum gesehen zu haben.",
+     "She had the feeling she had already seen this place once in a dream."
+    ],
+    [
+     "Jede Ecke wirkte vertraut, obwohl sie noch nie zuvor dort gewesen war.",
+     "Every corner seemed familiar, even though she had never been there before."
+    ],
+    [
+     "Dieses seltsame Gefühl ließ sie den ganzen Tag nicht mehr los.",
+     "This strange feeling stayed with her for the rest of the day."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B1",
+   "lines": [
+    [
+     "Immer mehr Menschen entscheiden sich dafür, mit dem Fahrrad zur Arbeit zu fahren.",
+     "More and more people choose to cycle to work."
+    ],
+    [
+     "Das spart nicht nur Geld, sondern ist auch gut für die Umwelt.",
+     "This not only saves money but is also good for the environment."
+    ],
+    [
+     "Viele Städte bauen deshalb ihre Radwege weiter aus.",
+     "Many cities are therefore continuing to expand their bike paths."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B1",
+   "lines": [
+    [
+     "Die Preise für Lebensmittel sind im letzten Jahr deutlich gestiegen.",
+     "Food prices have risen significantly over the past year."
+    ],
+    [
+     "Viele Familien müssen dadurch genauer auf ihr Budget achten.",
+     "Because of this, many families have to watch their budget more closely."
+    ],
+    [
+     "Experten erwarten, dass sich die Preise erst langsam wieder stabilisieren.",
+     "Experts expect prices to stabilize again only slowly."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B2",
+   "lines": [
+    [
+     "Viele Unternehmen bieten ihren Mitarbeitern inzwischen die Möglichkeit, im Homeoffice zu arbeiten.",
+     "Many companies now offer their employees the option to work from home."
+    ],
+    [
+     "Das schafft mehr Flexibilität, bringt aber auch neue Herausforderungen für die Zusammenarbeit mit sich.",
+     "This creates more flexibility but also brings new challenges for collaboration."
+    ],
+    [
+     "Manche Firmen setzen deshalb auf ein Modell aus Homeoffice und Bürotagen.",
+     "Some companies therefore rely on a model combining home office and office days."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B2",
+   "lines": [
+    [
+     "Der Klimawandel beeinflusst schon heute die Landwirtschaft in vielen Regionen der Welt.",
+     "Climate change is already affecting agriculture in many regions of the world."
+    ],
+    [
+     "Trockenperioden und unvorhersehbares Wetter erschweren die Ernteplanung.",
+     "Droughts and unpredictable weather make harvest planning more difficult."
+    ],
+    [
+     "Forscher arbeiten an Pflanzen, die auch unter diesen Bedingungen wachsen können.",
+     "Researchers are working on plants that can grow even under these conditions."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B1",
+   "lines": [
+    [
+     "Studien zeigen, dass regelmäßige Bewegung einen positiven Einfluss auf die geistige Gesundheit hat.",
+     "Studies show that regular exercise has a positive effect on mental health."
+    ],
+    [
+     "Schon ein kurzer Spaziergang am Tag kann Stress deutlich reduzieren.",
+     "Even a short walk each day can significantly reduce stress."
+    ],
+    [
+     "Trotzdem finden viele Menschen im Alltag kaum Zeit dafür.",
+     "Nevertheless, many people barely find time for it in everyday life."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "C1",
+   "lines": [
+    [
+     "Erneuerbare Energien spielen eine immer wichtigere Rolle in der deutschen Wirtschaft.",
+     "Renewable energy plays an increasingly important role in the German economy."
+    ],
+    [
+     "Windkraft und Solarenergie decken inzwischen einen erheblichen Teil des Strombedarfs.",
+     "Wind and solar power now cover a considerable share of electricity demand."
+    ],
+    [
+     "Die größte Herausforderung bleibt jedoch die Speicherung von überschüssiger Energie.",
+     "The biggest challenge, however, remains storing surplus energy."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "C1",
+   "lines": [
+    [
+     "Künstliche Intelligenz verändert bereits viele Bereiche unseres Alltags.",
+     "Artificial intelligence is already changing many areas of our everyday lives."
+    ],
+    [
+     "Sie hilft nicht nur bei einfachen Aufgaben, sondern übernimmt zunehmend auch komplexe Entscheidungen.",
+     "It not only helps with simple tasks but is increasingly taking on complex decisions too."
+    ],
+    [
+     "Genau deshalb wird die Frage nach klaren ethischen Grenzen immer wichtiger.",
+     "That is precisely why the question of clear ethical boundaries is becoming ever more important."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B2",
+   "lines": [
+    [
+     "Immer mehr Verbraucher achten beim Einkaufen auf Nachhaltigkeit und Umweltschutz.",
+     "More and more consumers pay attention to sustainability and environmental protection when shopping."
+    ],
+    [
+     "Sie bevorzugen Produkte mit weniger Verpackung und kürzeren Transportwegen.",
+     "They prefer products with less packaging and shorter transport distances."
+    ],
+    [
+     "Dieser Trend zwingt auch große Unternehmen, ihre Angebote zu überdenken.",
+     "This trend is also forcing large companies to rethink their offerings."
+    ]
+   ]
+  }
+ ],
+ "twisters": [
+  "Fischers Fritz fischt frische Fische, frische Fische fischt Fischers Fritz.",
+  "Zwischen zwei Zwetschgenzweigen sitzen zwei zwitschernde Schwalben.",
+  "Blaukraut bleibt Blaukraut und Brautkleid bleibt Brautkleid.",
+  "In Ulm und um Ulm und um Ulm herum.",
+  "Acht alte Ameisen aßen am Abend Ananas.",
+  "Der Metzger wetzt die Metzgermesser, wetzt der Metzger Metzgermesser."
+ ],
+ "prompts": [
+  "Erzähl mir von deinem letzten Urlaub.",
+  "Was hast du heute gegessen?",
+  "Beschreibe deinen Arbeitsplatz.",
+  "Was machst du normalerweise am Wochenende?",
+  "Welches Buch oder welchen Film würdest du empfehlen und warum?",
+  "Was ist dein Lieblingsort in deiner Stadt?",
+  "Erzähl mir von einem Hobby, das du hast.",
+  "Wie sieht ein typischer Tag bei dir aus?",
+  "Was würdest du tun, wenn du eine Million Euro gewinnen würdest?",
+  "Beschreibe eine Person, die dich inspiriert."
+ ],
+ "test_phrase": "Hallo! Kannst du mich hören? Das ist ein Test."
+}

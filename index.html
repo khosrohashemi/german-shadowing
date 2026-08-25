@@ -117,6 +117,7 @@
       <button id="playBtn" style="display:none;">🔊 Abspielen</button>
       <button id="pauseBtn" style="display:none;">⏸ Pause</button>
       <button id="recordBtn" style="display:none;">🎤 Aufnehmen</button>
+      <button id="finishRecordBtn" style="display:none;">✅ Fertig</button>
       <button id="retryBtn" style="display:none;">↺ Wiederholen</button>
       <button id="skipBtn" style="display:none;">⏭ Nächster</button>
       <button id="revealBtn" style="display:none;">👁 Text zeigen</button>
@@ -506,7 +507,7 @@ const els = {
   wotdText:$('wotdText'),
   sentenceTag:$('sentenceTag'), sentenceText:$('sentenceText'), translationText:$('translationText'),
   modeCard:$('modeCard'), startShadowBtn:$('startShadowBtn'), startListenBtn:$('startListenBtn'),
-  playBtn:$('playBtn'), pauseBtn:$('pauseBtn'), recordBtn:$('recordBtn'), retryBtn:$('retryBtn'), skipBtn:$('skipBtn'), revealBtn:$('revealBtn'), newSessionBtn:$('newSessionBtn'),
+  playBtn:$('playBtn'), pauseBtn:$('pauseBtn'), recordBtn:$('recordBtn'), finishRecordBtn:$('finishRecordBtn'), retryBtn:$('retryBtn'), skipBtn:$('skipBtn'), revealBtn:$('revealBtn'), newSessionBtn:$('newSessionBtn'),
   statusLine:$('statusLine'),
   diffRow:$('diffRow'), targetLine:$('targetLine'), saidLine:$('saidLine'), scoreLine:$('scoreLine'), feedbackMsg:$('feedbackMsg'),
   recordedAudioWrap:$('recordedAudioWrap'), recordedAudio:$('recordedAudio'),
@@ -934,6 +935,8 @@ function showSentenceCard(){
   els.revealBtn.style.display = state.settings.hideText ? 'inline-block' : 'none';
   els.playBtn.style.display='inline-block';
   els.recordBtn.style.display='none';
+  els.finishRecordBtn.style.display='none';
+  els.finishRecordBtn.disabled=false;
   els.retryBtn.style.display='none';
   els.skipBtn.style.display='inline-block';
   let statusMsg;
@@ -1011,8 +1014,8 @@ els.skipBtn.onclick = ()=>{
   speechSynthesis.cancel();
   if(currentAudioEl){ try{ currentAudioEl.pause(); }catch(e){} currentAudioEl=null; }
   ttsPaused=false; els.pauseBtn.style.display='none'; els.pauseBtn.textContent='⏸ Pause';
-  if(session.recognition){ try{ session.recognition.abort(); }catch(e){} }
-  if(session.mediaRecorder && session.mediaRecorder.state!=='inactive'){ try{ session.mediaRecorder.stop(); }catch(e){} }
+  if(stopActiveRecording){ stopActiveRecording(); }
+  else if(session.mediaRecorder && session.mediaRecorder.state!=='inactive'){ try{ session.mediaRecorder.stop(); }catch(e){} }
   nextRound();
 };
 els.revealBtn.onclick = ()=>{
@@ -1068,20 +1071,26 @@ els.playBtn.onclick = ()=>{
   });
 };
 
+let stopActiveRecording = null; // set while a recording is in progress; finishRecordBtn calls this
 function startRecording(){
   const myToken = session.token; // if the round changes (skip/retry-into-next) before we finish, discard our result
-  els.recordBtn.disabled=true;
+  els.recordBtn.style.display='none';
+  els.finishRecordBtn.style.display='inline-block';
   els.diffRow.style.display='none';
   let recognizedText = '';
   let recognitionDone = false;
   let mediaDone = !state.settings.recordAudio;
   let finished = false;
+  let userStopped = false;
   let mr = null;
+  const recordingStarted = Date.now();
 
   function finish(){
     if(!recognitionDone || !mediaDone || finished) return;
     finished = true;
-    els.recordBtn.disabled=false;
+    els.finishRecordBtn.style.display='none';
+    els.finishRecordBtn.disabled = false;
+    stopActiveRecording = null;
     if(myToken !== session.token) return; // stale — the user already moved to a different round
 
     if(hasSTT){
@@ -1140,27 +1149,43 @@ function startRecording(){
     else { mediaDone=true; finish(); }
   }
 
+  const MAX_RECORDING_MS = 120000; // generous backstop in case "Fertig" is never clicked
   function beginRecognition(){
+    stopActiveRecording = ()=>{
+      userStopped = true;
+      if(hasSTT && session.recognition){ try{ session.recognition.stop(); }catch(e){} }
+      else if(!hasSTT){ recognitionDone=true; stopRecorderIfNeeded(); finish(); }
+    };
     if(hasSTT){
-      setStatus((session.mode==='word' || session.isBonus) ? '🎤 Ich höre zu…' : '🎤 Ich höre zu… sprich alle drei Sätze nach.', true);
-      const rec = new SpeechRecognitionCtor();
-      rec.lang='de-DE'; rec.interimResults=false; rec.continuous=true; rec.maxAlternatives=1;
-      rec.onresult = (e)=>{
-        let full='';
-        for(let i=0;i<e.results.length;i++) full += e.results[i][0].transcript + ' ';
-        recognizedText = full.trim();
-      };
-      rec.onerror = ()=>{};
-      rec.onend = ()=>{ recognitionDone=true; stopRecorderIfNeeded(); finish(); };
-      session.recognition = rec;
-      try{ rec.start(); }catch(e){ recognitionDone=true; stopRecorderIfNeeded(); finish(); }
-      // Safety cap in case continuous recognition never naturally ends.
-      setTimeout(()=>{ try{ if(session.recognition===rec) rec.stop(); }catch(e){} }, 25000);
+      setStatus((session.mode==='word' || session.isBonus) ? '🎤 Ich höre zu…' : '🎤 Ich höre zu… sprich alle drei Sätze nach. Klicke „Fertig“, wenn du fertig bist.', true);
+      startOneRecognitionPass();
     } else {
-      const approxMs = 5000 * currentTargetLines().length;
-      setStatus('🎤 Sprich jetzt (~'+Math.round(approxMs/1000)+' Sekunden)…', true);
-      setTimeout(()=>{ recognitionDone=true; stopRecorderIfNeeded(); finish(); }, approxMs);
+      setStatus('🎤 Sprich jetzt und klicke „Fertig“, wenn du fertig bist.', true);
     }
+  }
+  // Chrome's SpeechRecognition can stop itself after a short silence even in
+  // continuous mode; if the user hasn't clicked "Fertig" yet, just restart it
+  // seamlessly so a brief pause never cuts the recording short.
+  function startOneRecognitionPass(){
+    const rec = new SpeechRecognitionCtor();
+    rec.lang='de-DE'; rec.interimResults=false; rec.continuous=true; rec.maxAlternatives=1;
+    let sessionText = '';
+    rec.onresult = (e)=>{
+      let full='';
+      for(let i=0;i<e.results.length;i++) full += e.results[i][0].transcript + ' ';
+      sessionText = full.trim();
+    };
+    rec.onerror = ()=>{};
+    rec.onend = ()=>{
+      if(sessionText) recognizedText = (recognizedText ? recognizedText+' ' : '') + sessionText;
+      if(!userStopped && Date.now()-recordingStarted < MAX_RECORDING_MS){
+        setTimeout(()=>{ if(!userStopped) startOneRecognitionPass(); }, 50);
+      } else {
+        recognitionDone=true; stopRecorderIfNeeded(); finish();
+      }
+    };
+    session.recognition = rec;
+    try{ rec.start(); }catch(e){ recognitionDone=true; stopRecorderIfNeeded(); finish(); }
   }
 
   if(state.settings.recordAudio && navigator.mediaDevices){
@@ -1184,6 +1209,11 @@ function startRecording(){
   }
 }
 els.recordBtn.onclick = startRecording;
+els.finishRecordBtn.onclick = ()=>{
+  els.finishRecordBtn.disabled = true;
+  setStatus('⏳ Wird ausgewertet…', false);
+  if(stopActiveRecording) stopActiveRecording();
+};
 els.retryBtn.onclick = ()=>{
   els.diffRow.style.display='none';
   els.recordBtn.style.display='inline-block';
