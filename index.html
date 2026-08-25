@@ -2179,9 +2179,9 @@ let listenSession = {episode:null, qIdx:-1, correctCount:0, recognition:null, to
 function getDuePodcasts(){
   const today = todayStr();
   const due = PODCASTS.filter(p=>{ const c=state.podcasts[p.id]; return c && c.due<=today; });
-  if(due.length) return due;
   const fresh = PODCASTS.filter(p=> !state.podcasts[p.id]);
-  return fresh.length ? fresh : PODCASTS;
+  const combined = due.concat(fresh); // due-for-review AND never-tried episodes are both fair picks
+  return combined.length ? combined : PODCASTS;
 }
 function setListenStatus(t){ els.listenStatus.textContent = t; }
 function setListenQStatus(t){ els.listenQStatus.textContent = t; }
