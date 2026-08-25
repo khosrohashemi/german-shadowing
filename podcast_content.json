@@ -6,10 +6,36 @@
   "level": "B1",
   "script": "In den letzten Jahren testen immer mehr Firmen in Europa ein neues Arbeitsmodell: die Vier-Tage-Woche. Die Idee ist einfach. Die Mitarbeiter arbeiten nur noch vier Tage pro Woche, meistens von Montag bis Donnerstag, und haben trotzdem ein volles Gehalt. Der Freitag wird frei.\n\nEin großes Beispiel kommt aus Island. Dort haben zwischen 2015 und 2019 mehrere Firmen und Behörden dieses Modell ausprobiert. Insgesamt haben etwa 2500 Angestellte teilgenommen. Das Ergebnis war überraschend positiv. Die Menschen waren weniger gestresst, schliefen besser und waren trotzdem genauso produktiv wie vorher. Nach dem Test haben viele isländische Arbeitgeber die kürzere Woche dauerhaft eingeführt.\n\nAuch in Großbritannien gab es 2022 einen großen Versuch. Über 60 Unternehmen aus verschiedenen Branchen haben sechs Monate lang die Vier-Tage-Woche getestet. Am Ende des Versuchs haben fast alle Firmen entschieden, das neue Modell weiterzuführen. Besonders interessant: Die Zahl der Kündigungen ist in dieser Zeit deutlich gesunken, weil die Mitarbeiter zufriedener waren.\n\nNatürlich funktioniert die Vier-Tage-Woche nicht in jedem Beruf. In Krankenhäusern, Fabriken oder im Handel ist es schwieriger, weil dort jemand an sieben Tagen in der Woche arbeiten muss. Kritiker sagen außerdem, dass die Arbeit in vier Tagen genauso anstrengend werden kann, wenn niemand die Aufgaben reduziert.\n\nTrotzdem wächst das Interesse an diesem Modell weltweit. In Deutschland haben im letzten Jahr über 40 Firmen an einem ähnlichen Pilotprojekt teilgenommen, organisiert von einer Beratungsfirma und einer Universität. Auch hier war das Feedback größtenteils positiv: mehr Zeit für Familie, Hobbys und Erholung.\n\nEine Angestellte aus Berlin, die an einem der deutschen Pilotprojekte teilgenommen hat, beschreibt die Veränderung so: Früher sei sie am Wochenende oft zu müde gewesen, um noch etwas zu unternehmen. Jetzt nutze sie den zusätzlichen freien Tag für Sport, für ihre Familie oder einfach, um nichts zu tun. Ihr Chef berichtet außerdem, dass die Meetings kürzer und fokussierter geworden seien, weil einfach weniger Zeit dafür bleibt.\n\nOb die Vier-Tage-Woche irgendwann zum Standard wird, ist noch offen. Aber immer mehr Experten glauben, dass sich die Arbeitswelt in den nächsten Jahren stark verändern wird — vielleicht wird der freie Freitag schon bald für viele Menschen ganz normal sein.",
   "questions": [
-   {"q": "Wie viele Tage pro Woche arbeiten die Menschen bei diesem neuen Modell?", "accept": ["vier", "4"], "hint": "vier Tage"},
-   {"q": "In welchem Land hat der große Versuch zwischen 2015 und 2019 stattgefunden?", "accept": ["island"], "hint": "Island"},
-   {"q": "Wie viele Unternehmen haben 2022 in Großbritannien teilgenommen?", "accept": ["60", "sechzig"], "hint": "über 60"},
-   {"q": "Was ist in Großbritannien während des Versuchs deutlich gesunken?", "accept": ["kündigungen"], "hint": "die Zahl der Kündigungen"}
+   {
+    "q": "Wie viele Tage pro Woche arbeiten die Menschen bei diesem neuen Modell?",
+    "accept": [
+     "vier",
+     "4"
+    ],
+    "hint": "vier Tage"
+   },
+   {
+    "q": "In welchem Land hat der große Versuch zwischen 2015 und 2019 stattgefunden?",
+    "accept": [
+     "island"
+    ],
+    "hint": "Island"
+   },
+   {
+    "q": "Wie viele Unternehmen haben 2022 in Großbritannien teilgenommen?",
+    "accept": [
+     "60",
+     "sechzig"
+    ],
+    "hint": "über 60"
+   },
+   {
+    "q": "Was ist in Großbritannien während des Versuchs deutlich gesunken?",
+    "accept": [
+     "kündigungen"
+    ],
+    "hint": "die Zahl der Kündigungen"
+   }
   ]
  },
  {
@@ -19,10 +45,37 @@
   "level": "B1",
   "script": "Es ist eine kalte Herbstwoche in München. Frau Berger, eine Rentnerin von 72 Jahren, räumt den Dachboden ihres Hauses auf. Das Haus gehörte früher ihrem Großvater, und seit seinem Tod vor drei Jahren liegen viele alte Sachen einfach dort oben.\n\nIn einer Kiste findet sie einen dunkelgrünen Wintermantel. Als sie in die Innentasche greift, spürt sie etwas Hartes. Es ist ein kleiner, rostiger Schlüssel, zusammen mit einem Zettel. Auf dem Zettel steht nur eine Adresse in Salzburg und die Zahl 14.\n\nFrau Berger ist neugierig. Sie erinnert sich, dass ihr Großvater oft von einer Reise nach Salzburg erzählt hat, aber nie Details verraten hat. Sie beschließt, mit dem Zug nach Salzburg zu fahren, um die Adresse zu finden.\n\nWährend der Zugfahrt denkt Frau Berger viel an ihre Kindheit zurück. Ihr Großvater war ein ruhiger Mann, der selten über seine Vergangenheit sprach. Sie erinnert sich, wie er manchmal stundenlang am Fenster saß und aufs Feld hinausschaute, als würde er etwas suchen. Erst jetzt, mit dem Schlüssel in der Hand, beginnt sie zu ahnen, dass dieses Schweigen vielleicht mehr bedeutet hat, als die Familie je vermutet hatte.\n\nAm nächsten Tag steht sie vor einem alten Gebäude in der Salzburger Altstadt. Es ist ein kleines Bankgebäude aus dem 19. Jahrhundert. Ein freundlicher Angestellter erklärt ihr, dass es dort ein altes Schließfachsystem gibt und dass Nummer 14 tatsächlich noch existiert.\n\nNach einigen Formularen und einem Anruf bei einem Notar darf sie das Fach öffnen. Darin liegt eine kleine Holzbox mit alten Fotos, einem Brief und mehreren Silbermünzen. Der Brief ist an ihre Großmutter gerichtet, geschrieben im Jahr 1962, kurz nachdem die beiden geheiratet hatten. Ihr Großvater beschreibt darin, wie schwierig die ersten Jahre nach dem Krieg waren und wie sehr er sich wünschte, seiner Frau eines Tages ein sicheres Leben zu bieten.\n\nFrau Berger sitzt lange in dem kleinen Büro und liest den Brief mehrmals. Sie hatte ihren Großvater immer als ruhigen, verschlossenen Mann gekannt. Jetzt versteht sie, wie viel Liebe und Sorge hinter seinem Schweigen steckte. Die Münzen nimmt sie nicht mit. Stattdessen bittet sie den Angestellten, sie einer kleinen Stiftung für Kriegswaisen in der Stadt zu spenden — genau das, sagt sie, hätte ihr Großvater sich gewünscht.",
   "questions": [
-   {"q": "In welcher Stadt wohnt Frau Berger?", "accept": ["münchen", "munchen"], "hint": "München"},
-   {"q": "Was findet sie in der Innentasche des Mantels?", "accept": ["schlüssel", "schlussel"], "hint": "einen Schlüssel"},
-   {"q": "In welche Stadt fährt sie, um die Adresse zu finden?", "accept": ["salzburg"], "hint": "Salzburg"},
-   {"q": "Was macht sie am Ende mit den Silbermünzen?", "accept": ["spend", "stiftung"], "hint": "sie spendet sie einer Stiftung"}
+   {
+    "q": "In welcher Stadt wohnt Frau Berger?",
+    "accept": [
+     "münchen",
+     "munchen"
+    ],
+    "hint": "München"
+   },
+   {
+    "q": "Was findet sie in der Innentasche des Mantels?",
+    "accept": [
+     "schlüssel",
+     "schlussel"
+    ],
+    "hint": "einen Schlüssel"
+   },
+   {
+    "q": "In welche Stadt fährt sie, um die Adresse zu finden?",
+    "accept": [
+     "salzburg"
+    ],
+    "hint": "Salzburg"
+   },
+   {
+    "q": "Was macht sie am Ende mit den Silbermünzen?",
+    "accept": [
+     "spend",
+     "stiftung"
+    ],
+    "hint": "sie spendet sie einer Stiftung"
+   }
   ]
  },
  {
@@ -32,10 +85,41 @@
   "level": "B2",
   "script": "An der Nordseeküste erleben Forscher in diesem Jahr etwas Ungewöhnliches: Immer häufiger werden große Wale direkt vor der deutschen Küste gesichtet. Besonders oft handelt es sich um Buckelwale, die normalerweise weit draußen im Atlantik leben.\n\nNach Angaben von Meeresbiologen der Universität Kiel wurden allein in den letzten zwölf Monaten über 30 Sichtungen gemeldet, deutlich mehr als in den Jahren zuvor. Noch vor zwanzig Jahren waren solche Beobachtungen extrem selten.\n\nEin Grund dafür könnte die verbesserte Wasserqualität in der Nordsee sein. Strengere Umweltgesetze in Europa haben in den letzten Jahrzehnten dazu geführt, dass weniger Chemikalien und Abwasser ins Meer gelangen. Dadurch haben sich auch die Fischpopulationen erholt, von denen sich die Wale ernähren.\n\nEin weiterer Faktor ist der Rückgang des Schiffslärms in bestimmten Gebieten, nachdem einige Regionen zu Schutzzonen erklärt wurden. Wale orientieren sich stark über Geräusche, und weniger Lärm bedeutet für sie weniger Stress und eine leichtere Nahrungssuche.\n\nFür die Fischerei bringt die Entwicklung allerdings auch neue Herausforderungen. Einige Fischer berichten, dass sich Wale in der Nähe von Netzen aufhalten, was zu gefährlichen Situationen führen kann. Experten empfehlen deshalb, bestimmte Fanggebiete während der Wandersaison der Wale vorübergehend zu meiden.\n\nDie Forscherin Dr. Meike Lorenzen von der Universität Kiel erklärt, dass ihr Team die Wale mit Drohnen und speziellen Unterwassermikrofonen beobachtet. So können die Wissenschaftler nicht nur einzelne Tiere über Jahre wiedererkennen, sondern auch ihre Wanderrouten genauer verstehen. Manche der beobachteten Wale, sagt sie, seien inzwischen schon seit über fünf Jahren immer wieder in derselben Gegend gesichtet worden, was für eine erstaunliche Ortstreue spricht.\n\nFür den Tourismus dagegen ist die Entwicklung eine gute Nachricht. Mehrere Küstenstädte, darunter Büsum und Cuxhaven, bieten inzwischen spezielle Bootstouren an, bei denen Besucher die Wale aus sicherer Entfernung beobachten können. Die Nachfrage nach diesen Touren ist laut lokalen Anbietern im letzten Sommer um fast 50 Prozent gestiegen.\n\nForscher warnen jedoch davor, die Entwicklung zu unterschätzen. Der Klimawandel verändert weiterhin die Meeresströmungen und Wassertemperaturen, und niemand kann sicher vorhersagen, ob die Wale langfristig in der Nordsee bleiben werden.",
   "questions": [
-   {"q": "Welche Walart wird am häufigsten vor der deutschen Küste gesichtet?", "accept": ["buckelwale", "buckelwal"], "hint": "Buckelwale"},
-   {"q": "Wie viele Sichtungen wurden in den letzten zwölf Monaten gemeldet?", "accept": ["30", "dreißig", "dreissig"], "hint": "über 30"},
-   {"q": "Nenne eine der beiden deutschen Küstenstädte, die Bootstouren anbieten.", "accept": ["büsum", "busum", "cuxhaven"], "hint": "Büsum oder Cuxhaven"},
-   {"q": "Um wie viel Prozent ist die Nachfrage nach den Touren gestiegen?", "accept": ["50", "fünfzig", "funfzig"], "hint": "fast 50 Prozent"}
+   {
+    "q": "Welche Walart wird am häufigsten vor der deutschen Küste gesichtet?",
+    "accept": [
+     "buckelwale",
+     "buckelwal"
+    ],
+    "hint": "Buckelwale"
+   },
+   {
+    "q": "Wie viele Sichtungen wurden in den letzten zwölf Monaten gemeldet?",
+    "accept": [
+     "30",
+     "dreißig",
+     "dreissig"
+    ],
+    "hint": "über 30"
+   },
+   {
+    "q": "Nenne eine der beiden deutschen Küstenstädte, die Bootstouren anbieten.",
+    "accept": [
+     "büsum",
+     "busum",
+     "cuxhaven"
+    ],
+    "hint": "Büsum oder Cuxhaven"
+   },
+   {
+    "q": "Um wie viel Prozent ist die Nachfrage nach den Touren gestiegen?",
+    "accept": [
+     "50",
+     "fünfzig",
+     "funfzig"
+    ],
+    "hint": "fast 50 Prozent"
+   }
   ]
  },
  {
@@ -45,10 +129,1877 @@
   "level": "B2",
   "script": "Jeden Sommer verbringt Familie Hoffmann zwei Wochen in einem kleinen Ferienhaus an der Ostsee, direkt in der Nähe von Rügen. Die vierzehnjährige Tochter Lea findet dort in diesem Jahr etwas Merkwürdiges im Briefkasten: eine alte Postkarte, vergilbt und mit verblasster Schrift.\n\nDie Postkarte zeigt ein Foto des Ferienhauses, aber das Haus sieht darauf ganz anders aus — ohne die moderne Terrasse, die es heute hat. Auf der Rückseite steht ein kurzer Text auf Deutsch, aber ohne Unterschrift und ohne Absenderadresse. Der Text lautet: „Wir haben es endlich gefunden. Komm bald nach, du weißt, wo.\"\n\nLea zeigt die Karte ihrem Vater, der das Haus vor fünf Jahren von einem älteren Ehepaar gekauft hat. Er erinnert sich, dass die frühere Besitzerin einmal erzählt hat, ihr Bruder sei in den 1980er-Jahren für mehrere Jahre spurlos verschwunden, bevor er plötzlich wieder auftauchte — ohne je zu erklären, wo er gewesen war.\n\nNeugierig geworden, fragt Lea im Dorf herum. Eine ältere Nachbarin erinnert sich tatsächlich an die Geschichte. Der Bruder, so erzählt sie, habe in den 1980er-Jahren angeblich nach einem verschollenen Familienschatz gesucht, von dem ihr Großvater vor dem Krieg gesprochen hatte.\n\nAm Abend sitzt Lea auf der Terrasse und betrachtet die alten Fotos noch einmal genauer. Auf einem Bild erkennt sie einen jungen Mann, der ihr seltsam bekannt vorkommt — vielleicht, denkt sie, weil er die gleichen Augen hat wie ihr Vater. Sie fragt sich, ob es in jeder Familie solche versteckten Geschichten gibt, die einfach nie erzählt wurden, bis jemand zufällig danach sucht.\n\nLea und ihr Vater beschließen, den alten Dachboden des Hauses noch einmal genauer zu untersuchen. Hinter einer losen Holzwand finden sie tatsächlich eine kleine, verstaubte Metallkiste. Darin liegen keine Schätze, sondern nur alte Familienfotos, ein Ring und mehrere weitere Postkarten — offenbar nie abgeschickt.\n\nDer „Schatz\", stellt sich heraus, war nie Gold oder Geld, sondern Erinnerungen, die der Bruder all die Jahre lang gesammelt und versteckt hatte, bevor er verschwand. Warum er nie zurückkam, bleibt bis heute ungeklärt. Lea beschließt jedoch, die gefundenen Postkarten in einem kleinen Rahmen im Ferienhaus aufzuhängen.",
   "questions": [
-   {"q": "In der Nähe welcher Insel verbringt die Familie Hoffmann ihren Urlaub?", "accept": ["rügen", "rugen"], "hint": "Rügen"},
-   {"q": "Wie alt ist Lea?", "accept": ["14", "vierzehn"], "hint": "vierzehn Jahre"},
-   {"q": "Was finden Lea und ihr Vater hinter der losen Holzwand?", "accept": ["metallkiste", "kiste"], "hint": "eine Metallkiste"},
-   {"q": "Was war der Schatz am Ende wirklich?", "accept": ["erinnerungen", "fotos", "postkarten"], "hint": "Erinnerungen, keine Schätze"}
+   {
+    "q": "In der Nähe welcher Insel verbringt die Familie Hoffmann ihren Urlaub?",
+    "accept": [
+     "rügen",
+     "rugen"
+    ],
+    "hint": "Rügen"
+   },
+   {
+    "q": "Wie alt ist Lea?",
+    "accept": [
+     "14",
+     "vierzehn"
+    ],
+    "hint": "vierzehn Jahre"
+   },
+   {
+    "q": "Was finden Lea und ihr Vater hinter der losen Holzwand?",
+    "accept": [
+     "metallkiste",
+     "kiste"
+    ],
+    "hint": "eine Metallkiste"
+   },
+   {
+    "q": "Was war der Schatz am Ende wirklich?",
+    "accept": [
+     "erinnerungen",
+     "fotos",
+     "postkarten"
+    ],
+    "hint": "Erinnerungen, keine Schätze"
+   }
+  ]
+ },
+ {
+  "id": "ep4",
+  "title": "Elektroautos werden günstiger",
+  "style": "news",
+  "level": "B1",
+  "script": "In den letzten Jahren sind Elektroautos in Deutschland deutlich günstiger geworden. Vor zehn Jahren kostete ein Elektroauto oft doppelt so viel wie ein vergleichbares Benzinauto. Heute ist der Unterschied viel kleiner geworden.\n\nEin wichtiger Grund dafür sind die Batterien. Die Herstellung von Batterien ist in den letzten Jahren viel billiger geworden, weil die Fabriken größer und effizienter arbeiten. Außerdem haben viele Autohersteller inzwischen eigene Batteriefabriken gebaut, sodass sie nicht mehr auf teure Lieferungen aus dem Ausland warten müssen.\n\nAuch der Staat hat eine Rolle gespielt. Mehrere Jahre lang hat die deutsche Regierung den Kauf von Elektroautos finanziell unterstützt. Käufer bekamen einen Zuschuss von mehreren Tausend Euro, wenn sie ein neues Elektroauto kauften. Diese Förderung wurde inzwischen reduziert, aber die Preise sind trotzdem weiter gesunken, weil die Technik einfach billiger geworden ist.\n\nEin weiterer Faktor ist die wachsende Konkurrenz. Früher gab es nur wenige Modelle zur Auswahl, meistens von teuren Marken. Heute bieten viele verschiedene Hersteller günstige Elektroautos an, auch aus China. Diese Konkurrenz zwingt die etablierten Firmen, ihre Preise zu senken.\n\nTrotzdem bleibt eine Herausforderung: Ladestationen. In größeren Städten gibt es inzwischen viele Ladestationen, aber auf dem Land ist das Netz noch nicht so gut ausgebaut. Wer ein Elektroauto kauft, muss deshalb oft genau planen, wo er unterwegs laden kann.\n\nExperten erwarten, dass Elektroautos in den nächsten fünf Jahren genauso viel kosten werden wie normale Autos mit Benzinmotor. Wenn das passiert, könnte sich die Zahl der Elektroautos auf den Straßen noch einmal deutlich erhöhen.",
+  "questions": [
+   {
+    "q": "Was ist ein wichtiger Grund, warum Elektroautos günstiger wurden?",
+    "accept": [
+     "batterien",
+     "batterie"
+    ],
+    "hint": "billigere Batterien"
+   },
+   {
+    "q": "Was hat die deutsche Regierung mehrere Jahre lang gemacht?",
+    "accept": [
+     "förderung",
+     "zuschuss",
+     "unterstützt"
+    ],
+    "hint": "den Kauf finanziell unterstützt"
+   },
+   {
+    "q": "Aus welchem Land kommen jetzt auch viele günstige Elektroautos?",
+    "accept": [
+     "china"
+    ],
+    "hint": "China"
+   },
+   {
+    "q": "Was ist auf dem Land noch eine Herausforderung?",
+    "accept": [
+     "ladestationen",
+     "laden"
+    ],
+    "hint": "zu wenige Ladestationen"
+   }
+  ]
+ },
+ {
+  "id": "ep5",
+  "title": "Die Zukunft der Bienen",
+  "style": "news",
+  "level": "B2",
+  "script": "Bienen gehören zu den wichtigsten Tieren für die Landwirtschaft, denn sie bestäuben viele Pflanzen, die wir als Nahrung brauchen. In den letzten Jahren haben Wissenschaftler jedoch beobachtet, dass die Zahl der Bienen in vielen Ländern zurückgeht.\n\nEin Grund dafür sind bestimmte Pestizide, die in der Landwirtschaft benutzt werden, um Pflanzen vor Schädlingen zu schützen. Diese Mittel schaden leider auch den Bienen und können ihre Orientierung stören. Manche Bienen finden dadurch nicht mehr zurück zu ihrem Bienenstock.\n\nEin weiterer Grund ist der Verlust von natürlichen Blühwiesen. Früher gab es überall am Straßenrand und auf Feldern bunte Wiesen mit vielen Blumen. Heute werden viele dieser Flächen landwirtschaftlich genutzt oder bebaut, sodass den Bienen weniger Nahrung zur Verfügung steht.\n\nAuch der Klimawandel spielt eine Rolle. Wenn der Frühling immer früher beginnt, blühen manche Pflanzen, bevor die Bienen aktiv werden. Dadurch verpassen die Bienen einen wichtigen Teil ihrer Nahrungsquelle.\n\nGlücklicherweise gibt es inzwischen viele Projekte, die den Bienen helfen sollen. Manche Städte pflanzen bewusst blühende Wiesen anstelle von einfachem Rasen. Landwirte bekommen finanzielle Unterstützung, wenn sie auf schädliche Pestizide verzichten. Auch private Gärten können helfen: Schon ein kleines Beet mit heimischen Blumen bietet Bienen wichtige Nahrung.\n\nImker berichten, dass diese Maßnahmen langsam Wirkung zeigen. In manchen Regionen ist die Zahl der Bienen wieder leicht gestiegen. Trotzdem warnen Experten, dass noch viel mehr getan werden muss, damit sich die Bienenpopulationen langfristig erholen können.",
+  "questions": [
+   {
+    "q": "Warum sind Bienen für die Landwirtschaft so wichtig?",
+    "accept": [
+     "bestäuben",
+     "bestäubung"
+    ],
+    "hint": "sie bestäuben Pflanzen"
+   },
+   {
+    "q": "Was kann bestimmten Bienen die Orientierung stören?",
+    "accept": [
+     "pestizide"
+    ],
+    "hint": "Pestizide"
+   },
+   {
+    "q": "Was pflanzen manche Städte anstelle von einfachem Rasen?",
+    "accept": [
+     "blühende wiesen",
+     "wiesen",
+     "blumen"
+    ],
+    "hint": "blühende Wiesen"
+   },
+   {
+    "q": "Was berichten Imker über die neuen Maßnahmen?",
+    "accept": [
+     "wirkung",
+     "gestiegen"
+    ],
+    "hint": "sie zeigen langsam Wirkung"
+   }
+  ]
+ },
+ {
+  "id": "ep6",
+  "title": "Homeoffice bleibt beliebt",
+  "style": "news",
+  "level": "B1",
+  "script": "Auch einige Jahre nach der Pandemie arbeiten viele Menschen in Deutschland weiterhin regelmäßig von zu Hause aus. Umfragen zeigen, dass etwa ein Drittel der Angestellten mindestens einen Tag pro Woche im Homeoffice verbringt.\n\nFür viele Arbeitnehmer bringt das klare Vorteile. Man spart Zeit, weil kein Weg zur Arbeit nötig ist. Diese Zeit kann für die Familie, für Sport oder einfach für mehr Schlaf genutzt werden. Außerdem berichten viele Menschen, dass sie sich zu Hause besser konzentrieren können, weil es im Büro oft laut und unruhig ist.\n\nAllerdings gibt es auch Nachteile. Manche Angestellte fühlen sich im Homeoffice einsam, weil der persönliche Kontakt zu Kollegen fehlt. Neue Mitarbeiter haben es besonders schwer, das Team richtig kennenzulernen, wenn sie kaum ins Büro kommen. Führungskräfte berichten außerdem, dass spontane Ideen seltener entstehen, wenn Kollegen sich nicht einfach im Flur treffen.\n\nViele Firmen versuchen deshalb, einen Mittelweg zu finden. Ein beliebtes Modell ist die Kombination aus Homeoffice und festen Bürotagen. An zwei oder drei Tagen pro Woche kommen alle ins Büro, an den anderen Tagen kann jeder selbst entscheiden, wo er arbeitet.\n\nExperten glauben, dass sich dieses gemischte Modell langfristig durchsetzen wird. Ein kompletter Verzicht auf das Büro wird selten, aber auch eine vollständige Rückkehr zum alten System scheint unwahrscheinlich. Die Zukunft der Arbeit liegt wohl irgendwo in der Mitte.",
+  "questions": [
+   {
+    "q": "Wie viele Angestellte arbeiten laut Umfragen mindestens einen Tag pro Woche im Homeoffice?",
+    "accept": [
+     "ein drittel",
+     "drittel"
+    ],
+    "hint": "etwa ein Drittel"
+   },
+   {
+    "q": "Welchen Vorteil nennt der Text zuerst?",
+    "accept": [
+     "zeit",
+     "zeitersparnis"
+    ],
+    "hint": "man spart Zeit"
+   },
+   {
+    "q": "Was fällt neuen Mitarbeitern im Homeoffice besonders schwer?",
+    "accept": [
+     "team kennenzulernen",
+     "kennenlernen"
+    ],
+    "hint": "das Team kennenzulernen"
+   },
+   {
+    "q": "Welches Modell wird als beliebter Mittelweg genannt?",
+    "accept": [
+     "homeoffice und bürotage",
+     "kombination",
+     "gemischtes modell"
+    ],
+    "hint": "eine Kombination aus Homeoffice und festen Bürotagen"
+   }
+  ]
+ },
+ {
+  "id": "ep7",
+  "title": "Plastik im Meer",
+  "style": "news",
+  "level": "B2",
+  "script": "Jedes Jahr gelangen Millionen Tonnen Plastikmüll in die Weltmeere. Ein großer Teil davon stammt von Land, zum Beispiel aus Flüssen, die Müll aus Städten ins Meer transportieren. Ein anderer Teil kommt direkt von Schiffen und der Fischereiindustrie.\n\nBesonders problematisch ist Mikroplastik. Das sind winzige Plastikteilchen, die entstehen, wenn größere Plastikstücke im Meer langsam zerfallen. Fische und andere Meerestiere nehmen dieses Mikroplastik oft versehentlich mit der Nahrung auf. Über die Nahrungskette kann es am Ende sogar bis auf unsere Teller gelangen.\n\nEin bekanntes Symbol für das Problem ist der sogenannte \"Große Pazifische Müllteppich\", eine riesige Ansammlung von Plastikmüll im Pazifischen Ozean. Die genaue Größe ist schwer zu messen, aber Schätzungen zufolge ist die Fläche mehrmals so groß wie Deutschland.\n\nUm das Problem zu bekämpfen, setzen viele Länder inzwischen auf strengere Gesetze. In der Europäischen Union sind bestimmte Einwegprodukte aus Plastik, wie Trinkhalme oder Wattestäbchen, seit einigen Jahren verboten. Auch viele Supermärkte verzichten zunehmend auf unnötige Plastikverpackungen.\n\nNeben Gesetzen gibt es auch technische Lösungen. Manche Organisationen entwickeln spezielle Boote und Systeme, die Plastikmüll direkt aus Flüssen oder aus dem Meer sammeln, bevor er sich weiter verteilt. Diese Projekte sind aufwendig und teuer, zeigen aber erste Erfolge in einzelnen Flussmündungen.\n\nExperten sind sich einig, dass Gesetze allein nicht reichen. Am wichtigsten sei es, weniger Plastik überhaupt erst zu produzieren und stattdessen auf wiederverwendbare Materialien zu setzen.",
+  "questions": [
+   {
+    "q": "Woher stammt ein großer Teil des Plastikmülls im Meer?",
+    "accept": [
+     "flüsse",
+     "flüssen",
+     "land"
+    ],
+    "hint": "aus Flüssen, von Land"
+   },
+   {
+    "q": "Was ist Mikroplastik?",
+    "accept": [
+     "winzige plastikteilchen",
+     "kleine plastikteile"
+    ],
+    "hint": "winzige Plastikteilchen"
+   },
+   {
+    "q": "Wie heißt die bekannte riesige Plastikansammlung im Pazifik?",
+    "accept": [
+     "großer pazifischer müllteppich",
+     "müllteppich"
+    ],
+    "hint": "der Große Pazifische Müllteppich"
+   },
+   {
+    "q": "Welche Plastikprodukte sind in der EU inzwischen verboten?",
+    "accept": [
+     "trinkhalme",
+     "wattestäbchen",
+     "einwegprodukte"
+    ],
+    "hint": "bestimmte Einwegprodukte wie Trinkhalme"
+   }
+  ]
+ },
+ {
+  "id": "ep8",
+  "title": "Schulen ohne Noten",
+  "style": "news",
+  "level": "B2",
+  "script": "In Deutschland experimentieren einige Schulen mit einem ungewöhnlichen Konzept: Unterricht ohne klassische Noten. Statt Einsen, Zweien oder Dreien bekommen die Schüler ausführliche schriftliche Rückmeldungen von ihren Lehrern.\n\nDie Idee dahinter ist einfach: Noten zeigen zwar, wie gut jemand in einem Fach ist, aber sie erklären nicht, warum. Eine schriftliche Rückmeldung kann genau beschreiben, was ein Schüler schon gut kann und woran er noch arbeiten sollte. Befürworter sagen, das motiviere die Schüler mehr als eine einfache Zahl.\n\nAn einigen Schulen, die dieses Modell schon länger nutzen, berichten Lehrer von positiven Erfahrungen. Die Schüler hätten weniger Angst vor Prüfungen und würden sich stattdessen mehr auf das eigentliche Lernen konzentrieren. Auch der Vergleich zwischen Mitschülern spiele eine kleinere Rolle, weil es keine einfache Rangliste mehr gebe.\n\nKritiker sehen das Modell jedoch skeptisch. Sie befürchten, dass Schüler ohne Noten schlechter auf das spätere Leben vorbereitet werden, in dem Leistung oft mit Zahlen bewertet wird. Außerdem sei es für Lehrer viel aufwendiger, für jeden einzelnen Schüler eine ausführliche Rückmeldung zu schreiben, statt einfach eine Note zu vergeben.\n\nAuch Eltern sind bei diesem Thema unterschiedlicher Meinung. Manche schätzen die genaueren Informationen über die Fortschritte ihres Kindes. Andere finden es schwierig, ohne eine klare Note einzuschätzen, wie ihr Kind im Vergleich zur Klasse steht.\n\nBisher bleibt der Verzicht auf Noten eine Ausnahme in Deutschland. Ob sich das Modell weiter verbreitet, wird auch davon abhängen, wie die ersten Langzeitstudien zu diesem Thema ausfallen.",
+  "questions": [
+   {
+    "q": "Was bekommen die Schüler statt klassischer Noten?",
+    "accept": [
+     "schriftliche rückmeldungen",
+     "rückmeldung"
+    ],
+    "hint": "ausführliche schriftliche Rückmeldungen"
+   },
+   {
+    "q": "Wovor hätten die Schüler laut Lehrern weniger Angst?",
+    "accept": [
+     "prüfungen"
+    ],
+    "hint": "vor Prüfungen"
+   },
+   {
+    "q": "Was befürchten Kritiker des Modells?",
+    "accept": [
+     "schlechter vorbereitet",
+     "vorbereitung"
+    ],
+    "hint": "eine schlechtere Vorbereitung auf das spätere Leben"
+   },
+   {
+    "q": "Was ist für Lehrer bei diesem Modell aufwendiger?",
+    "accept": [
+     "rückmeldung schreiben",
+     "schreiben"
+    ],
+    "hint": "für jeden Schüler eine Rückmeldung zu schreiben"
+   }
+  ]
+ },
+ {
+  "id": "ep9",
+  "title": "Der Fund im Garten",
+  "style": "story",
+  "level": "B1",
+  "script": "Thomas wohnt seit einem Jahr in einem alten Haus am Rand von Freiburg. Das Haus gehörte früher einer älteren Dame, die vor ihrem Tod dort über fünfzig Jahre gelebt hatte. Der Garten hinter dem Haus war lange nicht gepflegt worden, deshalb beschließt Thomas an einem sonnigen Samstag, endlich damit anzufangen.\n\nBeim Umgraben eines alten Beetes stößt sein Spaten plötzlich auf etwas Hartes. Zuerst denkt er an einen Stein, doch als er genauer hinschaut, erkennt er die Form einer kleinen Metallschachtel. Neugierig gräbt er sie vorsichtig aus der Erde.\n\nDie Schachtel ist verrostet und lässt sich zunächst nicht öffnen. Erst mit einem Schraubenzieher gelingt es Thomas, den Deckel zu lösen. Darin findet er ein paar alte Münzen, eine kleine Puppe aus Stoff und ein zusammengefaltetes Stück Papier.\n\nAuf dem Papier steht in kindlicher Handschrift ein kurzer Text: „Für später, wenn ich groß bin. Vergiss diesen Tag nicht.“ Unterschrieben ist der Zettel mit dem Namen „Anna, 8 Jahre alt“ und einem Datum aus dem Jahr 1962.\n\nThomas ist berührt von dem Fund. Er fragt bei seinen neuen Nachbarn nach, ob jemand die frühere Besitzerin des Hauses gekannt hat. Ein älterer Nachbar erinnert sich tatsächlich: Die Dame hieß Anna und hatte als Kind genau in diesem Garten gespielt.\n\nThomas beschließt, die Schachtel nicht wegzuwerfen. Stattdessen stellt er sie auf ein Regal in seinem Wohnzimmer, zusammen mit einer kleinen Notiz, in der er die Geschichte des Fundes für die Zukunft aufschreibt. Vielleicht findet ja irgendwann jemand anderes seine eigene Notiz im selben Garten.",
+  "questions": [
+   {
+    "q": "In welcher Stadt wohnt Thomas?",
+    "accept": [
+     "freiburg"
+    ],
+    "hint": "Freiburg"
+   },
+   {
+    "q": "Was findet Thomas beim Umgraben des Beetes?",
+    "accept": [
+     "metallschachtel",
+     "schachtel"
+    ],
+    "hint": "eine kleine Metallschachtel"
+   },
+   {
+    "q": "Wie hieß das Mädchen, das die Nachricht geschrieben hat?",
+    "accept": [
+     "anna"
+    ],
+    "hint": "Anna"
+   },
+   {
+    "q": "Was macht Thomas am Ende mit der Schachtel?",
+    "accept": [
+     "ins regal",
+     "regal",
+     "behält sie"
+    ],
+    "hint": "er stellt sie ins Regal im Wohnzimmer"
+   }
+  ]
+ },
+ {
+  "id": "ep10",
+  "title": "Die Uhr, die stehen blieb",
+  "style": "story",
+  "level": "B1",
+  "script": "Auf dem Flohmarkt in Leipzig entdeckt Julia eine alte Wanduhr mit einem holzverzierten Rahmen. Der Verkäufer erzählt ihr, die Uhr stamme aus den 1930er-Jahren und habe seiner Großmutter gehört. Julia gefällt die Uhr sofort, obwohl sie nicht mehr richtig funktioniert. Der Zeiger bleibt immer bei genau zwanzig vor drei stehen.\n\nZu Hause hängt sie die Uhr trotzdem an die Wand im Flur, einfach als Dekoration. Ein paar Wochen später, während sie mit ihrem Vater telefoniert, erwähnt sie beiläufig die Uhr und die stehen gebliebene Zeit.\n\nIhr Vater wird plötzlich sehr still. Nach einer Pause erzählt er ihr, dass genau um zwanzig vor drei sein eigener Vater, Julias Großvater, viele Jahre zuvor gestorben sei. Julia hatte ihren Großvater nie kennengelernt, da er schon vor ihrer Geburt gestorben war.\n\nDer Zufall lässt Julia nicht mehr los. Sie beginnt, mehr über ihre Familiengeschichte zu erfahren, und fragt ihren Vater nach alten Fotos und Geschichten. Dabei erfährt sie, dass ihr Großvater selbst gern Uhren reparierte und sogar eine kleine Werkstatt im Keller hatte.\n\nEinige Monate später bringt Julia die alte Wanduhr zu einem Uhrmacher in ihrer Straße. Nach einer gründlichen Reparatur läuft die Uhr wieder ganz normal. Julia entscheidet sich jedoch, sie trotzdem an die alte Zeit einzustellen und nie wieder aufzuziehen.\n\nFür sie ist die Uhr inzwischen mehr als nur ein Möbelstück vom Flohmarkt. Sie erinnert sie jeden Tag daran, wie kleine Zufälle manchmal ganze Familiengeschichten miteinander verbinden können.",
+  "questions": [
+   {
+    "q": "Auf welchem Flohmarkt findet Julia die Uhr?",
+    "accept": [
+     "leipzig"
+    ],
+    "hint": "Leipzig"
+   },
+   {
+    "q": "Bei welcher Zeit bleibt der Zeiger der Uhr immer stehen?",
+    "accept": [
+     "zwanzig vor drei"
+    ],
+    "hint": "zwanzig vor drei"
+   },
+   {
+    "q": "Was ist zu dieser Zeit vor vielen Jahren passiert?",
+    "accept": [
+     "großvater gestorben",
+     "gestorben"
+    ],
+    "hint": "ihr Großvater ist gestorben"
+   },
+   {
+    "q": "Wohin bringt Julia die Uhr, um sie reparieren zu lassen?",
+    "accept": [
+     "uhrmacher"
+    ],
+    "hint": "zu einem Uhrmacher"
+   }
+  ]
+ },
+ {
+  "id": "ep11",
+  "title": "Ein Brief nach zwanzig Jahren",
+  "style": "story",
+  "level": "B2",
+  "script": "Als Markus sein altes Klassenzimmer nach zwanzig Jahren wieder betritt, fühlt er sich seltsam nervös. Die Schule hat alle ehemaligen Schüler seines Abschlussjahrgangs zu einem besonderen Treffen eingeladen: Jeder von ihnen hatte damals im letzten Schuljahr einen Brief an sein zukünftiges Ich geschrieben, der seitdem in einer verschlossenen Kiste im Lehrerzimmer aufbewahrt wurde.\n\nDie ehemalige Klassenlehrerin, inzwischen fast siebzig Jahre alt, verteilt die vergilbten Umschläge einzeln an ihre früheren Schüler. Markus erkennt seine eigene, damals noch unsichere Handschrift sofort auf dem Umschlag.\n\nIn dem Brief hatte der siebzehnjährige Markus geschrieben, dass er unbedingt Musiker werden wollte, und zwar egal, was seine Eltern dazu sagten. Er hatte sich selbst versprochen, niemals einen \"langweiligen Bürojob\" anzunehmen.\n\nHeute arbeitet Markus tatsächlich in einem Büro, als Steuerberater. Für einen Moment fühlt er sich fast schuldig, als hätte er sein jüngeres Ich enttäuscht. Doch je länger er nachdenkt, desto klarer wird ihm, dass er trotzdem regelmäßig Gitarre spielt, inzwischen sogar in einer kleinen Band mit früheren Studienfreunden.\n\nEr blickt sich im Raum um und sieht ähnliche Reaktionen bei seinen ehemaligen Mitschülern: manche lachen über ihre alten Träume, manche wirken nachdenklich, wieder andere sind sichtlich stolz, weil sie tatsächlich genau das erreicht haben, was sie sich damals gewünscht hatten.\n\nAm Ende des Abends schreibt jeder einen neuen Brief, diesmal an sein Ich in zwanzig weiteren Jahren. Markus überlegt lange, bevor er beginnt zu schreiben. Er entscheidet sich, ehrlich zu bleiben: nicht alle Träume müssen genauso in Erfüllung gehen, wie man es sich als Jugendlicher vorgestellt hat, damit ein Leben trotzdem gut gelebt ist.",
+  "questions": [
+   {
+    "q": "Was hatten die Schüler vor zwanzig Jahren geschrieben?",
+    "accept": [
+     "brief",
+     "brief an sich selbst"
+    ],
+    "hint": "einen Brief an ihr zukünftiges Ich"
+   },
+   {
+    "q": "Was wollte Markus als Siebzehnjähriger werden?",
+    "accept": [
+     "musiker"
+    ],
+    "hint": "Musiker"
+   },
+   {
+    "q": "Als was arbeitet Markus heute?",
+    "accept": [
+     "steuerberater"
+    ],
+    "hint": "als Steuerberater"
+   },
+   {
+    "q": "Was macht Markus trotzdem noch regelmäßig?",
+    "accept": [
+     "gitarre spielen",
+     "gitarre",
+     "musik machen"
+    ],
+    "hint": "er spielt regelmäßig Gitarre in einer Band"
+   }
+  ]
+ },
+ {
+  "id": "ep12",
+  "title": "Die Reise ohne Ziel",
+  "style": "story",
+  "level": "B1",
+  "script": "Nach einer anstrengenden Prüfungswoche beschließt Sara, spontan etwas Verrücktes zu tun: Sie fährt zum Hauptbahnhof, schaut auf die Abfahrtstafel und steigt einfach in den nächsten Zug, ohne vorher zu wissen, wohin er fährt.\n\nDer Zug fährt Richtung Norden, und nach etwa zwei Stunden steigt Sara in einer kleinen Stadt aus, deren Namen sie noch nie gehört hat. Es ist ein sonniger Nachmittag, und die Straßen der Altstadt sind fast leer.\n\nSie schlendert ohne Plan durch enge Gassen und entdeckt ein kleines Café mit Tischen direkt am Fluss. Die Besitzerin, eine freundliche Frau mittleren Alters, fragt Sara neugierig, was eine Touristin ganz allein an einem gewöhnlichen Dienstag in diese kleine Stadt führt.\n\nSara erzählt ihr lachend von ihrer spontanen Zugfahrt ohne Ziel. Die Besitzerin findet die Idee wunderbar und empfiehlt ihr sofort einen versteckten Aussichtspunkt am Rand der Stadt, den die meisten Touristen normalerweise nie finden.\n\nDer Weg dorthin führt durch einen kleinen Wald und vorbei an einem alten Wasserrad. Oben angekommen, hat Sara einen weiten Blick über die Dächer der Stadt und die umliegenden Felder. Sie setzt sich auf eine Bank und bleibt lange dort sitzen, ohne auf die Uhr zu schauen.\n\nAls die Sonne langsam untergeht, macht sich Sara auf den Rückweg zum Bahnhof. Im Zug nach Hause denkt sie darüber nach, wie selten sie sich normalerweise Zeit für solche spontanen Momente nimmt. Sie beschließt, diese kleine Tradition ab jetzt öfter zu wiederholen, ganz ohne festen Plan.",
+  "questions": [
+   {
+    "q": "Warum steigt Sara spontan in einen Zug?",
+    "accept": [
+     "nach der prüfungswoche",
+     "spontan",
+     "erholung"
+    ],
+    "hint": "nach einer anstrengenden Prüfungswoche, ganz spontan"
+   },
+   {
+    "q": "In welche Richtung fährt der Zug?",
+    "accept": [
+     "norden"
+    ],
+    "hint": "Richtung Norden"
+   },
+   {
+    "q": "Wo trifft Sara die freundliche Frau?",
+    "accept": [
+     "café"
+    ],
+    "hint": "in einem kleinen Café am Fluss"
+   },
+   {
+    "q": "Was empfiehlt die Besitzerin Sara?",
+    "accept": [
+     "aussichtspunkt"
+    ],
+    "hint": "einen versteckten Aussichtspunkt"
+   }
+  ]
+ },
+ {
+  "id": "ep13",
+  "title": "Die Katze aus dem Nachbarhaus",
+  "style": "story",
+  "level": "A2",
+  "script": "Seit einigen Wochen sitzt jeden Nachmittag eine graue Katze vor Herrn Webers Gartentür. Er kennt die Katze nicht, aber sie sieht gepflegt aus und trägt ein rotes Halsband ohne Namensschild.\n\nHerr Weber stellt der Katze zuerst vorsichtig eine kleine Schale mit Wasser hin. Am nächsten Tag bringt er auch etwas Futter mit, das er extra im Supermarkt gekauft hat. Die Katze scheint das zu mögen und kommt von da an noch regelmäßiger.\n\nEr fragt bei den Nachbarn herum, ob jemand die Katze kennt, aber niemand kann ihm helfen. Also klebt er kleine Zettel an die Laternenpfähle in der Straße, mit einem Foto der Katze und seiner Telefonnummer.\n\nZwei Tage später ruft eine Frau aus der Nachbarstraße an. Sie erklärt, die Katze heiße Minka und gehöre eigentlich ihrer Familie. Minka sei aber schon öfter weggelaufen, weil sie das ruhige Ende der Straße lieber möge als ihr eigenes, lauteres Zuhause direkt an der Hauptstraße.\n\nDie Frau bedankt sich herzlich bei Herrn Weber und holt Minka noch am selben Abend ab. Bevor sie geht, fragt sie ihn, ob es in Ordnung wäre, wenn Minka gelegentlich weiterhin vorbeikommt.\n\nHerr Weber freut sich über die Frage. Seitdem sitzt die graue Katze weiterhin ab und zu vor seiner Gartentür, jetzt aber mit dem Wissen ihrer Besitzerin. Herr Weber hat sogar eine kleine Katzenschale extra für Minka draußen stehen, direkt neben der Gartentür.",
+  "questions": [
+   {
+    "q": "Welche Farbe hat die Katze?",
+    "accept": [
+     "grau",
+     "graue"
+    ],
+    "hint": "grau"
+   },
+   {
+    "q": "Was gibt Herr Weber der Katze zuerst?",
+    "accept": [
+     "wasser"
+    ],
+    "hint": "eine Schale mit Wasser"
+   },
+   {
+    "q": "Wie heißt die Katze wirklich?",
+    "accept": [
+     "minka"
+    ],
+    "hint": "Minka"
+   },
+   {
+    "q": "Warum läuft die Katze immer wieder zu Herrn Weber?",
+    "accept": [
+     "ruhiger",
+     "ruhigeres ende der straße",
+     "es ist ruhiger"
+    ],
+    "hint": "sie mag das ruhigere Ende der Straße"
+   }
+  ]
+ },
+ {
+  "id": "ep14",
+  "title": "Die vergessene Kunst des Reparierens",
+  "style": "news",
+  "level": "B2",
+  "script": "Früher war es normal, kaputte Gegenstände reparieren zu lassen, statt sie sofort wegzuwerfen. Ein Schuster besohlte alte Schuhe, ein Schneider änderte Kleidung, und ein Elektriker reparierte den Toaster. Heute ist es oft billiger, ein neues Produkt zu kaufen, als es reparieren zu lassen.\n\nIn den letzten Jahren entstehen jedoch immer mehr sogenannte Reparaturcafés. Dort treffen sich Freiwillige mit handwerklichem Wissen und helfen anderen Menschen kostenlos, ihre kaputten Gegenstände wieder in Ordnung zu bringen: von Fahrrädern über Lampen bis hin zu alten Radios.\n\nDie Idee dahinter ist nicht nur, Geld zu sparen. Viele Besucher solcher Reparaturcafés sagen, es fühle sich gut an, einen geliebten Gegenstand zu retten, anstatt ihn wegzuwerfen. Außerdem lernen die Menschen dabei oft selbst etwas über die Technik hinter ihren Alltagsgegenständen.\n\nAuch für die Umwelt hat das Reparieren große Vorteile. Jedes reparierte Gerät bedeutet weniger Elektroschrott und weniger Rohstoffe, die für ein neues Produkt gebraucht werden. Studien zeigen, dass die Herstellung neuer Geräte oft mehr Energie verbraucht als jahrelange Nutzung des alten Geräts.\n\nManche Hersteller reagieren inzwischen auf diesen Trend. Einige Firmen bieten mittlerweile Ersatzteile und Reparaturanleitungen für ihre eigenen Produkte an, statt Kunden nur zum Neukauf zu bewegen. In der Europäischen Union gibt es sogar neue Gesetze, die Hersteller dazu verpflichten sollen, Reparaturen einfacher zu machen.\n\nOb sich dieser Trend langfristig durchsetzt, bleibt offen. Viele Reparaturcafé-Organisatoren sind aber zuversichtlich: Immer mehr junge Menschen interessieren sich wieder dafür, wie Dinge funktionieren und wie man sie selbst instand halten kann.",
+  "questions": [
+   {
+    "q": "Was passiert in einem Reparaturcafé?",
+    "accept": [
+     "reparieren",
+     "reparatur",
+     "kaputte gegenstände reparieren"
+    ],
+    "hint": "Freiwillige reparieren kaputte Gegenstände"
+   },
+   {
+    "q": "Was spart man laut Text, wenn man ein Gerät reparieren lässt statt es wegzuwerfen?",
+    "accept": [
+     "elektroschrott",
+     "rohstoffe"
+    ],
+    "hint": "Elektroschrott und Rohstoffe"
+   },
+   {
+    "q": "Was bieten manche Hersteller inzwischen zusätzlich an?",
+    "accept": [
+     "ersatzteile",
+     "reparaturanleitungen"
+    ],
+    "hint": "Ersatzteile und Reparaturanleitungen"
+   },
+   {
+    "q": "Wer interessiert sich laut den Organisatoren wieder mehr für Reparatur?",
+    "accept": [
+     "junge menschen"
+    ],
+    "hint": "junge Menschen"
+   }
+  ]
+ },
+ {
+  "id": "ep15",
+  "title": "Nachtzüge feiern ein Comeback",
+  "style": "news",
+  "level": "B1",
+  "script": "Vor einigen Jahren galten Nachtzüge in Europa fast als aussterbende Reiseform. Viele Verbindungen wurden gestrichen, weil billige Flüge schneller und oft günstiger waren. Inzwischen hat sich dieser Trend jedoch umgekehrt.\n\nMehrere europäische Bahngesellschaften haben in den letzten Jahren neue Nachtzugverbindungen eingeführt. Man kann inzwischen wieder bequem von Deutschland nach Schweden, Österreich oder Italien fahren, ohne einen einzigen Tag Urlaub für die Reise zu opfern, weil man einfach über Nacht schläft.\n\nEin wichtiger Grund für diese Entwicklung ist der Klimawandel. Immer mehr Reisende möchten aus Umweltgründen auf Flugreisen verzichten, besonders auf kürzeren Strecken innerhalb Europas. Ein Zug verursacht im Durchschnitt deutlich weniger klimaschädliche Gase als ein Flugzeug.\n\nAuch der Komfort hat sich verbessert. Neue Nachtzüge bieten oft moderne Schlafwagen mit bequemen Betten, eigenen Waschbecken und manchmal sogar kleinen Duschen. Das unterscheidet sich stark von den alten, oft ungemütlichen Nachtzügen aus früheren Jahrzehnten.\n\nDennoch bleiben Herausforderungen. Nachtzüge sind oft teurer als ein vergleichbarer Flug, und nicht jede Strecke wird gleich gut bedient. Manche Reisende beklagen sich außerdem über verspätete Anschlusszüge, wenn eine Reise mehrere Länder durchquert.\n\nTrotz dieser Probleme wächst die Nachfrage weiter. Reiseexperten erwarten, dass in den nächsten Jahren noch mehr neue Verbindungen entstehen werden, besonders zwischen großen europäischen Hauptstädten.",
+  "questions": [
+   {
+    "q": "Warum wurden früher viele Nachtzugverbindungen gestrichen?",
+    "accept": [
+     "billige flüge",
+     "flüge"
+    ],
+    "hint": "wegen billiger Flüge"
+   },
+   {
+    "q": "Welcher Grund wird für das Comeback der Nachtzüge zuerst genannt?",
+    "accept": [
+     "klimawandel",
+     "umwelt"
+    ],
+    "hint": "der Klimawandel"
+   },
+   {
+    "q": "Was bieten neue Nachtzüge oft, das alte nicht hatten?",
+    "accept": [
+     "duschen",
+     "waschbecken",
+     "komfort"
+    ],
+    "hint": "moderne Schlafwagen mit Duschen und Waschbecken"
+   },
+   {
+    "q": "Was beklagen manche Reisende bei internationalen Verbindungen?",
+    "accept": [
+     "verspätete anschlusszüge",
+     "verspätung"
+    ],
+    "hint": "verspätete Anschlusszüge"
+   }
+  ]
+ },
+ {
+  "id": "ep16",
+  "title": "Insekten als Proteinquelle",
+  "style": "news",
+  "level": "B2",
+  "script": "In vielen Ländern Asiens, Afrikas und Lateinamerikas gehören essbare Insekten schon lange zur normalen Ernährung. In Europa dagegen galten Insekten lange als ungewöhnliches oder sogar unangenehmes Lebensmittel. Das ändert sich inzwischen langsam.\n\nSeit einigen Jahren dürfen bestimmte Insektenarten, zum Beispiel Mehlwürmer und Grillen, auch in der Europäischen Union offiziell als Lebensmittel verkauft werden. Man findet sie mittlerweile in Form von Proteinriegeln, Nudeln oder sogar Mehl in manchen Supermärkten.\n\nEin wichtiger Vorteil von Insekten ist ihre umweltfreundliche Herstellung. Im Vergleich zu klassischen Nutztieren wie Kühen oder Schweinen benötigen Insekten viel weniger Wasser, Futter und Platz, um die gleiche Menge Protein zu produzieren. Auch der Ausstoß von klimaschädlichen Gasen ist bei der Insektenzucht deutlich geringer.\n\nTrotzdem tun sich viele Verbraucher in Europa noch schwer damit, Insekten direkt zu essen. Umfragen zeigen, dass die Idee vielen Menschen zunächst unangenehm vorkommt, selbst wenn sie wissen, dass Insekten gesund und nahrhaft sind. Deshalb versuchen viele Hersteller, Insektenprotein möglichst unsichtbar in bekannte Produkte einzubauen, zum Beispiel als Mehlersatz in Brot oder Keksen.\n\nExperten glauben, dass sich diese Einstellung über die nächsten Generationen langsam verändern wird, ähnlich wie es früher bei anderen neuen Lebensmitteln der Fall war. Kinder, die schon heute mit solchen Produkten aufwachsen, könnten Insekten in Zukunft als ganz normalen Bestandteil ihrer Ernährung betrachten.\n\nOb Insekten irgendwann Fleisch als Hauptproteinquelle in Europa ersetzen, bleibt allerdings noch offen. Wahrscheinlicher ist zunächst eine Ergänzung des bestehenden Angebots.",
+  "questions": [
+   {
+    "q": "In welchen Weltregionen gehören Insekten schon lange zur normalen Ernährung?",
+    "accept": [
+     "asien",
+     "afrika",
+     "lateinamerika"
+    ],
+    "hint": "Asien, Afrika, Lateinamerika"
+   },
+   {
+    "q": "Welche zwei Insektenarten werden im Text als Beispiel genannt?",
+    "accept": [
+     "mehlwürmer",
+     "grillen"
+    ],
+    "hint": "Mehlwürmer und Grillen"
+   },
+   {
+    "q": "Was benötigen Insekten im Vergleich zu Kühen viel weniger?",
+    "accept": [
+     "wasser",
+     "futter",
+     "platz"
+    ],
+    "hint": "Wasser, Futter und Platz"
+   },
+   {
+    "q": "Wie versuchen Hersteller, Insektenprotein für Verbraucher akzeptabler zu machen?",
+    "accept": [
+     "unsichtbar einbauen",
+     "mehlersatz"
+    ],
+    "hint": "sie bauen es unsichtbar in bekannte Produkte ein"
+   }
+  ]
+ },
+ {
+  "id": "ep17",
+  "title": "Die stille Bibliothek der Zukunft",
+  "style": "news",
+  "level": "A2",
+  "script": "Bibliotheken verändern sich in vielen deutschen Städten. Früher dachten viele Menschen bei einer Bibliothek nur an ruhige Räume voller Bücher. Heute bieten moderne Bibliotheken viel mehr als nur Bücher zum Ausleihen.\n\nIn vielen neuen Bibliotheken gibt es zum Beispiel gemütliche Sofas, kleine Cafés und sogar Räume für Musik oder Kunst. Manche Bibliotheken verleihen inzwischen nicht nur Bücher, sondern auch Werkzeuge, Musikinstrumente oder Spiele.\n\nAuch die Technik hat sich stark verändert. In modernen Bibliotheken kann man E-Books direkt herunterladen, ohne überhaupt vor Ort zu sein. Manche Bibliotheken bieten sogar 3D-Drucker an, die Besucher kostenlos oder günstig nutzen können.\n\nTrotzdem bleibt ein wichtiger Teil gleich: Viele Menschen kommen weiterhin in die Bibliothek, weil es dort ruhig ist. Gerade Schüler und Studenten nutzen die Bibliothek gern zum Lernen, weil sie zu Hause oft abgelenkt sind.\n\nBibliothekare berichten, dass die Besucherzahlen in den letzten Jahren wieder gestiegen sind, seit die Bibliotheken mehr Angebote haben. Für viele junge Menschen ist die Bibliothek heute ein Treffpunkt geworden, nicht nur ein Ort für Bücher.\n\nExperten glauben, dass sich Bibliotheken in Zukunft noch weiter verändern werden. Trotzdem soll ein Teil davon immer gleich bleiben: ein ruhiger, offener Ort, an dem jeder willkommen ist.",
+  "questions": [
+   {
+    "q": "Was verleihen manche Bibliotheken inzwischen zusätzlich zu Büchern?",
+    "accept": [
+     "werkzeuge",
+     "musikinstrumente",
+     "spiele"
+    ],
+    "hint": "Werkzeuge, Musikinstrumente oder Spiele"
+   },
+   {
+    "q": "Was kann man in modernen Bibliotheken direkt herunterladen?",
+    "accept": [
+     "e-books"
+    ],
+    "hint": "E-Books"
+   },
+   {
+    "q": "Warum nutzen Schüler und Studenten die Bibliothek gern zum Lernen?",
+    "accept": [
+     "ruhe",
+     "ruhig",
+     "nicht abgelenkt"
+    ],
+    "hint": "weil es dort ruhig ist"
+   },
+   {
+    "q": "Was ist die Bibliothek für viele junge Menschen heute geworden?",
+    "accept": [
+     "treffpunkt"
+    ],
+    "hint": "ein Treffpunkt"
+   }
+  ]
+ },
+ {
+  "id": "ep18",
+  "title": "Wie Städte grüner werden",
+  "style": "news",
+  "level": "B1",
+  "script": "Immer mehr Städte in Deutschland versuchen, mehr Grünflächen in die Stadt zu bringen. Statt graue Betonflächen entstehen Parks, kleine Wälder mitten in der Stadt und sogar begrünte Hausdächer.\n\nEin Grund dafür ist die Hitze im Sommer. In Städten mit vielen Häusern und Straßen wird es im Sommer besonders heiß, weil Beton und Asphalt die Wärme speichern. Bäume und Pflanzen dagegen spenden Schatten und kühlen die Luft ab.\n\nEin bekanntes Beispiel sind begrünte Dächer. Auf vielen neuen Gebäuden werden inzwischen Dächer mit Pflanzen und kleinen Gräsern bedeckt, statt sie einfach leer zu lassen. Diese grünen Dächer speichern Regenwasser, kühlen das Gebäude und bieten Insekten einen neuen Lebensraum.\n\nAuch alte Straßen werden umgebaut. In manchen Städten werden einzelne Straßenabschnitte für Autos gesperrt und stattdessen mit Bäumen und Bänken zu kleinen grünen Plätzen umgewandelt. Anwohner berichten, dass sich diese Straßen dadurch viel angenehmer anfühlen.\n\nNatürlich kostet dieser Umbau Geld, und nicht jede Stadt kann sich alle Projekte gleichzeitig leisten. Deshalb setzen viele Städte zunächst kleinere Projekte um, bevor sie größere Flächen umgestalten.\n\nExperten sind sich einig: Mehr Grün in der Stadt hilft nicht nur gegen die Hitze, sondern macht die Menschen auch zufriedener. Studien zeigen, dass Menschen sich in grünen Umgebungen weniger gestresst fühlen als in reinen Betonlandschaften.",
+  "questions": [
+   {
+    "q": "Warum wird es in Städten mit viel Beton besonders heiß?",
+    "accept": [
+     "beton speichert wärme",
+     "wärme speichern"
+    ],
+    "hint": "Beton und Asphalt speichern die Wärme"
+   },
+   {
+    "q": "Was speichern begrünte Dächer?",
+    "accept": [
+     "regenwasser"
+    ],
+    "hint": "Regenwasser"
+   },
+   {
+    "q": "Was passiert mit manchen Straßenabschnitten in Städten?",
+    "accept": [
+     "für autos gesperrt",
+     "grüne plätze"
+    ],
+    "hint": "sie werden für Autos gesperrt und begrünt"
+   },
+   {
+    "q": "Wie fühlen sich Menschen laut Studien in grünen Umgebungen?",
+    "accept": [
+     "weniger gestresst",
+     "zufriedener"
+    ],
+    "hint": "weniger gestresst"
+   }
+  ]
+ },
+ {
+  "id": "ep19",
+  "title": "Das Geheimnis der alten Schule",
+  "style": "story",
+  "level": "B1",
+  "script": "In der kleinen Stadt Wetzlar steht seit über hundert Jahren ein altes Schulgebäude, das seit einiger Zeit leer steht. Die Stadt hat entschieden, das Gebäude zu renovieren und daraus ein kleines Museum zu machen.\n\nBei den Renovierungsarbeiten entdecken die Handwerker hinter einer alten Holzwand im Dachgeschoss eine versteckte Kammer. Niemand hatte diesen Raum auf den alten Baupläne bemerkt, weil er offenbar später zugemauert worden war.\n\nIn der kleinen Kammer finden sie eine Kiste mit alten Schulheften, Fotografien und einem Klassenbuch aus dem Jahr 1943. Die Bürgermeisterin, selbst eine Heimatgeschichte-Interessierte, lässt die Fundstücke sofort vorsichtig sichern.\n\nBeim Durchsehen der Unterlagen stellt sich heraus, dass in dieser Kammer während des Krieges offenbar heimlich Unterricht für einige jüdische Kinder stattgefunden hatte, die zu dieser Zeit die normale Schule nicht mehr besuchen durften. Ein ehemaliger Lehrer hatte den Raum wohl heimlich eingerichtet, ohne dass die Behörden davon wussten.\n\nDie Stadt beschließt, diesen Teil der Geschichte besonders im neuen Museum zu zeigen. Historiker werden eingeladen, die gefundenen Dokumente genauer zu untersuchen und, wenn möglich, Nachkommen der damaligen Schüler zu finden.\n\nBei der Eröffnung des Museums, ein Jahr später, kommt tatsächlich eine ältere Frau aus Berlin zu Besuch. Sie erkennt auf einem der alten Fotos ihre eigene Mutter als kleines Mädchen wieder. Für sie ist dieser Moment, wie sie später sagt, einer der bewegendsten Momente ihres Lebens.",
+  "questions": [
+   {
+    "q": "In welcher Stadt steht das alte Schulgebäude?",
+    "accept": [
+     "wetzlar"
+    ],
+    "hint": "Wetzlar"
+   },
+   {
+    "q": "Wo finden die Handwerker die versteckte Kammer?",
+    "accept": [
+     "dachgeschoss",
+     "hinter einer holzwand"
+    ],
+    "hint": "hinter einer Holzwand im Dachgeschoss"
+   },
+   {
+    "q": "Aus welchem Jahr stammt das gefundene Klassenbuch?",
+    "accept": [
+     "1943"
+    ],
+    "hint": "1943"
+   },
+   {
+    "q": "Wer erkennt bei der Museumseröffnung ein Foto wieder?",
+    "accept": [
+     "ältere frau",
+     "frau aus berlin"
+    ],
+    "hint": "eine ältere Frau aus Berlin"
+   }
+  ]
+ },
+ {
+  "id": "ep20",
+  "title": "Der Regenschirm, der blieb",
+  "style": "story",
+  "level": "A2",
+  "script": "An einem regnerischen Dienstag vergisst Frau Hartmann ihren roten Regenschirm im Bus. Erst als sie zu Hause ankommt, merkt sie, dass er fehlt. Sie ist traurig, denn der Schirm war ein Geschenk von ihrer Tochter gewesen.\n\nAm nächsten Tag ruft sie beim Fundbüro der Stadt an, aber niemand hat einen roten Regenschirm abgegeben. Frau Hartmann denkt, sie werde ihn wohl nie wiedersehen.\n\nZwei Wochen später steht plötzlich ein Mann vor ihrer Tür. Er hält einen roten Regenschirm in der Hand und fragt, ob er ihr gehöre. Der Mann erklärt, er habe den Schirm im selben Bus gefunden und die Nummer im Schirm-Etikett gesehen, das die Tochter dort vor Jahren angebracht hatte.\n\nEr habe lange gebraucht, um die richtige Adresse zu finden, weil auf dem Etikett nur ein alter Nachname stand. Erst über einen Nachbarn habe er schließlich Frau Hartmanns aktuelle Adresse erfahren.\n\nFrau Hartmann bedankt sich sehr herzlich und lädt den Mann spontan auf eine Tasse Kaffee ein. Die beiden verstehen sich sofort gut und reden über eine Stunde lang über ihre Stadtviertel und gemeinsame Bekannte.\n\nSeit diesem Tag trifft sich Frau Hartmann regelmäßig mit ihrem neuen Nachbarn zum Kaffee. Der rote Regenschirm hängt inzwischen wieder sicher an seinem Platz neben der Wohnungstür, aber die neue Freundschaft ist das, was für Frau Hartmann eigentlich am meisten zählt.",
+  "questions": [
+   {
+    "q": "An welchem Wochentag vergisst Frau Hartmann ihren Regenschirm?",
+    "accept": [
+     "dienstag"
+    ],
+    "hint": "Dienstag"
+   },
+   {
+    "q": "Welche Farbe hat der Regenschirm?",
+    "accept": [
+     "rot",
+     "roter"
+    ],
+    "hint": "rot"
+   },
+   {
+    "q": "Wie findet der Mann Frau Hartmanns Adresse?",
+    "accept": [
+     "über einen nachbarn"
+    ],
+    "hint": "über einen Nachbarn"
+   },
+   {
+    "q": "Wozu lädt Frau Hartmann den Mann ein?",
+    "accept": [
+     "kaffee"
+    ],
+    "hint": "auf eine Tasse Kaffee"
+   }
+  ]
+ },
+ {
+  "id": "ep21",
+  "title": "Die vergessene Melodie",
+  "style": "story",
+  "level": "B2",
+  "script": "Als Kind hatte Elena immer eine bestimmte Melodie gesummt, ohne genau zu wissen, woher sie kam. Ihre Eltern konnten sich nicht erklären, wo sie diese Melodie gelernt hatte, denn niemand in der Familie erinnerte sich, sie ihr je vorgesungen zu haben.\n\nJahre später, inzwischen erwachsen, hört Elena zufällig in einem kleinen Konzertsaal in Wien genau diese Melodie, gespielt von einem Streichquartett. Sie ist wie erstarrt und muss sich nach dem Konzert sofort erkundigen, um welches Stück es sich handelt.\n\nEin Musiker erklärt ihr, das Stück stamme von einem wenig bekannten Komponisten aus dem frühen zwanzigsten Jahrhundert und werde heutzutage nur noch selten aufgeführt. Elena kann sich immer noch nicht erklären, wie sie diese Melodie schon als kleines Kind gekannt haben könnte.\n\nZurück bei ihren Eltern erzählt sie von diesem seltsamen Erlebnis. Ihre Großmutter, die zufällig zu Besuch ist, hört aufmerksam zu und beginnt plötzlich selbst, leise die gleiche Melodie zu summen. Sie erklärt, dieses Stück habe ihre eigene Mutter, Elenas Urgroßmutter, früher oft am Klavier gespielt, lange bevor Elena überhaupt geboren wurde.\n\nOffenbar hatte die Großmutter die Melodie über all die Jahre unbewusst weitergegeben, indem sie sie manchmal beim Wiegen von Elenas Mutter als Baby gesungen hatte, die es später wiederum bei Elena getan hatte, ohne dass irgendjemand sich bewusst daran erinnerte.\n\nElena beschließt, die Melodie aufzuschreiben und für ihre eigenen zukünftigen Kinder aufzubewahren. Zum ersten Mal in ihrem Leben versteht sie, wie manche Dinge über Generationen weitergegeben werden, ganz ohne Worte und ohne dass es jemandem bewusst ist.",
+  "questions": [
+   {
+    "q": "Wo hört Elena die Melodie als Erwachsene wieder?",
+    "accept": [
+     "konzertsaal",
+     "wien"
+    ],
+    "hint": "in einem Konzertsaal in Wien"
+   },
+   {
+    "q": "Wer erklärt Elena schließlich, woher die Melodie stammt?",
+    "accept": [
+     "großmutter"
+    ],
+    "hint": "ihre Großmutter"
+   },
+   {
+    "q": "Wer hat das Stück ursprünglich oft gespielt?",
+    "accept": [
+     "urgroßmutter"
+    ],
+    "hint": "Elenas Urgroßmutter"
+   },
+   {
+    "q": "Was beschließt Elena am Ende mit der Melodie zu tun?",
+    "accept": [
+     "aufschreiben",
+     "aufbewahren"
+    ],
+    "hint": "sie aufzuschreiben und aufzubewahren"
+   }
+  ]
+ },
+ {
+  "id": "ep22",
+  "title": "Ein Zufall in der U-Bahn",
+  "style": "story",
+  "level": "B1",
+  "script": "An einem gewöhnlichen Montagmorgen sitzt Felix in der überfüllten U-Bahn auf dem Weg zur Arbeit. Er merkt, dass ihm gegenüber ein Mann sitzt, der ein Buch liest, das er selbst vor Jahren einmal verschenkt hat, mit seiner eigenen handschriftlichen Widmung darin.\n\nFelix ist sich zunächst nicht ganz sicher, ob er sich täuscht, aber die kleine Zeichnung auf dem Buchdeckel überzeugt ihn: Es ist tatsächlich genau dieses Buch, das er einst seiner damaligen Freundin zum Abschied geschenkt hatte, bevor sie beide getrennte Wege gegangen waren.\n\nNeugierig und etwas nervös spricht er den fremden Mann an. Er fragt vorsichtig, woher das Buch stamme. Der Mann erzählt überrascht, er habe es vor kurzem in einem kleinen Antiquariat gekauft, weil ihm der Titel gefallen habe.\n\nFelix erklärt kurz die Geschichte hinter dem Buch, ohne zu viele private Details zu verraten. Der Mann findet die Geschichte faszinierend und bietet Felix spontan an, ihm das Buch zurückzugeben, falls es ihm wichtig sei.\n\nFelix überlegt kurz, lehnt dann aber freundlich ab. Er erklärt, dass dieses Kapitel seines Lebens längst abgeschlossen sei und das Buch nun einfach seinen eigenen, neuen Weg gehen solle, so wie es offenbar ohnehin schon getan habe.\n\nDie beiden Männer steigen kurz darauf an verschiedenen Stationen aus, ohne sich die Telefonnummern auszutauschen. Für Felix bleibt dieser kurze Moment trotzdem einer, an den er sich noch lange erinnern wird, jedes Mal, wenn er in einer U-Bahn sitzt.",
+  "questions": [
+   {
+    "q": "Wo trifft Felix den fremden Mann?",
+    "accept": [
+     "u-bahn"
+    ],
+    "hint": "in der U-Bahn"
+   },
+   {
+    "q": "Was liest der fremde Mann?",
+    "accept": [
+     "buch"
+    ],
+    "hint": "ein Buch, das Felix früher verschenkt hat"
+   },
+   {
+    "q": "Wo hat der Mann das Buch gekauft?",
+    "accept": [
+     "antiquariat"
+    ],
+    "hint": "in einem Antiquariat"
+   },
+   {
+    "q": "Nimmt Felix das Buch am Ende zurück?",
+    "accept": [
+     "nein",
+     "lehnt ab"
+    ],
+    "hint": "nein, er lehnt ab"
+   }
+  ]
+ },
+ {
+  "id": "ep23",
+  "title": "Die letzte Reise des Zuges",
+  "style": "story",
+  "level": "B2",
+  "script": "Der alte Regionalzug zwischen Bad Kissingen und dem kleinen Nachbardorf fährt seit fast sechzig Jahren dieselbe kurze Strecke. Nun soll die Linie aus wirtschaftlichen Gründen endgültig eingestellt werden, weil sich der Betrieb für die Bahngesellschaft nicht mehr lohnt.\n\nFür die letzte offizielle Fahrt versammeln sich überraschend viele Menschen am kleinen Bahnhof, darunter auch der pensionierte Lokführer Herbert, der diese Strecke über vierzig Jahre lang gefahren war, bevor er in Rente ging.\n\nHerbert erzählt den anderen Wartenden Geschichten aus seiner Zeit als Lokführer: von einem Elch, der einmal mitten auf den Gleisen stand, von einer Hochzeit, bei der die Braut den Zug verpasst hatte und mit dem nächsten nachkommen musste, und von unzähligen Schülern, die er über die Jahre zur Schule gebracht hatte.\n\nAls der Zug schließlich zur letzten Fahrt einfährt, steigt Herbert noch einmal in die Führerkabine, mit besonderer Erlaubnis der Bahngesellschaft. Die aktuelle Lokführerin lässt ihn symbolisch die letzten Meter selbst fahren.\n\nViele Fahrgäste nutzen die Fahrt, um Fotos zu machen oder einfach still aus dem Fenster zu schauen. Manche ältere Fahrgäste wirken sichtlich bewegt, weil der Zug für sie über Jahrzehnte ein fester Teil ihres Alltags gewesen war.\n\nAm Ziel angekommen, applaudieren alle Fahrgäste gemeinsam. Die Bahngesellschaft verspricht, den Bahnhof als kleines Denkmal zu erhalten, auch wenn keine Züge mehr fahren werden. Für Herbert und viele andere bleibt die letzte Fahrt trotzdem ein bittersüßer Abschied von einem wichtigen Teil ihrer eigenen Geschichte.",
+  "questions": [
+   {
+    "q": "Wie lange fuhr diese Zugstrecke insgesamt?",
+    "accept": [
+     "sechzig jahre",
+     "60 jahre"
+    ],
+    "hint": "fast sechzig Jahre"
+   },
+   {
+    "q": "Wie viele Jahre war Herbert als Lokführer auf dieser Strecke tätig?",
+    "accept": [
+     "vierzig jahre",
+     "40 jahre"
+    ],
+    "hint": "über vierzig Jahre"
+   },
+   {
+    "q": "Was darf Herbert bei der letzten Fahrt symbolisch tun?",
+    "accept": [
+     "den zug fahren",
+     "letzte meter fahren"
+    ],
+    "hint": "die letzten Meter selbst fahren"
+   },
+   {
+    "q": "Was verspricht die Bahngesellschaft mit dem Bahnhof zu tun?",
+    "accept": [
+     "als denkmal erhalten",
+     "erhalten"
+    ],
+    "hint": "ihn als kleines Denkmal zu erhalten"
+   }
+  ]
+ },
+ {
+  "id": "ep24",
+  "title": "Solardächer für alle",
+  "style": "news",
+  "level": "B1",
+  "script": "Immer mehr Hausbesitzer in Deutschland lassen sich Solarpanele auf das Dach montieren. Was vor zwanzig Jahren noch selten und teuer war, ist heute für viele Familien eine normale Investition geworden.\n\nEin wichtiger Grund für diesen Trend sind die stark gesunkenen Preise für Solartechnik. Vor zehn Jahren kostete eine Solaranlage für ein durchschnittliches Haus noch mehrere Zehntausend Euro. Heute ist der Preis deutlich niedriger, während die Anlagen gleichzeitig effizienter geworden sind.\n\nAuch steigende Strompreise spielen eine Rolle. Viele Menschen möchten unabhängiger von großen Energieanbietern werden und ihren eigenen Strom produzieren. Mit einer Solaranlage und einem passenden Speicher kann eine Familie einen großen Teil ihres Strombedarfs selbst decken.\n\nStädte und Gemeinden unterstützen diesen Trend zunehmend. In manchen Regionen ist es inzwischen sogar gesetzlich vorgeschrieben, dass neue Gebäude mit Solaranlagen ausgestattet werden müssen. Auch bei Renovierungen alter Häuser wird die Installation von Solarpanelen oft finanziell gefördert.\n\nNicht jedes Haus ist allerdings ideal für Solarenergie geeignet. Dächer, die stark von Bäumen beschattet werden oder in die falsche Richtung zeigen, liefern deutlich weniger Strom. Experten empfehlen deshalb, vor dem Kauf einer Anlage die eigene Dachsituation genau prüfen zu lassen.\n\nTrotz einzelner Herausforderungen wächst die Zahl der Solaranlagen in Deutschland weiter kontinuierlich. Manche Experten glauben, dass in wenigen Jahren die Mehrheit der neuen Häuser automatisch mit Solartechnik gebaut werden wird.",
+  "questions": [
+   {
+    "q": "Was ist ein wichtiger Grund, warum sich mehr Menschen Solaranlagen kaufen?",
+    "accept": [
+     "gesunkene preise",
+     "niedrigere preise"
+    ],
+    "hint": "stark gesunkene Preise"
+   },
+   {
+    "q": "Wovon möchten viele Menschen unabhängiger werden?",
+    "accept": [
+     "energieanbietern",
+     "energieanbieter"
+    ],
+    "hint": "von großen Energieanbietern"
+   },
+   {
+    "q": "Was ist in manchen Regionen für neue Gebäude gesetzlich vorgeschrieben?",
+    "accept": [
+     "solaranlagen"
+    ],
+    "hint": "Solaranlagen"
+   },
+   {
+    "q": "Welche Dächer liefern deutlich weniger Strom?",
+    "accept": [
+     "beschattete dächer",
+     "dächer im schatten"
+    ],
+    "hint": "Dächer, die von Bäumen beschattet werden"
+   }
+  ]
+ },
+ {
+  "id": "ep25",
+  "title": "Freiwillige Arbeit im Alter",
+  "style": "news",
+  "level": "B2",
+  "script": "Immer mehr Menschen engagieren sich nach ihrer Pensionierung freiwillig in sozialen Projekten. Statt den neu gewonnenen Ruhestand nur mit Hobbys zu verbringen, entscheiden sich viele Rentner bewusst dafür, weiterhin aktiv zu bleiben und anderen zu helfen.\n\nDie Bereiche, in denen sich ältere Menschen engagieren, sind vielfältig. Manche unterstützen Schulkinder beim Lesenlernen, andere helfen in Krankenhäusern oder Seniorenheimen aus. Wieder andere engagieren sich in Umweltprojekten, zum Beispiel bei der Pflege öffentlicher Grünflächen.\n\nExperten sehen in diesem Trend mehrere Vorteile. Für die Gesellschaft bedeutet die freiwillige Arbeit älterer Menschen eine wertvolle Unterstützung, gerade in Bereichen, in denen es an Fachkräften oder Ressourcen fehlt. Gleichzeitig profitieren die Freiwilligen selbst davon: Studien zeigen, dass regelmäßiges soziales Engagement im Alter mit besserer geistiger und körperlicher Gesundheit zusammenhängt.\n\nEin weiterer wichtiger Aspekt ist die soziale Verbindung. Viele Menschen verlieren nach der Pensionierung den täglichen Kontakt zu Kollegen, den sie jahrzehntelang gewohnt waren. Freiwilligenarbeit bietet eine Möglichkeit, weiterhin regelmäßig unter Menschen zu sein und sich als nützlich zu fühlen.\n\nManche Organisationen haben inzwischen spezielle Programme entwickelt, um älteren Freiwilligen den Einstieg zu erleichtern. Dazu gehören zum Beispiel kurze Schulungen oder die Möglichkeit, sich zunächst unverbindlich in einem Projekt auszuprobieren, bevor man sich langfristig verpflichtet.\n\nAngesichts der wachsenden Zahl älterer Menschen in Deutschland gehen viele Experten davon aus, dass freiwillige Arbeit im Alter in Zukunft eine noch größere Rolle spielen wird, sowohl für die Gesellschaft als auch für die Freiwilligen selbst.",
+  "questions": [
+   {
+    "q": "In welchen Bereichen engagieren sich ältere Menschen laut Text?",
+    "accept": [
+     "schulen",
+     "krankenhäuser",
+     "umweltprojekte"
+    ],
+    "hint": "Schulen, Krankenhäuser, Umweltprojekte"
+   },
+   {
+    "q": "Womit hängt regelmäßiges soziales Engagement laut Studien zusammen?",
+    "accept": [
+     "besserer gesundheit",
+     "gesundheit"
+    ],
+    "hint": "besserer geistiger und körperlicher Gesundheit"
+   },
+   {
+    "q": "Was verlieren viele Menschen nach der Pensionierung?",
+    "accept": [
+     "kontakt zu kollegen",
+     "sozialen kontakt"
+    ],
+    "hint": "den täglichen Kontakt zu Kollegen"
+   },
+   {
+    "q": "Was bieten manche Organisationen älteren Freiwilligen an?",
+    "accept": [
+     "schulungen",
+     "unverbindliches ausprobieren"
+    ],
+    "hint": "kurze Schulungen oder die Möglichkeit, sich unverbindlich auszuprobieren"
+   }
+  ]
+ },
+ {
+  "id": "ep26",
+  "title": "Die Wiederkehr der Straßenbahn",
+  "style": "news",
+  "level": "B1",
+  "script": "In vielen deutschen Städten wird derzeit wieder in Straßenbahnen investiert. Manche Städte, die ihre Straßenbahnnetze vor Jahrzehnten stillgelegt hatten, planen inzwischen, sie wieder aufzubauen.\n\nEin Grund dafür ist der wachsende Verkehr in den Innenstädten. Immer mehr Autos führen zu Staus und Parkplatzproblemen. Straßenbahnen können viele Menschen gleichzeitig transportieren und benötigen dabei deutlich weniger Platz als eine entsprechende Anzahl von Autos.\n\nAuch Umweltgründe spielen eine wichtige Rolle. Moderne Straßenbahnen fahren meist elektrisch und verursachen daher keine direkten Abgase. Das passt gut zu den Klimazielen vieler Städte, die ihren CO2-Ausstoß in den kommenden Jahren deutlich senken wollen.\n\nDer Bau neuer Straßenbahnlinien ist allerdings teuer und dauert oft mehrere Jahre. Straßen müssen aufgerissen werden, um neue Gleise zu verlegen, was während der Bauzeit zu erheblichen Verkehrsbehinderungen führen kann. Viele Anwohner beklagen sich über den Lärm und Staub während dieser Bauphase.\n\nStädte, die den Bau bereits abgeschlossen haben, berichten jedoch von positiven Ergebnissen. Die Fahrgastzahlen im öffentlichen Nahverkehr sind gestiegen, und viele Anwohner nutzen inzwischen häufiger die Straßenbahn statt des eigenen Autos für Fahrten in die Innenstadt.\n\nExperten für Stadtplanung sehen in der Straßenbahn ein wichtiges Werkzeug für die Zukunft der Mobilität, besonders in mittelgroßen Städten, die weder eine U-Bahn brauchen noch komplett auf Busse setzen möchten.",
+  "questions": [
+   {
+    "q": "Warum planen manche Städte den Wiederaufbau von Straßenbahnnetzen?",
+    "accept": [
+     "wachsender verkehr",
+     "verkehr"
+    ],
+    "hint": "wegen des wachsenden Verkehrs in den Innenstädten"
+   },
+   {
+    "q": "Wie fahren moderne Straßenbahnen meist?",
+    "accept": [
+     "elektrisch"
+    ],
+    "hint": "elektrisch"
+   },
+   {
+    "q": "Worüber beklagen sich viele Anwohner während der Bauzeit?",
+    "accept": [
+     "lärm",
+     "staub"
+    ],
+    "hint": "Lärm und Staub"
+   },
+   {
+    "q": "Was ist laut Text in Städten mit neuen Straßenbahnen gestiegen?",
+    "accept": [
+     "fahrgastzahlen"
+    ],
+    "hint": "die Fahrgastzahlen im öffentlichen Nahverkehr"
+   }
+  ]
+ },
+ {
+  "id": "ep27",
+  "title": "Kinder lernen Programmieren",
+  "style": "news",
+  "level": "A2",
+  "script": "An immer mehr Schulen in Deutschland lernen Kinder schon früh, wie man einfache Computerprogramme schreibt. Was früher nur ein Hobby für wenige war, gehört inzwischen für viele Schüler zum normalen Unterricht.\n\nDafür benutzen die Lehrer oft spezielle Programme, die für Kinder einfach zu verstehen sind. Statt komplizierten Text schreiben die Kinder Programme mit bunten Bausteinen, die sie einfach zusammensetzen können, ähnlich wie bei einem Puzzle.\n\nMit diesen Programmen können die Kinder zum Beispiel kleine Spiele erstellen oder einfache Animationen programmieren. Viele Kinder haben großen Spaß daran, weil sie sofort sehen können, was ihr Programm macht.\n\nLehrer sagen, dass Programmieren den Kindern hilft, logisch zu denken. Wenn ein Programm nicht funktioniert, müssen die Kinder selbst herausfinden, wo der Fehler liegt. Das trainiert Geduld und Problemlösung.\n\nAuch für die Zukunft der Kinder kann das wichtig sein. In vielen Berufen wird heute technisches Wissen gebraucht, selbst wenn man nicht direkt als Programmierer arbeitet. Wer früh lernt, wie Computer funktionieren, hat später oft Vorteile.\n\nManche Eltern sind zunächst überrascht, wie einfach ihre Kinder mit dieser Technik umgehen. Viele Schulen planen deshalb, das Programmieren noch stärker in den normalen Unterricht einzubauen.",
+  "questions": [
+   {
+    "q": "Was benutzen die Kinder statt komplizierten Text zum Programmieren?",
+    "accept": [
+     "bausteine",
+     "bunte bausteine"
+    ],
+    "hint": "bunte Bausteine"
+   },
+   {
+    "q": "Was können die Kinder mit den Programmen erstellen?",
+    "accept": [
+     "spiele",
+     "animationen"
+    ],
+    "hint": "kleine Spiele oder Animationen"
+   },
+   {
+    "q": "Was müssen Kinder tun, wenn ihr Programm nicht funktioniert?",
+    "accept": [
+     "fehler finden",
+     "fehler suchen"
+    ],
+    "hint": "selbst den Fehler finden"
+   },
+   {
+    "q": "Was trainiert das Programmieren laut Lehrern?",
+    "accept": [
+     "geduld",
+     "problemlösung",
+     "logisches denken"
+    ],
+    "hint": "Geduld und Problemlösung"
+   }
+  ]
+ },
+ {
+  "id": "ep28",
+  "title": "Digitale Museen",
+  "style": "news",
+  "level": "B1",
+  "script": "Museen verändern sich in den letzten Jahren stark durch neue digitale Technik. Statt nur Bilder und Objekte hinter Glas zu zeigen, nutzen viele Museen inzwischen Bildschirme, virtuelle Realität und interaktive Angebote.\n\nEin Beispiel sind sogenannte virtuelle Rundgänge. Besucher können mit einer speziellen Brille in eine andere Zeit oder an einen anderen Ort reisen, zum Beispiel in ein antikes Gebäude, das heute nicht mehr existiert. So wird Geschichte lebendiger und leichter verständlich.\n\nAuch für Menschen, die ein Museum nicht persönlich besuchen können, gibt es neue Möglichkeiten. Viele große Museen bieten inzwischen digitale Sammlungen im Internet an. Man kann sich Gemälde in hoher Qualität anschauen, ohne überhaupt vor Ort zu sein.\n\nManche Museen setzen zusätzlich auf interaktive Stationen. Besucher können dort selbst etwas ausprobieren, zum Beispiel ein historisches Handwerk digital nachbauen oder Fragen zu einem Ausstellungsstück direkt am Bildschirm beantworten.\n\nNicht alle Besucher sind von dieser Entwicklung begeistert. Manche Menschen sagen, sie würden lieber die echten Objekte in Ruhe betrachten, statt sich mit Technik zu beschäftigen. Museumsdirektoren versuchen deshalb, eine Balance zwischen klassischer Ausstellung und neuer Technik zu finden.\n\nExperten glauben, dass digitale Angebote in Zukunft weiter wachsen werden, besonders um jüngere Besucher anzusprechen, die mit Technik aufgewachsen sind.",
+  "questions": [
+   {
+    "q": "Was können Besucher bei einem virtuellen Rundgang mit einer speziellen Brille erleben?",
+    "accept": [
+     "reise in andere zeit",
+     "andere zeit",
+     "anderen ort"
+    ],
+    "hint": "in eine andere Zeit oder an einen anderen Ort reisen"
+   },
+   {
+    "q": "Was bieten viele große Museen inzwischen im Internet an?",
+    "accept": [
+     "digitale sammlungen"
+    ],
+    "hint": "digitale Sammlungen"
+   },
+   {
+    "q": "Was können Besucher an interaktiven Stationen tun?",
+    "accept": [
+     "etwas ausprobieren",
+     "handwerk nachbauen"
+    ],
+    "hint": "selbst etwas ausprobieren"
+   },
+   {
+    "q": "Wen möchten Museen mit digitalen Angeboten besonders ansprechen?",
+    "accept": [
+     "jüngere besucher"
+    ],
+    "hint": "jüngere Besucher"
+   }
+  ]
+ },
+ {
+  "id": "ep29",
+  "title": "Der Koffer vom Dachboden",
+  "style": "story",
+  "level": "B1",
+  "script": "Beim Ausräumen des Dachbodens ihrer verstorbenen Tante findet Nina einen alten, ledernen Koffer, der mit einem kleinen Vorhängeschloss verschlossen ist. Niemand in der Familie hat einen passenden Schlüssel, und die Tante hat nie erwähnt, was sich in dem Koffer befindet.\n\nNina beschließt, den Koffer mit nach Hause zu nehmen, statt ihn einfach wegzuwerfen. Ein befreundeter Schlosser hilft ihr schließlich, das alte Schloss vorsichtig zu öffnen, ohne den Koffer selbst zu beschädigen.\n\nIm Inneren findet Nina eine Sammlung von Theaterprogrammen aus den 1970er-Jahren, mehrere Fotografien von Auftritten und ein handgeschriebenes Tagebuch. Sie erkennt ihre Tante auf den Fotos, deutlich jünger, in bunten Kostümen auf verschiedenen Bühnen.\n\nBeim Lesen des Tagebuchs erfährt Nina, dass ihre Tante als junge Frau tatsächlich Schauspielerin an einem kleinen Theater gewesen war, bevor sie später einen ganz anderen, ruhigeren Beruf ergriffen hatte. Ihre Tante hatte diesen Teil ihres Lebens offenbar niemandem in der Familie erzählt.\n\nNina ist überrascht, wie wenig sie eigentlich über das frühere Leben ihrer Tante wusste. Sie beschließt, mit älteren Verwandten zu sprechen, um mehr über diese Zeit zu erfahren, und findet tatsächlich einen entfernten Cousin, der sich noch an einige Theaterabende erinnert.\n\nAls Erinnerung lässt Nina eines der alten Theaterprogramme rahmen und hängt es in ihrem Wohnzimmer auf. Für sie ist es eine schöne Art, diesen unbekannten Teil der Familiengeschichte lebendig zu halten.",
+  "questions": [
+   {
+    "q": "Wo findet Nina den alten Koffer?",
+    "accept": [
+     "dachboden"
+    ],
+    "hint": "auf dem Dachboden"
+   },
+   {
+    "q": "Wer hilft Nina, den Koffer zu öffnen?",
+    "accept": [
+     "schlosser"
+    ],
+    "hint": "ein befreundeter Schlosser"
+   },
+   {
+    "q": "Was war die Tante als junge Frau?",
+    "accept": [
+     "schauspielerin"
+    ],
+    "hint": "Schauspielerin"
+   },
+   {
+    "q": "Was macht Nina mit einem der alten Theaterprogramme?",
+    "accept": [
+     "rahmen",
+     "aufhängen"
+    ],
+    "hint": "sie lässt es rahmen und aufhängen"
+   }
+  ]
+ },
+ {
+  "id": "ep30",
+  "title": "Die Nachricht auf dem Spiegel",
+  "style": "story",
+  "level": "A2",
+  "script": "Jeden Morgen putzt Frau Keller sorgfältig den großen Spiegel im Flur ihres kleinen Hotels. Eines Morgens findet sie darauf eine Nachricht, geschrieben mit einem Lippenstift: „Danke für alles. Ich komme wieder.“\n\nSie kann sich nicht erinnern, wer der Gast war, der diese Nachricht geschrieben hat. In den letzten Tagen hatten mehrere Gäste im Hotel übernachtet, und niemand hatte sich beim Auschecken besonders auffällig verhalten.\n\nFrau Keller beschließt, die Nachricht erst einmal nicht wegzuputzen. Stattdessen fotografiert sie den Spiegel und hängt später ein kleines Foto davon an die Wand in der Hotellobby.\n\nEinige Wochen später kommt tatsächlich eine junge Frau zurück ins Hotel und bucht wieder ein Zimmer. Beim Einchecken erkennt sie das Foto an der Wand sofort und lächelt. Sie erklärt Frau Keller, dass sie während eines schwierigen Lebensabschnitts einige Tage im Hotel übernachtet hatte und sich hier zum ersten Mal seit langer Zeit wieder sicher gefühlt habe.\n\nFrau Keller ist berührt von dieser Erklärung. Die beiden Frauen reden noch lange an diesem Abend miteinander, bei einer Tasse Tee in der kleinen Hotelküche.\n\nSeitdem hat Frau Keller eine neue Tradition: Sie putzt den Spiegel im Flur zwar weiterhin jeden Tag, aber wenn ein Gast eine kleine, freundliche Nachricht hinterlässt, lässt sie diese immer für ein paar Tage stehen, bevor sie den Spiegel wieder ganz sauber macht.",
+  "questions": [
+   {
+    "q": "Womit ist die Nachricht auf dem Spiegel geschrieben?",
+    "accept": [
+     "lippenstift"
+    ],
+    "hint": "mit einem Lippenstift"
+   },
+   {
+    "q": "Was macht Frau Keller mit der Nachricht, statt sie wegzuputzen?",
+    "accept": [
+     "fotografiert sie",
+     "foto machen"
+    ],
+    "hint": "sie fotografiert sie"
+   },
+   {
+    "q": "Was erklärt die junge Frau, als sie zurückkommt?",
+    "accept": [
+     "sicher gefühlt",
+     "schwierige zeit"
+    ],
+    "hint": "sie hatte sich im Hotel wieder sicher gefühlt"
+   },
+   {
+    "q": "Was macht Frau Keller jetzt mit freundlichen Nachrichten auf dem Spiegel?",
+    "accept": [
+     "stehen lassen",
+     "ein paar tage stehen lassen"
+    ],
+    "hint": "sie lässt sie ein paar Tage stehen"
+   }
+  ]
+ },
+ {
+  "id": "ep31",
+  "title": "Ein Sommer in den Bergen",
+  "style": "story",
+  "level": "B1",
+  "script": "Als Kind verbrachte Daniel jeden Sommer bei seinem Onkel in einem kleinen Bergdorf in Österreich. Nach dem Tod seines Onkels vor zwei Jahren war Daniel nicht mehr dort gewesen, weil ihn zu viele Erinnerungen belasteten.\n\nDieses Jahr beschließt er trotzdem, wieder hinzufahren. Der Weg von der Stadt in die Berge dauert mit dem Auto etwa vier Stunden, und je näher er dem Dorf kommt, desto vertrauter fühlt sich die Landschaft wieder an.\n\nDas alte Holzhaus seines Onkels steht noch genauso da, wie er es in Erinnerung hatte, nur der Garten ist inzwischen etwas verwildert. Ein Nachbar hat sich freundlicherweise weiterhin um das Nötigste gekümmert, seit das Haus leer steht.\n\nDaniel verbringt die ersten Tage hauptsächlich damit, die alten Wanderwege wieder zu gehen, die er als Kind mit seinem Onkel erkundet hatte. An einem besonders steilen Weg zu einem kleinen See erinnert er sich plötzlich an eine bestimmte Geschichte, die sein Onkel ihm dort erzählt hatte, über einen sagenhaften Bergsee-Geist.\n\nAm See angekommen, setzt sich Daniel für eine ganze Weile ans Wasser und denkt einfach nach. Zum ersten Mal seit dem Tod seines Onkels fühlt er sich nicht mehr nur traurig, sondern auch dankbar für die gemeinsame Zeit, die sie in diesen Bergen verbracht hatten.\n\nAm Ende der Reise beschließt Daniel, das Haus nicht zu verkaufen, wie er es ursprünglich geplant hatte. Stattdessen möchte er es renovieren und in Zukunft wieder regelmäßig dort seine Sommer verbringen.",
+  "questions": [
+   {
+    "q": "In welchem Land liegt das Bergdorf?",
+    "accept": [
+     "österreich"
+    ],
+    "hint": "Österreich"
+   },
+   {
+    "q": "Wie lange dauert die Fahrt von der Stadt in die Berge?",
+    "accept": [
+     "vier stunden",
+     "4 stunden"
+    ],
+    "hint": "etwa vier Stunden"
+   },
+   {
+    "q": "Wer hat sich um das Haus gekümmert, seit es leer steht?",
+    "accept": [
+     "nachbar"
+    ],
+    "hint": "ein Nachbar"
+   },
+   {
+    "q": "Was beschließt Daniel am Ende mit dem Haus zu tun?",
+    "accept": [
+     "renovieren",
+     "nicht verkaufen"
+    ],
+    "hint": "es zu renovieren, statt es zu verkaufen"
+   }
+  ]
+ },
+ {
+  "id": "ep32",
+  "title": "Das Rätsel der Kirchturmuhr",
+  "style": "story",
+  "level": "B2",
+  "script": "In dem kleinen Dorf Sankt Georgen läuft die Uhr am alten Kirchturm seit einigen Wochen ungewöhnlich unregelmäßig. Manchmal geht sie mehrere Stunden vor, manchmal bleibt sie über Nacht ganz stehen. Der örtliche Pfarrer bittet schließlich den pensionierten Uhrmacher Anton um Hilfe.\n\nAnton kennt die alte mechanische Uhr gut, da er sie schon vor über zwanzig Jahren einmal gründlich gewartet hatte. Zunächst vermutet er ein einfaches technisches Problem, etwa verschmutzte Zahnräder oder ein gelöstes Gewicht im Uhrwerk.\n\nBeim genaueren Untersuchen des Turminneren entdeckt er jedoch etwas Unerwartetes: ein kleines Vogelnest, das direkt neben dem empfindlichen Pendel gebaut wurde. Offenbar hatten Vögel über den Sommer den Turm als Nistplatz genutzt und dabei unabsichtlich die Bewegung des Pendels leicht gestört.\n\nAnton entfernt das Nest vorsichtig, nachdem er sichergestellt hat, dass keine Vögel mehr darin leben, und reinigt anschließend das gesamte Uhrwerk gründlich. Innerhalb weniger Tage läuft die Uhr wieder vollkommen normal.\n\nDie Dorfbewohner sind erleichtert, aber auch amüsiert über die ungewöhnliche Ursache des Problems. Der Pfarrer beschließt, kleine Schutzgitter an den Turmöffnungen anbringen zu lassen, damit sich das Problem in Zukunft nicht wiederholt.\n\nAnton selbst freut sich über die unerwartete Aufgabe. Seit seiner Pensionierung hatte er sich manchmal gelangweilt, und die kleine Reparatur erinnert ihn wieder daran, wie sehr er seine frühere Arbeit als Uhrmacher eigentlich vermisst hatte.",
+  "questions": [
+   {
+    "q": "Wen bittet der Pfarrer um Hilfe mit der Kirchturmuhr?",
+    "accept": [
+     "uhrmacher",
+     "anton"
+    ],
+    "hint": "den pensionierten Uhrmacher Anton"
+   },
+   {
+    "q": "Was findet Anton neben dem Pendel der Uhr?",
+    "accept": [
+     "vogelnest",
+     "nest"
+    ],
+    "hint": "ein kleines Vogelnest"
+   },
+   {
+    "q": "Wie lange dauert es, bis die Uhr wieder normal läuft?",
+    "accept": [
+     "wenige tage",
+     "einige tage"
+    ],
+    "hint": "innerhalb weniger Tage"
+   },
+   {
+    "q": "Was lässt der Pfarrer anbringen, um das Problem zu verhindern?",
+    "accept": [
+     "schutzgitter"
+    ],
+    "hint": "kleine Schutzgitter an den Turmöffnungen"
+   }
+  ]
+ },
+ {
+  "id": "ep33",
+  "title": "Die Flaschenpost",
+  "style": "story",
+  "level": "A2",
+  "script": "Während eines Spaziergangs am Strand der Ostsee findet die zehnjährige Mia eine Flasche im Sand. In der Flasche steckt ein zusammengerolltes Stück Papier. Aufgeregt öffnet sie die Flasche und zieht den Zettel heraus.\n\nAuf dem Papier steht eine kurze Nachricht auf Deutsch: „Hallo! Ich bin Paul und habe diese Flasche ins Meer geworfen, im Sommer vor drei Jahren. Wenn du das liest, schreib mir bitte!“ Darunter steht eine E-Mail-Adresse.\n\nMia zeigt den Fund sofort ihren Eltern. Gemeinsam schreiben sie eine kurze E-Mail an die angegebene Adresse und erzählen, wo und wann sie die Flasche gefunden haben.\n\nSchon am nächsten Tag bekommen sie eine Antwort. Paul, der inzwischen selbst schon dreizehn Jahre alt ist, freut sich riesig, dass seine Flasche tatsächlich gefunden wurde. Er erzählt, dass er die Flasche damals mit seiner Familie im Urlaub ins Meer geworfen hatte, einfach zum Spaß.\n\nMia und Paul schreiben sich in den nächsten Wochen mehrmals. Sie erfahren, dass ihre Familien nur etwa zwei Stunden Autofahrt voneinander entfernt wohnen. Ihre Eltern beschließen, sich im nächsten Sommer gemeinsam an der Ostsee zu treffen.\n\nAls sie sich schließlich persönlich kennenlernen, bringt Mia die alte Flasche mit ans Meer. Gemeinsam schreiben Mia und Paul eine neue Nachricht und werfen die Flasche noch einmal gemeinsam ins Wasser, gespannt darauf, wer sie als Nächstes finden wird.",
+  "questions": [
+   {
+    "q": "An welchem Meer findet Mia die Flasche?",
+    "accept": [
+     "ostsee"
+    ],
+    "hint": "an der Ostsee"
+   },
+   {
+    "q": "Wie heißt der Junge, der die Flasche ins Meer geworfen hat?",
+    "accept": [
+     "paul"
+    ],
+    "hint": "Paul"
+   },
+   {
+    "q": "Wie antworten Mia und ihre Eltern auf die Nachricht?",
+    "accept": [
+     "e-mail"
+    ],
+    "hint": "mit einer E-Mail"
+   },
+   {
+    "q": "Was machen Mia und Paul am Ende gemeinsam mit der Flasche?",
+    "accept": [
+     "ins wasser werfen",
+     "wieder werfen"
+    ],
+    "hint": "sie werfen sie noch einmal gemeinsam ins Wasser"
+   }
+  ]
+ },
+ {
+  "id": "ep34",
+  "title": "Weniger Fleisch, mehr Gemüse",
+  "style": "news",
+  "level": "B1",
+  "script": "In Deutschland essen immer mehr Menschen weniger Fleisch als früher. Umfragen zeigen, dass sich der durchschnittliche Fleischkonsum in den letzten zehn Jahren deutlich verringert hat, besonders bei jüngeren Menschen.\n\nEin wichtiger Grund dafür ist das gestiegene Umweltbewusstsein. Die Herstellung von Fleisch benötigt viel Wasser, Land und Futter, und sie verursacht außerdem einen großen Teil der klimaschädlichen Gase weltweit. Viele Menschen möchten mit weniger Fleischkonsum einen persönlichen Beitrag zum Klimaschutz leisten.\n\nAuch gesundheitliche Gründe spielen eine Rolle. Studien deuten darauf hin, dass eine Ernährung mit weniger Fleisch und mehr Gemüse das Risiko für bestimmte Krankheiten senken kann. Viele Menschen probieren deshalb bewusst pflanzliche Alternativen aus.\n\nDie Lebensmittelindustrie reagiert auf diesen Trend. In fast jedem Supermarkt findet man inzwischen eine große Auswahl an pflanzlichen Ersatzprodukten, von Wurst über Schnitzel bis hin zu Käse. Die Qualität dieser Produkte hat sich in den letzten Jahren stark verbessert.\n\nNicht jeder verzichtet komplett auf Fleisch. Viele Menschen bezeichnen sich selbst als \"Flexitarier\": Sie essen weiterhin gelegentlich Fleisch, versuchen aber bewusst, ihren Konsum insgesamt zu reduzieren und dabei auf Qualität statt Menge zu achten.\n\nLandwirte reagieren unterschiedlich auf diese Entwicklung. Manche stellen ihre Betriebe auf pflanzliche Produkte um, andere setzen weiterhin auf klassische Tierhaltung, versuchen dabei aber, die Bedingungen für die Tiere zu verbessern. Experten erwarten, dass sich der Trend zu weniger Fleischkonsum in den kommenden Jahren fortsetzen wird.",
+  "questions": [
+   {
+    "q": "Bei welcher Gruppe ist der Fleischkonsum besonders stark gesunken?",
+    "accept": [
+     "jüngere menschen",
+     "junge menschen"
+    ],
+    "hint": "bei jüngeren Menschen"
+   },
+   {
+    "q": "Wie nennt man Menschen, die weiterhin gelegentlich Fleisch essen, aber weniger davon?",
+    "accept": [
+     "flexitarier"
+    ],
+    "hint": "Flexitarier"
+   },
+   {
+    "q": "Was findet man inzwischen in fast jedem Supermarkt?",
+    "accept": [
+     "pflanzliche ersatzprodukte",
+     "ersatzprodukte"
+    ],
+    "hint": "eine große Auswahl an pflanzlichen Ersatzprodukten"
+   },
+   {
+    "q": "Was versuchen manche Landwirte bei klassischer Tierhaltung zu verbessern?",
+    "accept": [
+     "bedingungen für die tiere",
+     "bedingungen"
+    ],
+    "hint": "die Bedingungen für die Tiere"
+   }
+  ]
+ },
+ {
+  "id": "ep35",
+  "title": "Kurze Arbeitswege, mehr Lebensqualität",
+  "style": "news",
+  "level": "B1",
+  "script": "Immer mehr Stadtplaner setzen auf das Konzept der \"Fünfzehn-Minuten-Stadt\". Die Idee dahinter: Alles, was Menschen im Alltag brauchen, sollte in höchstens fünfzehn Minuten zu Fuß oder mit dem Fahrrad erreichbar sein.\n\nDazu gehören Geschäfte für den täglichen Einkauf, Schulen, Ärzte, Parks und Arbeitsplätze. Wenn all diese Orte nah beieinander liegen, müssen die Menschen weniger Zeit im Auto oder in überfüllten Bussen verbringen.\n\nErste Städte in Europa experimentieren bereits mit diesem Konzept. Dabei geht es nicht darum, eine komplett neue Stadt zu bauen, sondern bestehende Stadtviertel so zu verändern, dass mehr Angebote in der Nähe entstehen. Zum Beispiel werden leere Ladenflächen mit kleinen Nachbarschaftszentren gefüllt.\n\nBefürworter des Konzepts sehen viele Vorteile. Weniger Autoverkehr bedeutet weniger Lärm, saubere Luft und mehr Platz für Fußgänger und Radfahrer. Außerdem sollen die Menschen mehr Zeit für Familie und Freizeit gewinnen, weil sie weniger im Verkehr verbringen.\n\nEs gibt allerdings auch Kritik. Manche befürchten, dass durch dieses Konzept bestimmte Stadtviertel isoliert werden könnten, wenn Menschen kaum noch Gründe haben, andere Teile der Stadt zu besuchen. Andere warnen vor steigenden Mietpreisen in besonders attraktiven Fünfzehn-Minuten-Viertel.\n\nStadtplaner betonen, dass das Konzept schrittweise umgesetzt werden muss und nicht für jede Stadt gleich gut funktioniert. Kleinere und mittelgroße Städte könnten die Idee oft leichter umsetzen als riesige Metropolen.",
+  "questions": [
+   {
+    "q": "Wie schnell sollten Alltagsorte laut dem Konzept erreichbar sein?",
+    "accept": [
+     "fünfzehn minuten",
+     "15 minuten"
+    ],
+    "hint": "in höchstens fünfzehn Minuten"
+   },
+   {
+    "q": "Was wird mit leeren Ladenflächen gemacht?",
+    "accept": [
+     "nachbarschaftszentren"
+    ],
+    "hint": "sie werden mit kleinen Nachbarschaftszentren gefüllt"
+   },
+   {
+    "q": "Was befürchten Kritiker des Konzepts?",
+    "accept": [
+     "isolierte stadtviertel",
+     "isolation"
+    ],
+    "hint": "dass Stadtviertel isoliert werden könnten"
+   },
+   {
+    "q": "Welche Städte können das Konzept laut Stadtplanern leichter umsetzen?",
+    "accept": [
+     "kleinere und mittelgroße städte",
+     "kleinere städte"
+    ],
+    "hint": "kleinere und mittelgroße Städte"
+   }
+  ]
+ },
+ {
+  "id": "ep36",
+  "title": "Wasser sparen im Alltag",
+  "style": "news",
+  "level": "A2",
+  "script": "In den letzten Jahren gab es in Deutschland immer wieder trockene Sommer mit wenig Regen. Deshalb sprechen Experten und Städte jetzt öfter darüber, wie man im Alltag Wasser sparen kann.\n\nEin einfacher Tipp ist, beim Zähneputzen den Wasserhahn nicht die ganze Zeit laufen zu lassen. Das spart schon jeden Tag viel Wasser. Auch kürzere Duschen statt langer Bäder helfen dabei, Wasser zu sparen.\n\nIm Garten kann man ebenfalls Wasser sparen. Statt jeden Tag mit Trinkwasser zu gießen, sammeln viele Menschen inzwischen Regenwasser in großen Tonnen. Damit können sie ihre Blumen und Pflanzen gießen, ohne wertvolles Trinkwasser zu verwenden.\n\nAuch in der Landwirtschaft wird über neue Methoden nachgedacht. Manche Bauern benutzen spezielle Systeme, die das Wasser genau dort verteilen, wo die Pflanzen es wirklich brauchen, statt das ganze Feld gleichmäßig zu bewässern. Das spart große Mengen Wasser.\n\nStädte informieren ihre Bürger inzwischen öfter darüber, wie viel Wasser sie im Alltag verbrauchen. Manche Städte bitten die Menschen in besonders trockenen Sommern, weniger Wasser für den Garten oder zum Autowaschen zu benutzen.\n\nExperten sagen, dass jeder kleine Beitrag hilft. Wenn viele Menschen ein wenig Wasser sparen, macht das am Ende einen großen Unterschied für die ganze Stadt.",
+  "questions": [
+   {
+    "q": "Was sollte man beim Zähneputzen vermeiden?",
+    "accept": [
+     "wasserhahn laufen lassen",
+     "wasser laufen lassen"
+    ],
+    "hint": "den Wasserhahn die ganze Zeit laufen lassen"
+   },
+   {
+    "q": "Was sammeln viele Menschen für den Garten in Tonnen?",
+    "accept": [
+     "regenwasser"
+    ],
+    "hint": "Regenwasser"
+   },
+   {
+    "q": "Was benutzen manche Bauern, um Wasser genau zu verteilen?",
+    "accept": [
+     "spezielle systeme"
+    ],
+    "hint": "spezielle Systeme"
+   },
+   {
+    "q": "Worum bitten Städte die Menschen in trockenen Sommern?",
+    "accept": [
+     "weniger wasser benutzen",
+     "wasser sparen"
+    ],
+    "hint": "weniger Wasser für Garten oder Autowaschen zu benutzen"
+   }
+  ]
+ },
+ {
+  "id": "ep37",
+  "title": "Vertikale Gärten in der Stadt",
+  "style": "news",
+  "level": "B2",
+  "script": "In Städten mit wenig Platz für klassische Gärten setzen Architekten zunehmend auf sogenannte vertikale Gärten. Dabei werden Pflanzen nicht auf dem Boden angebaut, sondern direkt an Hauswänden oder speziellen Konstruktionen befestigt.\n\nDiese senkrechten Gärten bestehen oft aus mehreren Schichten, in denen unterschiedliche Pflanzenarten wachsen, von kleinen Kräutern bis hin zu größeren Sträuchern. Ein automatisches Bewässerungssystem versorgt die Pflanzen meist mit genau der richtigen Menge Wasser.\n\nDer Nutzen solcher Anlagen ist vielfältig. Sie verbessern die Luftqualität in der unmittelbaren Umgebung, weil Pflanzen Kohlendioxid aufnehmen und Sauerstoff produzieren. Außerdem wirken sie wie eine natürliche Dämmung und können im Sommer die Innentemperatur eines Gebäudes leicht senken.\n\nVertikale Gärten bieten zudem einen neuen Lebensraum für Insekten und Vögel, was besonders in stark verbauten Stadtgebieten selten geworden ist. Manche Architekten integrieren sogar kleine Nistplätze direkt in die Konstruktion.\n\nAllerdings sind solche Projekte auch mit Herausforderungen verbunden. Die Installation ist teuer, und die Pflanzen benötigen regelmäßige Pflege, damit sie gesund bleiben und nicht von der Wand fallen. Ohne professionelle Wartung können vertikale Gärten schnell verwahrlosen.\n\nTrotz dieser Herausforderungen entstehen immer mehr solcher Projekte, besonders an neuen Bürogebäuden und Hotels, die damit auch ihr eigenes Image als umweltbewusstes Unternehmen stärken möchten.",
+  "questions": [
+   {
+    "q": "Wo werden die Pflanzen bei vertikalen Gärten befestigt?",
+    "accept": [
+     "hauswände",
+     "wände"
+    ],
+    "hint": "an Hauswänden oder speziellen Konstruktionen"
+   },
+   {
+    "q": "Was versorgt die Pflanzen meist mit der richtigen Menge Wasser?",
+    "accept": [
+     "automatisches bewässerungssystem",
+     "bewässerungssystem"
+    ],
+    "hint": "ein automatisches Bewässerungssystem"
+   },
+   {
+    "q": "Was bieten vertikale Gärten für Insekten und Vögel?",
+    "accept": [
+     "lebensraum"
+    ],
+    "hint": "einen neuen Lebensraum"
+   },
+   {
+    "q": "Was passiert ohne professionelle Wartung mit vertikalen Gärten?",
+    "accept": [
+     "verwahrlosen"
+    ],
+    "hint": "sie können schnell verwahrlosen"
+   }
+  ]
+ },
+ {
+  "id": "ep38",
+  "title": "Der Boom der Second-Hand-Mode",
+  "style": "news",
+  "level": "B1",
+  "script": "Gebrauchte Kleidung zu kaufen, war früher für viele Menschen eher unattraktiv. Heute ist Second-Hand-Mode ein wachsender Trend, besonders bei jüngeren Menschen.\n\nEin Grund dafür ist das steigende Umweltbewusstsein. Die Herstellung neuer Kleidung verbraucht viel Wasser und Energie, und schnelle Mode führt oft dazu, dass Kleidungsstücke nach kurzer Zeit wieder weggeworfen werden. Second-Hand-Kleidung dagegen wird weiter genutzt, statt neu produziert zu werden.\n\nAuch finanzielle Gründe spielen eine Rolle. Gebrauchte Kleidung ist oft deutlich günstiger als neue Mode, besonders bei bekannten Marken. Für viele junge Menschen mit begrenztem Budget ist das ein wichtiger Vorteil.\n\nInzwischen gibt es zahlreiche Online-Plattformen, auf denen Nutzer gebrauchte Kleidung einfach verkaufen oder kaufen können. Man muss dafür nicht mehr unbedingt einen klassischen Second-Hand-Laden besuchen, sondern kann bequem von zu Hause aus stöbern.\n\nAuch bekannte Modemarken reagieren auf diesen Trend. Manche Unternehmen bieten inzwischen selbst Second-Hand-Bereiche in ihren Geschäften an oder nehmen alte Kleidungsstücke ihrer Kunden zurück, um sie weiterzuverkaufen oder zu recyceln.\n\nModeexperten sehen in diesem Trend eine dauerhafte Veränderung, nicht nur eine kurzfristige Mode-Erscheinung. Für viele junge Menschen ist Second-Hand-Kleidung inzwischen ein normaler Teil ihres Kleiderschranks geworden, statt eine Ausnahme.",
+  "questions": [
+   {
+    "q": "Welche Altersgruppe interessiert sich besonders für Second-Hand-Mode?",
+    "accept": [
+     "jüngere menschen",
+     "junge menschen"
+    ],
+    "hint": "jüngere Menschen"
+   },
+   {
+    "q": "Was verbraucht die Herstellung neuer Kleidung viel von?",
+    "accept": [
+     "wasser",
+     "energie"
+    ],
+    "hint": "Wasser und Energie"
+   },
+   {
+    "q": "Wo kann man inzwischen bequem gebrauchte Kleidung kaufen?",
+    "accept": [
+     "online-plattformen"
+    ],
+    "hint": "auf Online-Plattformen"
+   },
+   {
+    "q": "Was bieten manche Modemarken inzwischen in ihren Geschäften an?",
+    "accept": [
+     "second-hand-bereiche"
+    ],
+    "hint": "Second-Hand-Bereiche"
+   }
+  ]
+ },
+ {
+  "id": "ep39",
+  "title": "Die alte Werkstatt",
+  "style": "story",
+  "level": "B1",
+  "script": "Nach dem Verkauf des Familienhauses muss Robert die alte Werkstatt seines verstorbenen Vaters im Keller endlich ausräumen. Seit dessen Tod vor drei Jahren hatte niemand den Raum betreten, und Robert hatte diese Aufgabe immer wieder vor sich hergeschoben.\n\nBeim Öffnen der Kellertür schlägt ihm sofort der vertraute Geruch von Holz und Maschinenöl entgegen. Überall stehen Werkzeuge, halbfertige Holzarbeiten und kleine Kisten mit Schrauben und Nägeln, alles noch genau so, wie sein Vater es zurückgelassen hatte.\n\nAuf der Werkbank findet Robert ein angefangenes Holzprojekt: eine kleine Spielzeugeisenbahn, die offenbar für ein Enkelkind gedacht war. Robert erinnert sich, dass sein Vater kurz vor seinem Tod erwähnt hatte, an etwas Besonderem für die Geburt seines ersten Enkelkindes zu arbeiten.\n\nRobert, der selbst nie besonders handwerklich begabt war, beschließt spontan, das Projekt fortzusetzen. Er sucht sich Anleitungen im Internet und bittet einen befreundeten Tischler um Rat, wenn er nicht weiterkommt.\n\nEs dauert mehrere Wochenenden, bis die kleine Holzeisenbahn fertig ist. Robert macht dabei viele Fehler, aber mit jedem Schritt fühlt er sich seinem Vater ein Stück näher, so als würde er endlich verstehen, warum dieser so viel Zeit in seiner Werkstatt verbracht hatte.\n\nAls die Eisenbahn fertig ist, schenkt Robert sie seinem Sohn zur Geburt seines eigenen Kindes. Er erzählt ihm die ganze Geschichte dahinter und verspricht, ihm eines Tages ebenfalls das Arbeiten mit Holz zu zeigen, so wie es sein Vater ihm nie beigebracht hatte.",
+  "questions": [
+   {
+    "q": "Wo befindet sich die Werkstatt?",
+    "accept": [
+     "keller"
+    ],
+    "hint": "im Keller"
+   },
+   {
+    "q": "Was findet Robert auf der Werkbank?",
+    "accept": [
+     "spielzeugeisenbahn",
+     "eisenbahn"
+    ],
+    "hint": "eine kleine Spielzeugeisenbahn"
+   },
+   {
+    "q": "Wen bittet Robert um Rat bei dem Projekt?",
+    "accept": [
+     "tischler"
+    ],
+    "hint": "einen befreundeten Tischler"
+   },
+   {
+    "q": "Wem schenkt Robert die fertige Eisenbahn?",
+    "accept": [
+     "seinem sohn",
+     "sohn"
+    ],
+    "hint": "seinem Sohn, zur Geburt seines Kindes"
+   }
+  ]
+ },
+ {
+  "id": "ep40",
+  "title": "Der Garten meiner Großmutter",
+  "style": "story",
+  "level": "A2",
+  "script": "Als Lisa ein Kind war, verbrachte sie jeden Sommer im Garten ihrer Großmutter. Der Garten war klein, aber voller bunter Blumen, Gemüsebeete und ein alter Apfelbaum stand in der Mitte.\n\nNach dem Tod der Großmutter blieb der Garten viele Jahre unberührt. Niemand in der Familie hatte Zeit, sich darum zu kümmern, und langsam wuchsen Unkraut und wilde Pflanzen überall.\n\nAls Lisa selbst erwachsen ist und ein eigenes Haus kauft, entscheidet sie sich, den alten Garten ihrer Großmutter wieder herzurichten. Sie erinnert sich noch gut daran, wo welche Blumen früher standen, auch wenn vieles inzwischen verwildert ist.\n\nSie kauft die gleichen Blumensamen, die ihre Großmutter immer benutzt hatte, und pflanzt sie an den gleichen Stellen wieder ein. Der alte Apfelbaum steht zum Glück immer noch, nur etwas größer als früher.\n\nBeim Arbeiten im Garten denkt Lisa oft an ihre Großmutter und an die vielen Nachmittage, die sie dort zusammen verbracht hatten. Manchmal spricht sie sogar leise mit ihr, während sie die Erde umgräbt oder Unkraut entfernt.\n\nAls der Garten im nächsten Frühling endlich wieder blüht, lädt Lisa ihre ganze Familie zu einem kleinen Fest im Garten ein. Für sie fühlt es sich an, als würde ein wichtiger Teil ihrer Kindheit wieder lebendig werden.",
+  "questions": [
+   {
+    "q": "Was stand in der Mitte des Gartens?",
+    "accept": [
+     "apfelbaum"
+    ],
+    "hint": "ein alter Apfelbaum"
+   },
+   {
+    "q": "Was passiert mit dem Garten nach dem Tod der Großmutter?",
+    "accept": [
+     "verwildert",
+     "unberührt"
+    ],
+    "hint": "er bleibt unberührt und verwildert"
+   },
+   {
+    "q": "Was kauft Lisa, um den Garten wiederherzustellen?",
+    "accept": [
+     "blumensamen"
+    ],
+    "hint": "die gleichen Blumensamen"
+   },
+   {
+    "q": "Was macht Lisa, als der Garten wieder blüht?",
+    "accept": [
+     "fest",
+     "familie einladen"
+    ],
+    "hint": "sie lädt die Familie zu einem Fest ein"
+   }
+  ]
+ },
+ {
+  "id": "ep41",
+  "title": "Der Ring in der Schublade",
+  "style": "story",
+  "level": "B2",
+  "script": "Beim Aufräumen ihrer neuen Wohnung findet Clara in einer alten Kommode, die sie günstig auf einem Flohmarkt gekauft hatte, einen versteckten Ring in einer kleinen, geheimen Schublade. Sie hatte diese Schublade zuvor gar nicht bemerkt, da sie sehr geschickt in das Möbelstück eingebaut war.\n\nDer Ring ist schlicht, aber offensichtlich alt und aus echtem Gold. Auf der Innenseite entdeckt Clara eine feine Gravur mit den Initialen \"E.M.\" und einer Jahreszahl: 1958.\n\nClara fühlt sich verpflichtet, den Ring seinem ursprünglichen Besitzer oder dessen Nachkommen zurückzugeben. Sie kontaktiert den Verkäufer des Flohmarktstands, der sich jedoch nicht mehr erinnern kann, von wem genau er die Kommode ursprünglich erworben hatte.\n\nEntschlossen, das Rätsel zu lösen, wendet sich Clara an ein lokales Geschichtsarchiv und bittet um Hilfe bei der Suche nach früheren Besitzern der Kommode, basierend auf einem alten Herstellerstempel auf der Rückseite des Möbelstücks. Nach einigen Wochen findet sie tatsächlich einen Hinweis auf eine Familie, die in den 1950er-Jahren in der gleichen Stadt gelebt hatte.\n\nÜber eine lokale Genealogie-Gruppe im Internet gelingt es Clara schließlich, eine lebende Verwandte namens Erika Möller zu finden, deren Großmutter tatsächlich die passenden Initialen trug. Erika ist zutiefst gerührt, als Clara ihr den Ring überreicht, denn ihre Großmutter hatte diesen Ring seit einem mysteriösen Verlust in den sechziger Jahren als verloren betrachtet.\n\nAls Dank lädt Erika Clara zu sich nach Hause ein und erzählt ihr ausführlich die Geschichte ihrer Großmutter. Für beide Frauen beginnt daraus eine unerwartete, warme Freundschaft.",
+  "questions": [
+   {
+    "q": "Wo findet Clara den versteckten Ring?",
+    "accept": [
+     "kommode",
+     "geheime schublade"
+    ],
+    "hint": "in einer geheimen Schublade in einer Kommode"
+   },
+   {
+    "q": "Welche Initialen sind in den Ring eingraviert?",
+    "accept": [
+     "e.m.",
+     "em"
+    ],
+    "hint": "E.M."
+   },
+   {
+    "q": "Wohin wendet sich Clara, um mehr über die Kommode zu erfahren?",
+    "accept": [
+     "geschichtsarchiv",
+     "archiv"
+    ],
+    "hint": "an ein lokales Geschichtsarchiv"
+   },
+   {
+    "q": "Wie heißt die Verwandte, die Clara am Ende findet?",
+    "accept": [
+     "erika möller",
+     "erika"
+    ],
+    "hint": "Erika Möller"
+   }
+  ]
+ },
+ {
+  "id": "ep42",
+  "title": "Ein Zufall im Wartezimmer",
+  "style": "story",
+  "level": "A2",
+  "script": "Im Wartezimmer eines Zahnarztes sitzen Herr Lange und eine junge Frau nebeneinander. Beide warten schon eine ganze Weile, und beide sehen ziemlich nervös aus.\n\nUm die Zeit zu vertreiben, beginnt Herr Lange ein Gespräch. Er fragt die junge Frau, ob sie auch so nervös vor dem Zahnarzt sei wie er selbst. Sie lacht und erzählt, dass sie seit Kindheit große Angst vor dem Zahnarzt habe.\n\nWährend des Gesprächs stellt sich heraus, dass die junge Frau, die sich als Sophie vorstellt, in der gleichen Straße wohnt wie Herr Lange, nur wenige Häuser weiter. Beide sind überrascht, dass sie sich noch nie zuvor begegnet sind.\n\nSophie erzählt, dass sie erst vor zwei Monaten in die Straße gezogen ist. Herr Lange, der schon seit über zwanzig Jahren dort lebt, bietet ihr an, ihr bei Gelegenheit die Nachbarschaft und die besten kleinen Geschäfte in der Umgebung zu zeigen.\n\nAls Sophie schließlich zur Behandlung aufgerufen wird, wünscht Herr Lange ihr viel Glück. Nach ihrer eigenen Behandlung trifft er sie überraschend noch einmal im Wartezimmer, weil sie beide auf ihre jeweiligen Folgetermine warten.\n\nSeit diesem Tag grüßen sich Herr Lange und Sophie regelmäßig, wenn sie sich in der Straße begegnen. Manchmal trinken sie sogar zusammen einen Kaffee. Ein unangenehmer Zahnarztbesuch hat für beide unerwartet zu einer netten neuen Nachbarschaftsfreundschaft geführt.",
+  "questions": [
+   {
+    "q": "Wo lernen sich Herr Lange und Sophie kennen?",
+    "accept": [
+     "wartezimmer",
+     "beim zahnarzt"
+    ],
+    "hint": "im Wartezimmer beim Zahnarzt"
+   },
+   {
+    "q": "Wovor hat Sophie seit ihrer Kindheit Angst?",
+    "accept": [
+     "zahnarzt"
+    ],
+    "hint": "vor dem Zahnarzt"
+   },
+   {
+    "q": "Wie lange wohnt Sophie schon in der Straße?",
+    "accept": [
+     "zwei monate",
+     "2 monate"
+    ],
+    "hint": "erst seit zwei Monaten"
+   },
+   {
+    "q": "Was machen Herr Lange und Sophie inzwischen manchmal zusammen?",
+    "accept": [
+     "kaffee trinken"
+    ],
+    "hint": "sie trinken zusammen Kaffee"
+   }
+  ]
+ },
+ {
+  "id": "ep43",
+  "title": "Die Fotografin aus der Vergangenheit",
+  "style": "story",
+  "level": "B2",
+  "script": "Beim Durchstöbern eines Antiquitätengeschäfts in Hamburg entdeckt Tim eine alte Kamera, die noch mit einem unbelichteten Film geladen ist. Fasziniert von dieser ungewöhnlichen Entdeckung kauft er die Kamera sofort, obwohl der Verkäufer ihm keine Garantie geben kann, dass die Bilder überhaupt noch etwas zeigen werden.\n\nTim bringt den Film in ein spezialisiertes Fotolabor, das sich auf die Entwicklung alter, teilweise beschädigter Filme spezialisiert hat. Der Techniker dort erklärt ihm, dass es durchaus möglich sei, auch nach Jahrzehnten noch brauchbare Bilder aus einem alten Film zu gewinnen, allerdings nicht garantiert.\n\nEinige Tage später erhält Tim tatsächlich mehrere entwickelte Fotografien. Die Bilder zeigen eine unbekannte junge Frau an verschiedenen Orten in Hamburg, offensichtlich aus den 1970er-Jahren, erkennbar an der Kleidung und den alten Autos im Hintergrund.\n\nNeugierig geworden, veröffentlicht Tim die Fotos in einer lokalen Facebook-Gruppe für Hamburg-Geschichte, in der Hoffnung, dass jemand die Frau erkennen könnte. Innerhalb weniger Tage meldet sich tatsächlich eine ältere Dame, die die Frau auf den Fotos als ihre eigene, vor einigen Jahren verstorbene Schwester identifiziert.\n\nDie Dame erzählt Tim, dass ihre Schwester damals begeisterte Amateurfotografin gewesen war, ihre Kamera jedoch kurz vor einem geplanten Umzug verloren hatte und diesen Verlust nie ganz verkraften konnte.\n\nTim übergibt der Dame die entwickelten Fotos und die alte Kamera als Geschenk. Für sie ist es ein unerwartetes, kostbares Andenken an ihre Schwester, das sie sich niemals hätte träumen lassen, jemals wiederzubekommen.",
+  "questions": [
+   {
+    "q": "In welcher Stadt kauft Tim die alte Kamera?",
+    "accept": [
+     "hamburg"
+    ],
+    "hint": "Hamburg"
+   },
+   {
+    "q": "Aus welchem Jahrzehnt scheinen die Fotos zu stammen?",
+    "accept": [
+     "1970er",
+     "siebziger jahre"
+    ],
+    "hint": "aus den 1970er-Jahren"
+   },
+   {
+    "q": "Wo veröffentlicht Tim die Fotos, um die Frau zu finden?",
+    "accept": [
+     "facebook-gruppe",
+     "facebook"
+    ],
+    "hint": "in einer Facebook-Gruppe für Hamburg-Geschichte"
+   },
+   {
+    "q": "Was übergibt Tim der älteren Dame am Ende?",
+    "accept": [
+     "fotos und kamera",
+     "kamera"
+    ],
+    "hint": "die Fotos und die Kamera"
+   }
+  ]
+ },
+ {
+  "id": "ep44",
+  "title": "Bücher hören statt lesen",
+  "style": "news",
+  "level": "A2",
+  "script": "Immer mehr Menschen hören Bücher, statt sie zu lesen. Diese sogenannten Hörbücher werden von Sprechern vorgelesen und können bequem über das Handy oder einen Computer abgespielt werden.\n\nViele Menschen hören Hörbücher, während sie andere Dinge tun. Zum Beispiel beim Autofahren, beim Kochen oder beim Spazierengehen. So können sie eine Geschichte genießen, ohne extra Zeit zum Lesen zu brauchen.\n\nAuch für Menschen, die nicht gern oder nicht gut lesen können, sind Hörbücher eine gute Alternative. Sie können trotzdem alle Geschichten und Informationen aus einem Buch bekommen, einfach über das Hören statt über das Lesen.\n\nDie Auswahl an Hörbüchern ist in den letzten Jahren stark gewachsen. Es gibt inzwischen fast jedes bekannte Buch auch als Hörbuch, oft sogar mit bekannten Schauspielern als Sprechern.\n\nManche Menschen sagen aber, dass Hören und Lesen unterschiedliche Erfahrungen sind. Beim Lesen kann man sich die Figuren und Orte selbst vorstellen, während ein Sprecher beim Hörbuch schon eine bestimmte Stimme und Betonung vorgibt.\n\nTrotzdem sind sich viele Experten einig: Hauptsache, Menschen beschäftigen sich überhaupt mit Geschichten und Wissen, egal ob durch Lesen oder Hören. Beides hat seinen eigenen Wert.",
+  "questions": [
+   {
+    "q": "Wobei hören viele Menschen gern Hörbücher?",
+    "accept": [
+     "autofahren",
+     "kochen",
+     "spazierengehen"
+    ],
+    "hint": "beim Autofahren, Kochen oder Spazierengehen"
+   },
+   {
+    "q": "Für wen sind Hörbücher besonders eine gute Alternative?",
+    "accept": [
+     "menschen die nicht gern lesen",
+     "menschen die schlecht lesen"
+    ],
+    "hint": "für Menschen, die nicht gern oder nicht gut lesen können"
+   },
+   {
+    "q": "Wer liest manche Hörbücher als Sprecher vor?",
+    "accept": [
+     "bekannte schauspieler",
+     "schauspieler"
+    ],
+    "hint": "bekannte Schauspieler"
+   },
+   {
+    "q": "Was ist beim Lesen anders als beim Hören eines Hörbuchs?",
+    "accept": [
+     "figuren selbst vorstellen",
+     "eigene vorstellung"
+    ],
+    "hint": "man kann sich die Figuren selbst vorstellen"
+   }
+  ]
+ },
+ {
+  "id": "ep45",
+  "title": "Die Rückkehr der Pfandflasche",
+  "style": "news",
+  "level": "B1",
+  "script": "In Deutschland gehört das Pfandsystem für Flaschen und Dosen längst zum Alltag. Wer eine Plastikflasche oder Getränkedose kauft, zahlt automatisch einen kleinen Pfandbetrag mit, den er beim Zurückbringen der leeren Verpackung wiederbekommt.\n\nDieses System funktioniert in Deutschland schon seit vielen Jahren erfolgreich. Fast alle Einwegflaschen und Dosen werden inzwischen zurückgebracht und recycelt, statt einfach weggeworfen zu werden. Andere europäische Länder schauen sich dieses Modell inzwischen genauer an.\n\nIn den letzten Jahren haben mehrere Länder ähnliche Pfandsysteme eingeführt oder planen dies für die nahe Zukunft. Die Ergebnisse aus Deutschland zeigen, dass ein finanzieller Anreiz die Menschen tatsächlich dazu bringt, ihre Verpackungen zurückzubringen, statt sie in den normalen Müll oder sogar in die Natur zu werfen.\n\nBesonders auffällig ist ein sozialer Effekt des Systems: In vielen Städten sammeln manche Menschen gezielt liegen gelassene Pfandflaschen aus Mülleimern oder von Parkbänken, um sich damit ein kleines Zusatzeinkommen zu verdienen. Manche Menschen stellen ihre leeren Flaschen deshalb bewusst neben den Mülleimer statt hinein, damit andere sie leichter finden können.\n\nKritiker weisen darauf hin, dass das Pfandsystem allein nicht ausreicht, um das grundsätzliche Problem von zu viel Verpackungsmüll zu lösen. Mehrwegflaschen, die viele Male wiederverwendet werden können, seien noch umweltfreundlicher als das Recycling von Einwegflaschen.\n\nTrotzdem gilt das deutsche Pfandsystem international als erfolgreiches Beispiel dafür, wie einfache finanzielle Anreize das Verhalten vieler Menschen positiv verändern können.",
+  "questions": [
+   {
+    "q": "Was bekommt man zurück, wenn man eine leere Pfandflasche zurückbringt?",
+    "accept": [
+     "pfand",
+     "pfandbetrag",
+     "geld"
+    ],
+    "hint": "den Pfandbetrag"
+   },
+   {
+    "q": "Was machen manche Menschen mit liegen gelassenen Pfandflaschen?",
+    "accept": [
+     "sammeln",
+     "zusatzeinkommen"
+    ],
+    "hint": "sie sammeln sie für ein Zusatzeinkommen"
+   },
+   {
+    "q": "Was stellen manche Menschen bewusst neben den Mülleimer?",
+    "accept": [
+     "leere flaschen",
+     "pfandflaschen"
+    ],
+    "hint": "leere Pfandflaschen"
+   },
+   {
+    "q": "Was ist laut Kritikern noch umweltfreundlicher als Recycling?",
+    "accept": [
+     "mehrwegflaschen"
+    ],
+    "hint": "Mehrwegflaschen"
+   }
+  ]
+ },
+ {
+  "id": "ep46",
+  "title": "Schlaf wird zum Thema",
+  "style": "news",
+  "level": "B2",
+  "script": "Guter Schlaf gilt zunehmend als wichtiger Bestandteil eines gesunden Lebensstils, ähnlich wie Ernährung und Bewegung. Immer mehr Menschen beschäftigen sich bewusst damit, wie sie ihre Schlafqualität verbessern können.\n\nWissenschaftliche Studien zeigen, dass chronischer Schlafmangel negative Auswirkungen auf die körperliche und geistige Gesundheit haben kann. Dazu gehören ein geschwächtes Immunsystem, Konzentrationsprobleme und ein erhöhtes Risiko für verschiedene Krankheiten.\n\nEin Grund für die zunehmende Aufmerksamkeit ist die weite Verbreitung von Smartwatches und speziellen Apps, die den eigenen Schlaf automatisch aufzeichnen und analysieren können. Nutzer erhalten dadurch detaillierte Informationen darüber, wie lange und wie tief sie tatsächlich geschlafen haben.\n\nExperten empfehlen mehrere einfache Maßnahmen für besseren Schlaf. Dazu gehört ein regelmäßiger Schlafrhythmus, bei dem man möglichst jeden Tag zur gleichen Zeit ins Bett geht und aufsteht. Auch der Verzicht auf Bildschirme kurz vor dem Schlafengehen wird häufig empfohlen, da das Licht der Geräte den natürlichen Schlaf-Wach-Rhythmus stören kann.\n\nManche Unternehmen reagieren inzwischen ebenfalls auf dieses Thema. Einige Firmen bieten ihren Angestellten spezielle Ruheräume für kurze Mittagsschläfchen an, weil sie erkannt haben, dass ausgeruhte Mitarbeiter produktiver und konzentrierter arbeiten.\n\nExperten warnen jedoch auch vor einer übertriebenen Fixierung auf perfekte Schlafdaten. Zu viel Sorge um die eigenen Schlafwerte kann paradoxerweise selbst zu Schlafproblemen führen, wenn Menschen dadurch zusätzlichen Druck verspüren.",
+  "questions": [
+   {
+    "q": "Welche negativen Folgen kann chronischer Schlafmangel haben?",
+    "accept": [
+     "geschwächtes immunsystem",
+     "konzentrationsprobleme"
+    ],
+    "hint": "ein geschwächtes Immunsystem und Konzentrationsprobleme"
+   },
+   {
+    "q": "Was zeichnen Smartwatches und Apps automatisch auf?",
+    "accept": [
+     "schlaf"
+    ],
+    "hint": "den eigenen Schlaf"
+   },
+   {
+    "q": "Was wird kurz vor dem Schlafengehen häufig empfohlen zu vermeiden?",
+    "accept": [
+     "bildschirme"
+    ],
+    "hint": "der Verzicht auf Bildschirme"
+   },
+   {
+    "q": "Was bieten manche Firmen ihren Angestellten inzwischen an?",
+    "accept": [
+     "ruheräume",
+     "mittagsschläfchen"
+    ],
+    "hint": "spezielle Ruheräume für Mittagsschläfchen"
+   }
+  ]
+ },
+ {
+  "id": "ep47",
+  "title": "Der Brief unter der Dielenplatte",
+  "style": "story",
+  "level": "B1",
+  "script": "Beim Renovieren ihres alten Reihenhauses in Köln entdeckt Familie Brandt beim Entfernen einer alten Dielenplatte im Wohnzimmer einen versteckten Briefumschlag. Der Umschlag ist verstaubt, aber noch gut erhalten, und trägt keinen Absender.\n\nNeugierig öffnet Herr Brandt den Umschlag vorsichtig. Darin befindet sich ein Brief, datiert auf das Jahr 1989, kurz vor dem Fall der Berliner Mauer. Der Brief ist an eine Person namens Ingrid gerichtet und beschreibt die Hoffnung des Schreibers auf ein baldiges Wiedersehen, ohne die politische Situation genauer zu erklären.\n\nFamilie Brandt ist fasziniert von diesem Fund und versucht herauszufinden, wer diesen Brief geschrieben und warum er ihn unter der Dielenplatte versteckt hatte, statt ihn abzuschicken. Ein Nachbar, der schon lange in der Straße wohnt, erinnert sich an die frühere Bewohnerin des Hauses, eine Frau namens Ingrid Sommer, die vor einigen Jahren verstorben war.\n\nMit dieser Information wendet sich die Familie an das städtische Standesamt und erfährt, dass Ingrid Sommer eine Tochter hatte, die inzwischen in München lebt. Nach einigem Zögern beschließen die Brandts, die Tochter zu kontaktieren und ihr von dem Fund zu erzählen.\n\nDie Tochter, mittlerweile selbst schon in den Fünfzigern, erklärt am Telefon, dass ihre Mutter tatsächlich vor der Wiedervereinigung eine Beziehung zu einem Mann aus Ostdeutschland gehabt hatte, die durch die politische Teilung erschwert wurde. Warum der Brief nie abgeschickt wurde, bleibt jedoch ein Rätsel.\n\nDie Tochter bittet darum, den Brief per Post zu bekommen, um ihn als letztes Andenken an diesen unbekannten Teil des Lebens ihrer Mutter aufzubewahren.",
+  "questions": [
+   {
+    "q": "In welcher Stadt liegt das Reihenhaus der Familie Brandt?",
+    "accept": [
+     "köln"
+    ],
+    "hint": "Köln"
+   },
+   {
+    "q": "Aus welchem Jahr stammt der gefundene Brief?",
+    "accept": [
+     "1989"
+    ],
+    "hint": "1989"
+   },
+   {
+    "q": "An wen ist der Brief gerichtet?",
+    "accept": [
+     "ingrid"
+    ],
+    "hint": "an Ingrid"
+   },
+   {
+    "q": "Wohin bringt der gefundene Brief die Familie letztendlich?",
+    "accept": [
+     "zur tochter",
+     "münchen"
+    ],
+    "hint": "zur Tochter der früheren Bewohnerin, in München"
+   }
+  ]
+ },
+ {
+  "id": "ep48",
+  "title": "Der Fremde im Zug nach Prag",
+  "style": "story",
+  "level": "B2",
+  "script": "Auf einer Zugfahrt von Dresden nach Prag setzt sich ein älterer Herr Anna gegenüber, die gerade ihre Kopfhörer aufsetzen möchte, um in Ruhe Musik zu hören. Höflich fragt er sie, ob sie sich schon einmal gefragt habe, wie viele Geschichten sich wohl in diesem einen Zugwagen gerade abspielen.\n\nAnna, eigentlich nicht in der Stimmung für ein Gespräch mit Fremden, lässt sich trotzdem auf die ungewöhnliche Frage ein. Der Mann erzählt ihr, dass er früher selbst Zugbegleiter gewesen sei und über die Jahre unzählige interessante Begegnungen in Zügen erlebt habe.\n\nEr beginnt, ihr eine Geschichte aus seiner Zeit als Zugbegleiter zu erzählen: von einem Paar, das sich in genau diesem Zug kennengelernt und Jahre später tatsächlich geheiratet hatte, und von einem Kind, das einmal seinen verlorenen Teddybären erst Monate später auf demselben Bahnhof wiederfand.\n\nAnna, zunächst skeptisch, beginnt sich für die Geschichten zu interessieren und stellt selbst immer mehr Fragen. Die beiden reden die restliche Zugfahrt über verschiedene Themen, von Reisen über Familie bis hin zu ihren jeweiligen Lebensplänen.\n\nAls der Zug in Prag ankommt, bedankt sich Anna beim Mann für das unerwartet interessante Gespräch. Sie tauschen keine Kontaktdaten aus, aber beide steigen mit einem Lächeln aus dem Zug.\n\nAuf dem Bahnsteig denkt Anna kurz darüber nach, wie oft sie sonst einfach ihre Kopfhörer aufsetzt, ohne überhaupt die Möglichkeit für ein interessantes Gespräch in Betracht zu ziehen. Sie beschließt, in Zukunft öfter offen für solche zufälligen Begegnungen zu sein.",
+  "questions": [
+   {
+    "q": "Von welcher Stadt nach welcher Stadt fährt der Zug?",
+    "accept": [
+     "dresden nach prag",
+     "dresden",
+     "prag"
+    ],
+    "hint": "von Dresden nach Prag"
+   },
+   {
+    "q": "Was war der ältere Herr früher beruflich?",
+    "accept": [
+     "zugbegleiter"
+    ],
+    "hint": "Zugbegleiter"
+   },
+   {
+    "q": "Was ist einem Paar in diesem Zug laut seiner Geschichte passiert?",
+    "accept": [
+     "kennengelernt",
+     "geheiratet"
+    ],
+    "hint": "sie haben sich kennengelernt und später geheiratet"
+   },
+   {
+    "q": "Was beschließt Anna am Ende der Fahrt?",
+    "accept": [
+     "offener sein",
+     "öfter gespräche zulassen"
+    ],
+    "hint": "in Zukunft öfter offen für solche Begegnungen zu sein"
+   }
+  ]
+ },
+ {
+  "id": "ep49",
+  "title": "Die Malerin vom Marktplatz",
+  "style": "story",
+  "level": "A2",
+  "script": "Jeden Samstag sitzt eine ältere Frau mit einer Staffelei auf dem Marktplatz der kleinen Stadt Rothenburg und malt Bilder von den alten Häusern. Die Touristen bleiben oft stehen und schauen ihr beim Malen zu.\n\nDie junge Journalistin Sophie interessiert sich für die Geschichte der Malerin und spricht sie eines Tages an. Die Frau, die sich als Helga vorstellt, erzählt, dass sie schon seit über dreißig Jahren jeden Samstag auf dem Marktplatz malt, bei jedem Wetter.\n\nHelga erklärt, dass sie früher als Lehrerin gearbeitet hat und erst nach ihrer Pensionierung wieder mit dem Malen begonnen hat, einem Hobby aus ihrer Jugend. Für sie ist der Marktplatz nicht nur ein schönes Motiv, sondern auch ein Ort, an dem sie viele interessante Menschen trifft.\n\nSophie fragt, ob Helga ihre Bilder auch verkauft. Helga lacht und erklärt, dass sie ihre Bilder eigentlich nie verkauft, sondern sie am Ende des Jahres immer an Freunde und Familie verschenkt. Für sie stehe das Malen selbst im Vordergrund, nicht das Ergebnis.\n\nSophie schreibt einen kleinen Artikel über Helga für die lokale Zeitung. Nach der Veröffentlichung kommen noch mehr Menschen extra zum Marktplatz, um die bekannte Malerin einmal persönlich zu sehen.\n\nHelga freut sich über die neue Aufmerksamkeit, bleibt aber bescheiden. Sie sagt, das Wichtigste sei für sie weiterhin, jeden Samstag einfach draußen zu sitzen, die schöne Stadt zu betrachten und dabei ganz in Ruhe zu malen.",
+  "questions": [
+   {
+    "q": "In welcher Stadt malt Helga jeden Samstag?",
+    "accept": [
+     "rothenburg"
+    ],
+    "hint": "Rothenburg"
+   },
+   {
+    "q": "Was war Helgas Beruf, bevor sie in Rente ging?",
+    "accept": [
+     "lehrerin"
+    ],
+    "hint": "Lehrerin"
+   },
+   {
+    "q": "Was macht Helga mit ihren fertigen Bildern?",
+    "accept": [
+     "verschenken",
+     "an freunde und familie verschenken"
+    ],
+    "hint": "sie verschenkt sie an Freunde und Familie"
+   },
+   {
+    "q": "Was schreibt Sophie über Helga?",
+    "accept": [
+     "artikel"
+    ],
+    "hint": "einen kleinen Artikel für die Zeitung"
+   }
   ]
  }
 ]
