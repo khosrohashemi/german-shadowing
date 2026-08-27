@@ -100,6 +100,7 @@
       <span class="pill" id="streakPill">🔥 0 Tage</span>
       <span class="pill" id="xpPill">⭐ 0 XP</span>
       <span class="pill" id="weakPill" title="Wörter, die heute zur Wiederholung fällig sind" style="display:none;">🎯 0</span>
+      <span class="pill" id="levelPill" title="Geschätzt aus deinen bisherigen Ergebnissen" style="display:none;">🎓 Niveau: —</span>
       <button class="ghost" id="themeToggle" title="Hell/Dunkel">🌙</button>
     </div>
   </header>
@@ -118,6 +119,37 @@
       <button class="primary" id="startShadowBtn">🗣️ Schatten üben</button>
       <button class="primary" id="startListenBtn">🎧 Hören üben</button>
       <button class="primary" id="startDictBtn">📖 Wörterbuch</button>
+    </div>
+  </div>
+
+  <div class="card" id="shadowSetupCard" style="display:none;">
+    <div class="tag">Schatten üben</div>
+    <div class="sentence" style="font-size:1.1rem;">Wie viele Sätze pro Passage möchtest du üben?</div>
+    <div class="controls">
+      <button class="primary" id="shadowLines1Btn">1 Satz</button>
+      <button class="primary" id="shadowLines2Btn">2 Sätze</button>
+      <button class="primary" id="shadowLines3Btn">3 Sätze</button>
+    </div>
+    <div class="controls" style="margin-top:6px;">
+      <button class="ghost" id="shadowSetupBackBtn">↩ Zurück zur Auswahl</button>
+    </div>
+  </div>
+
+  <div class="card" id="listenSetupCard" style="display:none;">
+    <div class="tag">Hören üben</div>
+    <div class="sentence" style="font-size:1.1rem;">Welches Niveau möchtest du üben?</div>
+    <div class="controls">
+      <button id="lvlA1Btn">A1</button>
+      <button id="lvlA2Btn">A2</button>
+      <button id="lvlB1Btn">B1</button>
+      <button id="lvlB2Btn">B2</button>
+      <button id="lvlC1Btn">C1</button>
+      <button id="lvlC2Btn">C2</button>
+      <button class="primary" id="lvlRandomBtn">🎲 Zufällig</button>
+    </div>
+    <div class="status" id="listenSetupStatus"></div>
+    <div class="controls" style="margin-top:6px;">
+      <button class="ghost" id="listenSetupBackBtn">↩ Zurück zur Auswahl</button>
     </div>
   </div>
 
@@ -1416,10 +1448,11 @@ function defaultState(){
     leitner:{}, // id -> {box, due, history:[]}
     weakWords:{}, // normalized word -> {box, due, misses, example, exampleEn}
     podcasts:{}, // episode id -> {box, due, bestScore}
+    levelStats:{}, // CEFR level -> {sum, count} — feeds the estimated-level badge
     dictCache:{}, // lowercased word -> parsed Wiktionary lookup result
     streak:{practiceDates:[], currentStreak:0, longestStreak:0},
     xp:0, badges:[],
-    settings:{rate:0.85, pause:1.2, sessionLen:6, category:'all', hideText:false, recordAudio:false, theme:'light', voiceName:''},
+    settings:{rate:0.85, pause:1.2, sessionLen:6, category:'all', hideText:false, recordAudio:false, theme:'light', voiceName:'', linesPerPassage:3},
     stats:{totalPracticed:0, scoreSum:0}
   };
 }
@@ -1444,6 +1477,10 @@ const els = {
   wotdText:$('wotdText'),
   sentenceTag:$('sentenceTag'), sentenceText:$('sentenceText'), translationText:$('translationText'),
   modeCard:$('modeCard'), startShadowBtn:$('startShadowBtn'), startListenBtn:$('startListenBtn'),
+  levelPill:$('levelPill'),
+  shadowSetupCard:$('shadowSetupCard'), shadowLines1Btn:$('shadowLines1Btn'), shadowLines2Btn:$('shadowLines2Btn'), shadowLines3Btn:$('shadowLines3Btn'), shadowSetupBackBtn:$('shadowSetupBackBtn'),
+  listenSetupCard:$('listenSetupCard'), listenSetupStatus:$('listenSetupStatus'), listenSetupBackBtn:$('listenSetupBackBtn'),
+  lvlA1Btn:$('lvlA1Btn'), lvlA2Btn:$('lvlA2Btn'), lvlB1Btn:$('lvlB1Btn'), lvlB2Btn:$('lvlB2Btn'), lvlC1Btn:$('lvlC1Btn'), lvlC2Btn:$('lvlC2Btn'), lvlRandomBtn:$('lvlRandomBtn'),
   playBtn:$('playBtn'), pauseBtn:$('pauseBtn'), recordBtn:$('recordBtn'), finishRecordBtn:$('finishRecordBtn'), retryBtn:$('retryBtn'), skipBtn:$('skipBtn'), revealBtn:$('revealBtn'), newSessionBtn:$('newSessionBtn'),
   statusLine:$('statusLine'),
   diffRow:$('diffRow'), targetLine:$('targetLine'), saidLine:$('saidLine'), scoreLine:$('scoreLine'), feedbackMsg:$('feedbackMsg'),
@@ -1677,6 +1714,27 @@ function getDueWeakWords(){
     .filter(([,rec])=>rec.due<=today)
     .sort((a,b)=> (b[1].misses-a[1].misses) || (a[1].due<b[1].due?-1:1));
 }
+// Feeds the estimated-level badge: every scored passage/podcast counts toward
+// its own CEFR level's running average, regardless of which skill produced it.
+function recordLevelScore(level, score){
+  if(!level) return;
+  const s = state.levelStats[level] || {sum:0, count:0};
+  s.sum += score; s.count += 1;
+  state.levelStats[level] = s;
+  saveState();
+}
+// Walks A2→C1 (the levels the app actually has content for) and returns the
+// highest level with enough attempts and a solid average — a rough estimate,
+// not a certified assessment, and null until there's enough data to say anything.
+function estimateLevel(){
+  const order = ['A2','B1','B2','C1'];
+  let best = null;
+  for(const lvl of order){
+    const s = state.levelStats[lvl];
+    if(s && s.count>=3 && (s.sum/s.count)>=70) best = lvl;
+  }
+  return best;
+}
 function renderTopBar(){
   recomputeStreak();
   els.streakPill.textContent = '🔥 ' + state.streak.currentStreak + ' Tage';
@@ -1684,6 +1742,9 @@ function renderTopBar(){
   const dueCount = getDueWeakWords().length;
   els.weakPill.style.display = dueCount>0 ? 'inline-block' : 'none';
   els.weakPill.textContent = '🎯 ' + dueCount;
+  const lvl = estimateLevel();
+  els.levelPill.style.display = lvl ? 'inline-block' : 'none';
+  if(lvl) els.levelPill.textContent = '🎓 Niveau: ' + lvl;
 }
 function renderStats(){
   els.statTotal.textContent = state.stats.totalPracticed;
@@ -1830,11 +1891,18 @@ let session = {queue:[], idx:-1, current:null, roundCount:0, recognition:null, m
 function setStatus(text, live){
   els.statusLine.innerHTML = (live? '<span class="dot live"></span>' : '<span class="dot"></span>') + ' ' + text;
 }
+// Returns the passage's line objects ({de,en}) trimmed to the user's chosen
+// "Sätze pro Passage" setting (1, 2, or 3) — only meaningful in passage mode.
+function currentPassageLines(){
+  const n = Math.max(1, Math.min(3, state.settings.linesPerPassage||3));
+  return session.current.lines.slice(0, n);
+}
 // Returns the array of German lines to speak/score for the current round:
-// 3 lines for a normal passage, 1 for a bonus tongue-twister or a weak-word review.
+// up to 3 lines for a normal passage (per the line-count setting), 1 for a
+// bonus tongue-twister or a weak-word review.
 function currentTargetLines(){
   if(session.mode==='word') return [session.current.example];
-  return session.isBonus ? [session.current] : session.current.lines.map(l=>l.de);
+  return session.isBonus ? [session.current] : currentPassageLines().map(l=>l.de);
 }
 function currentTargetText(){ return currentTargetLines().join(' '); }
 // Returns [{text, url}] pairing each line with its pre-recorded natural-voice
@@ -1848,7 +1916,7 @@ function currentTargetItems(){
   if(session.isBonus){
     return [{text: session.current, url: 'audio/tt'+session.bonusIdx+'.mp3'}];
   }
-  return session.current.lines.map((l,idx)=>({text: l.de, url: 'audio/'+session.current.id+'_'+idx+'.mp3'}));
+  return currentPassageLines().map((l,idx)=>({text: l.de, url: 'audio/'+session.current.id+'_'+idx+'.mp3'}));
 }
 
 function showSentenceCard(){
@@ -1866,9 +1934,10 @@ function showSentenceCard(){
   } else {
     const p = session.current;
     const catNames = {talk:'Alltagsgespräch', story:'Erzählung', topic:'Aktuelles Thema'};
+    const shownLines = currentPassageLines();
     els.sentenceTag.textContent = (catNames[p.c]||p.c) + ' · ' + p.level;
-    els.sentenceText.innerHTML = state.settings.hideText ? '🔊 Hör zu…' : p.lines.map(l=>tapify(l.de)).join('<br>');
-    els.translationText.innerHTML = p.lines.map(l=>l.en).join('<br>');
+    els.sentenceText.innerHTML = state.settings.hideText ? '🔊 Hör zu…' : shownLines.map(l=>tapify(l.de)).join('<br>');
+    els.translationText.innerHTML = shownLines.map(l=>l.en).join('<br>');
   }
   document.getElementById('practiceCard').querySelector('.sentence').classList.remove('hidden-text');
   document.getElementById('practiceCard').classList.toggle('bonus', session.isBonus || session.mode==='word');
@@ -1882,8 +1951,13 @@ function showSentenceCard(){
   let statusMsg;
   if(session.mode==='word') statusMsg = 'Ein Wort, das dir schwerfällt — klicke auf „Abspielen“.';
   else if(session.isBonus) statusMsg = 'Klicke auf „Abspielen“, um den Zungenbrecher zu hören.';
-  else statusMsg = 'Klicke auf „Abspielen“, um die drei Sätze zu hören.';
+  else statusMsg = 'Klicke auf „Abspielen“, um ' + sentencePhrase() + ' zu hören.';
   setStatus(statusMsg, false);
+}
+// "den Satz" / "beide Sätze" / "alle drei Sätze" — matches the chosen line count.
+function sentencePhrase(){
+  const n = Math.max(1, Math.min(3, state.settings.linesPerPassage||3));
+  return n===1 ? 'den Satz' : n===2 ? 'beide Sätze' : 'alle drei Sätze';
 }
 // Picks the most-missed / most-overdue due weak word not yet attempted this session.
 function pickDueWeakWord(){
@@ -1940,16 +2014,28 @@ function startSession(){
 }
 function showModeCard(){
   els.modeCard.style.display='block';
+  els.shadowSetupCard.style.display='none';
+  els.listenSetupCard.style.display='none';
   els.practiceCard.style.display='none';
   els.listenCard.style.display='none';
   els.dictCard.style.display='none';
 }
 els.startShadowBtn.onclick = ()=>{
   els.modeCard.style.display='none';
+  els.shadowSetupCard.style.display='block';
+};
+els.shadowSetupBackBtn.onclick = showModeCard;
+function pickShadowLineCount(n){
+  state.settings.linesPerPassage = n;
+  saveState();
+  els.shadowSetupCard.style.display='none';
   els.practiceCard.style.display='block';
   els.newSessionBtn.style.display='none';
   startSession();
-};
+}
+els.shadowLines1Btn.onclick = ()=>pickShadowLineCount(1);
+els.shadowLines2Btn.onclick = ()=>pickShadowLineCount(2);
+els.shadowLines3Btn.onclick = ()=>pickShadowLineCount(3);
 els.newSessionBtn.onclick = showModeCard;
 els.skipBtn.onclick = ()=>{
   speechSynthesis.cancel();
@@ -1963,7 +2049,7 @@ els.revealBtn.onclick = ()=>{
   if(session.mode==='word'){
     els.sentenceText.innerHTML = boldWordInTapified(tapify(session.current.example), session.current.word);
   } else {
-    els.sentenceText.innerHTML = session.isBonus ? tapify(session.current) : session.current.lines.map(l=>tapify(l.de)).join('<br>');
+    els.sentenceText.innerHTML = session.isBonus ? tapify(session.current) : currentPassageLines().map(l=>tapify(l.de)).join('<br>');
   }
   els.revealBtn.style.display='none';
 };
@@ -2007,7 +2093,7 @@ els.playBtn.onclick = ()=>{
     setStatus('Gleich geht\'s los — bereite dich vor…', false);
     setTimeout(()=>{
       els.recordBtn.style.display='inline-block';
-      setStatus((session.mode==='word' || session.isBonus) ? 'Jetzt bist du dran! Klicke auf 🎤 und sprich nach.' : 'Jetzt bist du dran! Klicke auf 🎤 und sprich alle drei Sätze nach.', false);
+      setStatus((session.mode==='word' || session.isBonus) ? 'Jetzt bist du dran! Klicke auf 🎤 und sprich nach.' : 'Jetzt bist du dran! Klicke auf 🎤 und sprich '+sentencePhrase()+' nach.', false);
     }, state.settings.pause*1000);
   });
 };
@@ -2060,7 +2146,8 @@ function startRecording(){
         renderTopBar(); renderStats();
       } else if(!session.isBonus){
         updateCard(session.current.id, score);
-        updateWeakWords(diff.targetWords, diff.aMatched, session.current);
+        updateWeakWords(diff.targetWords, diff.aMatched, {id: session.current.id, lines: currentPassageLines()});
+        recordLevelScore(session.current.level, score);
         const linesCount = currentTargetLines().length;
         state.stats.totalPracticed += linesCount;
         state.stats.scoreSum += score*linesCount;
@@ -2098,7 +2185,7 @@ function startRecording(){
       else if(!hasSTT){ recognitionDone=true; stopRecorderIfNeeded(); finish(); }
     };
     if(hasSTT){
-      setStatus((session.mode==='word' || session.isBonus) ? '🎤 Ich höre zu…' : '🎤 Ich höre zu… sprich alle drei Sätze nach. Klicke „Fertig“, wenn du fertig bist.', true);
+      setStatus((session.mode==='word' || session.isBonus) ? '🎤 Ich höre zu…' : '🎤 Ich höre zu… sprich '+sentencePhrase()+' nach. Klicke „Fertig“, wenn du fertig bist.', true);
       startOneRecognitionPass();
     } else {
       setStatus('🎤 Sprich jetzt und klicke „Fertig“, wenn du fertig bist.', true);
@@ -2176,22 +2263,28 @@ function endSession(){
 /* ---------------- Listening comprehension mode ---------------- */
 let listenSession = {episode:null, qIdx:-1, correctCount:0, recognition:null, token:0};
 
-function getDuePodcasts(){
+// null = any level ("🎲 Zufällig"); otherwise the CEFR level chosen on the setup screen,
+// remembered across "Anderer Podcast" clicks until the user picks a new level.
+let currentListenLevel = null;
+function getDuePodcasts(level){
   const today = todayStr();
-  const due = PODCASTS.filter(p=>{ const c=state.podcasts[p.id]; return c && c.due<=today; });
-  const fresh = PODCASTS.filter(p=> !state.podcasts[p.id]);
+  let pool = level ? PODCASTS.filter(p=>p.level===level) : PODCASTS;
+  if(pool.length===0) return [];
+  const due = pool.filter(p=>{ const c=state.podcasts[p.id]; return c && c.due<=today; });
+  const fresh = pool.filter(p=> !state.podcasts[p.id]);
   const combined = due.concat(fresh); // due-for-review AND never-tried episodes are both fair picks
-  return combined.length ? combined : PODCASTS;
+  return combined.length ? combined : pool;
 }
 function setListenStatus(t){ els.listenStatus.textContent = t; }
 function setListenQStatus(t){ els.listenQStatus.textContent = t; }
 
-// Picks a random due/fresh episode (avoiding the one just shown, when another is available)
-// and resets the listen card to it — used both for the initial pick and "Anderer Podcast".
+// Picks a random due/fresh episode at the chosen level (avoiding the one just shown,
+// when another is available) and resets the listen card to it — used both for the
+// initial pick and "Anderer Podcast".
 function loadListenEpisode(){
   if(listenSession.recognition){ try{ listenSession.recognition.abort(); }catch(e){} }
   els.listenAudio.pause();
-  const pool = getDuePodcasts();
+  const pool = getDuePodcasts(currentListenLevel);
   const currentId = listenSession.episode ? listenSession.episode.id : null;
   const choices = pool.length>1 ? pool.filter(p=>p.id!==currentId) : pool;
   const ep = choices[Math.floor(Math.random()*choices.length)];
@@ -2209,10 +2302,28 @@ function loadListenEpisode(){
 }
 els.startListenBtn.onclick = ()=>{
   els.modeCard.style.display='none';
+  els.listenSetupCard.style.display='block';
+  els.listenSetupStatus.textContent='';
+};
+els.listenSetupBackBtn.onclick = showModeCard;
+function pickListenLevel(level){
+  if(level && !PODCASTS.some(p=>p.level===level)){
+    els.listenSetupStatus.textContent = 'Für Niveau ' + level + ' gibt es noch keine Folgen — wähle ein anderes Niveau oder „Zufällig“.';
+    return;
+  }
+  currentListenLevel = level;
+  els.listenSetupCard.style.display='none';
   els.listenCard.style.display='block';
   loadListenEpisode();
   primeMicPermission();
-};
+}
+els.lvlA1Btn.onclick = ()=>pickListenLevel('A1');
+els.lvlA2Btn.onclick = ()=>pickListenLevel('A2');
+els.lvlB1Btn.onclick = ()=>pickListenLevel('B1');
+els.lvlB2Btn.onclick = ()=>pickListenLevel('B2');
+els.lvlC1Btn.onclick = ()=>pickListenLevel('C1');
+els.lvlC2Btn.onclick = ()=>pickListenLevel('C2');
+els.lvlRandomBtn.onclick = ()=>pickListenLevel(null);
 els.listenSkipEpBtn.onclick = loadListenEpisode;
 els.listenBackBtn.onclick = ()=>{
   els.listenAudio.pause();
@@ -2298,6 +2409,7 @@ function finishListenSession(){
   const ep = listenSession.episode;
   const total = ep.questions.length;
   const score = Math.round((listenSession.correctCount/total)*100);
+  recordLevelScore(ep.level, score);
   els.listenQABlock.style.display='none';
   els.listenSummary.style.display='block';
   els.listenScoreLine.textContent = listenSession.correctCount + ' / ' + total + ' richtig (' + score + '%)';
