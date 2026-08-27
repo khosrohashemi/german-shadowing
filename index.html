@@ -1813,6 +1813,36 @@ function normalizeWords(text){
     .replace(/[.,!?;:„"“”'’\-()]/g,' ')
     .split(/\s+/).filter(Boolean);
 }
+// Chrome's continuous speech recognition sometimes "re-hears" and emits the
+// same word or short phrase several times in a row; this collapses immediate
+// repeats (case/punctuation-insensitive) without touching genuinely repeated
+// words that aren't adjacent.
+function collapseRepeats(text){
+  const raw = text.split(/\s+/).filter(Boolean);
+  const out = [];
+  let prevNorm = null;
+  for(const w of raw){
+    const norm = w.toLowerCase().replace(/[.,!?;:„"“”'’\-()]/g,'');
+    if(norm && norm===prevNorm) continue;
+    out.push(w);
+    prevNorm = norm;
+  }
+  return out.join(' ');
+}
+// Chrome can offer several competing guesses per recognized segment; since we
+// already know the sentence the user was asked to say, pick whichever
+// alternative is closest to that target instead of blindly trusting Chrome's
+// top-ranked guess.
+function pickBestAlternative(result, targetText){
+  let best = result[0].transcript, bestScore = -1;
+  const n = Math.min(result.length, 5);
+  for(let a=0;a<n;a++){
+    const candidate = result[a].transcript;
+    const s = scoreAndDiff(targetText, candidate).score;
+    if(s>bestScore){ bestScore = s; best = candidate; }
+  }
+  return best;
+}
 function lcsMatch(a,b){
   const n=a.length, m=b.length;
   const dp = Array.from({length:n+1},()=>new Array(m+1).fill(0));
@@ -2121,6 +2151,7 @@ function startRecording(){
     if(myToken !== session.token) return; // stale — the user already moved to a different round
 
     if(hasSTT){
+      recognizedText = collapseRepeats(recognizedText);
       const diff = renderDiff(currentTargetText(), recognizedText);
       const score = diff.score;
       if(session.mode==='word'){
@@ -2196,11 +2227,11 @@ function startRecording(){
   // seamlessly so a brief pause never cuts the recording short.
   function startOneRecognitionPass(){
     const rec = new SpeechRecognitionCtor();
-    rec.lang='de-DE'; rec.interimResults=false; rec.continuous=true; rec.maxAlternatives=1;
+    rec.lang='de-DE'; rec.interimResults=false; rec.continuous=true; rec.maxAlternatives=5;
     let sessionText = '';
     rec.onresult = (e)=>{
       let full='';
-      for(let i=0;i<e.results.length;i++) full += e.results[i][0].transcript + ' ';
+      for(let i=0;i<e.results.length;i++) full += pickBestAlternative(e.results[i], currentTargetText()) + ' ';
       sessionText = full.trim();
     };
     rec.onerror = ()=>{};
@@ -2378,13 +2409,18 @@ els.listenQAnswerBtn.onclick = ()=>{
     return;
   }
   const rec = new SpeechRecognitionCtor();
-  rec.lang='de-DE'; rec.interimResults=false; rec.maxAlternatives=1;
+  rec.lang='de-DE'; rec.interimResults=false; rec.maxAlternatives=5;
+  const targetHints = listenSession.episode.questions[listenSession.qIdx].accept.join(' ');
   let said = '';
-  rec.onresult = (e)=>{ said = e.results[0][0].transcript; };
+  rec.onresult = (e)=>{
+    let full='';
+    for(let i=0;i<e.results.length;i++) full += pickBestAlternative(e.results[i], targetHints) + ' ';
+    said = full.trim();
+  };
   rec.onerror = ()=>{};
   rec.onend = ()=>{
     els.listenQAnswerBtn.disabled=false;
-    if(myToken===listenSession.token) judgeListenAnswer(said);
+    if(myToken===listenSession.token) judgeListenAnswer(collapseRepeats(said));
   };
   listenSession.recognition = rec;
   try{ rec.start(); }catch(e){ els.listenQAnswerBtn.disabled=false; if(myToken===listenSession.token) judgeListenAnswer(''); }
