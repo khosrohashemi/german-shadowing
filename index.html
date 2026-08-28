@@ -195,8 +195,10 @@
       <button class="primary" id="listenDoneBtn">✅ Fertig gehört — zu den Fragen</button>
       <button id="listenPrevEpBtn" style="display:none;">⏮ Voriger Podcast</button>
       <button id="listenSkipEpBtn">🔀 Anderer Podcast</button>
+      <button id="listenTranscriptBtn">📜 Transkript anzeigen</button>
       <button class="ghost" id="listenBackBtn">↩ Zurück zur Auswahl</button>
     </div>
+    <div id="listenTranscriptBox" style="display:none;margin-top:10px;white-space:pre-wrap;line-height:1.6;color:var(--muted);"></div>
     <div class="status" id="listenStatus"></div>
 
     <div id="listenQABlock" style="display:none;">
@@ -214,10 +216,8 @@
         <div class="score" id="listenScoreLine"></div>
         <div class="feedback-msg" id="listenSummaryMsg"></div>
         <div class="controls">
-          <button id="listenTranscriptBtn">📜 Transkript anzeigen</button>
           <button class="primary" id="listenAgainBtn">↩ Zurück zur Auswahl</button>
         </div>
-        <div id="listenTranscriptBox" style="display:none;margin-top:10px;white-space:pre-wrap;line-height:1.6;color:var(--muted);"></div>
       </div>
     </div>
   </div>
@@ -2698,6 +2698,9 @@ function displayListenEpisode(ep){
   els.listenPrevEpBtn.style.display = listenHistoryIdx>0 ? 'inline-block' : 'none';
   els.listenQABlock.style.display='none';
   els.listenSummary.style.display='none';
+  els.listenTranscriptBox.style.display='none';
+  els.listenTranscriptBox.innerHTML = ep.paragraphs.map(p=>tapify(p)).join('\n\n');
+  els.listenTranscriptBtn.textContent = '📜 Transkript anzeigen';
   setListenStatus('Höre dir den Podcast an — du kannst pausieren und zurückspulen, wie du möchtest. Danach kommen ein paar Verständnisfragen.');
 }
 // Picks a random due/fresh episode at the chosen level (avoiding the one just shown,
@@ -2859,8 +2862,6 @@ function finishListenSession(){
   els.listenScoreLine.textContent = listenSession.correctCount + ' / ' + total + ' richtig (' + score + '%)';
   els.listenScoreLine.className = 'score ' + (score>=85?'good':score>=50?'mid':'bad');
   els.listenSummaryMsg.textContent = score>=85 ? 'Ausgezeichnetes Hörverständnis! 🎉' : score>=50 ? 'Gut gemacht, weiter so.' : 'Diese Folge kommt bald wieder — dranbleiben!';
-  els.listenTranscriptBox.style.display='none';
-  els.listenTranscriptBox.innerHTML = ep.paragraphs.map(p=>tapify(p)).join('\n\n');
 
   const card = state.podcasts[ep.id] || {box:0, due:todayStr(), bestScore:0};
   if(score>=85) card.box = Math.min((card.box||0)+1, BOX_INTERVALS.length-1);
@@ -2877,7 +2878,9 @@ function finishListenSession(){
   renderTopBar(); renderStats();
 }
 els.listenTranscriptBtn.onclick = ()=>{
-  els.listenTranscriptBox.style.display = els.listenTranscriptBox.style.display==='none' ? 'block' : 'none';
+  const nowShown = els.listenTranscriptBox.style.display==='none';
+  els.listenTranscriptBox.style.display = nowShown ? 'block' : 'none';
+  els.listenTranscriptBtn.textContent = nowShown ? '🙈 Transkript verbergen' : '📜 Transkript anzeigen';
 };
 
 /* ---------------- German-German dictionary (live Wiktionary lookup) ---------------- */
