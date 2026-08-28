@@ -2794,31 +2794,68 @@ function allListenHints(){
   }
   return allListenHintsCache;
 }
-// Distractors come from the OTHER questions of the same episode first, since
-// those answers share the episode's topic/characters/numbers — making the
-// options genuinely hard to tell apart instead of an obvious odd-one-out.
+// A same-episode answer to a DIFFERENT question ("München" vs "sie spendet sie
+// einer Stiftung") is still trivially easy to rule out by shape alone — one's a
+// place, one's a sentence. These helpers classify an answer's "shape" so
+// distractors get matched against answers that actually look alike.
+// "eins" (never "ein") on purpose — bare "ein" is almost always the indefinite
+// article ("ein Treffpunkt", "ein paar Tage"), not the numeral, and matching it
+// was misfiling ordinary phrase answers into the numeric bucket.
+const LISTEN_NUMBER_WORD = /\b(eins|zwei|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf|zwölf|zwoelf|dreizehn|vierzehn|fünfzehn|fuenfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|dreissig|vierzig|fünfzig|fuenfzig|sechzig|siebzig|achtzig|neunzig|hundert|tausend|prozent)\b/i;
+const LISTEN_SMALL_WORDS = new Set(['oder','und','von','zu','im','der','die','das','des','dem','den']);
+function listenHintIsNumeric(h){ return /\d/.test(h) || LISTEN_NUMBER_WORD.test(h); }
+function listenHintLooksProper(h){
+  if(listenHintIsNumeric(h)) return false;
+  const words = h.trim().split(/\s+/);
+  if(words.length>3) return false;
+  return words.every(w=> LISTEN_SMALL_WORDS.has(w.toLowerCase()) || /^[A-ZÄÖÜ]/.test(w));
+}
+function listenHintCategory(h){
+  if(listenHintIsNumeric(h)) return 'number';
+  if(listenHintLooksProper(h)) return 'proper';
+  return 'phrase';
+}
+function listenExtractNumber(h){
+  const m = h.match(/\d+/);
+  return m ? parseInt(m[0],10) : null;
+}
+// Picks the 3 answers (from the same episode first, then the full pool) whose
+// shape most closely matches the correct one: same category always, and for
+// numeric answers, the closest magnitude — so the wrong options are genuinely
+// plausible instead of eliminable on sight.
 function buildListenChoices(q, ep){
   const correct = q.hint;
   const correctKey = correct.trim().toLowerCase();
-  const seen = new Set([correctKey]);
-  const distractors = [];
+  const correctCat = listenHintCategory(correct);
+  const correctNum = listenExtractNumber(correct);
+  const seenKeys = new Set([correctKey]);
+  const pool = [];
   ep.questions.forEach(other=>{
     const key = other.hint.trim().toLowerCase();
-    if(seen.has(key)) return;
-    seen.add(key); distractors.push(other.hint);
+    if(seenKeys.has(key)) return;
+    seenKeys.add(key); pool.push({h:other.hint, fromEpisode:true});
   });
-  if(distractors.length<3){
-    const pool = allListenHints().filter(h=> !seen.has(h.trim().toLowerCase()));
-    const shuffled = pool.slice();
-    for(let i=shuffled.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]]; }
-    for(const h of shuffled){
-      if(distractors.length>=3) break;
-      const key = h.trim().toLowerCase();
-      if(seen.has(key)) continue;
-      seen.add(key); distractors.push(h);
+  allListenHints().forEach(h=>{
+    const key = h.trim().toLowerCase();
+    if(seenKeys.has(key)) return;
+    seenKeys.add(key); pool.push({h, fromEpisode:false});
+  });
+  // Shuffle before scoring so ties (very common within the broad "phrase" category)
+  // don't always resolve to the same few answers in dataset order.
+  for(let i=pool.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
+  pool.forEach(item=>{
+    let score = 0;
+    if(listenHintCategory(item.h)!==correctCat) score += 100;
+    if(correctNum!=null){
+      const n = listenExtractNumber(item.h);
+      score += n!=null ? Math.abs(n-correctNum) : 15;
     }
-  }
-  const opts = [correct, ...distractors.slice(0,3)];
+    if(!item.fromEpisode) score += 5; // same-episode ties broken in favor of topical closeness
+    item.score = score;
+  });
+  pool.sort((a,b)=> a.score-b.score);
+  const distractors = pool.slice(0,3).map(item=>item.h);
+  const opts = [correct, ...distractors];
   for(let i=opts.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [opts[i],opts[j]]=[opts[j],opts[i]]; }
   return opts;
 }
