@@ -163,6 +163,7 @@
       <button id="recordBtn" style="display:none;">🎤 Aufnehmen</button>
       <button id="finishRecordBtn" style="display:none;">✅ Fertig</button>
       <button id="retryBtn" style="display:none;">↺ Wiederholen</button>
+      <button id="prevRoundBtn" style="display:none;">⏮ Zurück</button>
       <button id="skipBtn" style="display:none;">⏭ Nächster</button>
       <button id="revealBtn" style="display:none;">👁 Text zeigen</button>
       <button class="ghost" id="newSessionBtn" style="display:none;">↩ Zurück zur Auswahl</button>
@@ -187,6 +188,7 @@
     <audio id="listenAudio" controls style="width:100%;margin-top:10px;" preload="none"></audio>
     <div class="controls">
       <button class="primary" id="listenDoneBtn">✅ Fertig gehört — zu den Fragen</button>
+      <button id="listenPrevEpBtn" style="display:none;">⏮ Voriger Podcast</button>
       <button id="listenSkipEpBtn">🔀 Anderer Podcast</button>
       <button class="ghost" id="listenBackBtn">↩ Zurück zur Auswahl</button>
     </div>
@@ -1757,7 +1759,7 @@ const els = {
   shadowSetupCard:$('shadowSetupCard'), shadowLines1Btn:$('shadowLines1Btn'), shadowLines2Btn:$('shadowLines2Btn'), shadowLines3Btn:$('shadowLines3Btn'), shadowSetupBackBtn:$('shadowSetupBackBtn'),
   listenSetupCard:$('listenSetupCard'), listenSetupStatus:$('listenSetupStatus'), listenSetupBackBtn:$('listenSetupBackBtn'),
   lvlA1Btn:$('lvlA1Btn'), lvlA2Btn:$('lvlA2Btn'), lvlB1Btn:$('lvlB1Btn'), lvlB2Btn:$('lvlB2Btn'), lvlC1Btn:$('lvlC1Btn'), lvlC2Btn:$('lvlC2Btn'), lvlRandomBtn:$('lvlRandomBtn'),
-  playBtn:$('playBtn'), pauseBtn:$('pauseBtn'), recordBtn:$('recordBtn'), finishRecordBtn:$('finishRecordBtn'), retryBtn:$('retryBtn'), skipBtn:$('skipBtn'), revealBtn:$('revealBtn'), newSessionBtn:$('newSessionBtn'),
+  playBtn:$('playBtn'), pauseBtn:$('pauseBtn'), recordBtn:$('recordBtn'), finishRecordBtn:$('finishRecordBtn'), retryBtn:$('retryBtn'), skipBtn:$('skipBtn'), prevRoundBtn:$('prevRoundBtn'), revealBtn:$('revealBtn'), newSessionBtn:$('newSessionBtn'),
   statusLine:$('statusLine'),
   diffRow:$('diffRow'), targetLine:$('targetLine'), saidLine:$('saidLine'), scoreLine:$('scoreLine'), feedbackMsg:$('feedbackMsg'),
   recordedAudioWrap:$('recordedAudioWrap'), recordedAudio:$('recordedAudio'),
@@ -1770,7 +1772,7 @@ const els = {
   freestyleNextBtn:$('freestyleNextBtn'), freestyleStatus:$('freestyleStatus'), freestyleTranscript:$('freestyleTranscript'),
   practiceCard:$('practiceCard'),
   listenCard:$('listenCard'), listenTag:$('listenTag'), listenTitle:$('listenTitle'), listenAudio:$('listenAudio'),
-  listenDoneBtn:$('listenDoneBtn'), listenSkipEpBtn:$('listenSkipEpBtn'), listenBackBtn:$('listenBackBtn'), listenStatus:$('listenStatus'),
+  listenDoneBtn:$('listenDoneBtn'), listenSkipEpBtn:$('listenSkipEpBtn'), listenPrevEpBtn:$('listenPrevEpBtn'), listenBackBtn:$('listenBackBtn'), listenStatus:$('listenStatus'),
   listenQABlock:$('listenQABlock'), listenQProgress:$('listenQProgress'), listenQText:$('listenQText'),
   listenQPlayBtn:$('listenQPlayBtn'), listenQAnswerBtn:$('listenQAnswerBtn'), listenQStatus:$('listenQStatus'), listenQFeedback:$('listenQFeedback'),
   listenSummary:$('listenSummary'), listenScoreLine:$('listenScoreLine'), listenSummaryMsg:$('listenSummaryMsg'),
@@ -2228,7 +2230,7 @@ function updateWeakWords(targetWords, aMatched, passage){
 }
 
 /* ---------------- Session controller ---------------- */
-let session = {queue:[], idx:-1, current:null, roundCount:0, recognition:null, mediaRecorder:null, isBonus:false, bonusIdx:-1, mode:'passage', weakWordsAttempted:null, token:0};
+let session = {queue:[], idx:-1, current:null, roundCount:0, recognition:null, mediaRecorder:null, isBonus:false, bonusIdx:-1, mode:'passage', weakWordsAttempted:null, token:0, history:[], historyIdx:-1};
 
 function setStatus(text, live){
   els.statusLine.innerHTML = (live? '<span class="dot live"></span>' : '<span class="dot"></span>') + ' ' + text;
@@ -2290,6 +2292,7 @@ function showSentenceCard(){
   els.finishRecordBtn.disabled=false;
   els.retryBtn.style.display='none';
   els.skipBtn.style.display='inline-block';
+  els.prevRoundBtn.style.display = session.historyIdx>0 ? 'inline-block' : 'none';
   let statusMsg;
   if(session.mode==='word') statusMsg = 'Ein Wort, das dir schwerfällt — klicke auf „Abspielen“.';
   else if(session.isBonus) statusMsg = 'Klicke auf „Abspielen“, um den Zungenbrecher zu hören.';
@@ -2310,8 +2313,28 @@ function pickDueWeakWord(){
   session.weakWordsAttempted.add(chosen[0]);
   return {word: chosen[0], example: chosen[1].example, exampleEn: chosen[1].exampleEn, sourceId: chosen[1].sourceId, sourceLineIdx: chosen[1].sourceLineIdx};
 }
+// Records the round currently shown so "⏮ Zurück" can restore it later, and
+// marks this as the newest point reached (discarding any stale "forward" history
+// from before a previous back-navigation).
+function pushRoundHistory(){
+  session.history = session.history.slice(0, session.historyIdx+1);
+  session.history.push({mode:session.mode, current:session.current, isBonus:session.isBonus, bonusIdx:session.bonusIdx, idx:session.idx});
+  session.historyIdx = session.history.length-1;
+}
+function restoreRoundHistory(snap){
+  session.mode = snap.mode; session.current = snap.current;
+  session.isBonus = snap.isBonus; session.bonusIdx = snap.bonusIdx; session.idx = snap.idx;
+}
 function nextRound(){
   session.token++; // invalidates any recognition/recording still in flight from the previous round
+  // If we'd previously gone back, step forward through already-visited rounds
+  // first instead of generating a brand-new one.
+  if(session.historyIdx < session.history.length-1){
+    session.historyIdx++;
+    restoreRoundHistory(session.history[session.historyIdx]);
+    showSentenceCard();
+    return;
+  }
   session.roundCount++;
   // Every 4th round, resurface a word the user has struggled with (if any are due
   // today), without consuming a passage or colliding with the bonus slot below.
@@ -2320,6 +2343,7 @@ function nextRound(){
     if(w){
       session.mode = 'word'; session.isBonus = false;
       session.current = w;
+      pushRoundHistory();
       showSentenceCard();
       return;
     }
@@ -2331,6 +2355,7 @@ function nextRound(){
     session.isBonus = true;
     session.bonusIdx = Math.floor(Math.random()*TONGUE_TWISTERS.length);
     session.current = TONGUE_TWISTERS[session.bonusIdx];
+    pushRoundHistory();
     showSentenceCard();
     return;
   }
@@ -2341,6 +2366,15 @@ function nextRound(){
     return;
   }
   session.current = session.queue[session.idx];
+  pushRoundHistory();
+  showSentenceCard();
+}
+// Steps back to the previously shown round, if any.
+function prevRound(){
+  if(session.historyIdx<=0) return;
+  session.token++;
+  session.historyIdx--;
+  restoreRoundHistory(session.history[session.historyIdx]);
   showSentenceCard();
 }
 function startSession(){
@@ -2351,6 +2385,7 @@ function startSession(){
   }
   session.idx=-1; session.roundCount=0; session.mode='passage';
   session.weakWordsAttempted = new Set();
+  session.history = []; session.historyIdx = -1;
   primeMicPermission();
   nextRound();
 }
@@ -2386,6 +2421,14 @@ els.skipBtn.onclick = ()=>{
   if(stopActiveRecording){ stopActiveRecording(); }
   else if(session.mediaRecorder && session.mediaRecorder.state!=='inactive'){ try{ session.mediaRecorder.stop(); }catch(e){} }
   nextRound();
+};
+els.prevRoundBtn.onclick = ()=>{
+  speechSynthesis.cancel();
+  if(currentAudioEl){ try{ currentAudioEl.pause(); }catch(e){} currentAudioEl=null; }
+  ttsPaused=false; els.pauseBtn.style.display='none'; els.pauseBtn.textContent='⏸ Pause';
+  if(stopActiveRecording){ stopActiveRecording(); }
+  else if(session.mediaRecorder && session.mediaRecorder.state!=='inactive'){ try{ session.mediaRecorder.stop(); }catch(e){} }
+  prevRound();
 };
 els.revealBtn.onclick = ()=>{
   if(session.mode==='word'){
@@ -2613,6 +2656,9 @@ let listenSession = {episode:null, qIdx:-1, correctCount:0, recognition:null, to
 // null = any level ("🎲 Zufällig"); otherwise the CEFR level chosen on the setup screen,
 // remembered across "Anderer Podcast" clicks until the user picks a new level.
 let currentListenLevel = null;
+// Episode ids visited this level-session, so "⏮ Voriger Podcast" can step back.
+let listenHistory = [];
+let listenHistoryIdx = -1;
 function getDuePodcasts(level){
   const today = todayStr();
   let pool = level ? PODCASTS.filter(p=>p.level===level) : PODCASTS;
@@ -2625,16 +2671,11 @@ function getDuePodcasts(level){
 function setListenStatus(t){ els.listenStatus.textContent = t; }
 function setListenQStatus(t){ els.listenQStatus.textContent = t; }
 
-// Picks a random due/fresh episode at the chosen level (avoiding the one just shown,
-// when another is available) and resets the listen card to it — used both for the
-// initial pick and "Anderer Podcast".
-function loadListenEpisode(){
+// Resets the listen card to show the given episode — shared by fresh picks and
+// history navigation ("Anderer Podcast" / "Voriger Podcast").
+function displayListenEpisode(ep){
   if(listenSession.recognition){ try{ listenSession.recognition.abort(); }catch(e){} }
   els.listenAudio.pause();
-  const pool = getDuePodcasts(currentListenLevel);
-  const currentId = listenSession.episode ? listenSession.episode.id : null;
-  const choices = pool.length>1 ? pool.filter(p=>p.id!==currentId) : pool;
-  const ep = choices[Math.floor(Math.random()*choices.length)];
   listenSession = {episode: ep, qIdx:-1, correctCount:0, recognition:null, token: listenSession.token+1};
   const styleNames = {news:'📰 Nachrichten', story:'📖 Geschichte'};
   els.listenTag.textContent = (styleNames[ep.style]||ep.style) + ' · ' + ep.level;
@@ -2643,9 +2684,34 @@ function loadListenEpisode(){
   els.listenAudio.playbackRate = 1;
   els.listenDoneBtn.style.display='inline-block';
   els.listenSkipEpBtn.style.display='inline-block';
+  els.listenPrevEpBtn.style.display = listenHistoryIdx>0 ? 'inline-block' : 'none';
   els.listenQABlock.style.display='none';
   els.listenSummary.style.display='none';
   setListenStatus('Höre dir den Podcast an — du kannst pausieren und zurückspulen, wie du möchtest. Danach kommen ein paar Verständnisfragen.');
+}
+// Picks a random due/fresh episode at the chosen level (avoiding the one just shown,
+// when another is available) and shows it — used both for the initial pick and
+// "Anderer Podcast". Steps forward through revisit history first if we'd gone back.
+function loadListenEpisode(){
+  if(listenHistoryIdx < listenHistory.length-1){
+    listenHistoryIdx++;
+    displayListenEpisode(listenHistory[listenHistoryIdx]);
+    return;
+  }
+  const pool = getDuePodcasts(currentListenLevel);
+  const currentId = listenSession.episode ? listenSession.episode.id : null;
+  const choices = pool.length>1 ? pool.filter(p=>p.id!==currentId) : pool;
+  const ep = choices[Math.floor(Math.random()*choices.length)];
+  listenHistory = listenHistory.slice(0, listenHistoryIdx+1);
+  listenHistory.push(ep);
+  listenHistoryIdx = listenHistory.length-1;
+  displayListenEpisode(ep);
+}
+// Steps back to the previously shown episode, if any.
+function prevListenEpisode(){
+  if(listenHistoryIdx<=0) return;
+  listenHistoryIdx--;
+  displayListenEpisode(listenHistory[listenHistoryIdx]);
 }
 els.startListenBtn.onclick = ()=>{
   els.modeCard.style.display='none';
@@ -2659,6 +2725,7 @@ function pickListenLevel(level){
     return;
   }
   currentListenLevel = level;
+  listenHistory = []; listenHistoryIdx = -1;
   els.listenSetupCard.style.display='none';
   els.listenCard.style.display='block';
   loadListenEpisode();
@@ -2672,6 +2739,7 @@ els.lvlC1Btn.onclick = ()=>pickListenLevel('C1');
 els.lvlC2Btn.onclick = ()=>pickListenLevel('C2');
 els.lvlRandomBtn.onclick = ()=>pickListenLevel(null);
 els.listenSkipEpBtn.onclick = loadListenEpisode;
+els.listenPrevEpBtn.onclick = prevListenEpisode;
 els.listenBackBtn.onclick = ()=>{
   els.listenAudio.pause();
   listenSession.token++;
