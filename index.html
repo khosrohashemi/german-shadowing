@@ -203,10 +203,6 @@
       <div class="diff-row">
         <div class="diff-label" id="listenQProgress"></div>
         <div class="sentence" id="listenQText" style="font-size:1.2rem;"></div>
-        <div class="controls">
-          <button id="listenQPlayBtn">🔊 Frage abspielen</button>
-          <button id="listenQAnswerBtn" style="display:none;">🎤 Antworten</button>
-        </div>
         <div id="listenQChoices" class="choice-list" style="display:none;"></div>
         <div class="status" id="listenQStatus"></div>
         <div class="feedback-msg" id="listenQFeedback"></div>
@@ -1780,7 +1776,7 @@ const els = {
   listenCard:$('listenCard'), listenTag:$('listenTag'), listenTitle:$('listenTitle'), listenAudio:$('listenAudio'),
   listenDoneBtn:$('listenDoneBtn'), listenSkipEpBtn:$('listenSkipEpBtn'), listenPrevEpBtn:$('listenPrevEpBtn'), listenBackBtn:$('listenBackBtn'), listenStatus:$('listenStatus'),
   listenQABlock:$('listenQABlock'), listenQProgress:$('listenQProgress'), listenQText:$('listenQText'),
-  listenQPlayBtn:$('listenQPlayBtn'), listenQAnswerBtn:$('listenQAnswerBtn'), listenQChoices:$('listenQChoices'), listenQStatus:$('listenQStatus'), listenQFeedback:$('listenQFeedback'),
+  listenQChoices:$('listenQChoices'), listenQStatus:$('listenQStatus'), listenQFeedback:$('listenQFeedback'),
   listenSummary:$('listenSummary'), listenScoreLine:$('listenScoreLine'), listenSummaryMsg:$('listenSummaryMsg'),
   listenTranscriptBtn:$('listenTranscriptBtn'), listenTranscriptBox:$('listenTranscriptBox'), listenAgainBtn:$('listenAgainBtn'),
   startDictBtn:$('startDictBtn'), dictCard:$('dictCard'), dictInput:$('dictInput'), dictSearchBtn:$('dictSearchBtn'),
@@ -2782,13 +2778,11 @@ function nextListenQuestion(){
   els.listenQProgress.textContent = 'Frage ' + (listenSession.qIdx+1) + ' von ' + ep.questions.length;
   els.listenQText.innerHTML = tapify(q.q);
   els.listenQFeedback.textContent = '';
-  els.listenQPlayBtn.style.display = 'inline-block';
-  els.listenQAnswerBtn.style.display='none';
-  els.listenQChoices.innerHTML=''; els.listenQChoices.style.display='none';
-  setListenQStatus('Klicke auf 🔊, um die Frage zu hören.');
+  renderListenChoices(q, ep);
+  setListenQStatus('Wähle die richtige Antwort.');
 }
-// All model answers across every episode, used as a pool of wrong-answer options
-// for multiple-choice — cached since PODCASTS never changes at runtime.
+// All model answers across every episode — only used as a distractor fallback
+// when an episode doesn't have enough of its own distinct answers (see below).
 let allListenHintsCache = null;
 function allListenHints(){
   if(!allListenHintsCache){
@@ -2797,29 +2791,37 @@ function allListenHints(){
   }
   return allListenHintsCache;
 }
-function buildListenChoices(q){
+// Distractors come from the OTHER questions of the same episode first, since
+// those answers share the episode's topic/characters/numbers — making the
+// options genuinely hard to tell apart instead of an obvious odd-one-out.
+function buildListenChoices(q, ep){
   const correct = q.hint;
   const correctKey = correct.trim().toLowerCase();
-  const pool = allListenHints().filter(h=> h.trim().toLowerCase()!==correctKey);
-  const shuffled = pool.slice();
-  for(let i=shuffled.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]]; }
-  const distractors = []; const seen = new Set([correctKey]);
-  for(const h of shuffled){
-    const key = h.trim().toLowerCase();
-    if(seen.has(key)) continue;
-    seen.add(key); distractors.push(h);
-    if(distractors.length>=3) break;
+  const seen = new Set([correctKey]);
+  const distractors = [];
+  ep.questions.forEach(other=>{
+    const key = other.hint.trim().toLowerCase();
+    if(seen.has(key)) return;
+    seen.add(key); distractors.push(other.hint);
+  });
+  if(distractors.length<3){
+    const pool = allListenHints().filter(h=> !seen.has(h.trim().toLowerCase()));
+    const shuffled = pool.slice();
+    for(let i=shuffled.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]]; }
+    for(const h of shuffled){
+      if(distractors.length>=3) break;
+      const key = h.trim().toLowerCase();
+      if(seen.has(key)) continue;
+      seen.add(key); distractors.push(h);
+    }
   }
-  const opts = [correct, ...distractors];
+  const opts = [correct, ...distractors.slice(0,3)];
   for(let i=opts.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [opts[i],opts[j]]=[opts[j],opts[i]]; }
   return opts;
 }
-function disableListenChoices(){
-  Array.from(els.listenQChoices.children).forEach(b=> b.disabled=true);
-}
-function renderListenChoices(q){
+function renderListenChoices(q, ep){
   els.listenQChoices.innerHTML='';
-  buildListenChoices(q).forEach(choiceText=>{
+  buildListenChoices(q, ep).forEach(choiceText=>{
     const b = document.createElement('button');
     b.type='button'; b.className='choice-btn'; b.textContent=choiceText;
     b.onclick = ()=> answerListenChoice(choiceText, b);
@@ -2828,8 +2830,6 @@ function renderListenChoices(q){
   els.listenQChoices.style.display='flex';
 }
 function answerListenChoice(chosenText, btnEl){
-  listenSession.token++; // invalidate any in-flight mic recognition for this question
-  if(listenSession.recognition){ try{ listenSession.recognition.abort(); }catch(e){} }
   const q = listenSession.episode.questions[listenSession.qIdx];
   const correctKey = q.hint.trim().toLowerCase();
   const isCorrect = chosenText.trim().toLowerCase()===correctKey;
@@ -2838,7 +2838,6 @@ function answerListenChoice(chosenText, btnEl){
     if(b.textContent.trim().toLowerCase()===correctKey) b.classList.add('correct');
   });
   if(!isCorrect) btnEl.classList.add('wrong');
-  els.listenQAnswerBtn.disabled = true;
   if(isCorrect){
     listenSession.correctCount++;
     els.listenQFeedback.textContent = '✅ Richtig!';
@@ -2846,61 +2845,6 @@ function answerListenChoice(chosenText, btnEl){
     els.listenQFeedback.textContent = '❌ Nicht ganz — richtige Antwort: ' + q.hint;
   }
   setListenQStatus('Du hast ausgewählt: „' + chosenText + '"');
-  const myToken = listenSession.token;
-  setTimeout(()=>{ if(myToken===listenSession.token) nextListenQuestion(); }, 2500);
-}
-els.listenQPlayBtn.onclick = ()=>{
-  setListenQStatus('🔊 Frage wird abgespielt…');
-  const ep = listenSession.episode;
-  const qIdx = listenSession.qIdx;
-  speakSmart(ep.questions[qIdx].q, 'audio/'+ep.id+'_q'+qIdx+'.mp3', 1, ()=>{
-    els.listenQAnswerBtn.style.display='inline-block';
-    renderListenChoices(ep.questions[qIdx]);
-    setListenQStatus('Wähle eine Antwort oder antworte per Mikrofon.');
-  });
-};
-els.listenQAnswerBtn.onclick = ()=>{
-  const myToken = listenSession.token;
-  els.listenQAnswerBtn.disabled = true;
-  disableListenChoices();
-  setListenQStatus('🎤 Ich höre zu…');
-  if(!hasSTT){
-    const q = listenSession.episode.questions[listenSession.qIdx];
-    setListenQStatus('Spracherkennung nicht verfügbar — bewerte dich selbst.');
-    els.listenQFeedback.textContent = 'Erwartete Antwort: ' + q.hint;
-    els.listenQAnswerBtn.disabled=false;
-    setTimeout(()=>{ if(myToken===listenSession.token) nextListenQuestion(); }, 3000);
-    return;
-  }
-  const rec = new SpeechRecognitionCtor();
-  rec.lang='de-DE'; rec.interimResults=false; rec.maxAlternatives=5;
-  const targetHints = listenSession.episode.questions[listenSession.qIdx].accept.join(' ');
-  let said = '';
-  rec.onresult = (e)=>{
-    if(e.results && e.results.length){
-      said = pickBestAlternative(e.results[e.results.length-1], targetHints);
-    }
-  };
-  rec.onerror = ()=>{};
-  rec.onend = ()=>{
-    els.listenQAnswerBtn.disabled=false;
-    if(myToken===listenSession.token) judgeListenAnswer(collapseRepeats(said));
-  };
-  listenSession.recognition = rec;
-  try{ rec.start(); }catch(e){ els.listenQAnswerBtn.disabled=false; if(myToken===listenSession.token) judgeListenAnswer(''); }
-  setTimeout(()=>{ try{ if(listenSession.recognition===rec) rec.stop(); }catch(e){} }, 12000);
-};
-function judgeListenAnswer(said){
-  const q = listenSession.episode.questions[listenSession.qIdx];
-  const norm = normalizeWords(said).join(' ');
-  const correct = q.accept.some(a=> norm.includes(normalizeWords(a).join(' ')));
-  if(correct){
-    listenSession.correctCount++;
-    els.listenQFeedback.textContent = '✅ Richtig!';
-  } else {
-    els.listenQFeedback.textContent = '❌ Nicht ganz — richtige Antwort: ' + q.hint;
-  }
-  setListenQStatus('Du hast gesagt: „' + (said || '(nichts erkannt)') + '"');
   const myToken = listenSession.token;
   setTimeout(()=>{ if(myToken===listenSession.token) nextListenQuestion(); }, 2500);
 }
