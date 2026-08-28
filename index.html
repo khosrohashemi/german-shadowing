@@ -2094,14 +2094,50 @@ function normalizeWords(text){
 // repeats (case/punctuation-insensitive) without touching genuinely repeated
 // words that aren't adjacent.
 function collapseRepeats(text){
+  const stripPunct = w => w.toLowerCase().replace(/[.,!?;:„"“”'’\-()]/g,'');
+
+  // Pass 1: collapse consecutive identical single words ("wort wort wort" -> "wort"),
+  // however many times in a row they repeat.
   const raw = text.split(/\s+/).filter(Boolean);
-  const out = [];
-  let prevNorm = null;
+  const step1 = [];
   for(const w of raw){
-    const norm = w.toLowerCase().replace(/[.,!?;:„"“”'’\-()]/g,'');
-    if(norm && norm===prevNorm) continue;
-    out.push(w);
-    prevNorm = norm;
+    const norm = stripPunct(w);
+    if(step1.length && stripPunct(step1[step1.length-1])===norm) continue;
+    step1.push(w);
+  }
+
+  // Pass 2: collapse consecutive identical short PHRASES (2-6 words), e.g. Chrome's
+  // continuous recognition re-hearing the tail of what was just said after a pause
+  // ("ich glaube ich glaube dass..." -> "ich glaube dass..."), however many times
+  // in a row the phrase repeats.
+  const out = [];
+  let i = 0;
+  while(i < step1.length){
+    let matchedLen = 0;
+    for(let L=6; L>=2; L--){
+      if(i+2*L > step1.length) continue;
+      let same = true;
+      for(let k=0;k<L;k++){
+        if(stripPunct(step1[i+k]) !== stripPunct(step1[i+L+k])){ same=false; break; }
+      }
+      if(same){ matchedLen = L; break; }
+    }
+    if(matchedLen){
+      for(let k=0;k<matchedLen;k++) out.push(step1[i+k]);
+      let j = i + matchedLen;
+      while(j+matchedLen<=step1.length){
+        let same = true;
+        for(let k=0;k<matchedLen;k++){
+          if(stripPunct(step1[j+k]) !== stripPunct(step1[i+k])){ same=false; break; }
+        }
+        if(!same) break;
+        j += matchedLen;
+      }
+      i = j;
+    } else {
+      out.push(step1[i]);
+      i++;
+    }
   }
   return out.join(' ');
 }
@@ -2514,7 +2550,7 @@ function startRecording(){
     rec.onend = ()=>{
       if(sessionText) recognizedText = (recognizedText ? recognizedText+' ' : '') + sessionText;
       if(!userStopped && Date.now()-recordingStarted < MAX_RECORDING_MS){
-        setTimeout(()=>{ if(!userStopped) startOneRecognitionPass(); }, 50);
+        setTimeout(()=>{ if(!userStopped) startOneRecognitionPass(); }, 250);
       } else {
         recognitionDone=true; stopRecorderIfNeeded(); finish();
       }
