@@ -302,6 +302,7 @@
             <option value="talk">Alltagsgespräche</option>
             <option value="story">Erzählungen</option>
             <option value="topic">Aktuelle Themen</option>
+            <option value="redemittel">Redemittel &amp; Ausdrücke</option>
           </select>
         </div>
         <div class="full row-check"><input type="checkbox" id="hideTextChk"> <label for="hideTextChk" style="margin:0;">Text erst nach dem Hören anzeigen (reines Hörtraining)</label></div>
@@ -890,6 +891,281 @@ const PASSAGES = [
     {de:"Immer mehr Familien fahren im Urlaub lieber mit dem Zug statt mit dem Flugzeug.", en:"More and more families prefer to travel by train rather than by plane on vacation."},
     {de:"Das ist zwar oft langsamer, aber viele finden es entspannter.", en:"It's often slower, but many find it more relaxing."},
     {de:"Außerdem ist die Zugfahrt meistens besser für die Umwelt.", en:"Also, the train journey is usually better for the environment."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Normalerweise stehe ich um sechs Uhr auf und dusche als Erstes.", en:"I normally get up at six and shower first."},
+    {de:"Danach mache ich mir schnell ein Butterbrot und einen Kaffee.", en:"After that I quickly make myself a sandwich and a coffee."},
+    {de:"Um kurz nach sieben verlasse ich dann das Haus.", en:"Then I leave the house shortly after seven."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Ich fahre jeden Tag mit der U-Bahn zur Arbeit.", en:"I take the subway to work every day."},
+    {de:"Die Fahrt dauert ungefähr zwanzig Minuten, wenn nichts schiefgeht.", en:"The ride takes about twenty minutes if nothing goes wrong."},
+    {de:"Manchmal nutze ich die Zeit, um noch ein bisschen zu lesen.", en:"Sometimes I use the time to read a bit."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Wie war denn dein Wochenende, hast du was Schönes gemacht?", en:"So how was your weekend, did you do anything nice?"},
+    {de:"Ach, nicht viel, ich habe hauptsächlich die Wohnung geputzt.", en:"Ah, not much, I mostly cleaned the apartment."},
+    {de:"Das kenne ich, bei mir sieht es auch nie fertig aus.", en:"I know that feeling, mine never looks finished either."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Gehst du heute in die Kantine oder hast du dir was mitgebracht?", en:"Are you going to the cafeteria today or did you bring something?"},
+    {de:"Ich hab mir heute Reste von gestern mitgebracht.", en:"I brought leftovers from yesterday today."},
+    {de:"Gute Idee, das spart auch noch Geld.", en:"Good idea, that saves money too."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Nach der Arbeit gehe ich meistens erst mal eine Runde joggen.", en:"After work I usually go for a jog first."},
+    {de:"Danach koche ich mir etwas Einfaches zum Abendessen.", en:"After that I cook myself something simple for dinner."},
+    {de:"Den Rest des Abends verbringe ich meistens vor dem Fernseher.", en:"I usually spend the rest of the evening in front of the TV."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Ich muss heute noch unbedingt einkaufen gehen, der Kühlschrank ist leer.", en:"I really still need to go shopping today, the fridge is empty."},
+    {de:"Kannst du mir eine Liste schreiben, was wir alles brauchen?", en:"Can you write me a list of everything we need?"},
+    {de:"Klar, ich schicke sie dir gleich per Nachricht.", en:"Sure, I'll send it to you by message right away."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Am Samstag räume ich normalerweise die ganze Wohnung auf.", en:"On Saturdays I normally tidy up the whole apartment."},
+    {de:"Die Wäsche mache ich meistens sonntags, wenn ich mehr Zeit habe.", en:"I usually do the laundry on Sundays when I have more time."},
+    {de:"Bügeln ist ehrlich gesagt meine unbeliebteste Hausarbeit.", en:"Ironing is honestly my least favorite chore."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Hast du am Wochenende schon was vor, oder ist noch alles offen?", en:"Do you already have plans for the weekend, or is everything still open?"},
+    {de:"Noch nichts Festes, vielleicht treffe ich mich mit ein paar Freunden.", en:"Nothing fixed yet, maybe I'll meet up with some friends."},
+    {de:"Sag mir Bescheid, falls ihr noch jemanden gebrauchen könnt.", en:"Let me know if you could use one more person."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Was gibt es heute Abend bei euch zu essen?", en:"What are you having for dinner tonight?"},
+    {de:"Ich glaube, ich mache einfach Nudeln mit Tomatensoße.", en:"I think I'll just make pasta with tomato sauce."},
+    {de:"Klingt gut, das schmeckt eigentlich immer.", en:"Sounds good, that pretty much always tastes good."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Beeil dich ein bisschen, der Bus fährt gleich.", en:"Hurry up a little, the bus is about to leave."},
+    {de:"Ich bin schon fast fertig, ich muss nur noch die Schuhe anziehen.", en:"I'm almost ready, I just still need to put my shoes on."},
+    {de:"Gut, dann lass uns loslegen, sonst verpassen wir ihn noch.", en:"Good, then let's get going, or we'll miss it."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Hallo Mama, wie geht es dir und Papa so?", en:"Hi Mom, how are you and Dad doing?"},
+    {de:"Uns geht es gut, wir waren gerade im Garten.", en:"We're doing well, we were just out in the garden."},
+    {de:"Schön zu hören, ich rufe euch am Wochenende noch mal an.", en:"Nice to hear, I'll call you again over the weekend."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Hast du kurz Zeit, ich muss dich was fragen.", en:"Do you have a moment, I need to ask you something."},
+    {de:"Klar, schreib einfach, ich bin gerade zu Hause.", en:"Sure, just write, I'm home right now."},
+    {de:"Super, dann schreibe ich dir gleich alles im Detail.", en:"Great, then I'll write you all the details right away."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Dieses Wetter macht mich langsam wahnsinnig, schon wieder Regen.", en:"This weather is slowly driving me crazy, rain again."},
+    {de:"Ich weiß, ich hatte gehofft, dass es heute trocken bleibt.", en:"I know, I had hoped it would stay dry today."},
+    {de:"Na ja, wenigstens müssen wir die Blumen nicht selbst gießen.", en:"Well, at least we don't have to water the flowers ourselves."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Ich bin heute total müde, ich habe kaum geschlafen.", en:"I'm totally tired today, I barely slept."},
+    {de:"Das kenne ich, bei mir war es diese Woche auch so.", en:"I know that feeling, it was like that for me this week too."},
+    {de:"Ich glaube, ich gehe heute mal richtig früh ins Bett.", en:"I think I'll go to bed really early today."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Gehst du mit in die Küche, ich hole mir einen Kaffee?", en:"Are you coming to the kitchen with me, I'm getting a coffee?"},
+    {de:"Gerne, ich könnte auch eine kleine Pause gebrauchen.", en:"Sure, I could use a little break too."},
+    {de:"Gut, dann treffen wir uns in fünf Minuten dort.", en:"Good, then let's meet there in five minutes."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Der Verkehr heute Morgen war wirklich furchtbar.", en:"The traffic this morning was really terrible."},
+    {de:"Ja, auf der Autobahn stand ich fast eine halbe Stunde still.", en:"Yes, I was stuck on the highway for almost half an hour."},
+    {de:"Vielleicht sollten wir demnächst früher losfahren.", en:"Maybe we should leave earlier from now on."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Ich habe letzte Woche mit dem Training im Fitnessstudio angefangen.", en:"I started training at the gym last week."},
+    {de:"Das ist toll, wie oft gehst du denn hin?", en:"That's great, how often do you go?"},
+    {de:"Bisher versuche ich es dreimal die Woche zu schaffen.", en:"So far I'm trying to manage it three times a week."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Kannst du bitte die Wäsche aufhängen, wenn du Zeit hast?", en:"Can you please hang up the laundry when you have time?"},
+    {de:"Mach ich gleich, ich muss nur noch kurz duschen.", en:"I'll do it right away, I just still need to shower quickly."},
+    {de:"Danke, das wäre echt eine große Hilfe.", en:"Thanks, that would really be a big help."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Hast du Lust, heute Abend etwas zu bestellen?", en:"Do you feel like ordering something tonight?"},
+    {de:"Gute Idee, ich habe wirklich keine Energie mehr zum Kochen.", en:"Good idea, I really have no energy left to cook."},
+    {de:"Dann schau ich mal, welche Lieferdienste noch offen haben.", en:"Then I'll check which delivery services are still open."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Ich fahre neuerdings jeden Tag mit dem Rad zur Arbeit.", en:"I've recently started biking to work every day."},
+    {de:"Wie lange brauchst du damit im Vergleich zum Bus?", en:"How long does that take compared to the bus?"},
+    {de:"Ungefähr genauso lange, aber es macht mehr Spaß.", en:"About the same amount of time, but it's more fun."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Bist du heute Abend zu Hause oder unterwegs?", en:"Are you home tonight or out somewhere?"},
+    {de:"Ich bin bis ungefähr acht Uhr bei einem Freund.", en:"I'm at a friend's place until about eight o'clock."},
+    {de:"Alles klar, dann sehen wir uns später.", en:"Alright, then we'll see each other later."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Ohne meinen ersten Kaffee bin ich morgens echt nicht ansprechbar.", en:"Without my first coffee I'm really not approachable in the morning."},
+    {de:"Das geht mir ganz genauso, ich brauche mindestens eine Tasse.", en:"It's exactly the same for me, I need at least one cup."},
+    {de:"Zum Glück gibt es hier im Büro eine gute Kaffeemaschine.", en:"Luckily there's a good coffee machine here in the office."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Ich gehe noch schnell mit dem Hund eine Runde spazieren.", en:"I'm quickly going for a walk with the dog."},
+    {de:"Soll ich mitkommen, ich könnte auch etwas frische Luft gebrauchen.", en:"Should I come along, I could use some fresh air too."},
+    {de:"Gerne, dann können wir uns dabei noch ein bisschen unterhalten.", en:"Sure, then we can chat a bit while we're at it."},
+  ]},
+  {c:"talk", level:"B2", lines:[
+    {de:"Ich versuche in letzter Zeit, früher ins Bett zu gehen.", en:"I've been trying to go to bed earlier lately."},
+    {de:"Klappt das denn einigermaßen, oder fällt es dir schwer?", en:"Is that working out reasonably well, or is it hard for you?"},
+    {de:"Es klappt so mittelmäßig, mein Handy lenkt mich immer noch ab.", en:"It's working so-so, my phone still distracts me."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Wollen wir heute zusammen einkaufen und danach kochen?", en:"Do we want to go shopping together today and cook afterward?"},
+    {de:"Klingt gut, ich brauche sowieso noch ein paar Sachen.", en:"Sounds good, I need a few things anyway."},
+    {de:"Perfekt, dann treffen wir uns um elf am Supermarkt.", en:"Perfect, then let's meet at the supermarket at eleven."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Diese Woche ist bei mir wirklich stressig, ich habe kaum Pausen.", en:"This week is really stressful for me, I barely have any breaks."},
+    {de:"Oh nein, kann ich dir irgendwie helfen?", en:"Oh no, can I help you somehow?"},
+    {de:"Das ist lieb, aber ich glaube, ich schaffe es schon irgendwie.", en:"That's kind, but I think I'll manage somehow."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Frühstückst du eigentlich jeden Tag, oder überspringst du das manchmal?", en:"Do you actually eat breakfast every day, or do you sometimes skip it?"},
+    {de:"Meistens esse ich etwas, sonst bin ich schon um zehn total hungrig.", en:"I usually eat something, otherwise I'm totally hungry by ten already."},
+    {de:"Bei mir reicht morgens meistens nur ein Kaffee.", en:"For me, usually just a coffee is enough in the morning."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Ich mache jetzt Feierabend, bis morgen dann.", en:"I'm finishing work now, see you tomorrow then."},
+    {de:"Bis morgen, schönen Abend noch!", en:"See you tomorrow, have a nice evening!"},
+    {de:"Dir auch, wir sehen uns dann früh am Morgen.", en:"You too, we'll see each other early tomorrow morning."},
+  ]},
+  {c:"talk", level:"A2", lines:[
+    {de:"Zieh dir lieber eine Jacke an, draußen ist es ziemlich kühl.", en:"You'd better put on a jacket, it's quite cool outside."},
+    {de:"Stimmt, gestern habe ich total gefroren ohne Jacke.", en:"True, yesterday I was totally freezing without a jacket."},
+    {de:"Dann nimm heute sicherheitshalber gleich einen Schal mit.", en:"Then take a scarf with you today just to be safe."},
+  ]},
+  {c:"talk", level:"B1", lines:[
+    {de:"Ich versuche abends weniger Zeit am Handy zu verbringen.", en:"I'm trying to spend less time on my phone in the evenings."},
+    {de:"Und, klappt das schon ein bisschen?", en:"So, is that working out a little already?"},
+    {de:"Bisher noch nicht so richtig, aber ich bleibe dran.", en:"Not really so far, but I'm sticking with it."},
+  ]},
+  {c:"redemittel", level:"A2", lines:[
+    {de:"Na klar, das mache ich doch gerne für dich.", en:"Sure thing, I'll gladly do that for you."},
+    {de:"Auf jeden Fall, da hast du völlig recht.", en:"Absolutely, you're completely right about that."},
+    {de:"Genau, so hätte ich das auch gesehen.", en:"Exactly, that's how I would have seen it too."},
+  ]},
+  {c:"redemittel", level:"B1", lines:[
+    {de:"Na ja, ich bin mir da nicht so sicher.", en:"Well, I'm not so sure about that."},
+    {de:"Das kommt darauf an, wie viel Zeit wir haben.", en:"That depends on how much time we have."},
+    {de:"Eigentlich schon, aber irgendetwas stört mich daran.", en:"Actually yes, but something about it bothers me."},
+  ]},
+  {c:"redemittel", level:"B1", lines:[
+    {de:"Meiner Meinung nach sollten wir noch etwas warten.", en:"In my opinion, we should wait a bit longer."},
+    {de:"Ich finde, das ist eine ziemlich gute Idee.", en:"I think that's a pretty good idea."},
+    {de:"Ehrlich gesagt, ich habe darüber noch gar nicht nachgedacht.", en:"Honestly, I haven't even thought about that yet."},
+  ]},
+  {c:"redemittel", level:"A2", lines:[
+    {de:"Echt jetzt? Das hätte ich nicht gedacht.", en:"Really? I wouldn't have thought that."},
+    {de:"Im Ernst? Das ist ja eine Überraschung.", en:"Seriously? That's quite a surprise."},
+    {de:"Kaum zu glauben, dass das schon zehn Jahre her ist.", en:"Hard to believe that was already ten years ago."},
+  ]},
+  {c:"redemittel", level:"B2", lines:[
+    {de:"Also, wie soll ich sagen, es ist ein bisschen kompliziert.", en:"Well, how should I put it, it's a bit complicated."},
+    {de:"Moment mal, lass mich kurz nachdenken.", en:"Hold on, let me think for a moment."},
+    {de:"Tja, das ist eine gute Frage, ehrlich gesagt.", en:"Well, that's a good question, honestly."},
+  ]},
+  {c:"redemittel", level:"B1", lines:[
+    {de:"Wie wäre es, wenn wir das Treffen auf morgen verschieben?", en:"How about we postpone the meeting to tomorrow?"},
+    {de:"Ich schlage vor, dass wir zuerst etwas essen gehen.", en:"I suggest we go eat something first."},
+    {de:"Vielleicht sollten wir einfach jemanden fragen, der sich auskennt.", en:"Maybe we should just ask someone who knows about it."},
+  ]},
+  {c:"redemittel", level:"A2", lines:[
+    {de:"Entschuldige bitte, das war wirklich nicht meine Absicht.", en:"Sorry, that really wasn't my intention."},
+    {de:"Tut mir leid, ich hätte früher Bescheid sagen sollen.", en:"I'm sorry, I should have let you know earlier."},
+    {de:"Das war mein Fehler, es tut mir wirklich leid.", en:"That was my mistake, I'm really sorry."},
+  ]},
+  {c:"redemittel", level:"A2", lines:[
+    {de:"Ach interessant, erzähl mir mehr davon.", en:"Oh interesting, tell me more about that."},
+    {de:"Wirklich? Das wusste ich noch gar nicht.", en:"Really? I didn't know that yet."},
+    {de:"Das klingt spannend, wie ist es denn dazu gekommen?", en:"That sounds exciting, how did that come about?"},
+  ]},
+  {c:"redemittel", level:"B1", lines:[
+    {de:"Ich vermute, dass er einfach den Bus verpasst hat.", en:"I suspect he simply missed the bus."},
+    {de:"Wahrscheinlich ist sie noch im Stau stecken geblieben.", en:"She's probably still stuck in traffic."},
+    {de:"Es könnte sein, dass wir das falsch verstanden haben.", en:"It could be that we misunderstood that."},
+  ]},
+  {c:"redemittel", level:"B2", lines:[
+    {de:"Also, kurz gesagt, wir müssen das Projekt neu planen.", en:"So, in short, we need to replan the project."},
+    {de:"Zusammenfassend lässt sich sagen, dass es gut gelaufen ist.", en:"In summary, it can be said that it went well."},
+    {de:"Mit anderen Worten, wir fangen einfach noch einmal von vorne an.", en:"In other words, we're simply starting over from the beginning."},
+  ]},
+  {c:"redemittel", level:"A2", lines:[
+    {de:"Na, wie läuft's bei dir so in letzter Zeit?", en:"So, how's it going with you lately?"},
+    {de:"Was gibt's Neues bei dir?", en:"What's new with you?"},
+    {de:"Lange nicht gesehen, wie geht es dir denn?", en:"Long time no see, how are you doing?"},
+  ]},
+  {c:"redemittel", level:"A2", lines:[
+    {de:"Also dann, bis bald und mach's gut!", en:"Alright then, see you soon and take care!"},
+    {de:"Ich muss jetzt langsam los, wir sehen uns!", en:"I have to get going now, see you around!"},
+    {de:"Schönen Feierabend noch, bis morgen!", en:"Have a nice rest of the evening, see you tomorrow!"},
+  ]},
+  {c:"redemittel", level:"B1", lines:[
+    {de:"Wärst du so nett und würdest mir kurz helfen?", en:"Would you be so kind as to help me for a moment?"},
+    {de:"Könntest du mir bitte einen Gefallen tun?", en:"Could you please do me a favor?"},
+    {de:"Macht es dir etwas aus, das Fenster zu schließen?", en:"Would you mind closing the window?"},
+  ]},
+  {c:"redemittel", level:"B1", lines:[
+    {de:"Das nervt mich wirklich, ehrlich gesagt.", en:"That really annoys me, honestly."},
+    {de:"Jetzt reicht es mir aber langsam.", en:"Now I'm slowly running out of patience."},
+    {de:"Das kann doch wohl nicht wahr sein.", en:"That surely can't be true."},
+  ]},
+  {c:"redemittel", level:"A2", lines:[
+    {de:"Zum Glück ist am Ende alles gut gegangen.", en:"Luckily everything turned out fine in the end."},
+    {de:"Endlich! Ich dachte schon, das dauert ewig.", en:"Finally! I already thought it would take forever."},
+    {de:"Was für eine Erleichterung, dass wir das geschafft haben.", en:"What a relief that we managed that."},
+  ]},
+  {c:"redemittel", level:"B1", lines:[
+    {de:"Pass auf, dass du nicht zu spät kommst.", en:"Watch out that you're not late."},
+    {de:"An deiner Stelle würde ich das noch einmal überdenken.", en:"If I were you, I'd reconsider that."},
+    {de:"Du solltest besser vorsichtig sein, es ist ziemlich glatt draußen.", en:"You'd better be careful, it's quite slippery outside."},
+  ]},
+  {c:"redemittel", level:"B2", lines:[
+    {de:"Ich weiß noch nicht so richtig, was ich machen soll.", en:"I still don't quite know what I should do."},
+    {de:"Einerseits will ich, andererseits habe ich auch keine Zeit.", en:"On one hand I want to, on the other hand I don't have time either."},
+    {de:"Mal sehen, ich lass es einfach auf mich zukommen.", en:"We'll see, I'll just let it come to me."},
+  ]},
+  {c:"redemittel", level:"A2", lines:[
+    {de:"Vielen Dank, das war wirklich sehr nett von dir.", en:"Thank you very much, that was really very kind of you."},
+    {de:"Ich weiß das wirklich zu schätzen, danke dir.", en:"I really appreciate that, thank you."},
+    {de:"Das hast du wirklich toll gemacht, danke schön.", en:"You really did that great, thank you."},
+  ]},
+  {c:"redemittel", level:"B1", lines:[
+    {de:"Das hast du wirklich gut hinbekommen.", en:"You really pulled that off well."},
+    {de:"Respekt, davor hätte ich echt Angst gehabt.", en:"Respect, I would've really been afraid of that."},
+    {de:"Du machst das wirklich super, weiter so.", en:"You're doing that really great, keep it up."},
+  ]},
+  {c:"redemittel", level:"A2", lines:[
+    {de:"Wie meinst du das genau?", en:"What exactly do you mean by that?"},
+    {de:"Kannst du das noch einmal anders erklären?", en:"Can you explain that again differently?"},
+    {de:"Moment, habe ich das richtig verstanden?", en:"Wait, did I understand that correctly?"},
+  ]},
+  {c:"redemittel", level:"B1", lines:[
+    {de:"Danke für das Angebot, aber ich muss leider ablehnen.", en:"Thanks for the offer, but I unfortunately have to decline."},
+    {de:"Das passt mir diese Woche leider gar nicht.", en:"That unfortunately doesn't work for me at all this week."},
+    {de:"Vielleicht ein anderes Mal, heute schaffe ich es nicht.", en:"Maybe another time, I can't make it today."},
+  ]},
+  {c:"redemittel", level:"A2", lines:[
+    {de:"Das wird schon irgendwie klappen.", en:"It'll work out somehow."},
+    {de:"Kopf hoch, das wird schon wieder.", en:"Chin up, it'll be alright again."},
+    {de:"Ich bin ziemlich zuversichtlich, dass es gut ausgeht.", en:"I'm pretty confident that it will turn out well."},
+  ]},
+  {c:"redemittel", level:"B1", lines:[
+    {de:"Na gut, dann eben nicht.", en:"Alright then, fine, never mind."},
+    {de:"Da kann man wohl nichts machen.", en:"There's probably nothing that can be done about that."},
+    {de:"Was soll's, versuchen wir es einfach noch einmal.", en:"Oh well, let's just try it again."},
+  ]},
+  {c:"redemittel", level:"B1", lines:[
+    {de:"Das ist mir wirklich sehr wichtig.", en:"That's really very important to me."},
+    {de:"Darauf kommt es am Ende wirklich an.", en:"That's really what it comes down to in the end."},
+    {de:"Das sollten wir auf keinen Fall vergessen.", en:"We definitely shouldn't forget that."},
+  ]},
+  {c:"redemittel", level:"A2", lines:[
+    {de:"Die Zeit vergeht wirklich wie im Flug.", en:"Time really flies."},
+    {de:"Ich kann es kaum glauben, wie schnell das ging.", en:"I can hardly believe how fast that went."},
+    {de:"Schon wieder Freitag? Die Woche ist ja rum.", en:"Friday already? The week is really over."},
   ]},
 ];
 PASSAGES.forEach((p,i)=>p.id='p'+i);
@@ -1963,7 +2239,7 @@ function showSentenceCard(){
     els.translationText.textContent = 'Nur zum Spaß — beeinflusst deine Statistik nicht.';
   } else {
     const p = session.current;
-    const catNames = {talk:'Alltagsgespräch', story:'Erzählung', topic:'Aktuelles Thema'};
+    const catNames = {talk:'Alltagsgespräch', story:'Erzählung', topic:'Aktuelles Thema', redemittel:'Redemittel'};
     const shownLines = currentPassageLines();
     els.sentenceTag.textContent = (catNames[p.c]||p.c) + ' · ' + p.level;
     els.sentenceText.innerHTML = state.settings.hideText ? '🔊 Hör zu…' : shownLines.map(l=>tapify(l.de)).join('<br>');
