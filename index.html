@@ -2542,9 +2542,13 @@ function startRecording(){
     rec.lang='de-DE'; rec.interimResults=false; rec.continuous=true; rec.maxAlternatives=5;
     let sessionText = '';
     rec.onresult = (e)=>{
-      let full='';
-      for(let i=0;i<e.results.length;i++) full += pickBestAlternative(e.results[i], currentTargetText()) + ' ';
-      sessionText = full.trim();
+      // In this setup, Chrome keeps re-sending the whole utterance-so-far as a
+      // growing rewrite (each new result entry is the previous one plus more
+      // words), not a separate new chunk — so only the newest entry is needed,
+      // not the whole list concatenated together.
+      if(e.results && e.results.length){
+        sessionText = pickBestAlternative(e.results[e.results.length-1], currentTargetText());
+      }
     };
     rec.onerror = ()=>{};
     rec.onend = ()=>{
@@ -2725,9 +2729,9 @@ els.listenQAnswerBtn.onclick = ()=>{
   const targetHints = listenSession.episode.questions[listenSession.qIdx].accept.join(' ');
   let said = '';
   rec.onresult = (e)=>{
-    let full='';
-    for(let i=0;i<e.results.length;i++) full += pickBestAlternative(e.results[i], targetHints) + ' ';
-    said = full.trim();
+    if(e.results && e.results.length){
+      said = pickBestAlternative(e.results[e.results.length-1], targetHints);
+    }
   };
   rec.onerror = ()=>{};
   rec.onend = ()=>{
@@ -7718,11 +7722,10 @@ els.freestyleRecordBtn.onclick = ()=>{
   els.freestyleStatus.textContent='🎤 Ich höre zu… sprich frei, keine Bewertung.';
   const rec = new SpeechRecognitionCtor();
   rec.lang='de-DE'; rec.interimResults=false; rec.continuous=true;
-  let full='';
   rec.onresult = (e)=>{
-    full='';
-    for(let i=0;i<e.results.length;i++) full += e.results[i][0].transcript + ' ';
-    els.freestyleTranscript.value = full.trim();
+    if(e.results && e.results.length){
+      els.freestyleTranscript.value = e.results[e.results.length-1][0].transcript.trim();
+    }
   };
   rec.onend = ()=>{ els.freestyleStatus.textContent='Fertig. Lies deine Antwort noch einmal durch.'; };
   rec.start();
