@@ -57,6 +57,10 @@
   .score{font-size:1.8rem;font-weight:700;margin-top:10px;}
   .score.good{color:var(--ok);} .score.mid{color:var(--extra);} .score.bad{color:var(--miss);}
   .feedback-msg{font-size:.95rem;margin-top:4px;color:var(--muted);}
+  .choice-list{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+  .choice-btn{text-align:left;width:100%;}
+  .choice-btn.correct{border-color:var(--ok);color:var(--ok);}
+  .choice-btn.wrong{border-color:var(--miss);color:var(--miss);}
   details{margin-bottom:16px;}
   summary{cursor:pointer;font-weight:600;padding:6px 0;}
   .settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px;}
@@ -203,6 +207,7 @@
           <button id="listenQPlayBtn">🔊 Frage abspielen</button>
           <button id="listenQAnswerBtn" style="display:none;">🎤 Antworten</button>
         </div>
+        <div id="listenQChoices" class="choice-list" style="display:none;"></div>
         <div class="status" id="listenQStatus"></div>
         <div class="feedback-msg" id="listenQFeedback"></div>
       </div>
@@ -1775,7 +1780,7 @@ const els = {
   listenCard:$('listenCard'), listenTag:$('listenTag'), listenTitle:$('listenTitle'), listenAudio:$('listenAudio'),
   listenDoneBtn:$('listenDoneBtn'), listenSkipEpBtn:$('listenSkipEpBtn'), listenPrevEpBtn:$('listenPrevEpBtn'), listenBackBtn:$('listenBackBtn'), listenStatus:$('listenStatus'),
   listenQABlock:$('listenQABlock'), listenQProgress:$('listenQProgress'), listenQText:$('listenQText'),
-  listenQPlayBtn:$('listenQPlayBtn'), listenQAnswerBtn:$('listenQAnswerBtn'), listenQStatus:$('listenQStatus'), listenQFeedback:$('listenQFeedback'),
+  listenQPlayBtn:$('listenQPlayBtn'), listenQAnswerBtn:$('listenQAnswerBtn'), listenQChoices:$('listenQChoices'), listenQStatus:$('listenQStatus'), listenQFeedback:$('listenQFeedback'),
   listenSummary:$('listenSummary'), listenScoreLine:$('listenScoreLine'), listenSummaryMsg:$('listenSummaryMsg'),
   listenTranscriptBtn:$('listenTranscriptBtn'), listenTranscriptBox:$('listenTranscriptBox'), listenAgainBtn:$('listenAgainBtn'),
   startDictBtn:$('startDictBtn'), dictCard:$('dictCard'), dictInput:$('dictInput'), dictSearchBtn:$('dictSearchBtn'),
@@ -2779,7 +2784,70 @@ function nextListenQuestion(){
   els.listenQFeedback.textContent = '';
   els.listenQPlayBtn.style.display = 'inline-block';
   els.listenQAnswerBtn.style.display='none';
+  els.listenQChoices.innerHTML=''; els.listenQChoices.style.display='none';
   setListenQStatus('Klicke auf 🔊, um die Frage zu hören.');
+}
+// All model answers across every episode, used as a pool of wrong-answer options
+// for multiple-choice — cached since PODCASTS never changes at runtime.
+let allListenHintsCache = null;
+function allListenHints(){
+  if(!allListenHintsCache){
+    allListenHintsCache = [];
+    PODCASTS.forEach(ep=> ep.questions.forEach(q=> allListenHintsCache.push(q.hint)));
+  }
+  return allListenHintsCache;
+}
+function buildListenChoices(q){
+  const correct = q.hint;
+  const correctKey = correct.trim().toLowerCase();
+  const pool = allListenHints().filter(h=> h.trim().toLowerCase()!==correctKey);
+  const shuffled = pool.slice();
+  for(let i=shuffled.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]]; }
+  const distractors = []; const seen = new Set([correctKey]);
+  for(const h of shuffled){
+    const key = h.trim().toLowerCase();
+    if(seen.has(key)) continue;
+    seen.add(key); distractors.push(h);
+    if(distractors.length>=3) break;
+  }
+  const opts = [correct, ...distractors];
+  for(let i=opts.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [opts[i],opts[j]]=[opts[j],opts[i]]; }
+  return opts;
+}
+function disableListenChoices(){
+  Array.from(els.listenQChoices.children).forEach(b=> b.disabled=true);
+}
+function renderListenChoices(q){
+  els.listenQChoices.innerHTML='';
+  buildListenChoices(q).forEach(choiceText=>{
+    const b = document.createElement('button');
+    b.type='button'; b.className='choice-btn'; b.textContent=choiceText;
+    b.onclick = ()=> answerListenChoice(choiceText, b);
+    els.listenQChoices.appendChild(b);
+  });
+  els.listenQChoices.style.display='flex';
+}
+function answerListenChoice(chosenText, btnEl){
+  listenSession.token++; // invalidate any in-flight mic recognition for this question
+  if(listenSession.recognition){ try{ listenSession.recognition.abort(); }catch(e){} }
+  const q = listenSession.episode.questions[listenSession.qIdx];
+  const correctKey = q.hint.trim().toLowerCase();
+  const isCorrect = chosenText.trim().toLowerCase()===correctKey;
+  Array.from(els.listenQChoices.children).forEach(b=>{
+    b.disabled = true;
+    if(b.textContent.trim().toLowerCase()===correctKey) b.classList.add('correct');
+  });
+  if(!isCorrect) btnEl.classList.add('wrong');
+  els.listenQAnswerBtn.disabled = true;
+  if(isCorrect){
+    listenSession.correctCount++;
+    els.listenQFeedback.textContent = '✅ Richtig!';
+  } else {
+    els.listenQFeedback.textContent = '❌ Nicht ganz — richtige Antwort: ' + q.hint;
+  }
+  setListenQStatus('Du hast ausgewählt: „' + chosenText + '"');
+  const myToken = listenSession.token;
+  setTimeout(()=>{ if(myToken===listenSession.token) nextListenQuestion(); }, 2500);
 }
 els.listenQPlayBtn.onclick = ()=>{
   setListenQStatus('🔊 Frage wird abgespielt…');
@@ -2787,12 +2855,14 @@ els.listenQPlayBtn.onclick = ()=>{
   const qIdx = listenSession.qIdx;
   speakSmart(ep.questions[qIdx].q, 'audio/'+ep.id+'_q'+qIdx+'.mp3', 1, ()=>{
     els.listenQAnswerBtn.style.display='inline-block';
-    setListenQStatus('Jetzt antworte per Mikrofon.');
+    renderListenChoices(ep.questions[qIdx]);
+    setListenQStatus('Wähle eine Antwort oder antworte per Mikrofon.');
   });
 };
 els.listenQAnswerBtn.onclick = ()=>{
   const myToken = listenSession.token;
   els.listenQAnswerBtn.disabled = true;
+  disableListenChoices();
   setListenQStatus('🎤 Ich höre zu…');
   if(!hasSTT){
     const q = listenSession.episode.questions[listenSession.qIdx];
