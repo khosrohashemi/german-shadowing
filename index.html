@@ -166,6 +166,7 @@
       <button id="prevRoundBtn" style="display:none;">⏮ Zurück</button>
       <button id="skipBtn" style="display:none;">⏭ Nächster</button>
       <button id="revealBtn" style="display:none;">👁 Text zeigen</button>
+      <button class="ghost" id="homeBtn">🏠 Start</button>
       <button class="ghost" id="newSessionBtn" style="display:none;">↩ Zurück zur Auswahl</button>
     </div>
     <div class="status" id="statusLine"></div>
@@ -1759,7 +1760,7 @@ const els = {
   shadowSetupCard:$('shadowSetupCard'), shadowLines1Btn:$('shadowLines1Btn'), shadowLines2Btn:$('shadowLines2Btn'), shadowLines3Btn:$('shadowLines3Btn'), shadowSetupBackBtn:$('shadowSetupBackBtn'),
   listenSetupCard:$('listenSetupCard'), listenSetupStatus:$('listenSetupStatus'), listenSetupBackBtn:$('listenSetupBackBtn'),
   lvlA1Btn:$('lvlA1Btn'), lvlA2Btn:$('lvlA2Btn'), lvlB1Btn:$('lvlB1Btn'), lvlB2Btn:$('lvlB2Btn'), lvlC1Btn:$('lvlC1Btn'), lvlC2Btn:$('lvlC2Btn'), lvlRandomBtn:$('lvlRandomBtn'),
-  playBtn:$('playBtn'), pauseBtn:$('pauseBtn'), recordBtn:$('recordBtn'), finishRecordBtn:$('finishRecordBtn'), retryBtn:$('retryBtn'), skipBtn:$('skipBtn'), prevRoundBtn:$('prevRoundBtn'), revealBtn:$('revealBtn'), newSessionBtn:$('newSessionBtn'),
+  playBtn:$('playBtn'), pauseBtn:$('pauseBtn'), recordBtn:$('recordBtn'), finishRecordBtn:$('finishRecordBtn'), retryBtn:$('retryBtn'), skipBtn:$('skipBtn'), prevRoundBtn:$('prevRoundBtn'), revealBtn:$('revealBtn'), newSessionBtn:$('newSessionBtn'), homeBtn:$('homeBtn'),
   statusLine:$('statusLine'),
   diffRow:$('diffRow'), targetLine:$('targetLine'), saidLine:$('saidLine'), scoreLine:$('scoreLine'), feedbackMsg:$('feedbackMsg'),
   recordedAudioWrap:$('recordedAudioWrap'), recordedAudio:$('recordedAudio'),
@@ -2429,6 +2430,15 @@ els.prevRoundBtn.onclick = ()=>{
   if(stopActiveRecording){ stopActiveRecording(); }
   else if(session.mediaRecorder && session.mediaRecorder.state!=='inactive'){ try{ session.mediaRecorder.stop(); }catch(e){} }
   prevRound();
+};
+els.homeBtn.onclick = ()=>{
+  session.token++;
+  speechSynthesis.cancel();
+  if(currentAudioEl){ try{ currentAudioEl.pause(); }catch(e){} currentAudioEl=null; }
+  ttsPaused=false; els.pauseBtn.style.display='none'; els.pauseBtn.textContent='⏸ Pause';
+  if(stopActiveRecording){ stopActiveRecording(); }
+  else if(session.mediaRecorder && session.mediaRecorder.state!=='inactive'){ try{ session.mediaRecorder.stop(); }catch(e){} }
+  showModeCard();
 };
 els.revealBtn.onclick = ()=>{
   if(session.mode==='word'){
