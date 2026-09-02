@@ -330,6 +330,11 @@
 (function(){
 "use strict";
 
+// Bumped whenever pre-generated audio files are replaced under the same
+// filename, so browsers that cached the old clip fetch the new one instead
+// of silently reusing stale audio for the same URL.
+const AUDIO_V = 2;
+
 /* ---------------- Content ---------------- */
 /* Each passage is 3 connected German sentences (a mini dialogue/narrative/argument),
    so one shadowing round covers a coherent chunk instead of an isolated sentence. */
@@ -1835,7 +1840,7 @@ els.voiceSelect.onchange = ()=>{ state.settings.voiceName = els.voiceSelect.valu
 els.testVoiceBtn.onclick = ()=>{
   els.testVoiceBtn.disabled = true;
   setStatus('🔊 Teste Stimme…', true);
-  speakSmart('Hallo! Kannst du mich hören? Das ist ein Test.', 'audio/test.mp3', 1, ()=>{
+  speakSmart('Hallo! Kannst du mich hören? Das ist ein Test.', 'audio/test.mp3?v='+AUDIO_V, 1, ()=>{
     els.testVoiceBtn.disabled = false;
   });
 };
@@ -2256,13 +2261,13 @@ function currentTargetText(){ return currentTargetLines().join(' '); }
 function currentTargetItems(){
   if(session.mode==='word'){
     const w = session.current;
-    const url = (w.sourceId!=null && w.sourceLineIdx!=null) ? ('audio/'+w.sourceId+'_'+w.sourceLineIdx+'.mp3') : null;
+    const url = (w.sourceId!=null && w.sourceLineIdx!=null) ? ('audio/'+w.sourceId+'_'+w.sourceLineIdx+'.mp3?v='+AUDIO_V) : null;
     return [{text: w.example, url}];
   }
   if(session.isBonus){
-    return [{text: session.current, url: 'audio/tt'+session.bonusIdx+'.mp3'}];
+    return [{text: session.current, url: 'audio/tt'+session.bonusIdx+'.mp3?v='+AUDIO_V}];
   }
-  return currentPassageLines().map((l,idx)=>({text: l.de, url: 'audio/'+session.current.id+'_'+idx+'.mp3'}));
+  return currentPassageLines().map((l,idx)=>({text: l.de, url: 'audio/'+session.current.id+'_'+idx+'.mp3?v='+AUDIO_V}));
 }
 
 function showSentenceCard(){
@@ -2289,6 +2294,7 @@ function showSentenceCard(){
   document.getElementById('practiceCard').classList.toggle('bonus', session.isBonus || session.mode==='word');
   els.revealBtn.style.display = state.settings.hideText ? 'inline-block' : 'none';
   els.playBtn.style.display='inline-block';
+  els.playBtn.disabled=false;
   els.recordBtn.style.display='none';
   els.finishRecordBtn.style.display='none';
   els.finishRecordBtn.disabled=false;
@@ -2691,7 +2697,7 @@ function displayListenEpisode(ep){
   const styleNames = {news:'📰 Nachrichten', story:'📖 Geschichte'};
   els.listenTag.textContent = (styleNames[ep.style]||ep.style) + ' · ' + ep.level;
   els.listenTitle.textContent = ep.title;
-  els.listenAudio.src = 'audio/'+ep.id+'_full.mp3';
+  els.listenAudio.src = 'audio/'+ep.id+'_full.mp3?v='+AUDIO_V;
   els.listenAudio.playbackRate = 1;
   els.listenDoneBtn.style.display='inline-block';
   els.listenSkipEpBtn.style.display='inline-block';
@@ -7840,7 +7846,7 @@ let freestyleCurrent = FREESTYLE_PROMPTS[freestyleIdx];
 els.freestylePrompt.innerHTML = tapify(freestyleCurrent);
 els.freestyleAskBtn.onclick = ()=>{
   els.freestyleStatus.textContent='🔊 Frage wird gestellt…';
-  speakSmart(freestyleCurrent, 'audio/fp'+freestyleIdx+'.mp3', 0.9, ()=> els.freestyleStatus.textContent='Jetzt antworte frei auf Deutsch.');
+  speakSmart(freestyleCurrent, 'audio/fp'+freestyleIdx+'.mp3?v='+AUDIO_V, 0.9, ()=> els.freestyleStatus.textContent='Jetzt antworte frei auf Deutsch.');
 };
 els.freestyleNextBtn.onclick = ()=>{
   freestyleIdx = Math.floor(Math.random()*FREESTYLE_PROMPTS.length);
