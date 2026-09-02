@@ -5,16 +5,16 @@
    "level": "A2",
    "lines": [
     [
-     "Guten Morgen! Ich hätte gern einen Kaffee mit wenig Milch, bitte.",
-     "Good morning! I'd like a coffee with a little milk, please."
+     "Guten Morgen! Ich hätte gern einen Kaffee, so schwarz wie meine Laune vor dem ersten Schluck.",
+     "Good morning! I'd like a coffee, as black as my mood before the first sip."
     ],
     [
-     "Und vielleicht noch ein Stück Kuchen, wenn Sie welchen haben.",
-     "And maybe a piece of cake too, if you have any."
+     "Und ein Stück Kuchen, bitte — ich feiere heute nämlich mich selbst.",
+     "And a piece of cake, please — today I'm celebrating myself."
     ],
     [
-     "Vielen Dank, das reicht mir völlig.",
-     "Thank you very much, that's plenty for me."
+     "Ohne besonderen Grund. Das ist der beste Grund von allen.",
+     "No special reason. That's the best reason of all."
     ]
    ]
   },
@@ -23,106 +23,16 @@
    "level": "A2",
    "lines": [
     [
-     "Entschuldigung, könnten Sie mir sagen, wie ich zum Bahnhof komme?",
-     "Excuse me, could you tell me how to get to the train station?"
+     "Entschuldigung, ich glaube, ich bin seit zehn Minuten im Kreis gelaufen.",
+     "Excuse me, I think I've been walking in circles for ten minutes."
     ],
     [
-     "Ich muss in einer halben Stunde dort sein.",
-     "I need to be there in half an hour."
+     "Können Sie mir sagen, wie ich zum Bahnhof komme?",
+     "Can you tell me how to get to the train station?"
     ],
     [
-     "Super, vielen Dank für Ihre Hilfe!",
-     "Great, thank you very much for your help!"
-    ]
-   ]
-  },
-  {
-   "c": "talk",
-   "level": "B1",
-   "lines": [
-    [
-     "Hast du am Wochenende schon etwas vor?",
-     "Do you already have plans for the weekend?"
-    ],
-    [
-     "Ich dachte, wir könnten wandern gehen, wenn das Wetter mitspielt.",
-     "I thought we could go hiking if the weather cooperates."
-    ],
-    [
-     "Das klingt super, ich freue mich schon darauf.",
-     "That sounds great, I'm already looking forward to it."
-    ]
-   ]
-  },
-  {
-   "c": "talk",
-   "level": "B1",
-   "lines": [
-    [
-     "Es tut mir wirklich leid, dass ich mich verspätet habe.",
-     "I'm really sorry that I'm late."
-    ],
-    [
-     "Der Zug hatte fast eine Stunde Verspätung, das war nicht vorherzusehen.",
-     "The train was almost an hour late, that wasn't foreseeable."
-    ],
-    [
-     "Zum Glück haben wir noch genug Zeit für alles Wichtige.",
-     "Luckily we still have enough time for everything important."
-    ]
-   ]
-  },
-  {
-   "c": "talk",
-   "level": "B1",
-   "lines": [
-    [
-     "Ich habe gerade ein kleines Problem mit meinem Computer.",
-     "I just have a small problem with my computer."
-    ],
-    [
-     "Er stürzt jedes Mal ab, wenn ich das Programm öffne.",
-     "It crashes every time I open the program."
-    ],
-    [
-     "Kannst du kurz vorbeikommen und einen Blick darauf werfen?",
-     "Could you come by briefly and take a look at it?"
-    ]
-   ]
-  },
-  {
-   "c": "talk",
-   "level": "B2",
-   "lines": [
-    [
-     "Es geht leider um unseren Termin am Donnerstag.",
-     "It's unfortunately about our appointment on Thursday."
-    ],
-    [
-     "Mir ist kurzfristig etwas Wichtiges dazwischengekommen, das ich nicht verschieben kann.",
-     "Something important has come up unexpectedly that I can't postpone."
-    ],
-    [
-     "Wäre es möglich, den Termin auf Freitagnachmittag zu verlegen?",
-     "Would it be possible to move the appointment to Friday afternoon?"
-    ]
-   ]
-  },
-  {
-   "c": "talk",
-   "level": "B2",
-   "lines": [
-    [
-     "Entschuldigung, ich glaube, hier stimmt etwas mit der Rechnung nicht.",
-     "Excuse me, I think something isn't right with the bill."
-    ],
-    [
-     "Wir haben nur zwei Hauptgerichte bestellt, aber hier stehen drei.",
-     "We only ordered two main courses, but three are listed here."
-    ],
-    [
-     "Könnten Sie das bitte noch einmal überprüfen?",
-     "Could you please check that again?"
+     "Danke! Jetzt fühle ich mich fast wie ein echter Berliner.",
+     "Thanks! Now I feel almost like a real Berliner."
     ]
    ]
   },
@@ -131,70 +41,1204 @@
    "level": "A2",
    "lines": [
     [
-     "Hallo, wir sind gerade erst in die Wohnung nebenan eingezogen.",
-     "Hello, we just moved into the apartment next door."
+     "Hallo! Wir sind die neuen Nachbarn und wir haben Kekse gebacken.",
+     "Hello! We're the new neighbors, and we baked cookies."
     ],
     [
-     "Ich wollte mich kurz vorstellen und fragen, ob wir irgendetwas beachten sollten.",
-     "I wanted to introduce myself briefly and ask if there's anything we should be aware of."
+     "Sie sind ein bisschen schief, aber sie schmecken bestimmt trotzdem gut.",
+     "They're a little crooked, but they definitely still taste good."
     ],
     [
-     "Es freut mich sehr, Sie kennenzulernen.",
-     "It's very nice to meet you."
+     "Es freut uns wirklich sehr, Sie kennenzulernen.",
+     "We're really very glad to meet you."
     ]
    ]
   },
   {
-   "c": "story",
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Mein Hund findet jeden Spaziergang aufregender als eine Weltreise.",
+     "My dog finds every walk more exciting than a trip around the world."
+    ],
+    [
+     "Er bleibt an jedem Baum stehen, als wäre dort ein Geheimnis versteckt.",
+     "He stops at every tree as if a secret were hidden there."
+    ],
+    [
+     "Ehrlich gesagt, beneide ich seine Begeisterung ein bisschen.",
+     "Honestly, I envy his enthusiasm a little."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Ich glaube, mein Kühlschrank ist lauter als meine Nachbarn.",
+     "I think my fridge is louder than my neighbors."
+    ],
+    [
+     "Nachts brummt er wie ein kleiner, unzufriedener Roboter.",
+     "At night it hums like a small, unhappy robot."
+    ],
+    [
+     "Vielleicht sollte ich ihm einfach einen Namen geben.",
+     "Maybe I should just give it a name."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Kannst du mir kurz helfen? Ich stehe vor dem Automaten wie vor einem Rätsel.",
+     "Can you help me for a moment? I'm standing in front of the machine like it's a puzzle."
+    ],
+    [
+     "Ich drücke schon seit fünf Minuten auf die falschen Knöpfe.",
+     "I've been pressing the wrong buttons for five minutes already."
+    ],
+    [
+     "Ah, danke! Jetzt fühle ich mich gleich viel klüger.",
+     "Ah, thanks! Now I feel much smarter already."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Weißt du was? Heute regnet es, aber ich bin trotzdem gut gelaunt.",
+     "You know what? It's raining today, but I'm in a good mood anyway."
+    ],
+    [
+     "Ich liebe das Geräusch von Regen auf dem Fenster.",
+     "I love the sound of rain on the window."
+    ],
+    [
+     "Perfektes Wetter für Tee, ein Buch und nichts anderes.",
+     "Perfect weather for tea, a book, and nothing else."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Ich glaube, ich habe mich in dieses kleine Café hier verliebt.",
+     "I think I've fallen in love with this little café."
+    ],
+    [
+     "Der Kaffee ist gut, aber die Musik ist noch besser.",
+     "The coffee is good, but the music is even better."
+    ],
+    [
+     "Ich komme, glaube ich, ab jetzt jeden Tag hierher.",
+     "I think I'll come here every day from now on."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Mein Bruder sagt immer, ich koche wie ein Chaos mit Geschmack.",
+     "My brother always says I cook like chaos with flavor."
+    ],
+    [
+     "Ich benutze nie ein Rezept, nur mein Gefühl und viel Käse.",
+     "I never use a recipe, just my instinct and a lot of cheese."
+    ],
+    [
+     "Bisher hat sich noch niemand darüber beschwert.",
+     "So far nobody has complained about it."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Ich habe heute Morgen zwei linke Socken angezogen, ohne es zu merken.",
+     "This morning I put on two left socks without noticing."
+    ],
+    [
+     "Erst im Büro hat meine Kollegin es mir gesagt.",
+     "My colleague only told me at the office."
+    ],
+    [
+     "Na ja, wenigstens waren die Farben ganz hübsch zusammen.",
+     "Well, at least the colors looked pretty nice together."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Guten Tag! Ich suche ein Geschenk für meine beste Freundin.",
+     "Hello! I'm looking for a gift for my best friend."
+    ],
+    [
+     "Sie mag alles, was nach Sommer und Meer riecht.",
+     "She likes anything that smells like summer and the sea."
+    ],
+    [
+     "Diese Kerze hier? Perfekt, die nehme ich.",
+     "This candle here? Perfect, I'll take it."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Ich habe gerade meine erste Pflanze seit drei Monaten am Leben gehalten.",
+     "I've just kept my first plant alive for three months."
+    ],
+    [
+     "Das klingt vielleicht klein, aber für mich ist das ein Rekord.",
+     "That might sound small, but for me it's a record."
+    ],
+    [
+     "Als Nächstes versuche ich mich an einem Kaktus.",
+     "Next I'm going to try a cactus."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Ich liebe Sonntage, weil dann sogar die Zeit langsamer läuft.",
+     "I love Sundays because even time moves slower then."
+    ],
+    [
+     "Ich mache Frühstück, lese die Zeitung und plane gar nichts.",
+     "I make breakfast, read the newspaper, and plan absolutely nothing."
+    ],
+    [
+     "Ein perfekter Tag braucht manchmal einfach keine Pläne.",
+     "A perfect day sometimes just needs no plans at all."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Mein Handy hat heute geklingelt, aber es war nur mein eigener Wecker.",
+     "My phone rang today, but it was just my own alarm."
+    ],
+    [
+     "Ich habe trotzdem zwei Sekunden lang aufgeregt 'Hallo?' gesagt.",
+     "I still excitedly said 'Hello?' for two seconds anyway."
+    ],
+    [
+     "Manchmal bin ich mein eigener bester Witz.",
+     "Sometimes I'm my own best joke."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Ich probiere heute zum ersten Mal einen echten Berliner Döner.",
+     "Today I'm trying a real Berlin döner for the first time."
+    ],
+    [
+     "Alle sagen, danach schmeckt jeder andere Döner langweilig.",
+     "Everyone says every other döner tastes boring after this one."
+    ],
+    [
+     "Ich bin bereit — mein Magen und ich sind gespannt.",
+     "I'm ready — my stomach and I are both curious."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Meine Oma sagt, ein Tag ohne Kaffee und Kuchen zählt nicht richtig.",
+     "My grandma says a day without coffee and cake doesn't really count."
+    ],
+    [
+     "Deshalb backe ich sonntags immer etwas mit ihr zusammen.",
+     "That's why I always bake something with her on Sundays."
+    ],
+    [
+     "Ihr Apfelkuchen ist übrigens einfach unschlagbar.",
+     "Her apple cake, by the way, is simply unbeatable."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Ich habe heute versucht, ohne Navi zu fahren, wie ein echter Abenteurer.",
+     "Today I tried driving without navigation, like a real adventurer."
+    ],
+    [
+     "Nach zwanzig Minuten war ich stolz — und ziemlich verloren.",
+     "After twenty minutes I was proud — and pretty lost."
+    ],
+    [
+     "Am Ende habe ich das Navi doch noch angemacht.",
+     "In the end I turned the navigation on after all."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Kannst du dir vorstellen? Mein Nachbar übt seit Wochen Trompete.",
+     "Can you imagine? My neighbor has been practicing trumpet for weeks."
+    ],
+    [
+     "Er wird langsam wirklich besser, das muss ich zugeben.",
+     "He's slowly actually getting better, I have to admit."
+    ],
+    [
+     "Nur um sieben Uhr morgens könnte er vielleicht warten.",
+     "Only at seven in the morning, he could maybe wait a little."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Guten Abend! Haben Sie noch einen Tisch für zwei Personen frei?",
+     "Good evening! Do you still have a table free for two people?"
+    ],
+    [
+     "Am liebsten draußen, wenn das Wetter mitspielt.",
+     "Preferably outside, if the weather cooperates."
+    ],
+    [
+     "Perfekt, das klingt genau richtig für heute Abend.",
+     "Perfect, that sounds exactly right for tonight."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Ich habe gestern versucht, Brot selbst zu backen, wie ein echter Bäcker.",
+     "Yesterday I tried baking bread myself, like a real baker."
+    ],
+    [
+     "Es ist ziemlich hart geworden, fast wie ein kleiner Stein.",
+     "It turned out pretty hard, almost like a small rock."
+    ],
+    [
+     "Aber die Küche hat den ganzen Tag herrlich gerochen.",
+     "But the kitchen smelled wonderful all day."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Ich glaube, meine Katze denkt, dieses Sofa gehört nur ihr.",
+     "I think my cat believes this sofa belongs only to her."
+    ],
+    [
+     "Wenn ich mich setze, schaut sie mich beleidigt an.",
+     "When I sit down, she looks at me offended."
+    ],
+    [
+     "Also sitze ich meistens auf dem Boden. Sie hat gewonnen.",
+     "So I usually sit on the floor. She's won."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Ich habe heute mein erstes Wort auf Bayerisch gelernt: 'Servus'.",
+     "Today I learned my first word in Bavarian: 'Servus'."
+    ],
+    [
+     "Man kann es für Hallo und für Tschüss benutzen.",
+     "You can use it for both hello and goodbye."
+    ],
+    [
+     "Praktisch! Ein Wort für fast alle Situationen.",
+     "Practical! One word for almost every situation."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Ich habe eine Regel: Sonntagabend gibt es immer Pizza und einen Film.",
+     "I have a rule: Sunday evening always means pizza and a movie."
+    ],
+    [
+     "Egal, wie stressig die Woche war, das bleibt heilig.",
+     "No matter how stressful the week was, that stays sacred."
+    ],
+    [
+     "Kleine Rituale machen manchmal den größten Unterschied.",
+     "Small rituals sometimes make the biggest difference."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Ich glaube, ich habe heute den perfekten Parkplatz gefunden.",
+     "I think today I found the perfect parking spot."
+    ],
+    [
+     "Direkt vor der Tür, im Schatten, ohne Parkuhr.",
+     "Right by the door, in the shade, without a parking meter."
+    ],
+    [
+     "Das war eindeutig der beste Moment meiner Woche.",
+     "That was clearly the best moment of my week."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Meine kleine Schwester will unbedingt lernen, wie man Falafel macht.",
+     "My little sister really wants to learn how to make falafel."
+    ],
+    [
+     "Wir haben heute die Küche in ein kleines Labor verwandelt.",
+     "Today we turned the kitchen into a little laboratory."
+    ],
+    [
+     "Die Küche war chaotisch, aber die Falafel waren überraschend gut.",
+     "The kitchen was chaotic, but the falafel turned out surprisingly good."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Ich stehe jeden Morgen zehn Minuten zu spät auf, aus Prinzip.",
+     "Every morning I get up ten minutes too late, on principle."
+    ],
+    [
+     "Dann renne ich wie im Film zur Bahn.",
+     "Then I run to the train like in a movie."
+    ],
+    [
+     "Bisher habe ich sie trotzdem noch nie verpasst.",
+     "So far I still haven't missed it once."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Ich glaube, unser Kellner hat heute den besten Tag seines Lebens.",
+     "I think our waiter is having the best day of his life today."
+    ],
+    [
+     "Er singt leise beim Servieren und lächelt die ganze Zeit.",
+     "He sings quietly while serving and smiles the whole time."
+    ],
+    [
+     "Gute Laune ist wirklich ansteckend, findest du nicht?",
+     "Good mood is really contagious, don't you think?"
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Ich habe heute versucht, meiner Oma ein Foto per WhatsApp zu schicken.",
+     "Today I tried sending my grandma a photo via WhatsApp."
+    ],
+    [
+     "Nach zehn Minuten hatte sie es aus Versehen ausgedruckt.",
+     "After ten minutes she had accidentally printed it out."
+    ],
+    [
+     "Manche Dinge zwischen den Generationen bleiben einfach herrlich kompliziert.",
+     "Some things between generations just stay wonderfully complicated."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "A2",
+   "lines": [
+    [
+     "Ich habe entschieden: Diesen Sommer lerne ich endlich schwimmen.",
+     "I've decided: this summer I'll finally learn to swim."
+    ],
+    [
+     "Mit fünfundzwanzig ist es nie zu spät für ein neues Talent.",
+     "At twenty-five it's never too late for a new skill."
+    ],
+    [
+     "Nächste Woche fängt mein erster Kurs an.",
+     "My first course starts next week."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
    "level": "B1",
    "lines": [
     [
-     "Als sie aus dem Haus trat, bemerkte sie, dass es angefangen hatte zu regnen.",
-     "As she stepped out of the house, she noticed it had started to rain."
+     "Weißt du, was das Verrückte ist? Ich vermisse manchmal sogar den Regen hier.",
+     "You know what's crazy? Sometimes I even miss the rain here."
     ],
     [
-     "Sie hatte ihren Schirm vergessen und musste schnell zurück ins Haus laufen.",
-     "She had forgotten her umbrella and had to quickly run back inside."
+     "Als ich noch im sonnigen Süden gewohnt habe, dachte ich, ich würde ihn hassen.",
+     "When I still lived in the sunny south, I thought I'd hate it."
     ],
     [
-     "Am Ende kam sie trotzdem pünktlich zur Arbeit.",
-     "In the end, she still made it to work on time."
+     "Jetzt finde ich, ein grauer Himmel hat auch etwas Gemütliches.",
+     "Now I find that a gray sky has something cozy about it too."
     ]
    ]
   },
   {
-   "c": "story",
+   "c": "talk",
    "level": "B1",
    "lines": [
     [
-     "Der alte Mann saß jeden Morgen auf derselben Bank im Park.",
-     "The old man sat on the same bench in the park every morning."
+     "Ich habe gestern versehentlich meinem Chef eine Nachricht geschickt, die für meine beste Freundin gedacht war.",
+     "Yesterday I accidentally sent my boss a message meant for my best friend."
     ],
     [
-     "Er fütterte die Tauben und beobachtete die Kinder beim Spielen.",
-     "He fed the pigeons and watched the children playing."
+     "Zum Glück ging es nur um ein lustiges Katzenvideo und nicht um etwas Peinliches.",
+     "Luckily it was just a funny cat video and not something embarrassing."
     ],
     [
-     "Niemand wusste, wie lange er das schon so machte.",
-     "No one knew how long he had been doing this."
+     "Er hat sogar mit einem Lachsmoji geantwortet, also alles gut.",
+     "He even replied with a laughing emoji, so all good."
     ]
    ]
   },
   {
-   "c": "story",
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich habe beschlossen, dieses Jahr wirklich jeden Sonntag kochen zu üben.",
+     "I've decided to really practice cooking every Sunday this year."
+    ],
+    [
+     "Letzte Woche ist mir ein Soufflé komplett zusammengefallen, mitten vor Gästen.",
+     "Last week a soufflé completely collapsed on me, right in front of guests."
+    ],
+    [
+     "Wir haben trotzdem gelacht und es einfach 'Soufflé-Suppe' genannt.",
+     "We laughed anyway and just called it 'soufflé soup'."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Erinnerst du dich noch an unseren ersten Tag im neuen Job?",
+     "Do you still remember our first day at the new job?"
+    ],
+    [
+     "Ich habe mich in der Kaffeeküche verlaufen und stand plötzlich im Serverraum.",
+     "I got lost in the break room and suddenly ended up in the server room."
+    ],
+    [
+     "Bis heute nennt mich mein Kollege liebevoll 'der Entdecker'.",
+     "To this day, my colleague affectionately calls me 'the explorer'."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich glaube, unsere Vermieterin ist heimlich die netteste Person der Stadt.",
+     "I think our landlady is secretly the nicest person in the city."
+    ],
+    [
+     "Als die Heizung kaputt war, hat sie uns sofort zwei Wärmflaschen vorbeigebracht.",
+     "When the heating broke, she immediately brought us two hot water bottles."
+    ],
+    [
+     "Solche Nachbarn wünscht man sich wirklich ein Leben lang.",
+     "You really wish for neighbors like that for a lifetime."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Mein Opa erzählt jedes Weihnachten dieselbe Geschichte über seinen ersten Job.",
+     "Every Christmas my grandpa tells the same story about his first job."
+    ],
+    [
+     "Wir kennen sie inzwischen alle auswendig, sogar meine kleine Nichte.",
+     "By now we all know it by heart, even my little niece."
+    ],
+    [
+     "Trotzdem hört die ganze Familie jedes Mal wieder gebannt zu.",
+     "Still, the whole family listens spellbound every single time."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich habe heute versucht, ein Bewerbungsgespräch auf Deutsch zu üben.",
+     "Today I tried practicing a job interview in German."
+    ],
+    [
+     "Mitten im Satz habe ich das Wort für 'Teamfähigkeit' komplett vergessen.",
+     "Right in the middle of a sentence I completely forgot the word for 'teamwork'."
+    ],
+    [
+     "Mein Sprachpartner hat nur gelacht und gesagt: 'Willkommen im Club.'",
+     "My language partner just laughed and said, 'Welcome to the club.'"
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Kannst du glauben, dass wir uns vor genau zehn Jahren kennengelernt haben?",
+     "Can you believe we met exactly ten years ago?"
+    ],
+    [
+     "Damals hast du mir im Zug versehentlich meinen eigenen Sitzplatz weggenommen.",
+     "Back then you accidentally took my own seat on the train."
+    ],
+    [
+     "Aus diesem peinlichen Moment ist eine ziemlich gute Freundschaft geworden.",
+     "That embarrassing moment turned into a pretty great friendship."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich habe mir vorgenommen, dieses Jahr weniger Zeit am Handy zu verbringen.",
+     "I've resolved to spend less time on my phone this year."
+    ],
+    [
+     "Am ersten Tag habe ich es geschafft, es fast zwei ganze Stunden nicht anzufassen.",
+     "On the first day I managed to not touch it for almost two whole hours."
+    ],
+    [
+     "Kleine Schritte zählen auch, sage ich mir jetzt jeden Tag.",
+     "Small steps count too, I tell myself every day now."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Unsere WG hat neulich beschlossen, jeden Freitag gemeinsam zu kochen.",
+     "Our shared flat recently decided to cook together every Friday."
+    ],
+    [
+     "Jeder bringt ein Rezept aus seiner Heimat mit, das war die Regel.",
+     "Everyone brings a recipe from their home country, that was the rule."
+    ],
+    [
+     "So haben wir letzte Woche zum ersten Mal georgisches Käsebrot probiert.",
+     "That's how we tried Georgian cheese bread for the first time last week."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich muss zugeben, ich rede manchmal laut mit mir selbst beim Kochen.",
+     "I have to admit, I sometimes talk loudly to myself while cooking."
+    ],
+    [
+     "Neulich hat mich mein Mitbewohner dabei erwischt und für verrückt gehalten.",
+     "Recently my roommate caught me doing it and thought I was crazy."
+    ],
+    [
+     "Ich habe ihm erklärt, das Essen hört einfach besser zu als er.",
+     "I explained to him that the food simply listens better than he does."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Weißt du noch, wie wir letzten Winter im Schnee stecken geblieben sind?",
+     "Do you remember how we got stuck in the snow last winter?"
+    ],
+    [
+     "Wir haben zwei Stunden gebraucht, um das Auto wieder freizuschaufeln.",
+     "It took us two hours to dig the car out again."
+    ],
+    [
+     "Danach haben wir heiße Schokolade getrunken, als hätten wir einen Berg bezwungen.",
+     "Afterward we drank hot chocolate as if we'd conquered a mountain."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich glaube, mein größtes Talent ist es, Dinge im letzten Moment fertigzumachen.",
+     "I think my greatest talent is finishing things at the very last moment."
+    ],
+    [
+     "Meine Präsentation gestern war um Mitternacht noch eine leere Folie.",
+     "My presentation yesterday was still an empty slide at midnight."
+    ],
+    [
+     "Um neun Uhr morgens war sie plötzlich fertig — und sogar ziemlich gut.",
+     "By nine in the morning it was suddenly finished — and even pretty good."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich habe endlich verstanden, warum meine Kollegin jeden Tag Kopfhörer trägt.",
+     "I finally understood why my colleague wears headphones every day."
+    ],
+    [
+     "Es ist gar keine Musik, sondern einfach nur Stille zum Nachdenken.",
+     "It's not music at all, just silence for thinking."
+    ],
+    [
+     "Jetzt mache ich das manchmal auch, wenn das Büro zu laut wird.",
+     "Now I sometimes do that too when the office gets too loud."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich habe neulich in einem kleinen Buchladen ein Buch ohne Titel gefunden.",
+     "Recently I found a book without a title in a small bookshop."
+    ],
+    [
+     "Die Verkäuferin meinte, manche Geschichten bräuchten keine Vorwarnung.",
+     "The salesperson said some stories don't need a warning."
+    ],
+    [
+     "Ich habe es sofort gekauft, nur wegen dieses einen Satzes.",
+     "I bought it immediately, just because of that one sentence."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich erinnere mich noch genau an meinen ersten Tag in dieser Stadt.",
+     "I still remember exactly my first day in this city."
+    ],
+    [
+     "Ich habe mich sofort verlaufen und bin trotzdem irgendwie zufrieden gewesen.",
+     "I immediately got lost and was still somehow content."
+    ],
+    [
+     "Manchmal ist Verlorensein einfach der schönste Weg, etwas kennenzulernen.",
+     "Sometimes being lost is simply the nicest way to get to know something."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich habe gestern zufällig meinen alten Musiklehrer im Supermarkt getroffen.",
+     "Yesterday I ran into my old music teacher by chance at the supermarket."
+    ],
+    [
+     "Er erinnerte sich noch genau daran, dass ich nie im Takt klatschen konnte.",
+     "He still remembered exactly that I could never clap in rhythm."
+    ],
+    [
+     "Wir haben zusammen gelacht und beide zwanzig Minuten Eis vergessen zu kaufen.",
+     "We laughed together and both forgot to buy ice cream for twenty minutes."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich habe mir vorgenommen, meiner besten Freundin öfter einfach 'Danke' zu sagen.",
+     "I've decided to just say 'thank you' to my best friend more often."
+    ],
+    [
+     "Man vergisst so leicht, wie viel die kleinen Dinge wirklich bedeuten.",
+     "It's so easy to forget how much the small things really mean."
+    ],
+    [
+     "Heute Abend rufe ich sie an, nur um genau das zu sagen.",
+     "Tonight I'll call her, just to say exactly that."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich glaube, meine Nachbarin und ich haben nie ein einziges Wort gewechselt.",
+     "I think my neighbor and I have never exchanged a single word."
+    ],
+    [
+     "Aber jeden Morgen nicken wir uns freundlich beim Blumengießen zu.",
+     "But every morning we nod at each other kindly while watering the flowers."
+    ],
+    [
+     "Manchmal braucht Freundschaft eben keine großen Worte.",
+     "Sometimes friendship simply doesn't need big words."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich habe heute meinen ersten Marathon gesehen, allerdings nur als Zuschauer.",
+     "Today I watched my first marathon, though only as a spectator."
+    ],
+    [
+     "Die Läufer sahen erschöpft aus, aber irgendwie auch unglaublich stolz.",
+     "The runners looked exhausted, but somehow also incredibly proud."
+    ],
+    [
+     "Ich habe spontan beschlossen, mich nächstes Jahr selbst anzumelden.",
+     "I spontaneously decided to sign up myself next year."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich muss gestehen, ich habe letztes Wochenende drei Serien an einem Tag geschaut.",
+     "I have to confess, I watched three series in one day last weekend."
+    ],
+    [
+     "Draußen schien die Sonne, aber ich habe sie tapfer ignoriert.",
+     "The sun was shining outside, but I bravely ignored it."
+    ],
+    [
+     "Kein Bedauern — manchmal ist Faulheit einfach die beste Entscheidung.",
+     "No regrets — sometimes laziness is simply the best decision."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich war heute in einem Second-Hand-Laden und habe eine echte Schatzkiste entdeckt.",
+     "Today I was in a second-hand shop and discovered a real treasure chest."
+    ],
+    [
+     "Eine alte Jacke, die aussah, als hätte sie schon hundert Geschichten erlebt.",
+     "An old jacket that looked as if it had already lived a hundred stories."
+    ],
+    [
+     "Ich trage sie jetzt, als wären diese Geschichten auch ein bisschen meine.",
+     "I wear it now as if those stories were a little bit mine too."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich habe neulich versucht, meiner Mutter Videoanrufe beizubringen.",
+     "Recently I tried to teach my mother video calls."
+    ],
+    [
+     "Zwanzig Minuten lang hat sie nur ihre eigene Nase gesehen.",
+     "For twenty minutes she only saw her own nose."
+    ],
+    [
+     "Am Ende hat sie herzhaft gelacht und gesagt: 'Nächstes Mal per Brief.'",
+     "In the end she laughed heartily and said, 'Next time by letter.'"
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich glaube, der schönste Moment meines Tages war einfach die erste Tasse Kaffee.",
+     "I think the nicest moment of my day was simply the first cup of coffee."
+    ],
+    [
+     "Alles davor fühlt sich immer ein bisschen unwirklich an.",
+     "Everything before that always feels a little unreal."
+    ],
+    [
+     "Danach kann der Tag machen, was er will.",
+     "After that, the day can do whatever it wants."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich habe gestern zum ersten Mal in meinem Leben ein Gedicht auswendig gelernt.",
+     "Yesterday, for the first time in my life, I memorized a poem."
+    ],
+    [
+     "Es war für die Hochzeit meines besten Freundes, also musste es sitzen.",
+     "It was for my best friend's wedding, so it had to be perfect."
+    ],
+    [
+     "Am Ende habe ich nur eine Zeile vergessen — und niemand hat es bemerkt.",
+     "In the end I only forgot one line — and nobody noticed."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
    "level": "B2",
    "lines": [
     [
-     "Nach langer Suche fand er endlich den Brief seiner Großmutter.",
-     "After a long search, he finally found his grandmother's letter."
+     "Weißt du, was mich an dieser Stadt am meisten überrascht hat?",
+     "Do you know what surprised me most about this city?"
     ],
     [
-     "Die Tinte war verblasst, aber die Worte berührten ihn noch genauso tief wie früher.",
-     "The ink had faded, but the words still touched him just as deeply as before."
+     "Wie schnell aus völlig Fremden auf einmal so etwas wie Familie werden kann.",
+     "How quickly complete strangers can suddenly turn into something like family."
     ],
     [
-     "Er beschloss, den Brief für immer aufzubewahren.",
-     "He decided to keep the letter forever."
+     "Ich glaube, genau das macht ein Zuhause eigentlich erst zu einem Zuhause.",
+     "I think that's exactly what actually turns a place into a home."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B2",
+   "lines": [
+    [
+     "Ich habe lange gebraucht, um zu begreifen, dass Perfektionismus mich eher gebremst als vorangebracht hat.",
+     "It took me a long time to realize that perfectionism held me back more than it moved me forward."
+    ],
+    [
+     "Seitdem ich Dinge auch mal unfertig teile, fühle ich mich erstaunlich befreit.",
+     "Since I started sharing things even when unfinished, I've felt surprisingly liberated."
+    ],
+    [
+     "Am Ende interessiert sich sowieso niemand für die Fehler, die ich vermeiden wollte.",
+     "In the end, nobody's really interested in the mistakes I was trying to avoid anyway."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B2",
+   "lines": [
+    [
+     "Es ist schon lustig, wie sehr sich meine Prioritäten in den letzten Jahren verschoben haben.",
+     "It's funny how much my priorities have shifted in the last few years."
+    ],
+    [
+     "Früher zählte für mich vor allem der nächste Karriereschritt.",
+     "It used to be mostly about the next career step for me."
+    ],
+    [
+     "Heute freue ich mich mehr über einen ruhigen Sonntagmorgen als über jede Beförderung.",
+     "Today a quiet Sunday morning makes me happier than any promotion."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B2",
+   "lines": [
+    [
+     "Ich muss zugeben, ich habe unsere letzte Diskussion über Politik ziemlich unterschätzt.",
+     "I have to admit, I pretty much underestimated our last discussion about politics."
+    ],
+    [
+     "Ich dachte, wir würden uns nach fünf Minuten im Kreis drehen.",
+     "I thought we'd be going in circles after five minutes."
+    ],
+    [
+     "Stattdessen habe ich meine Meinung an zwei Stellen tatsächlich überdacht.",
+     "Instead, I actually reconsidered my opinion on two points."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B2",
+   "lines": [
+    [
+     "Neulich habe ich beim Aufräumen einen Brief gefunden, den ich mir vor zehn Jahren selbst geschrieben habe.",
+     "While tidying up recently, I found a letter I wrote to myself ten years ago."
+    ],
+    [
+     "Manche Wünsche darin klangen erstaunlich naiv, andere überraschend hellsichtig.",
+     "Some wishes in it sounded surprisingly naive, others surprisingly perceptive."
+    ],
+    [
+     "Ich glaube, ich schreibe mir heute Abend noch einen für die nächsten zehn Jahre.",
+     "I think I'll write myself another one tonight, for the next ten years."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B2",
+   "lines": [
+    [
+     "Ich habe angefangen, jeden Abend drei Dinge aufzuschreiben, die gut gelaufen sind.",
+     "I've started writing down three things that went well every evening."
+    ],
+    [
+     "Anfangs kam mir das ziemlich kitschig vor, ehrlich gesagt.",
+     "At first, honestly, it felt pretty cheesy to me."
+    ],
+    [
+     "Inzwischen freue ich mich tatsächlich schon tagsüber auf diesen kleinen Moment.",
+     "By now I actually look forward to that little moment during the day."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B2",
+   "lines": [
+    [
+     "Manchmal frage ich mich, ob wir als Gesellschaft das Zuhören ein bisschen verlernt haben.",
+     "Sometimes I wonder if we as a society have somewhat forgotten how to listen."
+    ],
+    [
+     "Jeder wartet gefühlt nur darauf, selbst wieder etwas sagen zu dürfen.",
+     "It feels like everyone's just waiting for their turn to speak again."
+    ],
+    [
+     "Deshalb versuche ich neuerdings bewusst, eine Pause vor jeder Antwort zu machen.",
+     "That's why I've recently been trying to consciously pause before every reply."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B2",
+   "lines": [
+    [
+     "Ich habe kürzlich gelernt, wie befreiend es sein kann, einfach 'Nein' zu sagen.",
+     "I recently learned how liberating it can be to simply say 'no'."
+    ],
+    [
+     "Jahrelang habe ich jede Einladung angenommen, aus Angst, jemanden zu enttäuschen.",
+     "For years I accepted every invitation, out of fear of disappointing someone."
+    ],
+    [
+     "Heute weiß ich: Ein ehrliches Nein ist oft freundlicher als ein widerwilliges Ja.",
+     "Today I know: an honest no is often kinder than a reluctant yes."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B2",
+   "lines": [
+    [
+     "Unsere Diskussion gestern hat mich echt zum Nachdenken gebracht, das muss ich zugeben.",
+     "Our discussion yesterday really got me thinking, I have to admit."
+    ],
+    [
+     "Du hattest recht, dass ich manche Entscheidungen zu impulsiv getroffen habe.",
+     "You were right that I've made some decisions too impulsively."
+    ],
+    [
+     "Ab jetzt gönne ich mir vor wichtigen Entscheidungen mindestens eine Nacht Schlaf.",
+     "From now on I'll give myself at least a night's sleep before important decisions."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B2",
+   "lines": [
+    [
+     "Ich habe kürzlich angefangen, mit meinem Vater regelmäßig zu telefonieren, nicht nur an Feiertagen.",
+     "I recently started calling my father regularly, not just on holidays."
+    ],
+    [
+     "Am Anfang wusste keiner von uns beiden, worüber wir eigentlich reden sollten.",
+     "At first neither of us really knew what to talk about."
+    ],
+    [
+     "Mittlerweile reden wir stundenlang über die belanglosesten Dinge — und ich liebe es.",
+     "By now we talk for hours about the most trivial things — and I love it."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "B2",
+   "lines": [
+    [
+     "Ich habe mir vorgenommen, dieses Jahr weniger zu vergleichen und mehr zu genießen.",
+     "I've resolved to compare less and enjoy more this year."
+    ],
+    [
+     "Soziale Medien machen es einem da wirklich nicht besonders leicht.",
+     "Social media really doesn't make that particularly easy."
+    ],
+    [
+     "Deshalb scrolle ich abends inzwischen bewusst weniger und lese stattdessen.",
+     "That's why in the evenings I now consciously scroll less and read instead."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "C1",
+   "lines": [
+    [
+     "Es fasziniert mich, wie unterschiedlich Menschen mit Unsicherheit umgehen.",
+     "It fascinates me how differently people deal with uncertainty."
+    ],
+    [
+     "Manche verfallen in Panik, andere entwickeln plötzlich eine bemerkenswerte Gelassenheit.",
+     "Some fall into panic, others suddenly develop a remarkable calm."
+    ],
+    [
+     "Ich frage mich oft, welche dieser beiden Reaktionen eigentlich die klügere ist.",
+     "I often wonder which of these two reactions is actually the wiser one."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "C1",
+   "lines": [
+    [
+     "Was mich an unserem letzten Gespräch am meisten beeindruckt hat, war deine Fähigkeit, unbequeme Wahrheiten auszusprechen.",
+     "What impressed me most about our last conversation was your ability to voice uncomfortable truths."
+    ],
+    [
+     "So etwas erfordert einen Mut, den ich mir selbst noch aneignen muss.",
+     "That requires a courage I still need to develop myself."
+    ],
+    [
+     "Vielleicht beginnt echte Reife genau in dem Moment, in dem man aufhört, es allen recht machen zu wollen.",
+     "Maybe true maturity begins exactly at the moment you stop trying to please everyone."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "C1",
+   "lines": [
+    [
+     "Manchmal beneide ich Menschen, die instinktiv wissen, was sie vom Leben wollen.",
+     "Sometimes I envy people who instinctively know what they want from life."
+    ],
+    [
+     "Bei mir ändert sich diese Antwort etwa alle zwei Jahre komplett.",
+     "For me, that answer changes completely about every two years."
+    ],
+    [
+     "Inzwischen betrachte ich das aber weniger als Schwäche und mehr als Neugier.",
+     "By now, though, I see that less as a weakness and more as curiosity."
+    ]
+   ]
+  },
+  {
+   "c": "talk",
+   "level": "C1",
+   "lines": [
+    [
+     "Ich glaube, das Schwierigste am Erwachsenwerden ist nicht die Verantwortung selbst.",
+     "I think the hardest part of growing up isn't the responsibility itself."
+    ],
+    [
+     "Es ist eher die Erkenntnis, dass niemand jemals wirklich vollständig vorbereitet ist.",
+     "It's rather the realization that no one is ever truly fully prepared."
+    ],
+    [
+     "Diesen Gedanken finde ich inzwischen eher tröstlich als beängstigend.",
+     "I actually find that thought comforting rather than frightening by now."
     ]
    ]
   },
@@ -203,52 +1247,124 @@
    "level": "A2",
    "lines": [
     [
-     "Die Kinder liefen lachend über die Wiese.",
-     "The children ran laughing across the meadow."
+     "Ein kleiner Hund saß jeden Tag vor der Bäckerei und wartete geduldig.",
+     "A small dog sat in front of the bakery every day, waiting patiently."
     ],
     [
-     "Ihre Eltern saßen im Schatten und schauten ihnen glücklich zu.",
-     "Their parents sat in the shade and watched them happily."
+     "Der Bäcker gab ihm immer ein Stück Brot, bevor er die Tür schloss.",
+     "The baker always gave him a piece of bread before closing the door."
     ],
     [
-     "Es war ein ganz gewöhnlicher, aber wunderschöner Nachmittag.",
-     "It was a completely ordinary but beautiful afternoon."
+     "Inzwischen kennt ihn die ganze Straße als 'den Brothund'.",
+     "By now the whole street knows him as 'the bread dog'."
     ]
    ]
   },
   {
    "c": "story",
-   "level": "B2",
+   "level": "A2",
    "lines": [
     [
-     "Erst als der Zug den Bahnhof verließ, erinnerte sie sich an ihren Koffer.",
-     "Only as the train left the station did she remember her suitcase."
+     "Am Strand fand ein Junge eine Flasche mit einem Zettel darin.",
+     "On the beach, a boy found a bottle with a note inside."
     ],
     [
-     "Er stand noch immer auf dem Bahnsteig, direkt neben der Bank.",
-     "It was still standing on the platform, right next to the bench."
+     "Darauf stand nur ein einziges Wort: 'Danke'.",
+     "On it there was only a single word: 'Thank you'."
     ],
     [
-     "Zum Glück konnte sie ihn am nächsten Tag am Fundbüro abholen.",
-     "Luckily, she was able to pick it up at the lost-and-found office the next day."
+     "Er lächelte und warf die Flasche mit einer neuen Nachricht wieder ins Meer.",
+     "He smiled and threw the bottle back into the sea with a new message."
     ]
    ]
   },
   {
    "c": "story",
-   "level": "C1",
+   "level": "A2",
    "lines": [
     [
-     "In der kleinen Stadt kannte fast jeder jeden.",
-     "In the small town, almost everyone knew everyone."
+     "Jeden Sommer malte die alte Frau ein Bild von ihrem Garten.",
+     "Every summer the old woman painted a picture of her garden."
     ],
     [
-     "Neuigkeiten verbreiteten sich schneller, als man sie erzählen konnte.",
-     "News spread faster than you could tell it."
+     "Die Blumen waren jedes Jahr ein bisschen anders auf dem Bild.",
+     "The flowers were a little different in the picture every year."
     ],
     [
-     "Manchmal wusste man von einem Ereignis, bevor es überhaupt passiert war.",
-     "Sometimes you knew about an event before it had even happened."
+     "So konnte sie sich später an jeden einzelnen Sommer erinnern.",
+     "That way she could later remember every single summer."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "A2",
+   "lines": [
+    [
+     "Ein Mann vergaß seinen Regenschirm im Bus und lief traurig nach Hause.",
+     "A man forgot his umbrella on the bus and walked home sadly."
+    ],
+    [
+     "Am nächsten Tag stand der Schirm plötzlich vor seiner Tür.",
+     "The next day the umbrella suddenly stood in front of his door."
+    ],
+    [
+     "Ein fremder Fahrgast hatte ihn extra für ihn zurückgebracht.",
+     "A stranger passenger had brought it back especially for him."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "A2",
+   "lines": [
+    [
+     "Zwei Freunde trafen sich nach zwanzig Jahren zufällig am Bahnhof wieder.",
+     "Two friends accidentally met again at the train station after twenty years."
+    ],
+    [
+     "Zuerst erkannten sie sich kaum, aber dann fingen sie an zu lachen.",
+     "At first they barely recognized each other, but then they started laughing."
+    ],
+    [
+     "Sie verpassten beide ihren Zug, weil sie so viel zu erzählen hatten.",
+     "They both missed their trains because they had so much to talk about."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "A2",
+   "lines": [
+    [
+     "Ein kleines Mädchen wollte unbedingt den höchsten Baum im Park erklimmen.",
+     "A little girl really wanted to climb the tallest tree in the park."
+    ],
+    [
+     "Nach vielen Versuchen schaffte sie es endlich bis ganz nach oben.",
+     "After many tries she finally made it all the way to the top."
+    ],
+    [
+     "Von dort oben sah die ganze Stadt plötzlich winzig klein aus.",
+     "From up there, the whole city suddenly looked tiny."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "A2",
+   "lines": [
+    [
+     "Der neue Nachbar brachte am ersten Tag selbstgebackenen Kuchen vorbei.",
+     "The new neighbor brought over homemade cake on the first day."
+    ],
+    [
+     "Der Kuchen war leider ziemlich verbrannt, aber alle aßen ihn höflich auf.",
+     "The cake was unfortunately quite burnt, but everyone politely ate it anyway."
+    ],
+    [
+     "Seitdem backt er jeden Monat einen besseren — und alle sind gespannt.",
+     "Since then he bakes a better one every month — and everyone is curious."
     ]
    ]
   },
@@ -257,16 +1373,430 @@
    "level": "B1",
    "lines": [
     [
-     "Nach dem Sturm lagen überall Äste und Blätter auf den Straßen.",
-     "After the storm, branches and leaves lay everywhere on the streets."
+     "Jeden Freitagabend stellte der alte Uhrmacher eine Kerze in sein Schaufenster.",
+     "Every Friday evening, the old clockmaker put a candle in his shop window."
     ],
     [
-     "Die Nachbarn kamen zusammen, um gemeinsam aufzuräumen.",
-     "The neighbors came together to clean up."
+     "Niemand in der Straße wusste, warum, aber alle fanden es irgendwie tröstlich.",
+     "No one on the street knew why, but everyone found it somehow comforting."
     ],
     [
-     "Bis zum Abend sah die Straße schon wieder fast normal aus.",
-     "By evening, the street already looked almost normal again."
+     "Erst nach seinem Tod erfuhren sie, dass er so seiner verstorbenen Frau gedachte.",
+     "Only after his death did they learn he was honoring his late wife that way."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B1",
+   "lines": [
+    [
+     "Eine Studentin fand in einem gebrauchten Buch eine handgeschriebene Widmung.",
+     "A student found a handwritten dedication in a used book."
+    ],
+    [
+     "Sie stammte von jemandem, der das Buch vor dreißig Jahren verschenkt hatte.",
+     "It was from someone who had given the book as a gift thirty years earlier."
+    ],
+    [
+     "Sie beschloss, das Buch genauso weiterzuverschenken, mit einer eigenen Widmung darin.",
+     "She decided to pass the book on the same way, with her own dedication inside."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B1",
+   "lines": [
+    [
+     "Der Straßenmusiker spielte jeden Tag an derselben Ecke dieselbe Melodie.",
+     "The street musician played the same melody on the same corner every day."
+    ],
+    [
+     "Eines Tages blieb eine Frau stehen und begann leise mitzusingen.",
+     "One day a woman stopped and began quietly singing along."
+    ],
+    [
+     "Es stellte sich heraus, dass sie das Lied vor Jahren selbst geschrieben hatte.",
+     "It turned out she had written the song herself years earlier."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B1",
+   "lines": [
+    [
+     "Ein Junge schickte seinem Großvater jede Woche eine kurze Sprachnachricht.",
+     "A boy sent his grandfather a short voice message every week."
+    ],
+    [
+     "Manchmal war es nur ein Satz über das Wetter oder die Schule.",
+     "Sometimes it was just one sentence about the weather or school."
+    ],
+    [
+     "Nach dessen Tod hörte er sich alle Nachrichten noch einmal in Ruhe an.",
+     "After his death, he listened to all the messages again in peace."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B1",
+   "lines": [
+    [
+     "In der kleinen Buchhandlung stand ein Regal nur für Bücher ohne Klappentext.",
+     "In the small bookshop there was a shelf just for books without a blurb."
+    ],
+    [
+     "Kunden mussten die ersten Seiten lesen, um herauszufinden, worum es ging.",
+     "Customers had to read the first pages to find out what it was about."
+    ],
+    [
+     "Erstaunlich viele kauften genau diese Bücher, einfach aus purer Neugier.",
+     "Surprisingly many bought exactly those books, purely out of curiosity."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B1",
+   "lines": [
+    [
+     "Eine Nachbarin hinterließ jeden Winter frisches Vogelfutter auf dem Balkongeländer.",
+     "A neighbor left fresh bird food on the balcony railing every winter."
+    ],
+    [
+     "Nach ein paar Jahren erkannte sie einzelne Vögel sogar am Gesang wieder.",
+     "After a few years she could even recognize individual birds by their song."
+    ],
+    [
+     "Sie gab jedem heimlich einen eigenen Namen, den nur sie kannte.",
+     "She secretly gave each one its own name, known only to her."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B1",
+   "lines": [
+    [
+     "Ein Taxifahrer sammelte seit Jahren die interessantesten Sätze seiner Fahrgäste.",
+     "For years, a taxi driver had been collecting the most interesting sentences from his passengers."
+    ],
+    [
+     "Er schrieb sie in ein kleines Notizbuch, das immer im Handschuhfach lag.",
+     "He wrote them in a small notebook that always lay in the glove compartment."
+    ],
+    [
+     "Eines Tages veröffentlichte er sie als Buch — ohne einen einzigen Namen zu nennen.",
+     "One day he published them as a book — without naming a single person."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B1",
+   "lines": [
+    [
+     "Ein Mädchen pflanzte an ihrem Geburtstag jedes Jahr einen kleinen Baum.",
+     "Every year on her birthday, a girl planted a small tree."
+    ],
+    [
+     "Mit zwanzig Jahren hatte sie schon einen ganzen kleinen Wald erschaffen.",
+     "By the age of twenty she had already created a whole little forest."
+    ],
+    [
+     "Kinder aus dem Dorf nannten ihn liebevoll 'Annas Wald'.",
+     "Children from the village lovingly called it 'Anna's forest'."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B1",
+   "lines": [
+    [
+     "Ein Kellner merkte sich die Lieblingsbestellung jedes Stammgastes auswendig.",
+     "A waiter memorized every regular guest's favorite order by heart."
+    ],
+    [
+     "Als das Café schließen sollte, schrieben ihm hundert Gäste einen Brief.",
+     "When the café was about to close, a hundred guests wrote him a letter."
+    ],
+    [
+     "Am Ende fanden sich genug Unterschriften, um das Café zu retten.",
+     "In the end, enough signatures were found to save the café."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B1",
+   "lines": [
+    [
+     "Ein Junge tauschte auf dem Schulhof jeden Tag sein Pausenbrot gegen Geschichten.",
+     "On the schoolyard, a boy traded his sandwich for stories every day."
+    ],
+    [
+     "Seine Mitschüler erzählten ihm von ihren Familien, ihren Ängsten und Träumen.",
+     "His classmates told him about their families, their fears, and their dreams."
+    ],
+    [
+     "Jahre später wurde aus diesem Jungen ein bekannter Schriftsteller.",
+     "Years later, that boy became a well-known writer."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B1",
+   "lines": [
+    [
+     "Eine alte Frau fütterte jeden Morgen dieselbe Möwe am Hafen.",
+     "An old woman fed the same seagull at the harbor every morning."
+    ],
+    [
+     "Die Fischer nannten den Vogel scherzhaft 'ihren Chef', weil er immer pünktlich kam.",
+     "The fishermen jokingly called the bird 'her boss' because it always came on time."
+    ],
+    [
+     "Als die Frau einmal krank war, wartete die Möwe drei Tage lang vergeblich.",
+     "When the woman was sick once, the seagull waited in vain for three days."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B1",
+   "lines": [
+    [
+     "Zwei Brüder stritten sich als Kinder ständig um denselben alten Fußball.",
+     "As children, two brothers constantly fought over the same old soccer ball."
+    ],
+    [
+     "Heute, als Erwachsene, schenken sie sich jedes Jahr scherzhaft einen neuen Ball.",
+     "Today, as adults, they jokingly give each other a new ball every year."
+    ],
+    [
+     "Der alte Ball steht immer noch, halb kaputt, im Regal ihrer Mutter.",
+     "The old ball still sits, half broken, on their mother's shelf."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B1",
+   "lines": [
+    [
+     "Ein Fotograf machte jeden Morgen um sechs Uhr dasselbe Foto vom Fluss.",
+     "A photographer took the same photo of the river every morning at six."
+    ],
+    [
+     "Nach zehn Jahren zeigte er alle dreitausendsechshundert Bilder in einer Ausstellung.",
+     "After ten years he showed all three thousand six hundred pictures in an exhibition."
+    ],
+    [
+     "Besucher standen minutenlang davor, weil sich der Fluss nie wirklich wiederholte.",
+     "Visitors stood in front of them for minutes because the river never truly repeated itself."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B1",
+   "lines": [
+    [
+     "Eine Bibliothekarin legte in jedes zurückgegebene Buch ein handgeschriebenes Lesezeichen.",
+     "A librarian placed a handwritten bookmark in every returned book."
+    ],
+    [
+     "Darauf stand jedes Mal ein anderer, kurzer, ermutigender Satz.",
+     "Each time it had a different short, encouraging sentence on it."
+    ],
+    [
+     "Manche Leser kamen extra wieder, nur um das nächste Lesezeichen zu finden.",
+     "Some readers came back specifically just to find the next bookmark."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B2",
+   "lines": [
+    [
+     "Der Uhrmacher reparierte jede Uhr, die man ihm brachte, obwohl er selbst nie eine trug.",
+     "The clockmaker repaired every clock brought to him, even though he himself never wore one."
+    ],
+    [
+     "Auf die Frage, warum, antwortete er stets: 'Zeit läuft sowieso, mit oder ohne mich.'",
+     "When asked why, he always answered: 'Time runs anyway, with or without me.'"
+    ],
+    [
+     "Erst nach seinem Tod fand man in seiner Werkstatt Hunderte selbstgebaute Uhren, alle stehen geblieben.",
+     "Only after his death did they find hundreds of self-built clocks in his workshop, all stopped."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B2",
+   "lines": [
+    [
+     "Die Malerin verkaufte nie eines ihrer Bilder, obwohl ihr die Menschen jeden Preis boten.",
+     "The painter never sold any of her paintings, even though people offered her any price."
+    ],
+    [
+     "Stattdessen verschenkte sie sie an Fremde, die ihr eine gute Geschichte erzählten.",
+     "Instead, she gave them away to strangers who told her a good story."
+    ],
+    [
+     "So hingen ihre Werke am Ende in hundert verschiedenen Wohnzimmern, aber in keiner Galerie.",
+     "So in the end, her works hung in a hundred different living rooms, but in no gallery."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B2",
+   "lines": [
+    [
+     "Ein Mann verbrachte jeden Abend eine Stunde damit, Briefe an unbekannte Empfänger zu schreiben.",
+     "A man spent an hour every evening writing letters to unknown recipients."
+    ],
+    [
+     "Er wählte die Adressen zufällig aus einem alten Telefonbuch aus.",
+     "He picked the addresses randomly from an old phone book."
+    ],
+    [
+     "Die meisten Menschen warfen die Briefe weg, doch manche schrieben ihm ein Leben lang zurück.",
+     "Most people threw the letters away, but some wrote back to him for a lifetime."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B2",
+   "lines": [
+    [
+     "Die Bäckerin backte an jedem Regentag ein zusätzliches Brot für einen unbekannten Empfänger.",
+     "On every rainy day, the baker baked an extra loaf for an unknown recipient."
+    ],
+    [
+     "Sie legte es einfach vor die Tür eines zufällig ausgewählten Hauses.",
+     "She simply left it in front of a randomly chosen house's door."
+    ],
+    [
+     "Erst nach Jahren erfuhr sie, dass ihre eigene Großmutter einst genau dasselbe getan hatte.",
+     "Only after years did she learn that her own grandmother had once done exactly the same thing."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B2",
+   "lines": [
+    [
+     "Der Bibliothekar weigerte sich jahrzehntelang, ein einziges Buch aus dem Bestand zu entfernen.",
+     "For decades the librarian refused to remove a single book from the collection."
+    ],
+    [
+     "Als der Platz knapp wurde, baute er kurzerhand ein zweites Stockwerk aus Holz.",
+     "When space ran out, he simply built a second story out of wood."
+    ],
+    [
+     "Heute gilt seine winzige Bibliothek als eine der ungewöhnlichsten des ganzen Landes.",
+     "Today his tiny library is considered one of the most unusual in the whole country."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B2",
+   "lines": [
+    [
+     "Sie hatte sich geschworen, niemals wieder nach ihrem Heimatdorf zurückzukehren.",
+     "She had sworn to herself never to return to her home village again."
+    ],
+    [
+     "Doch als ihre Kinder fragten, woher sie eigentlich komme, packte sie plötzlich die Koffer.",
+     "But when her children asked where she actually came from, she suddenly packed her bags."
+    ],
+    [
+     "Am Ortseingang stand noch immer derselbe schiefe Apfelbaum wie in ihrer Kindheit.",
+     "At the village entrance, the same crooked apple tree from her childhood still stood."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B2",
+   "lines": [
+    [
+     "Der Postbote kannte auf seiner Route jeden einzelnen Namen an jeder einzelnen Tür.",
+     "On his route, the mailman knew every single name at every single door."
+    ],
+    [
+     "Als er in Rente ging, stellten die Anwohner heimlich ein Schild mit seinem Namen auf.",
+     "When he retired, the residents secretly put up a sign with his name on it."
+    ],
+    [
+     "Die kleine Straße heißt seitdem inoffiziell nach ihm, obwohl das kein Stadtplan zeigt.",
+     "The small street has unofficially been named after him ever since, though no city map shows it."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B2",
+   "lines": [
+    [
+     "Ein Kind fragte den alten Gärtner, warum er Bäume pflanze, die er nie blühen sehen werde.",
+     "A child asked the old gardener why he planted trees he would never see bloom."
+    ],
+    [
+     "Er lächelte nur und sagte: 'Weil jemand sie irgendwann einmal genießen wird.'",
+     "He only smiled and said, 'Because someone will enjoy them someday.'"
+    ],
+    [
+     "Jahre später saß genau dieses Kind, längst erwachsen, unter einem seiner Bäume.",
+     "Years later, that very child, now grown up, sat under one of his trees."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B2",
+   "lines": [
+    [
+     "Die Übersetzerin arbeitete zwanzig Jahre lang heimlich an einem einzigen, sehr kurzen Gedicht.",
+     "For twenty years the translator secretly worked on a single, very short poem."
+    ],
+    [
+     "Jede Version brachte sie näher an einen Klang, den sie in Worten kaum fassen konnte.",
+     "Each version brought her closer to a sound she could barely capture in words."
+    ],
+    [
+     "Als sie es endlich veröffentlichte, bestand es nur noch aus vier Zeilen.",
+     "When she finally published it, it consisted of only four lines."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "B2",
+   "lines": [
+    [
+     "Ein Fischer warf jeden zu kleinen Fisch zurück ins Meer, egal wie mager der Fang gewesen war.",
+     "A fisherman threw every fish that was too small back into the sea, no matter how meager the catch had been."
+    ],
+    [
+     "Sein Sohn hielt das lange für übertriebene Vorsicht.",
+     "His son long thought this was exaggerated caution."
+    ],
+    [
+     "Erst als er selbst Vater wurde, verstand er, wofür sein eigener Vater eigentlich gesorgt hatte.",
+     "Only when he became a father himself did he understand what his own father had really been providing for."
     ]
    ]
   },
@@ -275,16 +1805,196 @@
    "level": "C1",
    "lines": [
     [
-     "Sie hatte das Gefühl, diesen Ort schon einmal in einem Traum gesehen zu haben.",
-     "She had the feeling she had already seen this place once in a dream."
+     "Der Archivar verbrachte sein gesamtes Berufsleben damit, Briefe zu ordnen, die niemand je lesen würde.",
+     "The archivist spent his entire career sorting letters that no one would ever read."
     ],
     [
-     "Jede Ecke wirkte vertraut, obwohl sie noch nie zuvor dort gewesen war.",
-     "Every corner seemed familiar, even though she had never been there before."
+     "Kollegen hielten das für vergebliche Mühe, doch er sah darin eine Art stillen Dienst an der Zukunft.",
+     "Colleagues considered it futile effort, but he saw it as a kind of quiet service to the future."
     ],
     [
-     "Dieses seltsame Gefühl ließ sie den ganzen Tag nicht mehr los.",
-     "This strange feeling stayed with her for the rest of the day."
+     "Fünfzig Jahre nach seinem Tod entdeckte eine Historikerin genau in diesen Briefen eine vergessene Wahrheit.",
+     "Fifty years after his death, a historian discovered a forgotten truth in exactly those letters."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "C1",
+   "lines": [
+    [
+     "Sie hatte gelernt, jede Enttäuschung als eine Art verspätetes Geschenk zu betrachten.",
+     "She had learned to view every disappointment as a kind of delayed gift."
+    ],
+    [
+     "Diese Haltung machte sie in den Augen mancher naiv, in den Augen anderer bewundernswert gelassen.",
+     "This attitude made her seem naive in some people's eyes, admirably composed in others'."
+    ],
+    [
+     "Sie selbst nannte es schlicht die einzige Methode, mit der sie je zurechtgekommen war.",
+     "She herself simply called it the only method she had ever managed to cope with."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "C1",
+   "lines": [
+    [
+     "Der Dirigent bestand darauf, jedes Konzert mit vollkommener Stille zu beginnen, nicht mit Musik.",
+     "The conductor insisted on beginning every concert with complete silence, not with music."
+    ],
+    [
+     "Kritiker nannten es anfangs eine überflüssige Marotte eines alternden Künstlers.",
+     "Critics initially called it a superfluous quirk of an aging artist."
+    ],
+    [
+     "Erst Jahrzehnte später begriff man, dass genau diese Stille das eigentliche Kunstwerk gewesen war.",
+     "Only decades later did people understand that this very silence had been the actual work of art."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "C1",
+   "lines": [
+    [
+     "Er hatte zeit seines Lebens behauptet, keinerlei Talent für Musik zu besitzen.",
+     "Throughout his life, he had claimed to have no talent whatsoever for music."
+    ],
+    [
+     "Erst im hohen Alter, fast erblindet, begann er wie zufällig, jeden Abend Klavier zu spielen.",
+     "Only in old age, almost blind, did he begin, almost by chance, to play piano every evening."
+    ],
+    [
+     "Die Melodien, die er komponierte, klangen, als hätte er sie sein ganzes Leben lang gesammelt.",
+     "The melodies he composed sounded as though he had been collecting them his whole life."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "C1",
+   "lines": [
+    [
+     "Die Wissenschaftlerin widmete ihre gesamte Karriere einer Frage, die kaum jemand für relevant hielt.",
+     "The scientist devoted her entire career to a question hardly anyone considered relevant."
+    ],
+    [
+     "Förderanträge wurden regelmäßig abgelehnt, Kollegen rieten ihr, sich einem 'ernsteren' Thema zuzuwenden.",
+     "Funding applications were routinely rejected, colleagues advised her to turn to a 'more serious' topic."
+    ],
+    [
+     "Am Ende ihres Lebens erwies sich ausgerechnet diese vermeintliche Randfrage als bahnbrechend.",
+     "By the end of her life, that supposedly marginal question turned out, of all things, to be groundbreaking."
+    ]
+   ]
+  },
+  {
+   "c": "story",
+   "level": "C1",
+   "lines": [
+    [
+     "Der junge Kartograf zeichnete jahrelang eine Landkarte eines Ortes, den es längst nicht mehr gab.",
+     "For years, the young cartographer drew a map of a place that no longer existed."
+    ],
+    [
+     "Er stützte sich dabei ausschließlich auf die lückenhaften Erinnerungen seiner Großmutter.",
+     "He relied solely on his grandmother's fragmentary memories for this."
+    ],
+    [
+     "Die fertige Karte zeigte am Ende weniger ein Dorf als vielmehr die Form ihrer Liebe zu ihm.",
+     "In the end, the finished map showed less a village than the shape of her love for him."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "A2",
+   "lines": [
+    [
+     "Wusstest du, dass Oktopusse drei Herzen haben?",
+     "Did you know that octopuses have three hearts?"
+    ],
+    [
+     "Zwei pumpen Blut zu den Kiemen, eines zum Rest des Körpers.",
+     "Two pump blood to the gills, one to the rest of the body."
+    ],
+    [
+     "Das Meer hält wirklich die verrücktesten Geheimnisse bereit.",
+     "The ocean really holds the craziest secrets."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "A2",
+   "lines": [
+    [
+     "In Deutschland gibt es über dreihundert verschiedene Brotsorten.",
+     "In Germany there are over three hundred different types of bread."
+    ],
+    [
+     "Kein anderes Land der Welt hat eine so große Vielfalt.",
+     "No other country in the world has such a large variety."
+    ],
+    [
+     "Deshalb nennen viele Deutsche ihr Brot mit echtem Stolz 'Weltkulturerbe'.",
+     "That's why many Germans proudly call their bread a 'world cultural heritage'."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "A2",
+   "lines": [
+    [
+     "Honig verdirbt praktisch nie, wenn man ihn richtig lagert.",
+     "Honey practically never spoils if stored properly."
+    ],
+    [
+     "Archäologen fanden sogar essbaren Honig in dreitausend Jahre alten Gräbern.",
+     "Archaeologists even found edible honey in three-thousand-year-old tombs."
+    ],
+    [
+     "Bienen machen also nicht nur Honig, sondern echte kleine Zeitkapseln.",
+     "So bees don't just make honey, they make real little time capsules."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "A2",
+   "lines": [
+    [
+     "Immer mehr Menschen in Städten kümmern sich um kleine Balkongärten.",
+     "More and more people in cities are taking care of small balcony gardens."
+    ],
+    [
+     "Sie pflanzen Tomaten, Kräuter und manchmal sogar kleine Erdbeeren.",
+     "They plant tomatoes, herbs, and sometimes even small strawberries."
+    ],
+    [
+     "Für viele ist das eine kleine, grüne Pause vom Alltag.",
+     "For many, it's a small, green break from everyday life."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "A2",
+   "lines": [
+    [
+     "Katzen schlafen im Durchschnitt etwa vierzehn Stunden am Tag.",
+     "Cats sleep on average about fourteen hours a day."
+    ],
+    [
+     "Das bedeutet, eine Katze verschläft fast zwei Drittel ihres Lebens.",
+     "That means a cat sleeps through almost two-thirds of its life."
+    ],
+    [
+     "Manchmal wünscht man sich fast, ein bisschen mehr Katze zu sein.",
+     "Sometimes you almost wish you were a little more like a cat."
     ]
    ]
   },
@@ -293,16 +2003,16 @@
    "level": "B1",
    "lines": [
     [
-     "Immer mehr Menschen entscheiden sich dafür, mit dem Fahrrad zur Arbeit zu fahren.",
-     "More and more people choose to cycle to work."
+     "In Japan gibt es einen eigenen Begriff für den Wald-Spaziergang: 'Waldbaden'.",
+     "In Japan there's a specific term for a forest walk: 'forest bathing'."
     ],
     [
-     "Das spart nicht nur Geld, sondern ist auch gut für die Umwelt.",
-     "This not only saves money but is also good for the environment."
+     "Studien zeigen, dass schon zwanzig Minuten im Wald den Stresspegel deutlich senken.",
+     "Studies show that just twenty minutes in the forest significantly lowers stress levels."
     ],
     [
-     "Viele Städte bauen deshalb ihre Radwege weiter aus.",
-     "Many cities are therefore continuing to expand their bike paths."
+     "Immer mehr deutsche Städte bieten deshalb inzwischen geführte Waldbaden-Touren an.",
+     "That's why more and more German cities now offer guided forest-bathing tours."
     ]
    ]
   },
@@ -311,16 +2021,178 @@
    "level": "B1",
    "lines": [
     [
-     "Die Preise für Lebensmittel sind im letzten Jahr deutlich gestiegen.",
-     "Food prices have risen significantly over the past year."
+     "Immer mehr Menschen entscheiden sich bewusst gegen ein eigenes Auto.",
+     "More and more people are consciously deciding against owning their own car."
     ],
     [
-     "Viele Familien müssen dadurch genauer auf ihr Budget achten.",
-     "Because of this, many families have to watch their budget more closely."
+     "Stattdessen nutzen sie eine Mischung aus Fahrrad, Bahn und Carsharing.",
+     "Instead, they use a mix of bicycle, train, and carsharing."
     ],
     [
-     "Experten erwarten, dass sich die Preise erst langsam wieder stabilisieren.",
-     "Experts expect prices to stabilize again only slowly."
+     "In manchen Großstädten ist diese Kombination sogar günstiger als ein eigenes Auto.",
+     "In some big cities, this combination is even cheaper than owning a car."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B1",
+   "lines": [
+    [
+     "Ein einzelner Regenwurm kann in seinem Leben tonnenweise Erde umwälzen.",
+     "A single earthworm can turn over tons of soil in its lifetime."
+    ],
+    [
+     "Ohne diese kleinen Helfer wäre unser Boden deutlich weniger fruchtbar.",
+     "Without these little helpers, our soil would be significantly less fertile."
+    ],
+    [
+     "Manche Wissenschaftler nennen sie deshalb liebevoll die 'Architekten des Bodens'.",
+     "Some scientists therefore lovingly call them the 'architects of the soil'."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B1",
+   "lines": [
+    [
+     "Immer mehr Firmen führen eine Vier-Tage-Woche ein, ohne das Gehalt zu kürzen.",
+     "More and more companies are introducing a four-day week without cutting salaries."
+    ],
+    [
+     "Erste Studien zeigen erstaunlich positive Effekte auf Gesundheit und Produktivität.",
+     "Early studies show surprisingly positive effects on health and productivity."
+    ],
+    [
+     "Kritiker warnen jedoch, dass dieses Modell nicht in jeder Branche funktioniert.",
+     "Critics warn, however, that this model doesn't work in every industry."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B1",
+   "lines": [
+    [
+     "Bibliotheken verleihen in einigen Städten inzwischen nicht nur Bücher.",
+     "In some cities, libraries now lend out more than just books."
+    ],
+    [
+     "Man kann dort auch Werkzeuge, Nähmaschinen oder sogar Musikinstrumente ausleihen.",
+     "You can also borrow tools, sewing machines, or even musical instruments there."
+    ],
+    [
+     "Diese Idee des Teilens spart Geld und schont gleichzeitig Ressourcen.",
+     "This idea of sharing saves money while also conserving resources."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B1",
+   "lines": [
+    [
+     "Manche Städte pflanzen bewusst mehr Bäume, um die Sommerhitze zu senken.",
+     "Some cities are deliberately planting more trees to reduce summer heat."
+    ],
+    [
+     "Ein einziger großer Baum kann an heißen Tagen wie eine natürliche Klimaanlage wirken.",
+     "A single large tree can act like a natural air conditioner on hot days."
+    ],
+    [
+     "Deshalb gilt Stadtgrün heute als wichtiger Teil der Klimaanpassung.",
+     "That's why urban greenery is now considered an important part of climate adaptation."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B1",
+   "lines": [
+    [
+     "Immer mehr Restaurants bieten inzwischen bewusst kleinere Portionen an.",
+     "More and more restaurants are now deliberately offering smaller portions."
+    ],
+    [
+     "So landet weniger Essen im Müll, und die Gäste können trotzdem mehrere Gerichte probieren.",
+     "This way less food ends up in the trash, and guests can still try several dishes."
+    ],
+    [
+     "Manche Köche sehen darin sogar eine neue Art, Genuss zu verstehen.",
+     "Some chefs even see this as a new way of understanding enjoyment."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B1",
+   "lines": [
+    [
+     "Forscher haben herausgefunden, dass Bäume über ihre Wurzeln miteinander kommunizieren.",
+     "Researchers have discovered that trees communicate with each other through their roots."
+    ],
+    [
+     "Über ein unterirdisches Pilznetzwerk tauschen sie sogar Nährstoffe und Warnsignale aus.",
+     "Through an underground fungal network, they even exchange nutrients and warning signals."
+    ],
+    [
+     "Manche nennen dieses Netzwerk deshalb liebevoll das 'Wood Wide Web'.",
+     "Some therefore lovingly call this network the 'Wood Wide Web'."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B1",
+   "lines": [
+    [
+     "Immer mehr junge Menschen interessieren sich wieder für alte Handwerksberufe.",
+     "More and more young people are becoming interested in old craft professions again."
+    ],
+    [
+     "Berufe wie Schreiner oder Buchbinder gelten plötzlich wieder als attraktiv.",
+     "Professions like carpenter or bookbinder suddenly seem attractive again."
+    ],
+    [
+     "Viele schätzen dabei besonders die Arbeit mit den eigenen Händen.",
+     "Many especially value working with their own hands."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B1",
+   "lines": [
+    [
+     "In vielen deutschen Städten entstehen sogenannte Tauschregale für Bücher.",
+     "So-called book-swap shelves are appearing in many German cities."
+    ],
+    [
+     "Jeder darf ein Buch mitnehmen und dafür ein anderes hineinstellen.",
+     "Anyone may take a book and put a different one in its place."
+    ],
+    [
+     "So finden alte Bücher immer wieder neue, überraschte Leserinnen und Leser.",
+     "That's how old books keep finding new, surprised readers."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B1",
+   "lines": [
+    [
+     "Manche Schulen führen inzwischen eine tägliche 'Bewegungspause' zwischen den Fächern ein.",
+     "Some schools are now introducing a daily 'movement break' between subjects."
+    ],
+    [
+     "Fünf Minuten Tanzen oder Strecken sollen die Konzentration danach deutlich verbessern.",
+     "Five minutes of dancing or stretching are meant to significantly improve concentration afterward."
+    ],
+    [
+     "Lehrer berichten, dass die Klasse danach spürbar ruhiger und aufmerksamer ist.",
+     "Teachers report that the class is noticeably calmer and more attentive afterward."
     ]
    ]
   },
@@ -329,16 +2201,16 @@
    "level": "B2",
    "lines": [
     [
-     "Viele Unternehmen bieten ihren Mitarbeitern inzwischen die Möglichkeit, im Homeoffice zu arbeiten.",
-     "Many companies now offer their employees the option to work from home."
+     "Immer mehr Unternehmen setzen auf die sogenannte Vier-Tage-Woche bei vollem Gehalt.",
+     "More and more companies are adopting the so-called four-day week at full pay."
     ],
     [
-     "Das schafft mehr Flexibilität, bringt aber auch neue Herausforderungen für die Zusammenarbeit mit sich.",
-     "This creates more flexibility but also brings new challenges for collaboration."
+     "Erste Pilotprojekte zeigen, dass Produktivität und Zufriedenheit dabei keineswegs leiden.",
+     "Early pilot projects show that productivity and satisfaction don't suffer at all."
     ],
     [
-     "Manche Firmen setzen deshalb auf ein Modell aus Homeoffice und Bürotagen.",
-     "Some companies therefore rely on a model combining home office and office days."
+     "Manche Firmen berichten sogar von weniger Krankheitstagen und motivierteren Teams.",
+     "Some companies even report fewer sick days and more motivated teams."
     ]
    ]
   },
@@ -347,34 +2219,196 @@
    "level": "B2",
    "lines": [
     [
-     "Der Klimawandel beeinflusst schon heute die Landwirtschaft in vielen Regionen der Welt.",
-     "Climate change is already affecting agriculture in many regions of the world."
+     "Städte weltweit experimentieren zunehmend mit sogenannten autofreien Innenstädten.",
+     "Cities worldwide are increasingly experimenting with so-called car-free city centers."
     ],
     [
-     "Trockenperioden und unvorhersehbares Wetter erschweren die Ernteplanung.",
-     "Droughts and unpredictable weather make harvest planning more difficult."
+     "Anwohner berichten von weniger Lärm, sauberer Luft und überraschend lebendigen Straßen.",
+     "Residents report less noise, cleaner air, and surprisingly lively streets."
     ],
     [
-     "Forscher arbeiten an Pflanzen, die auch unter diesen Bedingungen wachsen können.",
-     "Researchers are working on plants that can grow even under these conditions."
+     "Geschäftsleute befürchteten zunächst Umsatzeinbußen, doch oft trat das Gegenteil ein.",
+     "Business owners initially feared revenue losses, but often the opposite happened."
     ]
    ]
   },
   {
    "c": "topic",
-   "level": "B1",
+   "level": "B2",
    "lines": [
     [
-     "Studien zeigen, dass regelmäßige Bewegung einen positiven Einfluss auf die geistige Gesundheit hat.",
-     "Studies show that regular exercise has a positive effect on mental health."
+     "Der internationale Handel mit gebrauchter Kleidung wächst seit Jahren rasant.",
+     "International trade in used clothing has been growing rapidly for years."
     ],
     [
-     "Schon ein kurzer Spaziergang am Tag kann Stress deutlich reduzieren.",
-     "Even a short walk each day can significantly reduce stress."
+     "Für viele junge Menschen ist Second-Hand-Mode längst kein Notbehelf mehr, sondern bewusster Stil.",
+     "For many young people, secondhand fashion is no longer a makeshift solution but a deliberate style choice."
     ],
     [
-     "Trotzdem finden viele Menschen im Alltag kaum Zeit dafür.",
-     "Nevertheless, many people barely find time for it in everyday life."
+     "Diese Entwicklung setzt traditionelle Modeketten zunehmend unter Druck.",
+     "This development is increasingly putting pressure on traditional fashion chains."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B2",
+   "lines": [
+    [
+     "Immer mehr Krankenkassen übernehmen inzwischen die Kosten für sogenannte 'Naturverschreibungen'.",
+     "More and more health insurers are now covering the costs of so-called 'nature prescriptions'."
+    ],
+    [
+     "Ärzte verschreiben dabei regelmäßige Spaziergänge im Grünen anstelle von Medikamenten.",
+     "Doctors prescribe regular walks in nature instead of medication."
+    ],
+    [
+     "Studien deuten darauf hin, dass dieser Ansatz bei leichten Beschwerden erstaunlich wirksam ist.",
+     "Studies suggest this approach is surprisingly effective for mild ailments."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B2",
+   "lines": [
+    [
+     "Die Nachfrage nach reparierbaren Elektrogeräten steigt spürbar, seit Verbraucher genug von Wegwerfware haben.",
+     "Demand for repairable electronics is noticeably rising, as consumers grow tired of disposable products."
+    ],
+    [
+     "Sogenannte Reparaturcafés schießen deshalb in vielen Städten regelrecht aus dem Boden.",
+     "So-called repair cafés are therefore springing up all over many cities."
+    ],
+    [
+     "Freiwillige helfen dort kostenlos dabei, kaputte Geräte wieder zum Laufen zu bringen.",
+     "Volunteers help there for free to get broken devices running again."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B2",
+   "lines": [
+    [
+     "Forscher untersuchen zunehmend, wie sich Stadtplanung direkt auf unser Wohlbefinden auswirkt.",
+     "Researchers are increasingly examining how urban planning directly affects our well-being."
+    ],
+    [
+     "Grünflächen und kurze Wege scheinen dabei einen erstaunlich großen Einfluss auf die Lebenszufriedenheit zu haben.",
+     "Green spaces and short distances seem to have a surprisingly large influence on life satisfaction."
+    ],
+    [
+     "Einige Städte planen deshalb inzwischen nach dem Prinzip der 'Fünfzehn-Minuten-Stadt'.",
+     "Some cities are therefore now planning according to the '15-minute city' principle."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B2",
+   "lines": [
+    [
+     "Immer mehr Restaurants verzichten bewusst auf Speisekarten mit Preisen für einzelne Gerichte.",
+     "More and more restaurants are deliberately doing without menus that list prices for individual dishes."
+    ],
+    [
+     "Stattdessen zahlen Gäste einen Festpreis und lassen sich von der Küche überraschen.",
+     "Instead, guests pay a fixed price and let the kitchen surprise them."
+    ],
+    [
+     "Manche Köche sehen darin die einzige Möglichkeit, wirklich kreativ zu kochen.",
+     "Some chefs see this as the only way to truly cook creatively."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B2",
+   "lines": [
+    [
+     "Digitale Entgiftung, also bewusste Handypausen, wird zunehmend als eigenständiges Konzept ernst genommen.",
+     "Digital detox, meaning deliberate phone breaks, is increasingly being taken seriously as its own concept."
+    ],
+    [
+     "Manche Hotels bieten sogar spezielle Zimmer ganz ohne WLAN als besonderes Angebot an.",
+     "Some hotels even offer special rooms entirely without Wi-Fi as a special feature."
+    ],
+    [
+     "Erstaunlicherweise gehören genau diese Zimmer oft zu den zuerst ausgebuchten.",
+     "Surprisingly, these very rooms are often among the first to be booked out."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B2",
+   "lines": [
+    [
+     "Immer mehr Menschen entscheiden sich bewusst gegen ständige Erreichbarkeit im Job.",
+     "More and more people are deliberately opting out of constant availability at work."
+    ],
+    [
+     "Einige Länder diskutieren deshalb inzwischen ein gesetzliches 'Recht auf Unerreichbarkeit' nach Feierabend.",
+     "Some countries are therefore now discussing a legal 'right to disconnect' after work hours."
+    ],
+    [
+     "Befürworter sehen darin einen notwendigen Schutz vor ständigem Leistungsdruck.",
+     "Supporters see this as a necessary protection against constant performance pressure."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B2",
+   "lines": [
+    [
+     "Die Zahl der sogenannten Tiny Houses, also winziger, minimalistischer Wohnhäuser, wächst stetig.",
+     "The number of so-called tiny houses, meaning tiny, minimalist homes, is steadily growing."
+    ],
+    [
+     "Bewohner schätzen daran vor allem die geringen Kosten und den bewusst reduzierten Lebensstil.",
+     "Residents especially value the low costs and the deliberately reduced lifestyle."
+    ],
+    [
+     "Kritiker bezweifeln allerdings, dass sich dieses Modell wirklich für Familien eignet.",
+     "Critics doubt, however, that this model is really suitable for families."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B2",
+   "lines": [
+    [
+     "Immer mehr Universitäten bieten mittlerweile Kurse zum Thema Umgang mit Unsicherheit an.",
+     "More and more universities are now offering courses on dealing with uncertainty."
+    ],
+    [
+     "Studierende sollen lernen, mit ständigem Wandel gelassener umzugehen, anstatt ihn zu fürchten.",
+     "Students are meant to learn to handle constant change more calmly instead of fearing it."
+    ],
+    [
+     "Erste Rückmeldungen deuten darauf hin, dass genau diese Fähigkeit im Berufsleben besonders gefragt ist.",
+     "Early feedback suggests that exactly this skill is especially in demand in professional life."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "B2",
+   "lines": [
+    [
+     "Der Trend zu urbanem Gärtnern hat sich in den letzten Jahren deutlich beschleunigt.",
+     "The trend toward urban gardening has clearly accelerated in recent years."
+    ],
+    [
+     "Selbst auf kleinsten Flächen wie Dächern oder Hinterhöfen entstehen inzwischen produktive Gemüsegärten.",
+     "Even on the smallest spaces like rooftops or backyards, productive vegetable gardens are now emerging."
+    ],
+    [
+     "Für viele Städter ist das eine willkommene, greifbare Verbindung zur Natur.",
+     "For many city dwellers, this is a welcome, tangible connection to nature."
     ]
    ]
   },
@@ -383,16 +2417,16 @@
    "level": "C1",
    "lines": [
     [
-     "Erneuerbare Energien spielen eine immer wichtigere Rolle in der deutschen Wirtschaft.",
-     "Renewable energy plays an increasingly important role in the German economy."
+     "Zunehmend wird diskutiert, inwiefern ständige Erreichbarkeit unsere Fähigkeit zur Konzentration nachhaltig untergräbt.",
+     "There's growing debate over the extent to which constant availability is permanently undermining our ability to concentrate."
     ],
     [
-     "Windkraft und Solarenergie decken inzwischen einen erheblichen Teil des Strombedarfs.",
-     "Wind and solar power now cover a considerable share of electricity demand."
+     "Neurowissenschaftler weisen darauf hin, dass selbst kurze Unterbrechungen den Denkprozess erheblich stören können.",
+     "Neuroscientists point out that even brief interruptions can significantly disrupt the thinking process."
     ],
     [
-     "Die größte Herausforderung bleibt jedoch die Speicherung von überschüssiger Energie.",
-     "The biggest challenge, however, remains storing surplus energy."
+     "Manche Unternehmen experimentieren deshalb bereits mit bewusst eingerichteten, störungsfreien Arbeitsphasen.",
+     "Some companies are therefore already experimenting with deliberately established, distraction-free work periods."
     ]
    ]
   },
@@ -401,34 +2435,574 @@
    "level": "C1",
    "lines": [
     [
-     "Künstliche Intelligenz verändert bereits viele Bereiche unseres Alltags.",
-     "Artificial intelligence is already changing many areas of our everyday lives."
+     "Die Debatte um bedingungsloses Grundeinkommen hat durch mehrere großangelegte Pilotstudien neuen Auftrieb erhalten.",
+     "The debate over universal basic income has gained new momentum through several large-scale pilot studies."
     ],
     [
-     "Sie hilft nicht nur bei einfachen Aufgaben, sondern übernimmt zunehmend auch komplexe Entscheidungen.",
-     "It not only helps with simple tasks but is increasingly taking on complex decisions too."
+     "Befürworter argumentieren, es könne existenzielle Ängste lindern und unternehmerisches Risiko begünstigen.",
+     "Proponents argue it could ease existential anxieties and encourage entrepreneurial risk-taking."
     ],
     [
-     "Genau deshalb wird die Frage nach klaren ethischen Grenzen immer wichtiger.",
-     "That is precisely why the question of clear ethical boundaries is becoming ever more important."
+     "Kritiker hingegen bezweifeln, dass sich ein solches Modell langfristig finanzieren ließe.",
+     "Critics, on the other hand, doubt that such a model could be financed in the long term."
     ]
    ]
   },
   {
    "c": "topic",
+   "level": "C1",
+   "lines": [
+    [
+     "Immer mehr Ökonomen plädieren dafür, wirtschaftlichen Erfolg nicht ausschließlich am Wirtschaftswachstum zu messen.",
+     "More and more economists are advocating that economic success not be measured exclusively by economic growth."
+    ],
+    [
+     "Alternative Indikatoren, etwa zur Lebenszufriedenheit oder ökologischen Nachhaltigkeit, gewinnen zunehmend an Gewicht.",
+     "Alternative indicators, such as life satisfaction or ecological sustainability, are gaining increasing weight."
+    ],
+    [
+     "Einige Länder haben solche Kennzahlen inzwischen offiziell in ihre Regierungsberichte aufgenommen.",
+     "Some countries have now officially incorporated such metrics into their government reports."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "C1",
+   "lines": [
+    [
+     "Der demografische Wandel stellt viele europäische Länder vor grundlegende strukturelle Herausforderungen.",
+     "Demographic change is confronting many European countries with fundamental structural challenges."
+    ],
+    [
+     "Sinkende Geburtenraten treffen dabei auf eine gleichzeitig alternde Bevölkerung.",
+     "Falling birth rates coincide here with a simultaneously aging population."
+    ],
+    [
+     "Experten sind sich uneinig, welche Maßnahmen diese Entwicklung wirksam abfedern könnten.",
+     "Experts disagree on which measures could effectively cushion this development."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "C1",
+   "lines": [
+    [
+     "Die zunehmende Automatisierung wirft grundsätzliche Fragen zur Zukunft menschlicher Arbeit auf.",
+     "Increasing automation raises fundamental questions about the future of human labor."
+    ],
+    [
+     "Manche Berufsfelder verändern sich derart rasant, dass Ausbildungswege kaum noch Schritt halten können.",
+     "Some professional fields are changing so rapidly that training paths can barely keep up."
+    ],
+    [
+     "Umso wichtiger erscheint vielen Bildungsexperten die Fähigkeit, sich lebenslang neu zu orientieren.",
+     "To many education experts, the ability to reorient oneself throughout life therefore seems all the more important."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "C1",
+   "lines": [
+    [
+     "Immer mehr Forscher warnen davor, digitale Ablenkung schlicht als individuelles Willensproblem abzutun.",
+     "More and more researchers warn against simply dismissing digital distraction as a matter of individual willpower."
+    ],
+    [
+     "Vielmehr seien Apps gezielt darauf ausgelegt, unsere Aufmerksamkeit so lange wie möglich zu binden.",
+     "Rather, apps are deliberately designed to capture our attention for as long as possible."
+    ],
+    [
+     "Diese Erkenntnis verschiebt die Debatte zunehmend von persönlicher Disziplin hin zu unternehmerischer Verantwortung.",
+     "This insight is increasingly shifting the debate from personal discipline toward corporate responsibility."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "C1",
+   "lines": [
+    [
+     "Die Frage, wie Städte dem Klimawandel begegnen sollen, spaltet zunehmend selbst innerhalb einzelner Parteien.",
+     "The question of how cities should respond to climate change is increasingly divisive even within individual parties."
+    ],
+    [
+     "Während manche auf radikale Verkehrsberuhigung setzen, bevorzugen andere schrittweise, technologische Lösungen.",
+     "While some favor radical traffic calming, others prefer gradual, technological solutions."
+    ],
+    [
+     "Beide Lager berufen sich dabei paradoxerweise auf dieselben wissenschaftlichen Studien.",
+     "Paradoxically, both camps invoke the very same scientific studies."
+    ]
+   ]
+  },
+  {
+   "c": "topic",
+   "level": "C1",
+   "lines": [
+    [
+     "Zunehmend wird untersucht, welchen Einfluss ständiger sozialer Vergleich über soziale Medien auf das Selbstwertgefühl hat.",
+     "There is growing research into what influence constant social comparison via social media has on self-esteem."
+    ],
+    [
+     "Erste Langzeitstudien deuten auf einen messbaren Zusammenhang mit steigenden Angstwerten bei Jugendlichen hin.",
+     "Early longitudinal studies point to a measurable link with rising anxiety levels among young people."
+    ],
+    [
+     "Dennoch bleibt umstritten, ob Verbote oder eher Medienkompetenz der wirksamere Ansatz wären.",
+     "Nevertheless, it remains disputed whether bans or rather media literacy would be the more effective approach."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "A2",
+   "lines": [
+    [
+     "Na klar, das mache ich total gern für dich!",
+     "Sure thing, I'd totally love to do that for you!"
+    ],
+    [
+     "Auf jeden Fall, da hast du hundertprozentig recht.",
+     "Definitely, you're a hundred percent right about that."
+    ],
+    [
+     "Genau, so hätte ich das auch gesehen.",
+     "Exactly, that's how I would have seen it too."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "A2",
+   "lines": [
+    [
+     "Das ist ja der Hammer! Das hätte ich nie erwartet.",
+     "Wow, that's amazing! I would have never expected that."
+    ],
+    [
+     "Echt jetzt? Das musst du mir sofort genauer erzählen.",
+     "Really now? You have to tell me more about that right away."
+    ],
+    [
+     "Kein Wunder, dass du dich so freust.",
+     "No wonder you're so happy."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "A2",
+   "lines": [
+    [
+     "Oh nein, das tut mir wirklich sehr leid für dich.",
+     "Oh no, I'm really very sorry to hear that."
+    ],
+    [
+     "Kann ich irgendwie helfen? Sag einfach Bescheid.",
+     "Can I help somehow? Just let me know."
+    ],
+    [
+     "Kopf hoch, das wird schon wieder besser.",
+     "Chin up, it'll get better again."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "A2",
+   "lines": [
+    [
+     "Wow, das sieht ja richtig lecker aus!",
+     "Wow, that looks really delicious!"
+    ],
+    [
+     "Darf ich mal probieren? Nur ein kleines Stück.",
+     "May I try some? Just a small piece."
+    ],
+    [
+     "Mmh, das schmeckt wirklich fantastisch, Kompliment!",
+     "Mmh, that tastes really fantastic, compliments!"
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "A2",
+   "lines": [
+    [
+     "Entschuldigung, könnten Sie das bitte noch einmal wiederholen?",
+     "Excuse me, could you please repeat that once more?"
+    ],
+    [
+     "Ich habe leider nicht alles verstanden.",
+     "Unfortunately I didn't understand everything."
+    ],
+    [
+     "Ah, jetzt ist es klar, vielen Dank.",
+     "Ah, now it's clear, thank you very much."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "A2",
+   "lines": [
+    [
+     "Herzlichen Glückwunsch! Das hast du wirklich toll gemacht.",
+     "Congratulations! You really did that wonderfully."
+    ],
+    [
+     "Darauf sollten wir unbedingt anstoßen.",
+     "We definitely have to toast to that."
+    ],
+    [
+     "Ich bin so stolz auf dich, das musst du wissen.",
+     "I'm so proud of you, you should know that."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "A2",
+   "lines": [
+    [
+     "Also ehrlich gesagt, das gefällt mir nicht so gut.",
+     "Well, honestly, I don't like that very much."
+    ],
+    [
+     "Ich hätte da eher an etwas anderes gedacht.",
+     "I would have rather thought of something else."
+    ],
+    [
+     "Aber egal, probieren wir es einfach mal aus.",
+     "But whatever, let's just give it a try."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "A2",
+   "lines": [
+    [
+     "Entschuldigung, ich bin ein bisschen spät dran, sorry!",
+     "Sorry, I'm running a little late, my apologies!"
+    ],
+    [
+     "Der Bus kam einfach nicht, das war echt Pech.",
+     "The bus just wouldn't come, that was really bad luck."
+    ],
+    [
+     "Kein Problem, wir haben zum Glück noch genug Zeit.",
+     "No problem, luckily we still have enough time."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "A2",
+   "lines": [
+    [
+     "Wie war dein Tag? Erzähl mir alles!",
+     "How was your day? Tell me everything!"
+    ],
+    [
+     "Ach, ziemlich normal, aber schön entspannt.",
+     "Oh, pretty normal, but nicely relaxed."
+    ],
+    [
+     "Das klingt doch gar nicht so schlecht.",
+     "That doesn't sound bad at all, actually."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "A2",
+   "lines": [
+    [
+     "Möchtest du am Wochenende mit ins Kino kommen?",
+     "Would you like to come to the movies with me this weekend?"
+    ],
+    [
+     "Gerne! Welcher Film schwebt dir denn vor?",
+     "Gladly! Which movie do you have in mind?"
+    ],
+    [
+     "Perfekt, dann sehen wir uns Samstag um sieben.",
+     "Perfect, then we'll see each other Saturday at seven."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "A2",
+   "lines": [
+    [
+     "Kannst du mir bitte kurz einen Gefallen tun?",
+     "Can you do me a quick favor, please?"
+    ],
+    [
+     "Klar, sag einfach, worum es geht.",
+     "Sure, just tell me what it's about."
+    ],
+    [
+     "Danke, du bist echt ein Schatz.",
+     "Thanks, you're really a treasure."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "B1",
+   "lines": [
+    [
+     "Na ja, ich bin mir da ehrlich gesagt nicht so sicher.",
+     "Well, honestly, I'm not so sure about that."
+    ],
+    [
+     "Das kommt ganz darauf an, wie viel Zeit wir haben.",
+     "That really depends on how much time we have."
+    ],
+    [
+     "Eigentlich schon, aber irgendetwas daran stört mich noch.",
+     "Actually yes, but something about it still bothers me."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "B1",
+   "lines": [
+    [
+     "Meiner Meinung nach sollten wir damit noch etwas warten.",
+     "In my opinion, we should wait a bit longer with that."
+    ],
+    [
+     "Ich finde, das ist eigentlich eine ziemlich clevere Idee.",
+     "I think that's actually a pretty clever idea."
+    ],
+    [
+     "Ehrlich gesagt, darüber habe ich noch gar nicht nachgedacht.",
+     "Honestly, I haven't even thought about that yet."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "B1",
+   "lines": [
+    [
+     "Um ehrlich zu sein, das hätte ich mir echt nicht träumen lassen.",
+     "To be honest, I never would have dreamed of that."
+    ],
+    [
+     "Da fehlen mir gerade fast die Worte, wirklich.",
+     "I'm almost speechless right now, really."
+    ],
+    [
+     "Das musst du unbedingt der ganzen Familie erzählen.",
+     "You absolutely have to tell the whole family about that."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "B1",
+   "lines": [
+    [
+     "Also, ich würde das an deiner Stelle anders angehen.",
+     "Well, in your place, I'd approach that differently."
+    ],
+    [
+     "Vielleicht solltest du erst einmal in Ruhe darüber schlafen.",
+     "Maybe you should sleep on it calmly first."
+    ],
+    [
+     "Am Ende musst du natürlich selbst entscheiden, was richtig ist.",
+     "In the end, of course, you have to decide for yourself what's right."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich muss zugeben, das war wirklich nicht meine beste Idee.",
+     "I have to admit, that really wasn't my best idea."
+    ],
+    [
+     "Im Nachhinein hätte ich das definitely anders machen sollen.",
+     "In hindsight I definitely should have done that differently."
+    ],
+    [
+     "Na ja, aus Fehlern lernt man ja bekanntlich am meisten.",
+     "Well, they say you learn the most from mistakes anyway."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "B1",
+   "lines": [
+    [
+     "Entschuldigen Sie die Störung, dürfte ich kurz etwas fragen?",
+     "Excuse the interruption, may I ask something briefly?"
+    ],
+    [
+     "Selbstverständlich, worum geht es denn genau?",
+     "Of course, what exactly is it about?"
+    ],
+    [
+     "Vielen Dank für Ihre Geduld, das war mir wichtig.",
+     "Thank you very much for your patience, that was important to me."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "B1",
+   "lines": [
+    [
+     "Wenn ich ehrlich bin, hatte ich mir das ganz anders vorgestellt.",
+     "If I'm honest, I had imagined that quite differently."
+    ],
+    [
+     "Trotzdem bin ich am Ende positiv überrascht worden.",
+     "Still, in the end I was pleasantly surprised."
+    ],
+    [
+     "Manchmal ist es gut, wenn Dinge anders laufen als geplant.",
+     "Sometimes it's good when things turn out differently than planned."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "B1",
+   "lines": [
+    [
+     "Darf ich kurz einen anderen Vorschlag in den Raum werfen?",
+     "May I briefly throw a different suggestion into the room?"
+    ],
+    [
+     "Klar, wir sind für alle Ideen offen.",
+     "Sure, we're open to all ideas."
+    ],
+    [
+     "Gut, dann lass uns beide Möglichkeiten durchdenken.",
+     "Good, then let's think through both options."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "B1",
+   "lines": [
+    [
+     "Ich verstehe deinen Standpunkt, sehe die Sache aber etwas anders.",
+     "I understand your point of view, but I see the matter a bit differently."
+    ],
+    [
+     "Interessant, so hatte ich das noch gar nicht betrachtet.",
+     "Interesting, I hadn't looked at it that way at all."
+    ],
+    [
+     "Vielleicht liegt die Wahrheit ja irgendwo dazwischen.",
+     "Maybe the truth lies somewhere in between."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "B1",
+   "lines": [
+    [
+     "Tut mir leid, aber das kann ich diesmal wirklich nicht übernehmen.",
+     "I'm sorry, but I really can't take that on this time."
+    ],
+    [
+     "Kein Problem, dann finden wir eine andere Lösung.",
+     "No problem, then we'll find another solution."
+    ],
+    [
+     "Danke, dass du so verständnisvoll damit umgehst.",
+     "Thanks for being so understanding about it."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "B1",
+   "lines": [
+    [
+     "Um noch einmal auf deinen Punkt zurückzukommen: Da stimme ich dir voll zu.",
+     "To come back to your point once more: I fully agree with you there."
+    ],
+    [
+     "Das war wirklich gut formuliert, ehrlich gesagt.",
+     "That was really well put, honestly."
+    ],
+    [
+     "Genau darauf wollte ich eigentlich auch hinaus.",
+     "That's actually exactly what I was getting at too."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
    "level": "B2",
    "lines": [
     [
-     "Immer mehr Verbraucher achten beim Einkaufen auf Nachhaltigkeit und Umweltschutz.",
-     "More and more consumers pay attention to sustainability and environmental protection when shopping."
+     "Grundsätzlich stimme ich dir zu, allerdings sehe ich einen entscheidenden Haken an der Sache.",
+     "In principle I agree with you, though I see one decisive catch in the matter."
     ],
     [
-     "Sie bevorzugen Produkte mit weniger Verpackung und kürzeren Transportwegen.",
-     "They prefer products with less packaging and shorter transport distances."
+     "Man müsste zumindest bedenken, welche Folgen das langfristig haben könnte.",
+     "One would at least have to consider what consequences that could have long-term."
     ],
     [
-     "Dieser Trend zwingt auch große Unternehmen, ihre Angebote zu überdenken.",
-     "This trend is also forcing large companies to rethink their offerings."
+     "Trotzdem, insgesamt überwiegen für mich klar die Vorteile.",
+     "Still, overall the advantages clearly outweigh the drawbacks for me."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "B2",
+   "lines": [
+    [
+     "Bei allem Respekt, ich sehe das aus einem etwas anderen Blickwinkel.",
+     "With all due respect, I see this from a somewhat different angle."
+    ],
+    [
+     "Das mag durchaus stimmen, aber es greift meiner Ansicht nach zu kurz.",
+     "That may well be true, but in my view it falls short."
+    ],
+    [
+     "Lass uns das Thema vielleicht in Ruhe von beiden Seiten beleuchten.",
+     "Let's maybe calmly examine the issue from both sides."
+    ]
+   ]
+  },
+  {
+   "c": "redemittel",
+   "level": "B2",
+   "lines": [
+    [
+     "Ich möchte an dieser Stelle kurz einwerfen, dass die Lage komplexer ist, als sie scheint.",
+     "I'd like to briefly point out at this point that the situation is more complex than it seems."
+    ],
+    [
+     "Ein berechtigter Einwand, den man sicher nicht einfach abtun sollte.",
+     "A valid objection, one that certainly shouldn't simply be dismissed."
+    ],
+    [
+     "Genau deshalb lohnt es sich, noch einmal genauer hinzuschauen.",
+     "That's exactly why it's worth taking a closer look once more."
     ]
    ]
   }

@@ -21,7 +21,7 @@ def extract_block(varname, content):
 STR = r'"((?:[^"\\]|\\.)*)"'
 
 passages_block = extract_block('PASSAGES', content)
-passage_entries = re.findall(r"\{c:'(\w+)', level:'(\w+)', lines:\[(.*?)\]\}", passages_block, re.S)
+passage_entries = re.findall(r'\{c:"(\w+)", level:"(\w+)", lines:\[(.*?)\]\}', passages_block, re.S)
 passages = []
 for c, level, lines_block in passage_entries:
     lines = re.findall(r'\{de:' + STR + r', en:' + STR + r'\}', lines_block)
